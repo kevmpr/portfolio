@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Kevin portfolio</title>
+        <link rel="stylesheet" href="styles/style.css" />
+    </head>
+    <body>
+        <header class="header">
+            <a href="#profile" class="header__icon">
+                <img class="svg" src="./assets/svg/icon.svg" alt="icon" />
+                <p>Kevin</p>
+            </a>
+
+            <nav class="nav">
+                <ul class="nav__sections">
+                    <li class="sections__section">
+                        <a href="#profile">Inicio</a>
+                    </li>
+
+                    <li class="sections__section">
+                        <a href="#projects">Proyectos</a>
+                    </li>
+
+                    <li class="sections__section">
+                        <a href="#aboutme">Sobre mi</a>
+                    </li>
+
+                    <li class="sections__section">
+                        <a href="#contact">Contacto</a>
+                    </li>
+
+                    <li class="sections__section--language">
+                        <label for="toggle-view">
+                            <img
+                                class="svg"
+                                src="./assets/svg/mode-svg/light-mode.svg"
+                                alt="light-mode"
+                            />
+                        </label>
+                        <input type="checkbox" id="toggle-view" />
+                    </li>
+
+                    <li class="sections__section--language">
+                        <label for="toggle-language">
+                            <img
+                                src="./assets/img/es-lang.png"
+                                alt="spanish toggle-language"
+                            />
+                        </label>
+                        <input type="checkbox" id="toggle-language" />
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="main">
+            <section class="main__profile" id="profile">
+                <img
+                    class="profile__image"
+                    src="./assets/img/profile.jpeg"
+                    alt="profile"
+                />
+
+                <div class="profile__info">
+                    <h1 class="profile__title">
+                        Estudiante de 2do año de Desarrollo de Software |
+                        Desarrollador Back End | Desarrollador Front End
+                    </h1>
+                    <p class="profile__description">
+                        👋 Hola, soy
+                        <span class="profile__description__word"
+                            >Kevin Maximiliano Palma Romero</span
+                        >
+                        , un desarrollador apasionado de Argentina. <br /><br />
+
+                        💻 Me encanta aprender, programar y resolver problemas,
+                        siempre con disciplina, atención a los detalles y
+                        trabajo en equipo.<br /><br />
+
+                        🎯 Cada proyecto me enseña algo nuevo, y mi meta es
+                        crecer constantemente como programador.<br /><br />
+
+                        ❤️ Más allá de la tecnología, me encanta el anime, los
+                        videojuegos, leer y mantenerme activo entrenando. ¡Esos
+                        pequeños momentos también me inspiran!<br /><br />
+                    </p>
+
+                    <div class="profile__links">
+                        <a href="mailto:kev.mpr03@gmail.com" target="_blank">
+                            <img
+                                src="./assets/svg/contact-svg/email.svg"
+                                alt="Email"
+                            />
+                        </a>
+
+                        <a
+                            href="https://www.linkedin.com/in/kevin-m-palma-r/"
+                            target="_blank"
+                        >
+                            <img
+                                src="./assets/svg/contact-svg/linkedin.svg"
+                                alt="LinkedIn"
+                            />
+                        </a>
+
+                        <a href="https://github.com/kevmpr" target="_blank">
+                            <img
+                                src="./assets/svg/contact-svg/github.svg"
+                                alt="Github"
+                            />
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="main__projects" id="projects">
+                <h2 class="projects__title">Proyectos</h2>
+
+                <div class="projects__container">
+                    <div class="project">
+                        <img
+                            class="project__img"
+                            src="./assets/img/image.png"
+                            alt="project1"
+                        />
+
+                        <div class="project__text">
+                            <div>
+                                <h3 class="project__text__title">
+                                    Peluquería canina
+                                </h3>
+
+                                <p class="project__text__subtitle">
+                                    Desarrollador Back End
+                                </p>
+
+                                <p class="project__text__subtitle">
+                                    Enero 2025
+                                </p>
+                            </div>
+                            <p class="project__text__description">
+                                • Desarrollar una aplicación para la gestión de
+                                una peluquería canina. <br />
+                                • Implementar funcionalidades para registrar,
+                                visualizar, editar y eliminar información de
+                                perros y sus dueños. <br />
+                                • Diseñar una interfaz gráfica amigable e
+                                intuitiva con Swing. <br />
+                                • Asegurar la calidad del código mediante el uso
+                                de buenas prácticas y estándares de desarrollo.
+                                <br />
+                            </p>
+                        </div>
+
+                        <div class="project__links">
+                            <a
+                                href="https://github.com/kevmpr/dogGrooming"
+                                target="_blank"
+                                class="project__links__link"
+                                ><img
+                                    src="./assets/svg/link-svg/repository.svg"
+                                    alt="Repository"
+                                    title="Repository"
+                                />
+                            </a>
+
+                            <a
+                                href="https://www.linkedin.com/posts/kevin-m-palma-r_java-mysql-programaciaejn-activity-7284639078170398720-bCV8?utm_source=share&utm_medium=member_desktop"
+                                target="_blank"
+                                class="project__links__link"
+                                ><img
+                                    src="./assets/svg/link-svg/presentation.svg"
+                                    alt="Presentation"
+                                    title="Presentation"
+                                />
+                            </a>
+                        </div>
+
+                        <div class="project__tools">
+                            <img
+                                src="./assets/svg/project-svg/java.svg"
+                                alt="Java"
+                                title="Java"
+                            />
+
+                            <img
+                                src="./assets/svg/project-svg/mysql.svg"
+                                alt="MySQL"
+                                title="MySQL"
+                            />
+
+                            <img
+                                src="./assets/svg/project-svg/git.svg"
+                                alt="Git"
+                                title="Git"
+                            />
+
+                            <img
+                                src="./assets/svg/project-svg/netbeans.svg"
+                                alt="Apache Netbeans"
+                                title="Apache Netbeans"
+                            />
+
+                            <img
+                                src="./assets/svg/project-svg/trello.svg"
+                                alt="Trello"
+                                title="Trello"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="project">
+                        <img
+                            class="project__img"
+                            src="./assets/img/image.png"
+                            alt="project1"
+                        />
+
+                        <div class="project__text">
+                            <div>
+                                <h3 class="project__text__title">
+                                    Buscador de libros
+                                </h3>
+
+                                <p class="project__text__subtitle">
+                                    Desarrollador Back End
+                                </p>
+
+                                <p class="project__text__subtitle">
+                                    Diciembre 2024
+                                </p>
+                            </div>
+                            <p class="project__text__description">
+                                • Implementar un buscador de libros eficiente y
+                                funcional. <br />
+                                • Integrar la API Gutendex para obtener datos de
+                                libros. <br />
+                                • Diseñar una arquitectura basada en patrones
+                                como model, repository y service. <br />
+                                • Gestionar una base de datos PostgreSQL para
+                                almacenar y consultar información. <br />
+                            </p>
+                        </div>
+
+                        <div class="project__links">
+                            <a
+                                href="https://github.com/kevmpr/literAluraOne"
+                                target="_blank"
+                                class="project__links__link"
+                                ><img
+                                    src="./assets/svg/link-svg/repository.svg"
+                                    alt="Repository"
+                                    title="Repository"
+                                />
+                            </a>
+
+                            <a
+                                href="https://www.linkedin.com/posts/kevin-m-palma-r_aluralatam-oraclenexteducation-java-activity-7277028539122528257-nEly?utm_source=share&utm_medium=member_desktop"
+                                target="_blank"
+                                class="project__links__link"
+                                ><img
+                                    src="./assets/svg/link-svg/presentation.svg"
+                                    alt="Presentation"
+                                    title="Presentation"
+                                />
+                            </a>
+                        </div>
+
+                        <div class="project__tools">
+                            <img
+                                src="./assets/svg/project-svg/spring.svg"
+                                alt="Spring"
+                                title="Spring"
+                            />
+
+                            <img
+                                src="./assets/svg/project-svg/postgresql.svg"
+                                alt="PostgreSQL"
+                                title="PostgreSQL"
+                            />
+
+                            <img
+                                src="./assets/svg/project-svg/git.svg"
+                                alt="Git"
+                                title="Git"
+                            />
+
+                            <img
+                                src="./assets/svg/project-svg/intellij.svg"
+                                alt="IntelliJ"
+                                title="IntelliJ"
+                            />
+
+                            <img
+                                src="./assets/svg/project-svg/trello.svg"
+                                alt="Trello"
+                                title="Trello"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="project">
+                        <img
+                            class="project__img"
+                            src="./assets/img/image.png"
+                            alt="project1"
+                        />
+
+                        <div class="project__text">
+                            <div>
+                                <h3 class="project__text__title">
+                                    Conversor de moneda
+                                </h3>
+
+                                <p class="project__text__subtitle">
+                                    Desarrollador Back End
+                                </p>
+
+                                <p class="project__text__subtitle">
+                                    Octubre 2024
+                                </p>
+                            </div>
+                            <p class="project__text__description">
+                                • Crear un conversor de monedas con Java. <br />
+                                • Manejar la API ExchangeRate-API. <br />
+                                • Utilizar paquetes, librerías e importaciones.
+                                <br />
+                                • Manejo de errores. <br />
+                            </p>
+                        </div>
+
+                        <div class="project__links">
+                            <a
+                                href="https://github.com/kevmpr/conversorMonedaOne"
+                                target="_blank"
+                                class="project__links__link"
+                                ><img
+                                    src="./assets/svg/link-svg/repository.svg"
+                                    alt="Repository"
+                                    title="Repository"
+                                />
+                            </a>
+
+                            <a
+                                href="https://www.linkedin.com/posts/kevin-m-palma-r_aluralatam-oraclenexteducation-activity-7253125316636790784-ta60?utm_source=share&utm_medium=member_desktop"
+                                target="_blank"
+                                class="project__links__link"
+                                ><img
+                                    src="./assets/svg/link-svg/presentation.svg"
+                                    alt="Presentation"
+                                    title="Presentation"
+                                />
+                            </a>
+                        </div>
+
+                        <div class="project__tools">
+                            <img
+                                src="./assets/svg/project-svg/java.svg"
+                                alt="Java"
+                                title="Java"
+                            />
+
+                            <img
+                                src="./assets/svg/project-svg/git.svg"
+                                alt="Git"
+                                title="Git"
+                            />
+
+                            <img
+                                src="./assets/svg/project-svg/intellij.svg"
+                                alt="IntelliJ"
+                                title="IntelliJ"
+                            />
+
+                            <img
+                                src="./assets/svg/project-svg/trello.svg"
+                                alt="Trello"
+                                title="Trello"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="project">
+                        <img
+                            class="project__img"
+                            src="./assets/img/image.png"
+                            alt="project1"
+                        />
+
+                        <div class="project__text">
+                            <div>
+                                <h3 class="project__text__title">
+                                    Encriptador de texto
+                                </h3>
+
+                                <p class="project__text__subtitle">
+                                    Desarrollador Front End
+                                </p>
+
+                                <p class="project__text__subtitle">
+                                    Agosto 2024
+                                </p>
+                            </div>
+                            <p class="project__text__description">
+                                • Crear un encriptador con Javascript. <br />
+                                • Crear un desencriptador con Javascript. <br />
+                                • Implementar el diseño hecho en Figma a código
+                                con HTML y CSS. <br />
+                                • Realizar diseño responsivo para distintas
+                                resoluciones de pantalla. <br />
+                            </p>
+                        </div>
+
+                        <div class="project__links">
+                            <a
+                                href="https://kevmpr.github.io/encriptadorONE/index.html"
+                                target="_blank"
+                                class="project__links__link"
+                                ><img
+                                    src="./assets/svg/link-svg/web.svg"
+                                    alt="Web site"
+                                    title="Web site"
+                                />
+                            </a>
+
+                            <a
+                                href="https://github.com/kevmpr/encriptadorONE"
+                                target="_blank"
+                                class="project__links__link"
+                            >
+                                <img
+                                    src="./assets/svg/link-svg/repository.svg"
+                                    alt="Repository"
+                                    title="Repository"
+                                />
+                            </a>
+
+                            <a
+                                href="https://www.linkedin.com/posts/kevin-m-palma-r_aluralatam-oraclenexteducation-activity-7225571404170035201-Vyls?utm_source=share&utm_medium=member_desktop"
+                                target="_blank"
+                                class="project__links__link"
+                                ><img
+                                    src="./assets/svg/link-svg/presentation.svg"
+                                    alt="Presentation"
+                                    title="Presentation"
+                                />
+                            </a>
+                        </div>
+
+                        <div class="project__tools">
+                            <img
+                                src="./assets/svg/project-svg/js.svg"
+                                alt="JavaScript"
+                                title="JavaScript"
+                            />
+
+                            <img
+                                src="./assets/svg/project-svg/css.svg"
+                                alt="CSS"
+                                title="CSS"
+                            />
+
+                            <img
+                                src="./assets/svg/project-svg/html.svg"
+                                alt="HTML"
+                                title="HTML"
+                            />
+
+                            <img
+                                src="./assets/svg/project-svg/git.svg"
+                                alt="Git"
+                                title="Git"
+                            />
+
+                            <img
+                                src="./assets/svg/project-svg/vscode.svg"
+                                alt="Visual Studio Code"
+                                title="Visual Studio Code"
+                            />
+
+                            <img
+                                src="./assets/svg/project-svg/trello.svg"
+                                alt="Trello"
+                                title="Trello"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="project">
+                        <img
+                            class="project__img"
+                            src="./assets/img/image.png"
+                            alt="project1"
+                        />
+
+                        <div class="project__text">
+                            <div>
+                                <h3 class="project__text__title">
+                                    Almacen de comida
+                                </h3>
+
+                                <p class="project__text__subtitle">
+                                    Desarrollador Front End
+                                </p>
+
+                                <p class="project__text__subtitle">
+                                    Marzo 2024
+                                </p>
+                            </div>
+                            <p class="project__text__description">
+                                • Diseñar y estructurar las páginas web
+                                utilizando HTML. <br />
+                                • Estilizar y dar formato visual con CSS para
+                                asegurar una experiencia atractiva y funcional.
+                                <br />
+                            </p>
+                        </div>
+
+                        <div class="project__links">
+                            <a
+                                href="https://kevmpr.github.io/almacen_kelma/"
+                                target="_blank"
+                                class="project__links__link"
+                            >
+                                <img
+                                    src="./assets/svg/link-svg/web.svg"
+                                    alt="Web site"
+                                    title="Web site"
+                                />
+                            </a>
+
+                            <a
+                                href="https://github.com/kevmpr/almacen_kelma"
+                                target="_blank"
+                                class="project__links__link"
+                            >
+                                <img
+                                    src="./assets/svg/link-svg/repository.svg"
+                                    alt="Repository"
+                                    title="Repository"
+                                />
+                            </a>
+                        </div>
+
+                        <div class="project__tools">
+                            <img
+                                src="./assets/svg/project-svg/css.svg"
+                                alt="CSS"
+                                title="CSS"
+                            />
+
+                            <img
+                                src="./assets/svg/project-svg/html.svg"
+                                alt="HTML"
+                                title="HTML"
+                            />
+
+                            <img
+                                src="./assets/svg/project-svg/git.svg"
+                                alt="Git"
+                                title="Git"
+                            />
+
+                            <img
+                                src="./assets/svg/project-svg/vscode.svg"
+                                alt="Visual Studio Code"
+                                title="Visual Studio Code"
+                            />
+
+                            <img
+                                src="./assets/svg/project-svg/trello.svg"
+                                alt="Trello"
+                                title="Trello"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="main__aboutme" id="aboutme">
+                <h2 class="aboutme__title">Sobre mi</h2>
+
+                <div class="aboutme__info">
+                    <h3 class="aboutme__info__title">
+                        Comprometido con la innovación y el crecimiento
+                    </h3>
+                    <p class="aboutme__info__text">
+                        💡 Actualmente cursando el
+                        <span class="aboutme__info__text__word"
+                            >segundo año de la Tecnicatura Superior en
+                            Desarrollo de Software.</span
+                        >
+                        Mi objetivo es abrirme camino en el mundo de la
+                        programación, aplicando tanto conocimientos técnicos
+                        como habilidades interpersonales que potencien los
+                        proyectos en los que participo.<br /><br />
+
+                        🌱 Manejo una
+                        <span class="aboutme__info__text__word"
+                            >sólida base técnica</span
+                        >
+                        en HTML, CSS, Tailwind CSS, JavaScript, Java, Spring,
+                        PostgreSQL y MySQL. También tengo experiencia utilizando
+                        Git, GitHub, Notion, Jira y Trello, lo que me permite
+                        colaborar de forma organizada y ágil en cualquier
+                        entorno.<br /><br />
+
+                        🤝 Me considero una
+                        <span class="aboutme__info__text__word"
+                            >persona con habilidades clave</span
+                        >
+                        para el trabajo en equipo, gestionando tiempos y
+                        recursos con eficacia. Me esfuerzo por comunicarme
+                        claramente, escuchar activamente y aplicar un
+                        pensamiento crítico orientado a soluciones. Además,
+                        mantengo un
+                        <span class="aboutme__info__text__word"
+                            >fuerte compromiso</span
+                        >
+                        con la ética profesional, la negociación efectiva y la
+                        adaptabilidad en entornos cambiantes.<br /><br />
+
+                        🌐 Soy hablante
+                        <span class="aboutme__info__text__word"
+                            >nativo de español</span
+                        >
+                        y tengo un nivel
+                        <span class="aboutme__info__text__word"
+                            >intermedio alto (B2) de inglés</span
+                        >, lo que me facilita participar en proyectos
+                        internacionales y seguir aprendiendo de fuentes
+                        globales.<br /><br />
+
+                        💻 Mi meta es seguir creciendo como programador y
+                        <span class="aboutme__info__text__word">aportar valor en cada desafío que enfrente</span>, combinando
+                        pasión por la tecnología con habilidades humanas que
+                        marquen la diferencia.<br /><br />
+
+                        🚀 Estoy <span class="aboutme__info__text__word">listo para dar el siguiente paso</span> en mi carrera
+                        y formar parte de equipos que impacten positivamente en
+                        la industria.<br /><br />
+                    </p>
+                </div>
+            </section>
+
+            <section class="main__contact" id="contact">
+                <h2 class="contact__title">Contacto</h2>
+                <div class="contact__info">
+                    <p class="contact__info__text">
+                        📧 Si estás buscando a alguien con habilidades técnicas sólidas, capacidad de aprendizaje continuo y dedicación para superar expectativas, no dudes en contactarme ¡Estoy listo para formar parte de tu equipo y aportar al crecimiento de tu empresa!
+                    </p>
+
+                    <div class="contact__info__links">
+                        <a
+                            href="mailto:kev.mpr03@gmail.com"
+                            target="_blank"
+                            class="contact__info__links__link"
+                        >
+                            <img
+                                src="./assets/svg/contact-svg/email.svg"
+                                alt="Email"
+                            />
+
+                            kev.mpr03@gmail.com
+                        </a>
+
+                        <a
+                            href="https://github.com/kevmpr"
+                            target="_blank"
+                            class="contact__info__links__link"
+                        >
+                            <img
+                                src="./assets/svg/contact-svg/github.svg"
+                                alt="Github"
+                            />
+
+                            kevmpr
+                        </a>
+
+                        <a
+                            href="https://www.linkedin.com/in/kevin-m-palma-r/"
+                            target="_blank"
+                            class="contact__info__links__link"
+                        >
+                            <img
+                                src="./assets/svg/contact-svg/linkedin.svg"
+                                alt="LinkedIn"
+                            />
+
+                            kevin maximiliano palma romero
+                        </a>
+
+                        <a
+                            href="./assets/files/CV Kevin Maximiliano Palma Romero - Desarrollador Back End 2025.pdf"
+                            target="_blank"
+                            class="contact__info__links__link"
+                        >
+                            <img
+                                src="./assets/svg/contact-svg/cv.svg"
+                                alt="Curriculum Vitae"
+                            />
+
+                            descargar cv
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <p>⌨️ con ❤️ por Kevin Maximiliano Palma Romero</p>
+        </footer>
+    </body>
+</html>
