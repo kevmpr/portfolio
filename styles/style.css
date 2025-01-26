@@ -9,6 +9,7 @@
     --white-color: #f8fcff;
     --white-color-hover: #ffffff;
     --black-color: #02131f;
+    --black-color-hover: #000000;
 
     --icon-font-size: 1.5rem;
     --section-font-size: 1rem;
@@ -40,9 +41,15 @@ body {
     color: var(--black-color);
 }
 
-.dark-mode{
-    background: #020024;
-    color: #f8fcff;
+.darkmode {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgb(18, 18, 18) 35%,
+        rgb(39, 39, 39) 100%
+    );
+    color: var(--white-color);
 }
 
 ul {
@@ -70,13 +77,13 @@ a {
     z-index: 10;
 }
 
-.header-darkMode{
-    background: rgb(232, 239, 253);
+.header--darkmode {
+    background: rgb(0, 0, 0);
     background: linear-gradient(
-        0deg,
-        rgba(232, 239, 253, 1) 0%,
-        rgba(241, 244, 254, 1) 51%,
-        rgba(255, 255, 255, 1) 100%
+        90deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgb(18, 18, 18) 35%,
+        rgb(39, 39, 39) 100%
     );
 }
 
@@ -146,7 +153,7 @@ a {
     list-style: none;
 }
 
-.input-toggle{
+.input-toggle {
     display: none;
 }
 
@@ -211,15 +218,42 @@ a {
 
 .profile__title {
     margin-bottom: 1rem;
-    background: -webkit-linear-gradient(0, #090979,#0d92f4);
+    background: -webkit-linear-gradient(
+        0,
+        var(--primary-color-dark),
+        var(--primary-color)
+    );
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.profile__description__word{
+.profile__title--darkmode {
+    background: -webkit-linear-gradient(
+        0,
+        var(--primary-color),
+        var(--white-color-hover)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.profile__description {
+    color: var(--black-color);
+}
+
+.profile__description--darkmode {
+    color: var(--white-color);
+}
+
+.profile__description__word {
     font-weight: 700;
     color: var(--primary-color-dark);
+}
+
+.profile__description__word--darkmode {
+    color: var(--primary-color);
 }
 
 @keyframes link {
@@ -231,47 +265,79 @@ a {
     }
 }
 
-.profile__links{
+@keyframes linkDark {
+    0% {
+        border-bottom: 2px solid transparent;
+    }
+    100% {
+        border-bottom: 2px solid var(--white-color);
+    }
+}
+
+.profile__links {
     display: flex;
     gap: 2rem;
 }
 
-.profile__links__link{
+.profile__links__link {
     border-bottom: 2px solid transparent;
 }
 
-.profile__links__link:hover{
+.profile__links__link:hover {
     animation: link 0.2s ease-in-out forwards;
 }
 
-.profile--skills{
+.profile__links__link--darkmode:hover {
+    animation: linkDark 0.2s ease-in-out forwards;
+}
+
+.profile--skills {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.profile--skills__title{
+.profile--skills__title {
     font-size: var(--title-font-size);
-    background: -webkit-linear-gradient(0, #090979,#0d92f4);
+    background: -webkit-linear-gradient(
+        0,
+        var(--primary-color-dark),
+        var(--primary-color)
+    );
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 0.5rem;
 }
 
-.profile--skills__hard{
+.profile--skills__title--darkmode {
+    background: -webkit-linear-gradient(
+        0,
+        var(--primary-color),
+        var(--white-color-hover)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.profile--skills__hard {
     display: flex;
     gap: 1rem;
     font-size: var(--text-font-size);
 }
 
-.profile--skills__hard__skill{
+.profile--skills__hard__skill {
     display: flex;
     flex-direction: column;
     align-items: center;
     font-weight: 700;
     color: var(--primary-color-dark);
+}
+
+.profile--skills__hard__skill--darkmode {
+    color: var(--primary-color);
 }
 
 .main__projects {
@@ -288,10 +354,26 @@ a {
     border-bottom: 4px solid var(--primary-color-dark);
     margin: 8rem 0 1rem 0;
     font-size: var(--title-font-size);
-    background: -webkit-linear-gradient(0, #090979,#0d92f4);
+    background: -webkit-linear-gradient(
+        0,
+        var(--primary-color-dark),
+        var(--primary-color)
+    );
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.projects__title--darkmode {
+    background: -webkit-linear-gradient(
+        0,
+        var(--primary-color),
+        var(--white-color-hover)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-bottom: 4px solid var(--primary-color);
 }
 
 .projects__container {
@@ -316,6 +398,11 @@ a {
     animation: appear linear, dissapear linear;
     animation-timeline: view();
     animation-range: entry 0 cover 25%, exit 0 cover 95%;
+}
+
+.project--darkmode {
+    box-shadow: rgba(13, 146, 244, 0.65) 0px 4px 8px -2px,
+        rgba(13, 146, 244, 0.4) 0px 0px 0px 1px;
 }
 
 .project:nth-child(even) {
@@ -346,7 +433,22 @@ a {
 
 .project__text__title {
     font-size: var(--subtitle-font-size);
-    background: -webkit-linear-gradient(0, #090979,#0d92f4);
+    background: -webkit-linear-gradient(
+        0,
+        var(--primary-color-dark),
+        var(--primary-color)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.project__text__title--darkmode {
+    background: -webkit-linear-gradient(
+        0,
+        var(--primary-color),
+        var(--white-color-hover)
+    );
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -355,6 +457,10 @@ a {
 .project__text__subtitle {
     font-size: var(--text-font-size);
     color: var(--primary-color-dark);
+}
+
+.project__text__subtitle--darkmode {
+    color: var(--primary-color);
 }
 
 .project__text__description {
@@ -377,10 +483,16 @@ a {
     border-bottom: 2px solid transparent;
 }
 
-
-
-.project__links__link:hover {
+.webLink:hover,
+.repositoryLink:hover,
+.presentationLink:hover {
     animation: link 0.2s ease-in-out forwards;
+}
+
+.webLinkDark:hover,
+.repositoryLinkDark:hover,
+.presentationLinkDark:hover {
+    animation: linkDark 0.2s ease-in-out forwards;
 }
 
 .project__tools {
@@ -411,7 +523,23 @@ a {
     border-bottom: 4px solid var(--primary-color-dark);
     margin: 8rem 0 1rem 0;
     font-size: var(--title-font-size);
-    background: -webkit-linear-gradient(0, #090979,#0d92f4);
+    background: -webkit-linear-gradient(
+        0,
+        var(--primary-color-dark),
+        var(--primary-color)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.aboutme__title--darkmode {
+    border-bottom: 4px solid var(--primary-color);
+    background: -webkit-linear-gradient(
+        0,
+        var(--primary-color),
+        var(--white-color-hover)
+    );
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -428,10 +556,20 @@ a {
         rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
     border-radius: 5px;
 }
+
+.aboutme__info--darkmode {
+    box-shadow: rgba(13, 146, 244, 0.65) 0px 4px 8px -2px,
+        rgba(13, 146, 244, 0.4) 0px 0px 0px 1px;
+}
+
 .aboutme__info__title {
     font-size: var(--subtitle-font-size);
     margin-bottom: 1rem;
     color: var(--primary-color-dark);
+}
+
+.aboutme__info__title--darkmode {
+    color: var(--primary-color);
 }
 
 .aboutme__info__text {
@@ -441,6 +579,10 @@ a {
 .aboutme__info__text__word {
     font-weight: 700;
     color: var(--primary-color-dark);
+}
+
+.aboutme__info__text__word--darkmode {
+    color: var(--primary-color);
 }
 
 .main__contact {
@@ -460,7 +602,23 @@ a {
     border-bottom: 4px solid var(--primary-color-dark);
     margin: 8rem 0 2rem 0;
     font-size: var(--title-font-size);
-    background: -webkit-linear-gradient(0, #090979,#0d92f4);
+    background: -webkit-linear-gradient(
+        0,
+        var(--primary-color-dark),
+        var(--primary-color)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.contact__title--darkmode {
+    border-bottom: 4px solid var(--primary-color);
+    background: -webkit-linear-gradient(
+        0,
+        var(--primary-color),
+        var(--white-color-hover)
+    );
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -482,8 +640,10 @@ a {
 .contact__info__links {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     gap: 1.5rem;
     padding: 2rem;
+    width: 95%;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
         rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
     border-radius: 5px;
@@ -495,7 +655,32 @@ a {
 }
 
 .contact__info__links > a:hover {
-    background: -webkit-linear-gradient(0, #090979,#0d92f4);
+    background: -webkit-linear-gradient(
+        0,
+        var(--primary-color-dark),
+        var(--primary-color)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.contact__info__links--darkmode {
+    box-shadow: rgba(13, 146, 244, 0.65) 0px 4px 8px -2px,
+        rgba(13, 146, 244, 0.4) 0px 0px 0px 1px;
+}
+
+.contact__info__links--darkmode > a:visited,
+.contact__info__links--darkmode > a:link {
+    color: var(--white-color);
+}
+
+.contact__info__links--darkmode > a:hover {
+    background: -webkit-linear-gradient(
+        0,
+        var(--primary-color),
+        var(--primary-color)
+    );
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -508,7 +693,6 @@ a {
     gap: 0.2rem;
     font-size: var(--text-font-size);
 }
-
 
 .footer {
     display: flex;
@@ -525,4 +709,15 @@ a {
         rgba(13, 146, 244, 1) 100%
     );
     color: var(--white-color);
+    z-index: 10;
+}
+
+.footer--darkmode {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgb(18, 18, 18) 35%,
+        rgb(39, 39, 39) 100%
+    );
 }
