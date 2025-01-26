@@ -40,6 +40,11 @@ body {
     color: var(--black-color);
 }
 
+.dark-mode{
+    background: #020024;
+    color: #f8fcff;
+}
+
 ul {
     list-style: none;
 }
@@ -63,6 +68,16 @@ a {
         rgba(13, 146, 244, 1) 100%
     );
     z-index: 10;
+}
+
+.header-darkMode{
+    background: rgb(232, 239, 253);
+    background: linear-gradient(
+        0deg,
+        rgba(232, 239, 253, 1) 0%,
+        rgba(241, 244, 254, 1) 51%,
+        rgba(255, 255, 255, 1) 100%
+    );
 }
 
 .header .header__icon:visited,
@@ -126,9 +141,13 @@ a {
     animation: section 0.2s ease-in-out forwards;
 }
 
-.sections__section--language,
-.sections__section--language {
+.sections__section--links,
+.sections__section--links {
     list-style: none;
+}
+
+.input-toggle{
+    display: none;
 }
 
 .main {
@@ -161,10 +180,10 @@ a {
 
 .main__profile {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 5rem;
     width: 100rem;
     min-height: 100vh;
     animation: appear linear, dissapear linear;
@@ -172,9 +191,16 @@ a {
     animation-range: entry 0 cover 40%, exit 0 cover 90%;
 }
 
+.profile {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
 .profile__image {
-    width: 20rem;
-    height: 20rem;
+    width: 23rem;
     border-radius: 50%;
 }
 
@@ -184,7 +210,7 @@ a {
 }
 
 .profile__title {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     background: -webkit-linear-gradient(0, #090979,#0d92f4);
     -webkit-background-clip: text;
     background-clip: text;
@@ -196,9 +222,56 @@ a {
     color: var(--primary-color-dark);
 }
 
+@keyframes link {
+    0% {
+        border-bottom: 2px solid transparent;
+    }
+    100% {
+        border-bottom: 2px solid var(--primary-color-dark);
+    }
+}
+
 .profile__links{
     display: flex;
     gap: 2rem;
+}
+
+.profile__links__link{
+    border-bottom: 2px solid transparent;
+}
+
+.profile__links__link:hover{
+    animation: link 0.2s ease-in-out forwards;
+}
+
+.profile--skills{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile--skills__title{
+    font-size: var(--title-font-size);
+    background: -webkit-linear-gradient(0, #090979,#0d92f4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.profile--skills__hard{
+    display: flex;
+    gap: 1rem;
+    font-size: var(--text-font-size);
+}
+
+.profile--skills__hard__skill{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 700;
+    color: var(--primary-color-dark);
 }
 
 .main__projects {
@@ -234,8 +307,8 @@ a {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr auto;
     gap: 1rem;
-    width: 60%;
-    padding: 1.5rem 0 1rem 1rem;
+    width: 55%;
+    padding: 1.5rem 0rem 1rem 2.5rem;
     border: 2px solid transparent;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
         rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
@@ -246,12 +319,13 @@ a {
 }
 
 .project:nth-child(even) {
-    padding: 1.5rem 1rem 1rem 0;
+    padding: 1.5rem 2.5rem 1rem 0;
 }
 
 .project__img {
-    width: 25rem;
+    width: 20rem;
     margin: 0 auto;
+    border-radius: 10px;
 }
 
 .project:nth-child(odd) .project__img {
@@ -303,14 +377,7 @@ a {
     border-bottom: 2px solid transparent;
 }
 
-@keyframes link {
-    0% {
-        border-bottom: 2px solid transparent;
-    }
-    100% {
-        border-bottom: 2px solid var(--primary-color-dark);
-    }
-}
+
 
 .project__links__link:hover {
     animation: link 0.2s ease-in-out forwards;
@@ -355,7 +422,7 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 60%;
+    width: 55%;
     padding: 1rem 1rem 0.5rem 1rem;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
         rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
@@ -391,7 +458,7 @@ a {
 .contact__title {
     padding-bottom: 0.2rem;
     border-bottom: 4px solid var(--primary-color-dark);
-    margin: 8rem 0 1rem 0;
+    margin: 8rem 0 2rem 0;
     font-size: var(--title-font-size);
     background: -webkit-linear-gradient(0, #090979,#0d92f4);
     -webkit-background-clip: text;
@@ -404,7 +471,8 @@ a {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-    width: 50%;
+    width: 55%;
+    text-align: center;
 }
 
 .contact__info__text {

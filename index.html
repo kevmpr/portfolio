@@ -31,85 +31,225 @@
                         <a href="#contact">Contacto</a>
                     </li>
 
-                    <li class="sections__section--language">
-                        <label for="toggle-view">
+                    <li class="sections__section--links">
+                        <label for="toggle-mode" id="toggle-mode-label">
                             <img
                                 class="svg"
                                 src="./assets/svg/mode-svg/light-mode.svg"
-                                alt="light-mode"
+                                alt="Light mode"
                             />
                         </label>
-                        <input type="checkbox" id="toggle-view" />
+                        <input
+                            type="checkbox"
+                            id="toggle-mode"
+                            class="input-toggle"
+                        />
                     </li>
 
-                    <li class="sections__section--language">
-                        <label for="toggle-language">
+                    <li class="sections__section--links">
+                        <label for="toggle-language" id="toggle-language-label">
                             <img
-                                src="./assets/img/es-lang.png"
-                                alt="spanish toggle-language"
+                                class="svg"
+                                src="./assets/svg/lang-svg/es.svg"
+                                alt="Spanish toggle-language"
                             />
                         </label>
-                        <input type="checkbox" id="toggle-language" />
+                        <input
+                            type="checkbox"
+                            id="toggle-language"
+                            class="input-toggle"
+                        />
                     </li>
                 </ul>
             </nav>
         </header>
         <main class="main">
             <section class="main__profile" id="profile">
-                <img
-                    class="profile__image"
-                    src="./assets/img/profile.jpeg"
-                    alt="profile"
-                />
+                <div class="profile">
+                    <img
+                        class="profile__image"
+                        src="./assets/img/profile.jpeg"
+                        alt="profile"
+                    />
 
-                <div class="profile__info">
-                    <h1 class="profile__title">
-                        Estudiante de 2do año de Desarrollo de Software |
-                        Desarrollador Back End | Desarrollador Front End
-                    </h1>
-                    <p class="profile__description">
-                        👋 Hola, soy
-                        <span class="profile__description__word"
-                            >Kevin Maximiliano Palma Romero</span
-                        >
-                        , un desarrollador apasionado de Argentina. <br /><br />
+                    <div class="profile__info">
+                        <h1 class="profile__title">
+                            Estudiante de 2do año de Desarrollo de Software |
+                            Desarrollador Back End | Desarrollador Front End
+                        </h1>
+                        <p class="profile__description">
+                            👋 Hola, soy
+                            <span class="profile__description__word"
+                                >Kevin Maximiliano Palma Romero</span
+                            >, un desarrollador apasionado de Argentina.
+                            <br /><br />
 
-                        💻 Me encanta aprender, programar y resolver problemas,
-                        siempre con disciplina, atención a los detalles y
-                        trabajo en equipo.<br /><br />
+                            💻 Me encanta aprender, programar y resolver
+                            problemas, siempre con disciplina, atención a los
+                            detalles y trabajo en equipo.<br /><br />
 
-                        🎯 Cada proyecto me enseña algo nuevo, y mi meta es
-                        crecer constantemente como programador.<br /><br />
+                            ❤️ Más allá de la tecnología, me encanta el anime,
+                            los videojuegos, leer y mantenerme activo
+                            entrenando. ¡Esos pequeños momentos también me
+                            inspiran!<br /><br />
+                        </p>
 
-                        ❤️ Más allá de la tecnología, me encanta el anime, los
-                        videojuegos, leer y mantenerme activo entrenando. ¡Esos
-                        pequeños momentos también me inspiran!<br /><br />
-                    </p>
+                        <div class="profile__links">
+                            <a
+                                href="mailto:kev.mpr03@gmail.com"
+                                target="_blank"
+                                class="profile__links__link"
+                            >
+                                <img
+                                    src="./assets/svg/contact-svg/email.svg"
+                                    alt="Email"
+                                />
+                            </a>
 
-                    <div class="profile__links">
-                        <a href="mailto:kev.mpr03@gmail.com" target="_blank">
+                            <a
+                                href="https://www.linkedin.com/in/kevin-m-palma-r/"
+                                target="_blank"
+                                class="profile__links__link"
+                            >
+                                <img
+                                    src="./assets/svg/contact-svg/linkedin.svg"
+                                    alt="LinkedIn"
+                                />
+                            </a>
+
+                            <a
+                                href="https://github.com/kevmpr"
+                                target="_blank"
+                                class="profile__links__link"
+                            >
+                                <img
+                                    src="./assets/svg/contact-svg/github.svg"
+                                    alt="Github"
+                                />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile--skills">
+                    <h2 class="profile--skills__title">Herramientas</h2>
+                    <div class="profile--skills__hard">
+                        <div class="profile--skills__hard__skill">
                             <img
-                                src="./assets/svg/contact-svg/email.svg"
-                                alt="Email"
+                                src="./assets/svg/project-svg/spring.svg"
+                                alt="Spring"
+                                title="Spring"
                             />
-                        </a>
+                            <p>Spring</p>
+                        </div>
 
-                        <a
-                            href="https://www.linkedin.com/in/kevin-m-palma-r/"
-                            target="_blank"
-                        >
+                        <div class="profile--skills__hard__skill">
                             <img
-                                src="./assets/svg/contact-svg/linkedin.svg"
-                                alt="LinkedIn"
+                                src="./assets/svg/project-svg/java.svg"
+                                alt="Java"
+                                title="Java"
                             />
-                        </a>
+                            <p>Java</p>
+                        </div>
 
-                        <a href="https://github.com/kevmpr" target="_blank">
+                        <div class="profile--skills__hard__skill">
                             <img
-                                src="./assets/svg/contact-svg/github.svg"
-                                alt="Github"
+                                src="./assets/svg/project-svg/js.svg"
+                                alt="JavaScript"
+                                title="JavaScript"
                             />
-                        </a>
+                            <p>JavaScript</p>
+                        </div>
+
+                        <div class="profile--skills__hard__skill">
+                            <img
+                                src="./assets/svg/project-svg/tailwind.svg"
+                                alt="Tailwind CSS"
+                                title="Tailwind CSS"
+                            />
+                            <p>Tailwind CSS</p>
+                        </div>
+
+                        <div class="profile--skills__hard__skill">
+                            <img
+                                src="./assets/svg/project-svg/css.svg"
+                                alt="CSS"
+                                title="CSS"
+                            />
+                            <p>CSS</p>
+                        </div>
+
+                        <div class="profile--skills__hard__skill">
+                            <img
+                                src="./assets/svg/project-svg/html.svg"
+                                alt="HTML"
+                                title="HTML"
+                            />
+                            <p>HTML</p>
+                        </div>
+
+                        <div class="profile--skills__hard__skill">
+                            <img
+                                src="./assets/svg/project-svg/postgresql.svg"
+                                alt="PostgreSQL"
+                                title="PostgreSQL"
+                            />
+                            <p>PostgreSQL</p>
+                        </div>
+
+                        <div class="profile--skills__hard__skill">
+                            <img
+                                src="./assets/svg/project-svg/mysql.svg"
+                                alt="MySQL"
+                                title="MySQL"
+                            />
+                            <p>MySQL</p>
+                        </div>
+
+                        <div class="profile--skills__hard__skill">
+                            <img
+                                src="./assets/svg/project-svg/git.svg"
+                                alt="Git"
+                                title="Git"
+                            />
+                            <p>Git</p>
+                        </div>
+
+                        <div class="profile--skills__hard__skill">
+                            <img
+                                src="./assets/svg/project-svg/vscode.svg"
+                                alt="Visual Studio Code"
+                                title="Visual Studio Code"
+                            />
+                            <p>VS Code</p>
+                        </div>
+
+                        <div class="profile--skills__hard__skill">
+                            <img
+                                src="./assets/svg/project-svg/intellij.svg"
+                                alt="IntelliJ"
+                                title="IntelliJ"
+                            />
+                            <p>IntelliJ</p>
+                        </div>
+
+                        <div class="profile--skills__hard__skill">
+                            <img
+                                src="./assets/svg/project-svg/netbeans.svg"
+                                alt="Apache Netbeans"
+                                title="Apache Netbeans"
+                            />
+                            <p>Netbeans</p>
+                        </div>
+
+                        <div class="profile--skills__hard__skill">
+                            <img
+                                src="./assets/svg/project-svg/trello.svg"
+                                alt="Trello"
+                                title="Trello"
+                            />
+                            <p>Trello</p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -633,13 +773,17 @@
                         globales.<br /><br />
 
                         💻 Mi meta es seguir creciendo como programador y
-                        <span class="aboutme__info__text__word">aportar valor en cada desafío que enfrente</span>, combinando
-                        pasión por la tecnología con habilidades humanas que
-                        marquen la diferencia.<br /><br />
+                        <span class="aboutme__info__text__word"
+                            >aportar valor en cada desafío que enfrente</span
+                        >, combinando pasión por la tecnología con habilidades
+                        humanas que marquen la diferencia.<br /><br />
 
-                        🚀 Estoy <span class="aboutme__info__text__word">listo para dar el siguiente paso</span> en mi carrera
-                        y formar parte de equipos que impacten positivamente en
-                        la industria.<br /><br />
+                        🚀 Estoy
+                        <span class="aboutme__info__text__word"
+                            >listo para dar el siguiente paso</span
+                        >
+                        en mi carrera y formar parte de equipos que impacten
+                        positivamente en la industria.<br /><br />
                     </p>
                 </div>
             </section>
@@ -648,7 +792,11 @@
                 <h2 class="contact__title">Contacto</h2>
                 <div class="contact__info">
                     <p class="contact__info__text">
-                        📧 Si estás buscando a alguien con habilidades técnicas sólidas, capacidad de aprendizaje continuo y dedicación para superar expectativas, no dudes en contactarme ¡Estoy listo para formar parte de tu equipo y aportar al crecimiento de tu empresa!
+                        📧 Si estás buscando a alguien con habilidades técnicas
+                        sólidas, capacidad de aprendizaje continuo y dedicación
+                        para superar expectativas, no dudes en contactarme
+                        ¡Estoy listo para formar parte de tu equipo y aportar al
+                        crecimiento de tu empresa!
                     </p>
 
                     <div class="contact__info__links">
@@ -710,5 +858,6 @@
         <footer class="footer">
             <p>⌨️ con ❤️ por Kevin Maximiliano Palma Romero</p>
         </footer>
+        <script src="./scripts/main.js"></script>
     </body>
 </html>
