@@ -17,19 +17,39 @@
             <nav class="nav">
                 <ul class="nav__sections">
                     <li class="sections__section">
-                        <a href="#profile">Inicio</a>
+                        <a
+                            href="#profile"
+                            data-section="header"
+                            data-value="home"
+                            >Inicio</a
+                        >
                     </li>
 
                     <li class="sections__section">
-                        <a href="#projects">Proyectos</a>
+                        <a
+                            href="#projects"
+                            data-section="header"
+                            data-value="projects"
+                            >Proyectos</a
+                        >
                     </li>
 
                     <li class="sections__section">
-                        <a href="#aboutme">Sobre mi</a>
+                        <a
+                            href="#aboutme"
+                            data-section="header"
+                            data-value="about"
+                            >Sobre mi</a
+                        >
                     </li>
 
                     <li class="sections__section">
-                        <a href="#contact">Contacto</a>
+                        <a
+                            href="#contact"
+                            data-section="header"
+                            data-value="contact"
+                            >Contacto</a
+                        >
                     </li>
 
                     <li class="sections__section--links">
@@ -48,7 +68,11 @@
                     </li>
 
                     <li class="sections__section--links">
-                        <label for="toggle-language" id="toggle-language-label">
+                        <label
+                            for="toggle-language"
+                            id="toggle-language-label"
+                            data-language="es"
+                        >
                             <img
                                 class="svg"
                                 src="./assets/svg/lang-svg/es.svg"
@@ -74,11 +98,19 @@
                     />
 
                     <div class="profile__info">
-                        <h1 class="profile__title">
+                        <h1
+                            class="profile__title"
+                            data-section="home"
+                            data-value="title"
+                        >
                             Estudiante de 2do año de Desarrollo de Software |
                             Desarrollador Back End | Desarrollador Front End
                         </h1>
-                        <p class="profile__description">
+                        <p
+                            class="profile__description"
+                            data-section="home"
+                            data-value="text"
+                        >
                             👋 Hola, soy
                             <span class="profile__description__word"
                                 >Kevin Maximiliano Palma Romero</span
@@ -133,7 +165,13 @@
                 </div>
 
                 <div class="profile--skills">
-                    <h2 class="profile--skills__title">Herramientas</h2>
+                    <h2
+                        class="profile--skills__title"
+                        data-section="home"
+                        data-value="subtitle"
+                    >
+                        Herramientas
+                    </h2>
                     <div class="profile--skills__hard">
                         <div class="profile--skills__hard__skill">
                             <img
@@ -256,7 +294,13 @@
             </section>
 
             <section class="main__projects" id="projects">
-                <h2 class="projects__title">Proyectos</h2>
+                <h2
+                    class="projects__title"
+                    data-section="projects"
+                    data-value="title"
+                >
+                    Proyectos
+                </h2>
 
                 <div class="projects__container">
                     <div class="project">
@@ -268,19 +312,39 @@
 
                         <div class="project__text">
                             <div>
-                                <h3 class="project__text__title">
+                                <h3
+                                    class="project__text__title"
+                                    data-section="projects"
+                                    data-value="project1"
+                                    data-info="title"
+                                >
                                     Peluquería canina
                                 </h3>
 
-                                <p class="project__text__subtitle">
+                                <p
+                                    class="project__text__subtitle"
+                                    data-section="projects"
+                                    data-value="project1"
+                                    data-info="rol"
+                                >
                                     Desarrollador Back End
                                 </p>
 
-                                <p class="project__text__subtitle">
+                                <p
+                                    class="project__text__subtitle"
+                                    data-section="projects"
+                                    data-value="project1"
+                                    data-info="date"
+                                >
                                     Enero 2025
                                 </p>
                             </div>
-                            <p class="project__text__description">
+                            <p
+                                class="project__text__description"
+                                data-section="projects"
+                                data-value="project1"
+                                data-info="description"
+                            >
                                 • Desarrollar una aplicación para la gestión de
                                 una peluquería canina. <br />
                                 • Implementar funcionalidades para registrar,
@@ -360,19 +424,39 @@
 
                         <div class="project__text">
                             <div>
-                                <h3 class="project__text__title">
+                                <h3
+                                    class="project__text__title"
+                                    data-section="projects"
+                                    data-value="project2"
+                                    data-info="title"
+                                >
                                     Buscador de libros
                                 </h3>
 
-                                <p class="project__text__subtitle">
+                                <p
+                                    class="project__text__subtitle"
+                                    data-section="projects"
+                                    data-value="project2"
+                                    data-info="rol"
+                                >
                                     Desarrollador Back End
                                 </p>
 
-                                <p class="project__text__subtitle">
+                                <p
+                                    class="project__text__subtitle"
+                                    data-section="projects"
+                                    data-value="project2"
+                                    data-info="date"
+                                >
                                     Diciembre 2024
                                 </p>
                             </div>
-                            <p class="project__text__description">
+                            <p
+                                class="project__text__description"
+                                data-section="projects"
+                                data-value="project2"
+                                data-info="description"
+                            >
                                 • Implementar un buscador de libros eficiente y
                                 funcional. <br />
                                 • Integrar la API Gutendex para obtener datos de
@@ -450,19 +534,39 @@
 
                         <div class="project__text">
                             <div>
-                                <h3 class="project__text__title">
+                                <h3
+                                    class="project__text__title"
+                                    data-section="projects"
+                                    data-value="project3"
+                                    data-info="title"
+                                >
                                     Conversor de moneda
                                 </h3>
 
-                                <p class="project__text__subtitle">
+                                <p
+                                    class="project__text__subtitle"
+                                    data-section="projects"
+                                    data-value="project3"
+                                    data-info="rol"
+                                >
                                     Desarrollador Back End
                                 </p>
 
-                                <p class="project__text__subtitle">
+                                <p
+                                    class="project__text__subtitle"
+                                    data-section="projects"
+                                    data-value="project3"
+                                    data-info="date"
+                                >
                                     Octubre 2024
                                 </p>
                             </div>
-                            <p class="project__text__description">
+                            <p
+                                class="project__text__description"
+                                data-section="projects"
+                                data-value="project3"
+                                data-info="description"
+                            >
                                 • Crear un conversor de monedas con Java. <br />
                                 • Manejar la API ExchangeRate-API. <br />
                                 • Utilizar paquetes, librerías e importaciones.
@@ -531,19 +635,39 @@
 
                         <div class="project__text">
                             <div>
-                                <h3 class="project__text__title">
+                                <h3
+                                    class="project__text__title"
+                                    data-section="projects"
+                                    data-value="project4"
+                                    data-info="title"
+                                >
                                     Encriptador de texto
                                 </h3>
 
-                                <p class="project__text__subtitle">
+                                <p
+                                    class="project__text__subtitle"
+                                    data-section="projects"
+                                    data-value="project4"
+                                    data-info="rol"
+                                >
                                     Desarrollador Front End
                                 </p>
 
-                                <p class="project__text__subtitle">
+                                <p
+                                    class="project__text__subtitle"
+                                    data-section="projects"
+                                    data-value="project4"
+                                    data-info="date"
+                                >
                                     Agosto 2024
                                 </p>
                             </div>
-                            <p class="project__text__description">
+                            <p
+                                class="project__text__description"
+                                data-section="projects"
+                                data-value="project4"
+                                data-info="description"
+                            >
                                 • Crear un encriptador con Javascript. <br />
                                 • Crear un desencriptador con Javascript. <br />
                                 • Implementar el diseño hecho en Figma a código
@@ -637,19 +761,39 @@
 
                         <div class="project__text">
                             <div>
-                                <h3 class="project__text__title">
+                                <h3
+                                    class="project__text__title"
+                                    data-section="projects"
+                                    data-value="project5"
+                                    data-info="title"
+                                >
                                     Almacen de comida
                                 </h3>
 
-                                <p class="project__text__subtitle">
+                                <p
+                                    class="project__text__subtitle"
+                                    data-section="projects"
+                                    data-value="project5"
+                                    data-info="rol"
+                                >
                                     Desarrollador Front End
                                 </p>
 
-                                <p class="project__text__subtitle">
+                                <p
+                                    class="project__text__subtitle"
+                                    data-section="projects"
+                                    data-value="project5"
+                                    data-info="date"
+                                >
                                     Marzo 2024
                                 </p>
                             </div>
-                            <p class="project__text__description">
+                            <p
+                                class="project__text__description"
+                                data-section="projects"
+                                data-value="project5"
+                                data-info="description"
+                            >
                                 • Diseñar y estructurar las páginas web
                                 utilizando HTML. <br />
                                 • Estilizar y dar formato visual con CSS para
@@ -720,15 +864,29 @@
             </section>
 
             <section class="main__aboutme" id="aboutme">
-                <h2 class="aboutme__title">Sobre mi</h2>
+                <h2
+                    class="aboutme__title"
+                    data-section="about"
+                    data-value="title"
+                >
+                    Sobre mi
+                </h2>
 
                 <div class="aboutme__info">
-                    <h3 class="aboutme__info__title">
+                    <h3
+                        class="aboutme__info__title"
+                        data-section="about"
+                        data-value="subtitle"
+                    >
                         Comprometido con la innovación y el crecimiento
                     </h3>
-                    <p class="aboutme__info__text">
+                    <p
+                        class="aboutme__info__text"
+                        data-section="about"
+                        data-value="text"
+                    >
                         💡 Actualmente cursando el
-                        <span class="aboutme__info__text__word"
+                        <span
                             >segundo año de la Tecnicatura Superior en
                             Desarrollo de Software.</span
                         >
@@ -738,9 +896,7 @@
                         proyectos en los que participo.<br /><br />
 
                         🌱 Manejo una
-                        <span class="aboutme__info__text__word"
-                            >sólida base técnica</span
-                        >
+                        <span>sólida base técnica</span>
                         en HTML, CSS, Tailwind CSS, JavaScript, Java, Spring,
                         PostgreSQL y MySQL. También tengo experiencia utilizando
                         Git, GitHub, Notion, Jira y Trello, lo que me permite
@@ -748,41 +904,30 @@
                         entorno.<br /><br />
 
                         🤝 Me considero una
-                        <span class="aboutme__info__text__word"
-                            >persona con habilidades clave</span
-                        >
+                        <span>persona con habilidades clave</span>
                         para el trabajo en equipo, gestionando tiempos y
                         recursos con eficacia. Me esfuerzo por comunicarme
                         claramente, escuchar activamente y aplicar un
                         pensamiento crítico orientado a soluciones. Además,
                         mantengo un
-                        <span class="aboutme__info__text__word"
-                            >fuerte compromiso</span
-                        >
+                        <span>fuerte compromiso</span>
                         con la ética profesional, la negociación efectiva y la
                         adaptabilidad en entornos cambiantes.<br /><br />
 
                         🌐 Soy hablante
-                        <span class="aboutme__info__text__word"
-                            >nativo de español</span
-                        >
+                        <span>nativo de español</span>
                         y tengo un nivel
-                        <span class="aboutme__info__text__word"
-                            >intermedio alto (B2) de inglés</span
-                        >, lo que me facilita participar en proyectos
-                        internacionales y seguir aprendiendo de fuentes
-                        globales.<br /><br />
+                        <span>intermedio alto (B2) de inglés</span>, lo que me
+                        facilita participar en proyectos internacionales y
+                        seguir aprendiendo de fuentes globales.<br /><br />
 
                         💻 Mi meta es seguir creciendo como programador y
-                        <span class="aboutme__info__text__word"
-                            >aportar valor en cada desafío que enfrente</span
-                        >, combinando pasión por la tecnología con habilidades
+                        <span>aportar valor en cada desafío que enfrente</span>,
+                        combinando pasión por la tecnología con habilidades
                         humanas que marquen la diferencia.<br /><br />
 
                         🚀 Estoy
-                        <span class="aboutme__info__text__word"
-                            >listo para dar el siguiente paso</span
-                        >
+                        <span>listo para dar el siguiente paso</span>
                         en mi carrera y formar parte de equipos que impacten
                         positivamente en la industria.<br /><br />
                     </p>
@@ -790,9 +935,19 @@
             </section>
 
             <section class="main__contact" id="contact">
-                <h2 class="contact__title">Contacto</h2>
+                <h2
+                    class="contact__title"
+                    data-section="contact"
+                    data-value="title"
+                >
+                    Contacto
+                </h2>
                 <div class="contact__info">
-                    <p class="contact__info__text">
+                    <p
+                        class="contact__info__text"
+                        data-section="contact"
+                        data-value="text"
+                    >
                         📧 Si estás buscando a alguien con habilidades técnicas
                         sólidas, capacidad de aprendizaje continuo y dedicación
                         para superar expectativas, no dudes en contactarme
@@ -844,21 +999,25 @@
                             href="./assets/files/CV Kevin Maximiliano Palma Romero - Desarrollador Back End 2025.pdf"
                             target="_blank"
                             class="contact__info__links__link cvLink"
+                            data-section="contact"
+                            data-value="cv"
                         >
                             <img
                                 src="./assets/svg/contact-svg/cv.svg"
                                 alt="Curriculum Vitae"
                             />
 
-                            descargar cv
+                            curriculum vitae
                         </a>
                     </div>
                 </div>
             </section>
         </main>
         <footer class="footer">
-            <p>⌨️ con ❤️ por Kevin Maximiliano Palma Romero</p>
+            <p data-section="footer" data-value="text">
+                ⌨️ con ❤️ por Kevin Maximiliano Palma Romero | 2025
+            </p>
         </footer>
-        <script src="./scripts/main.js"></script>
+        <script src="./scripts/main.js" type="module"></script>
     </body>
 </html>
