@@ -3,12 +3,12 @@
         "home": "Home",
         "projects": "Projects",
         "about": "About Me",
+        "skills": "Skills",
         "contact": "Contact"
     },
     "home": {
         "title": "2nd Year Software Development Student | Back End Developer | Front End Developer",
-        "text": "👋 Hi, I'm <span class=\"profile__description__word\">Kevin Maximiliano Palma Romero</span>, a passionate developer from Argentina.<br><br>💻 I love learning, coding, and solving problems, always with discipline, attention to detail, and teamwork.<br /><br /> ❤️ Beyond technology, I enjoy anime, video games, reading, and staying active through training. These little moments also inspire me!<br /><br />",
-        "subtitle": "Tools"
+        "text": "👋 Hi, I'm <span class=\"profile__description__word\">Kevin Maximiliano Palma Romero</span>, a passionate developer from Argentina.<br><br>💻 I love learning, coding, and solving problems, always with discipline, attention to detail, and teamwork.<br /><br /> ❤️ Beyond technology, I enjoy anime, video games, reading, and staying active through training. These little moments also inspire me!<br /><br />"
     },
     "projects": {
         "title": "Projects",
@@ -50,7 +50,28 @@
     },
     "contact": {
         "title": "Contact",
-        "text": "📧 If you're looking for someone with solid technical skills, a continuous learning mindset, and dedication to exceeding expectations, don't hesitate to contact me. I'm ready to join your team and contribute to your company's growth!"
+        "text": "📧 If you're looking for someone with solid technical skills, a continuous learning mindset, and dedication to exceeding expectations, don't hesitate to contact me. <br /><br />I'm ready to join your team and contribute to your company's growth!"
+    },
+    "skills": {
+        "title": "Skills",
+        "hard-skills": {
+            "title": "Hard Skills"
+        },
+        "soft-skills": {
+            "title": "Soft Skills",
+            "teamwok": "Teamwork",
+            "planning": "Planning and Time Management",
+            "critical-thinking": "Critical Thinking",
+            "ethics": "Professional Ethics",
+            "communication": "Communication and Active Listening",
+            "negotiation": "Negotiation",
+            "adaptability": "Adaptability"
+        },
+        "languages": {
+            "title": "Languages",
+            "spanish": "Spanish (Native)",
+            "english": "English (Upper intermediate B2)"
+        }
     },
     "footer": {
         "text": "⌨️ with ❤️ by Kevin Maximiliano Palma Romero | 2025"

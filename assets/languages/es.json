@@ -3,12 +3,12 @@
         "home": "Inicio",
         "projects": "Proyectos",
         "about": "Sobre mi",
+        "skills": "Habilidades",
         "contact": "Contacto"
     },
     "home": {
         "title": "Estudiante de 2do año de Desarrollo de Software | Desarrollador Back End | Desarrollador Front End",
-        "text": "👋 Hola, soy <span class=\"profile__description__word\">Kevin Maximiliano Palma Romero</span>, un desarrollador apasionado de Argentina.<br><br>💻 Me encanta aprender, programar y resolverproblemas, siempre con disciplina, atención a los detalles y trabajo en equipo.<br /><br /> ❤️ Más allá de la tecnología, me encanta el anime,los videojuegos, leer y mantenerme activo entrenando. ¡Esos pequeños momentos también me inspiran!<br /><br />",
-        "subtitle": "Herramientas"
+        "text": "👋 Hola, soy <span class=\"profile__description__word\">Kevin Maximiliano Palma Romero</span>, un desarrollador apasionado de Argentina.<br><br>💻 Me encanta aprender, programar y resolverproblemas, siempre con disciplina, atención a los detalles y trabajo en equipo.<br /><br /> ❤️ Más allá de la tecnología, me encanta el anime,los videojuegos, leer y mantenerme activo entrenando. ¡Esos pequeños momentos también me inspiran!<br /><br />"
     },
     "projects": {
         "title": "Proyectos",
@@ -50,7 +50,28 @@
     },
     "contact": {
         "title": "Contacto",
-        "text": "📧 Si estás buscando a alguien con habilidades técnicas sólidas, capacidad de aprendizaje continuo y dedicación para superar expectativas, no dudes en contactarme ¡Estoy listo para formar parte de tu equipo y aportar al crecimiento de tu empresa!"
+        "text": "📧 Si estás buscando a alguien con habilidades técnicas sólidas, capacidad de aprendizaje continuo y dedicación para superar expectativas, no dudes en contactarme <br /><br />¡Estoy listo para formar parte de tu equipo y aportar al crecimiento de tu empresa!"
+    },
+    "skills": {
+        "title": "Habilidades",
+        "hard-skills": {
+            "title": "Habilidades Técnicas"
+        },
+        "soft-skills": {
+            "title": "Habilidades Blandas",
+            "teamwok": "Trabajo en equipo",
+            "planning": "Planificación y Gestión del Tiempo",
+            "critical-thinking": "Pensamiento Crítico",
+            "ethics": "Ética Profesional",
+            "communication": "Comunicación y Escucha Activa",
+            "negotiation": "Negociación",
+            "adaptability": "Adaptabilidad"
+        },
+        "languages": {
+            "title": "Languages",
+            "spanish": "Español (Nativo)",
+            "english": "Inglés (Intermedio Alto B2)"
+        }
     },
     "footer": {
         "text": "⌨️ con ❤️ por Kevin Maximiliano Palma Romero | 2025"

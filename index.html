@@ -45,6 +45,15 @@
 
                     <li class="sections__section">
                         <a
+                            href="#skills"
+                            data-section="header"
+                            data-value="skills"
+                            >Habilidades</a
+                        >
+                    </li>
+
+                    <li class="sections__section">
+                        <a
                             href="#contact"
                             data-section="header"
                             data-value="contact"
@@ -90,205 +99,84 @@
         </header>
         <main class="main">
             <section class="main__profile" id="profile">
-                <div class="profile">
-                    <img
-                        class="profile__image"
-                        src="./assets/img/fotoPerfil.webp"
-                        alt="profile"
-                    />
-
-                    <div class="profile__info">
-                        <h1
-                            class="profile__title"
-                            data-section="home"
-                            data-value="title"
-                        >
-                            Estudiante de 2do año de Desarrollo de Software |
-                            Desarrollador Back End | Desarrollador Front End
-                        </h1>
-                        <p
-                            class="profile__description"
-                            data-section="home"
-                            data-value="text"
-                        >
-                            👋 Hola, soy
-                            <span class="profile__description__word"
-                                >Kevin Maximiliano Palma Romero</span
-                            >, un desarrollador apasionado de Argentina.
-                            <br /><br />
-
-                            💻 Me encanta aprender, programar y resolver
-                            problemas, siempre con disciplina, atención a los
-                            detalles y trabajo en equipo.<br /><br />
-
-                            ❤️ Más allá de la tecnología, me encanta el anime,
-                            los videojuegos, leer y mantenerme activo
-                            entrenando. ¡Esos pequeños momentos también me
-                            inspiran!<br /><br />
-                        </p>
-
-                        <div class="profile__links">
-                            <a
-                                href="mailto:kev.mpr03@gmail.com"
-                                target="_blank"
-                                class="profile__links__link"
-                            >
-                                <img
-                                    src="./assets/svg/contact-svg/email.svg"
-                                    alt="Email"
-                                />
-                            </a>
-
-                            <a
-                                href="https://www.linkedin.com/in/kevin-m-palma-r/"
-                                target="_blank"
-                                class="profile__links__link"
-                            >
-                                <img
-                                    src="./assets/svg/contact-svg/linkedin.svg"
-                                    alt="LinkedIn"
-                                />
-                            </a>
-
-                            <a
-                                href="https://github.com/kevmpr"
-                                target="_blank"
-                                class="profile__links__link githubIcon"
-                            >
-                                <img
-                                    src="./assets/svg/contact-svg/github.svg"
-                                    alt="Github"
-                                />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="profile--skills">
-                    <h2
-                        class="profile--skills__title"
+                <img
+                    class="profile__image"
+                    src="./assets/img/fotoPerfil.webp"
+                    alt="profile"
+                />
+                <div class="profile__info">
+                    <h1
+                        class="profile__title"
                         data-section="home"
-                        data-value="subtitle"
+                        data-value="title"
                     >
-                        Herramientas
-                    </h2>
-                    <div class="profile--skills__hard">
-                        <div class="profile--skills__hard__skill">
-                            <img
-                                src="./assets/svg/project-svg/spring.svg"
-                                alt="Spring"
-                                title="Spring"
-                            />
-                            <p>Spring</p>
-                        </div>
+                        Estudiante de 2do año de Desarrollo de Software |
+                        Desarrollador Back End | Desarrollador Front End
+                    </h1>
+                    <p
+                        class="profile__description"
+                        data-section="home"
+                        data-value="text"
+                    >
+                        👋 Hola, soy
+                        <span class="profile__description__word"
+                            >Kevin Maximiliano Palma Romero</span
+                        >, un desarrollador apasionado de Argentina.
+                        <br /><br />
 
-                        <div class="profile--skills__hard__skill">
-                            <img
-                                src="./assets/svg/project-svg/java.svg"
-                                alt="Java"
-                                title="Java"
-                            />
-                            <p>Java</p>
-                        </div>
+                        💻 Me encanta aprender, programar y resolver problemas,
+                        siempre con disciplina, atención a los detalles y
+                        trabajo en equipo.<br /><br />
 
-                        <div class="profile--skills__hard__skill">
-                            <img
-                                src="./assets/svg/project-svg/js.svg"
-                                alt="JavaScript"
-                                title="JavaScript"
-                            />
-                            <p>JavaScript</p>
-                        </div>
+                        ❤️ Más allá de la tecnología, me encanta el anime, los
+                        videojuegos, leer y mantenerme activo entrenando. ¡Esos
+                        pequeños momentos también me inspiran!<br /><br />
+                    </p>
 
-                        <div class="profile--skills__hard__skill">
+                    <div class="profile__links">
+                        <a
+                            href="mailto:kev.mpr03@gmail.com"
+                            target="_blank"
+                            class="profile__links__link"
+                        >
                             <img
-                                src="./assets/svg/project-svg/tailwind.svg"
-                                alt="Tailwind CSS"
-                                title="Tailwind CSS"
+                                src="./assets/svg/contact-svg/email.svg"
+                                alt="Email"
                             />
-                            <p>Tailwind CSS</p>
-                        </div>
+                        </a>
 
-                        <div class="profile--skills__hard__skill">
+                        <a
+                            href="https://www.linkedin.com/in/kevin-m-palma-r/"
+                            target="_blank"
+                            class="profile__links__link"
+                        >
                             <img
-                                src="./assets/svg/project-svg/css.svg"
-                                alt="CSS"
-                                title="CSS"
+                                src="./assets/svg/contact-svg/linkedin.svg"
+                                alt="LinkedIn"
                             />
-                            <p>CSS</p>
-                        </div>
+                        </a>
 
-                        <div class="profile--skills__hard__skill">
+                        <a
+                            href="https://github.com/kevmpr"
+                            target="_blank"
+                            class="profile__links__link githubIcon"
+                        >
                             <img
-                                src="./assets/svg/project-svg/html.svg"
-                                alt="HTML"
-                                title="HTML"
+                                src="./assets/svg/contact-svg/github.svg"
+                                alt="Github"
                             />
-                            <p>HTML</p>
-                        </div>
+                        </a>
 
-                        <div class="profile--skills__hard__skill">
+                        <a
+                            href="./assets/files/CV Kevin Maximiliano Palma Romero - Desarrollador Back End 2025.pdf"
+                            target="_blank"
+                            class="profile__links__link"
+                        >
                             <img
-                                src="./assets/svg/project-svg/postgresql.svg"
-                                alt="PostgreSQL"
-                                title="PostgreSQL"
+                                src="./assets/svg/contact-svg/cv-pdf.svg"
+                                alt="Curriculum Vitae"
                             />
-                            <p>PostgreSQL</p>
-                        </div>
-
-                        <div class="profile--skills__hard__skill">
-                            <img
-                                src="./assets/svg/project-svg/mysql.svg"
-                                alt="MySQL"
-                                title="MySQL"
-                            />
-                            <p>MySQL</p>
-                        </div>
-
-                        <div class="profile--skills__hard__skill">
-                            <img
-                                src="./assets/svg/project-svg/git.svg"
-                                alt="Git"
-                                title="Git"
-                            />
-                            <p>Git</p>
-                        </div>
-
-                        <div class="profile--skills__hard__skill">
-                            <img
-                                src="./assets/svg/project-svg/vscode.svg"
-                                alt="Visual Studio Code"
-                                title="Visual Studio Code"
-                            />
-                            <p>VS Code</p>
-                        </div>
-
-                        <div class="profile--skills__hard__skill">
-                            <img
-                                src="./assets/svg/project-svg/intellij.svg"
-                                alt="IntelliJ"
-                                title="IntelliJ"
-                            />
-                            <p>IntelliJ</p>
-                        </div>
-
-                        <div class="profile--skills__hard__skill">
-                            <img
-                                src="./assets/svg/project-svg/netbeans.svg"
-                                alt="Apache Netbeans"
-                                title="Apache Netbeans"
-                            />
-                            <p>Netbeans</p>
-                        </div>
-
-                        <div class="profile--skills__hard__skill">
-                            <img
-                                src="./assets/svg/project-svg/trello.svg"
-                                alt="Trello"
-                                title="Trello"
-                            />
-                            <p>Trello</p>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </section>
@@ -384,31 +272,31 @@
 
                         <div class="project__tools">
                             <img
-                                src="./assets/svg/project-svg/java.svg"
+                                src="./assets/svg/skills/hard-skills-svg/java.svg"
                                 alt="Java"
                                 title="Java"
                             />
 
                             <img
-                                src="./assets/svg/project-svg/mysql.svg"
+                                src="./assets/svg/skills/hard-skills-svg/mysql.svg"
                                 alt="MySQL"
                                 title="MySQL"
                             />
 
                             <img
-                                src="./assets/svg/project-svg/git.svg"
+                                src="./assets/svg/skills/hard-skills-svg/git.svg"
                                 alt="Git"
                                 title="Git"
                             />
 
                             <img
-                                src="./assets/svg/project-svg/netbeans.svg"
+                                src="./assets/svg/skills/hard-skills-svg/netbeans.svg"
                                 alt="Apache Netbeans"
                                 title="Apache Netbeans"
                             />
 
                             <img
-                                src="./assets/svg/project-svg/trello.svg"
+                                src="./assets/svg/skills/hard-skills-svg/trello.svg"
                                 alt="Trello"
                                 title="Trello"
                             />
@@ -494,31 +382,31 @@
 
                         <div class="project__tools">
                             <img
-                                src="./assets/svg/project-svg/spring.svg"
+                                src="./assets/svg/skills/hard-skills-svg/spring.svg"
                                 alt="Spring"
                                 title="Spring"
                             />
 
                             <img
-                                src="./assets/svg/project-svg/postgresql.svg"
+                                src="./assets/svg/skills/hard-skills-svg/postgresql.svg"
                                 alt="PostgreSQL"
                                 title="PostgreSQL"
                             />
 
                             <img
-                                src="./assets/svg/project-svg/git.svg"
+                                src="./assets/svg/skills/hard-skills-svg/git.svg"
                                 alt="Git"
                                 title="Git"
                             />
 
                             <img
-                                src="./assets/svg/project-svg/intellij.svg"
+                                src="./assets/svg/skills/hard-skills-svg/intellij.svg"
                                 alt="IntelliJ"
                                 title="IntelliJ"
                             />
 
                             <img
-                                src="./assets/svg/project-svg/trello.svg"
+                                src="./assets/svg/skills/hard-skills-svg/trello.svg"
                                 alt="Trello"
                                 title="Trello"
                             />
@@ -601,25 +489,25 @@
 
                         <div class="project__tools">
                             <img
-                                src="./assets/svg/project-svg/java.svg"
+                                src="./assets/svg/skills/hard-skills-svg/java.svg"
                                 alt="Java"
                                 title="Java"
                             />
 
                             <img
-                                src="./assets/svg/project-svg/git.svg"
+                                src="./assets/svg/skills/hard-skills-svg/git.svg"
                                 alt="Git"
                                 title="Git"
                             />
 
                             <img
-                                src="./assets/svg/project-svg/intellij.svg"
+                                src="./assets/svg/skills/hard-skills-svg/intellij.svg"
                                 alt="IntelliJ"
                                 title="IntelliJ"
                             />
 
                             <img
-                                src="./assets/svg/project-svg/trello.svg"
+                                src="./assets/svg/skills/hard-skills-svg/trello.svg"
                                 alt="Trello"
                                 title="Trello"
                             />
@@ -715,37 +603,37 @@
 
                         <div class="project__tools">
                             <img
-                                src="./assets/svg/project-svg/js.svg"
+                                src="./assets/svg/skills/hard-skills-svg/js.svg"
                                 alt="JavaScript"
                                 title="JavaScript"
                             />
 
                             <img
-                                src="./assets/svg/project-svg/css.svg"
+                                src="./assets/svg/skills/hard-skills-svg/css.svg"
                                 alt="CSS"
                                 title="CSS"
                             />
 
                             <img
-                                src="./assets/svg/project-svg/html.svg"
+                                src="./assets/svg/skills/hard-skills-svg/html.svg"
                                 alt="HTML"
                                 title="HTML"
                             />
 
                             <img
-                                src="./assets/svg/project-svg/git.svg"
+                                src="./assets/svg/skills/hard-skills-svg/git.svg"
                                 alt="Git"
                                 title="Git"
                             />
 
                             <img
-                                src="./assets/svg/project-svg/vscode.svg"
+                                src="./assets/svg/skills/hard-skills-svg/vscode.svg"
                                 alt="Visual Studio Code"
                                 title="Visual Studio Code"
                             />
 
                             <img
-                                src="./assets/svg/project-svg/trello.svg"
+                                src="./assets/svg/skills/hard-skills-svg/trello.svg"
                                 alt="Trello"
                                 title="Trello"
                             />
@@ -830,31 +718,31 @@
 
                         <div class="project__tools">
                             <img
-                                src="./assets/svg/project-svg/css.svg"
+                                src="./assets/svg/skills/hard-skills-svg/css.svg"
                                 alt="CSS"
                                 title="CSS"
                             />
 
                             <img
-                                src="./assets/svg/project-svg/html.svg"
+                                src="./assets/svg/skills/hard-skills-svg/html.svg"
                                 alt="HTML"
                                 title="HTML"
                             />
 
                             <img
-                                src="./assets/svg/project-svg/git.svg"
+                                src="./assets/svg/skills/hard-skills-svg/git.svg"
                                 alt="Git"
                                 title="Git"
                             />
 
                             <img
-                                src="./assets/svg/project-svg/vscode.svg"
+                                src="./assets/svg/skills/hard-skills-svg/vscode.svg"
                                 alt="Visual Studio Code"
                                 title="Visual Studio Code"
                             />
 
                             <img
-                                src="./assets/svg/project-svg/trello.svg"
+                                src="./assets/svg/skills/hard-skills-svg/trello.svg"
                                 alt="Trello"
                                 title="Trello"
                             />
@@ -872,65 +760,387 @@
                     Sobre mi
                 </h2>
 
-                <div class="aboutme__info">
-                    <h3
-                        class="aboutme__info__title"
-                        data-section="about"
-                        data-value="subtitle"
-                    >
-                        Comprometido con la innovación y el crecimiento
-                    </h3>
-                    <p
-                        class="aboutme__info__text"
-                        data-section="about"
-                        data-value="text"
-                    >
-                        💡 Actualmente cursando el
-                        <span
-                            >segundo año de la Tecnicatura Superior en
-                            Desarrollo de Software.</span
+                <div class="aboutme__container">
+                    <article class="aboutme__info">
+                        <h3
+                            class="aboutme__info__title"
+                            data-section="about"
+                            data-value="subtitle"
                         >
-                        Mi objetivo es abrirme camino en el mundo de la
-                        programación, aplicando tanto conocimientos técnicos
-                        como habilidades interpersonales que potencien los
-                        proyectos en los que participo.<br /><br />
+                            Comprometido con la innovación y el crecimiento
+                        </h3>
+                        <p
+                            class="aboutme__info__text"
+                            data-section="about"
+                            data-value="text"
+                        >
+                            💡 Actualmente cursando el
+                            <span
+                                >segundo año de la Tecnicatura Superior en
+                                Desarrollo de Software.</span
+                            >
+                            Mi objetivo es abrirme camino en el mundo de la
+                            programación, aplicando tanto conocimientos técnicos
+                            como habilidades interpersonales que potencien los
+                            proyectos en los que participo.<br /><br />
 
-                        🌱 Manejo una
-                        <span>sólida base técnica</span>
-                        en HTML, CSS, Tailwind CSS, JavaScript, Java, Spring,
-                        PostgreSQL y MySQL. También tengo experiencia utilizando
-                        Git, GitHub, Notion, Jira y Trello, lo que me permite
-                        colaborar de forma organizada y ágil en cualquier
-                        entorno.<br /><br />
+                            🌱 Manejo una
+                            <span>sólida base técnica</span>
+                            en HTML, CSS, Tailwind CSS, JavaScript, Java,
+                            Spring, PostgreSQL y MySQL. También tengo
+                            experiencia utilizando Git, GitHub, Notion, Jira y
+                            Trello, lo que me permite colaborar de forma
+                            organizada y ágil en cualquier entorno.<br /><br />
 
-                        🤝 Me considero una
-                        <span>persona con habilidades clave</span>
-                        para el trabajo en equipo, gestionando tiempos y
-                        recursos con eficacia. Me esfuerzo por comunicarme
-                        claramente, escuchar activamente y aplicar un
-                        pensamiento crítico orientado a soluciones. Además,
-                        mantengo un
-                        <span>fuerte compromiso</span>
-                        con la ética profesional, la negociación efectiva y la
-                        adaptabilidad en entornos cambiantes.<br /><br />
+                            🤝 Me considero una
+                            <span>persona con habilidades clave</span>
+                            para el trabajo en equipo, gestionando tiempos y
+                            recursos con eficacia. Me esfuerzo por comunicarme
+                            claramente, escuchar activamente y aplicar un
+                            pensamiento crítico orientado a soluciones. Además,
+                            mantengo un
+                            <span>fuerte compromiso</span>
+                            con la ética profesional, la negociación efectiva y
+                            la adaptabilidad en entornos cambiantes.<br /><br />
 
-                        🌐 Soy hablante
-                        <span>nativo de español</span>
-                        y tengo un nivel
-                        <span>intermedio alto (B2) de inglés</span>, lo que me
-                        facilita participar en proyectos internacionales y
-                        seguir aprendiendo de fuentes globales.<br /><br />
+                            🌐 Soy hablante
+                            <span>nativo de español</span>
+                            y tengo un nivel
+                            <span>intermedio alto (B2) de inglés</span>, lo que
+                            me facilita participar en proyectos internacionales
+                            y seguir aprendiendo de fuentes globales.<br /><br />
 
-                        💻 Mi meta es seguir creciendo como programador y
-                        <span>aportar valor en cada desafío que enfrente</span>,
-                        combinando pasión por la tecnología con habilidades
-                        humanas que marquen la diferencia.<br /><br />
+                            💻 Mi meta es seguir creciendo como programador y
+                            <span
+                                >aportar valor en cada desafío que
+                                enfrente</span
+                            >, combinando pasión por la tecnología con
+                            habilidades humanas que marquen la diferencia.<br /><br />
 
-                        🚀 Estoy
-                        <span>listo para dar el siguiente paso</span>
-                        en mi carrera y formar parte de equipos que impacten
-                        positivamente en la industria.<br /><br />
-                    </p>
+                            🚀 Estoy
+                            <span>listo para dar el siguiente paso</span>
+                            en mi carrera y formar parte de equipos que impacten
+                            positivamente en la industria.<br /><br />
+                        </p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="main__skills" id="skills">
+                <h2
+                    class="skills__title"
+                    data-section="skills"
+                    data-value="title"
+                >
+                    Habilidades
+                </h2>
+
+                <div class="skills__container">
+                    <div class="skills">
+                        <h2
+                            class="skill__title"
+                            data-section="skills"
+                            data-value="hard-skills"
+                            data-info="title"
+                        >
+                            Habilidades técnicas
+                        </h2>
+                        <div class="skill__container">
+                            <div class="skill__container__tool">
+                                <img
+                                    src="./assets/svg/skills/hard-skills-svg/spring.svg"
+                                    alt="Spring"
+                                    title="Spring"
+                                />
+                                <p>Spring</p>
+                            </div>
+
+                            <div class="skill__container__tool">
+                                <img
+                                    src="./assets/svg/skills/hard-skills-svg/java.svg"
+                                    alt="Java"
+                                    title="Java"
+                                />
+                                <p>Java</p>
+                            </div>
+
+                            <div class="skill__container__tool">
+                                <img
+                                    src="./assets/svg/skills/hard-skills-svg/js.svg"
+                                    alt="JavaScript"
+                                    title="JavaScript"
+                                />
+                                <p>JavaScript</p>
+                            </div>
+
+                            <div class="skill__container__tool">
+                                <img
+                                    src="./assets/svg/skills/hard-skills-svg/tailwind.svg"
+                                    alt="Tailwind CSS"
+                                    title="Tailwind CSS"
+                                />
+                                <p>Tailwind CSS</p>
+                            </div>
+
+                            <div class="skill__container__tool">
+                                <img
+                                    src="./assets/svg/skills/hard-skills-svg/css.svg"
+                                    alt="CSS"
+                                    title="CSS"
+                                />
+                                <p>CSS</p>
+                            </div>
+
+                            <div class="skill__container__tool">
+                                <img
+                                    src="./assets/svg/skills/hard-skills-svg/html.svg"
+                                    alt="HTML"
+                                    title="HTML"
+                                />
+                                <p>HTML</p>
+                            </div>
+
+                            <div class="skill__container__tool">
+                                <img
+                                    src="./assets/svg/skills/hard-skills-svg/postgresql.svg"
+                                    alt="PostgreSQL"
+                                    title="PostgreSQL"
+                                />
+                                <p>PostgreSQL</p>
+                            </div>
+
+                            <div class="skill__container__tool">
+                                <img
+                                    src="./assets/svg/skills/hard-skills-svg/mysql.svg"
+                                    alt="MySQL"
+                                    title="MySQL"
+                                />
+                                <p>MySQL</p>
+                            </div>
+
+                            <div class="skill__container__tool">
+                                <img
+                                    src="./assets/svg/skills/hard-skills-svg/git.svg"
+                                    alt="Git"
+                                    title="Git"
+                                />
+                                <p>Git</p>
+                            </div>
+
+                            <div class="skill__container__tool">
+                                <img
+                                    src="./assets/svg/skills/hard-skills-svg/vscode.svg"
+                                    alt="Visual Studio Code"
+                                    title="Visual Studio Code"
+                                />
+                                <p>VS Code</p>
+                            </div>
+
+                            <div class="skill__container__tool">
+                                <img
+                                    src="./assets/svg/skills/hard-skills-svg/intellij.svg"
+                                    alt="IntelliJ"
+                                    title="IntelliJ"
+                                />
+                                <p>IntelliJ</p>
+                            </div>
+
+                            <div class="skill__container__tool">
+                                <img
+                                    src="./assets/svg/skills/hard-skills-svg/netbeans.svg"
+                                    alt="Apache Netbeans"
+                                    title="Apache Netbeans"
+                                />
+                                <p>Netbeans</p>
+                            </div>
+
+                            <div class="skill__container__tool">
+                                <img
+                                    src="./assets/svg/skills/hard-skills-svg/trello.svg"
+                                    alt="Trello"
+                                    title="Trello"
+                                />
+                                <p>Trello</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills">
+                        <h2
+                            class="skill__title"
+                            data-section="skills"
+                            data-value="soft-skills"
+                            data-info="title"
+                        >
+                            Habilidades blandas
+                        </h2>
+                        <div class="skill__container">
+                            <div class="skill__container__tool">
+                                <img
+                                    src="./assets/svg/skills/soft-skills-svg/teamwork.svg"
+                                    alt="Teamwork"
+                                    title="Teamwork"
+                                    class="skill__tool__img"
+                                />
+                                <p
+                                    class="skill__tool__text"
+                                    data-section="skills"
+                                    data-value="soft-skills"
+                                    data-info="teamwok"
+                                >
+                                    Trabajo en equipo
+                                </p>
+                            </div>
+
+                            <div class="skill__container__tool">
+                                <img
+                                    src="./assets/svg/skills/soft-skills-svg/planningtime.svg"
+                                    alt="Planning and Time Management"
+                                    title="Planning and Time Management"
+                                    class="skill__tool__img"
+                                />
+                                <p
+                                    class="skill__tool__text"
+                                    data-section="skills"
+                                    data-value="soft-skills"
+                                    data-info="planning"
+                                >
+                                    Planificación y Gestión del Tiempo
+                                </p>
+                            </div>
+
+                            <div class="skill__container__tool">
+                                <img
+                                    src="./assets/svg/skills/soft-skills-svg/criticalthinking.svg"
+                                    alt="Critical Thinking"
+                                    title="Critical Thinking"
+                                    class="skill__tool__img"
+                                />
+                                <p
+                                    class="skill__tool__text"
+                                    data-section="skills"
+                                    data-value="soft-skills"
+                                    data-info="critical-thinking"
+                                >
+                                    Pensamiento Crítico
+                                </p>
+                            </div>
+
+                            <div class="skill__container__tool">
+                                <img
+                                    src="./assets/svg/skills/soft-skills-svg/proethics.svg"
+                                    alt="Professional Ethics"
+                                    title="Professional Ethics"
+                                    class="skill__tool__img"
+                                />
+                                <p
+                                    class="skill__tool__text"
+                                    data-section="skills"
+                                    data-value="soft-skills"
+                                    data-info="ethics"
+                                >
+                                    Ética Profesional
+                                </p>
+                            </div>
+
+                            <div class="skill__container__tool">
+                                <img
+                                    src="./assets/svg/skills/soft-skills-svg/communication.svg"
+                                    alt="Communication and Active Listening"
+                                    title="Communication and Active Listening"
+                                    class="skill__tool__img"
+                                />
+                                <p
+                                    class="skill__tool__text"
+                                    data-section="skills"
+                                    data-value="soft-skills"
+                                    data-info="communication"
+                                >
+                                    Comunicación y Escucha Activa
+                                </p>
+                            </div>
+
+                            <div class="skill__container__tool">
+                                <img
+                                    src="./assets/svg/skills/soft-skills-svg/negotiation.svg"
+                                    alt="Negotiation"
+                                    title="Negotiation"
+                                    class="skill__tool__img"
+                                />
+                                <p
+                                    class="skill__tool__text"
+                                    data-section="skills"
+                                    data-value="soft-skills"
+                                    data-info="negotiation"
+                                >
+                                    Negociación
+                                </p>
+                            </div>
+
+                            <div class="skill__container__tool">
+                                <img
+                                    src="./assets/svg/skills/soft-skills-svg/adaptability.svg"
+                                    alt="Adaptability"
+                                    title="Adaptability"
+                                    class="skill__tool__img"
+                                />
+                                <p
+                                    class="skill__tool__text"
+                                    data-section="skills"
+                                    data-value="soft-skills"
+                                    data-info="adaptability"
+                                >
+                                    Adaptabilidad
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills">
+                        <h2
+                            class="skill__title"
+                            data-section="skills"
+                            data-value="languages"
+                            data-info="title"
+                        >
+                            Idiomas
+                        </h2>
+                        <div class="skill__container">
+                            <div class="skill__container__tool">
+                                <img
+                                    src="./assets/svg/skills/languages-svg/lang.svg"
+                                    alt="Spanish (Native)"
+                                    title="Spanish (Native)"
+                                    class="skill__tool__img"
+                                />
+                                <p
+                                    class="skill__tool__text"
+                                    data-section="skills"
+                                    data-value="languages"
+                                    data-info="spanish"
+                                >
+                                    Español (Nativo)
+                                </p>
+                            </div>
+
+                            <div class="skill__container__tool">
+                                <img
+                                    src="./assets/svg/skills/languages-svg/lang.svg"
+                                    alt="English (Upper intermediate B2)"
+                                    title="English (Upper intermediate B2)"
+                                    class="skill__tool__img"
+                                />
+                                <p
+                                    class="skill__tool__text"
+                                    data-section="skills"
+                                    data-value="languages"
+                                    data-info="english"
+                                >
+                                    Inglés (Intermedio alto B2)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -950,7 +1160,7 @@
                     >
                         📧 Si estás buscando a alguien con habilidades técnicas
                         sólidas, capacidad de aprendizaje continuo y dedicación
-                        para superar expectativas, no dudes en contactarme
+                        para superar expectativas, no dudes en contactarme<br /><br />
                         ¡Estoy listo para formar parte de tu equipo y aportar al
                         crecimiento de tu empresa!
                     </p>
@@ -966,20 +1176,7 @@
                                 alt="Email"
                             />
 
-                            kev.mpr03@gmail.com
-                        </a>
-
-                        <a
-                            href="https://github.com/kevmpr"
-                            target="_blank"
-                            class="contact__info__links__link githubIcon"
-                        >
-                            <img
-                                src="./assets/svg/contact-svg/github.svg"
-                                alt="Github"
-                            />
-
-                            kevmpr
+                            Email
                         </a>
 
                         <a
@@ -992,7 +1189,20 @@
                                 alt="LinkedIn"
                             />
 
-                            kevin maximiliano palma romero
+                            LinkedIn
+                        </a>
+
+                        <a
+                            href="https://github.com/kevmpr"
+                            target="_blank"
+                            class="contact__info__links__link githubIcon"
+                        >
+                            <img
+                                src="./assets/svg/contact-svg/github.svg"
+                                alt="Github"
+                            />
+
+                            Github
                         </a>
 
                         <a
@@ -1003,11 +1213,11 @@
                             data-value="cv"
                         >
                             <img
-                                src="./assets/svg/contact-svg/cv.svg"
+                                src="./assets/svg/contact-svg/cv-pdf.svg"
                                 alt="Curriculum Vitae"
                             />
 
-                            curriculum vitae
+                            CV
                         </a>
                     </div>
                 </div>

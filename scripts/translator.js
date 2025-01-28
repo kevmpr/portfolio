@@ -18,7 +18,11 @@ const englishMode = async () => {
         const value = text.dataset.value;
         const info = text.dataset.info;
 
-        text.innerHTML = texts[section][value][info] ? texts[section][value][info] : texts[section][value];
+        try {
+            text.innerHTML = texts[section][value][info] ? texts[section][value][info] : texts[section][value];
+        } catch{
+
+        }
     });
 };
 
@@ -39,7 +43,11 @@ const spanishMode = async () => {
         const value = text.dataset.value;
         const info = text.dataset.info;   
 
-        text.innerHTML = texts[section][value][info] ? texts[section][value][info] : texts[section][value];
+        try {
+            text.innerHTML = texts[section][value][info] ? texts[section][value][info] : texts[section][value];
+        } catch{
+            
+        }
     });
 };
 
