@@ -1,79 +1,87 @@
 {
-    "header": {
-        "home": "Home",
-        "projects": "Projects",
-        "about": "About Me",
-        "skills": "Skills",
-        "contact": "Contact"
+  "header": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About Me",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "2nd Year Software Development Student | Back End Developer | Front End Developer",
+    "text": "👋 Hi, I'm <span class=\"profile__description__word\">Kevin Maximiliano Palma Romero</span>, a passionate developer from Argentina.<br><br>💻 I love learning, coding, and solving problems, always with discipline, attention to detail, and teamwork.<br><br > ❤️ Beyond technology, I enjoy anime, video games, reading, and staying active through training. These little moments also inspire me!<br ><br >"
+  },
+  "projects": {
+    "title": "Projects",
+    "project1": {
+      "title": "Dog Grooming",
+      "rol": "Back End Developer",
+      "date": "January 2025",
+      "description": "• Develop an application for managing a dog grooming service. <br > • Implement functionalities to register, view, edit, and delete information about dogs and their owners. <br > • Design a user-friendly and intuitive graphical interface using Swing. <br > • Ensure code quality by applying good practices and development standards. <br >"
     },
-    "home": {
-        "title": "2nd Year Software Development Student | Back End Developer | Front End Developer",
-        "text": "👋 Hi, I'm <span class=\"profile__description__word\">Kevin Maximiliano Palma Romero</span>, a passionate developer from Argentina.<br><br>💻 I love learning, coding, and solving problems, always with discipline, attention to detail, and teamwork.<br /><br /> ❤️ Beyond technology, I enjoy anime, video games, reading, and staying active through training. These little moments also inspire me!<br /><br />"
+    "project2": {
+      "title": "Book Finder",
+      "rol": "Back End Developer",
+      "date": "December 2024",
+      "description": "• Implement an efficient and functional book search engine. <br > • Integrate the Gutendex API to retrieve book data. <br > • Design an architecture based on patterns such as model, repository, and service. <br > • Manage a PostgreSQL database to store and query information. <br >"
     },
-    "projects": {
-        "title": "Projects",
-        "project1": {
-            "title": "Dog Grooming",
-            "rol": "Back End Developer",
-            "date": "January 2025",
-            "description": "• Develop an application for managing a dog grooming service. <br /> • Implement functionalities to register, view, edit, and delete information about dogs and their owners. <br /> • Design a user-friendly and intuitive graphical interface using Swing. <br /> • Ensure code quality by applying good practices and development standards. <br />"
-        },
-        "project2": {
-            "title": "Book Finder",
-            "rol": "Back End Developer",
-            "date": "December 2024",
-            "description": "• Implement an efficient and functional book search engine. <br /> • Integrate the Gutendex API to retrieve book data. <br /> • Design an architecture based on patterns such as model, repository, and service. <br /> • Manage a PostgreSQL database to store and query information. <br />"
-        },
-        "project3": {
-            "title": "Currency Converter",
-            "rol": "Back End Developer",
-            "date": "October 2024",
-            "description": "• Create a currency converter with Java. <br /> • Handle the ExchangeRate-API. <br /> • Use packages, libraries, and imports. <br /> • Error handling. <br />"
-        },
-        "project4": {
-            "title": "Text Encryptor",
-            "rol": "Front End Developer",
-            "date": "August 2024",
-            "description": "• Create an encryptor using JavaScript. <br /> • Create a decryptor using JavaScript. <br /> • Implement the design made in Figma into code using HTML and CSS. <br /> • Create a responsive design for different screen resolutions. <br />"
-        },
-        "project5": {
-            "title": "Food Store",
-            "rol": "Front End Developer",
-            "date": "March 2024",
-            "description": "• Design and structure web pages using HTML. <br /> • Style and format with CSS to ensure an attractive and functional user experience. <br />"
-        }
+    "project3": {
+      "title": "Currency Converter",
+      "rol": "Back End Developer",
+      "date": "October 2024",
+      "description": "• Create a currency converter with Java. <br > • Handle the ExchangeRate-API. <br > • Use packages, libraries, and imports. <br > • Handle errors. <br >"
     },
-    "about": {
-        "title": "About Me",
-        "subtitle": "Committed to Innovation and Growth",
-        "text": "💡 Currently in the <span class=\"aboutme__info__text__word\">second year of a Higher Technician in Software Development program.</span> My goal is to make my way into the programming world, applying both technical knowledge and interpersonal skills that enhance the projects I participate in.<br /><br /> 🌱 I have a <span class=\"aboutme__info__text__word\">solid technical foundation</span> in HTML, CSS, Tailwind CSS, JavaScript, Java, Spring, PostgreSQL, and MySQL. I also have experience using Git, GitHub, Postman, Notion, Jira, and Trello, allowing me to collaborate in an organized and agile manner in any environment.<br /><br /> 🤝 I consider myself a <span class=\"aboutme__info__text__word\">team player with key skills</span> in time and resource management. I strive to communicate clearly, listen actively, and apply critical thinking focused on solutions. Moreover, I maintain a <span class=\"aboutme__info__text__word\">strong commitment</span> to professional ethics, effective negotiation, and adaptability in changing environments.<br /><br /> 🌐 I'm a <span class=\"aboutme__info__text__word\">native Spanish speaker</span> and have an <span class=\"aboutme__info__text__word\">upper-intermediate level (B2) in English</span>, enabling me to participate in international projects and continue learning from global sources.<br /><br /> 💻 My goal is to keep growing as a programmer and <span class=\"aboutme__info__text__word\">add value to every challenge I face</span>, combining a passion for technology with human skills that make a difference.<br /><br /> 🚀 I'm <span class=\"aboutme__info__text__word\">ready to take the next step</span> in my career and join teams that positively impact the industry.<br /><br />"
+    "project4": {
+      "title": "Text Encryptor",
+      "rol": "Front End Developer",
+      "date": "August 2024",
+      "description": "• Create an encryptor using JavaScript. <br > • Create a decryptor using JavaScript. <br > • Implement the design made in Figma into code using HTML and CSS. <br > • Create a responsive design for different screen resolutions. <br >"
     },
-    "contact": {
-        "title": "Contact",
-        "text": "📧 If you're looking for someone with solid technical skills, a continuous learning mindset, and dedication to exceeding expectations, don't hesitate to contact me. <br /><br />I'm ready to join your team and contribute to your company's growth!"
-    },
-    "skills": {
-        "title": "Skills",
-        "hard-skills": {
-            "title": "Hard Skills"
-        },
-        "soft-skills": {
-            "title": "Soft Skills",
-            "teamwok": "Teamwork",
-            "planning": "Planning and Time Management",
-            "critical-thinking": "Critical Thinking",
-            "ethics": "Professional Ethics",
-            "communication": "Communication and Active Listening",
-            "negotiation": "Negotiation",
-            "adaptability": "Adaptability"
-        },
-        "languages": {
-            "title": "Languages",
-            "spanish": "Spanish (Native)",
-            "english": "English (Upper intermediate B2)"
-        }
-    },
-    "footer": {
-        "text": "⌨️ with ❤️ by Kevin Maximiliano Palma Romero | 2025"
+    "project5": {
+      "title": "Food Store",
+      "rol": "Front End Developer",
+      "date": "March 2024",
+      "description": "• Design and structure web pages using HTML. <br > • Style and format with CSS to ensure an attractive and functional user experience. <br >"
     }
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle1": "Academic Background",
+    "text1": "💡 Currently in the <span class=\"aboutme__info__text__word\">second year of a Higher Technician in Software Development program.</span> My goal is to make my way into the programming world, applying both technical knowledge and interpersonal skills that enhance the projects I participate in.<br><br>",
+    "subtitle2": "Technical Skills",
+    "text2": "🌱 I have a <span class=\"aboutme__info__text__word\">solid technical foundation</span> in HTML, CSS, Tailwind CSS, JavaScript, Java, Spring, PostgreSQL, and MySQL. I also have experience using Git, GitHub, Postman, Notion, Jira, and Trello, which allows me to collaborate in an organized and agile manner in any environment.<br><br>",
+    "subtitle3": "Interpersonal Skills",
+    "text3": "🤝 I consider myself a <span class=\"aboutme__info__text__word\">team player with key skills</span> in time and resource management. I strive to communicate clearly, listen actively, and apply critical thinking focused on solutions. Moreover, I maintain a <span class=\"aboutme__info__text__word\">strong commitment</span> to professional ethics, effective negotiation, and adaptability in changing environments.<br><br>",
+    "subtitle4": "Languages",
+    "text4": "🌐 I'm a <span class=\"aboutme__info__text__word\">native Spanish speaker</span> and have an <span class=\"aboutme__info__text__word\">upper-intermediate level (B2) in English</span>, enabling me to participate in international projects and continue learning from global sources.<br><br>",
+    "subtitle5": "Professional Goal",
+    "text5": "💻 My goal is to keep growing as a programmer and <span class=\"aboutme__info__text__word\">add value to every challenge I face</span>, combining a passion for technology with human skills that make a difference.<br ><br > 🚀 I'm <span class=\"aboutme__info__text__word\">ready to take the next step</span> in my career and join teams that positively impact the industry.<br><br>"
+  },
+  "contact": {
+    "title": "Contact",
+    "text": "📧 If you're looking for someone with solid technical skills, a continuous learning mindset, and dedication to exceeding expectations, don't hesitate to contact me. <br ><br >I'm ready to join your team and contribute to your company's growth!"
+  },
+  "skills": {
+    "title": "Skills",
+    "hard-skills": {
+      "title": "Hard Skills"
+    },
+    "soft-skills": {
+      "title": "Soft Skills",
+      "teamwok": "Teamwork",
+      "planning": "Planning and Time Management",
+      "critical-thinking": "Critical Thinking",
+      "ethics": "Professional Ethics",
+      "communication": "Communication and Active Listening",
+      "negotiation": "Negotiation",
+      "adaptability": "Adaptability"
+    },
+    "languages": {
+      "title": "Languages",
+      "spanish": "Spanish (Native)",
+      "english": "English (Upper intermediate B2)"
+    }
+  },
+  "footer": {
+    "text": "⌨️ with ❤️ by Kevin Maximiliano Palma Romero | 2025"
+  }
 }

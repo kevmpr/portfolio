@@ -1,79 +1,87 @@
 {
-    "header": {
-        "home": "Inicio",
-        "projects": "Proyectos",
-        "about": "Sobre mi",
-        "skills": "Habilidades",
-        "contact": "Contacto"
+  "header": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "about": "Sobre mi",
+    "skills": "Habilidades",
+    "contact": "Contacto"
+  },
+  "home": {
+    "title": "Estudiante de 2do año de Desarrollo de Software | Desarrollador Back End | Desarrollador Front End",
+    "text": "👋 Hola, soy <span class=\"profile__description__word\">Kevin Maximiliano Palma Romero</span>, un desarrollador apasionado de Argentina.<br><br>💻 Me encanta aprender, programar y resolverproblemas, siempre con disciplina, atención a los detalles y trabajo en equipo.<br ><br > ❤️ Más allá de la tecnología, me encanta el anime,los videojuegos, leer y mantenerme activo entrenando. ¡Esos pequeños momentos también me inspiran!<br ><br >"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "project1": {
+      "title": "Peluquería canina",
+      "rol": "Desarrollador Back End",
+      "date": "Enero 2025",
+      "description": "• Desarrollar una aplicación para la gestión de una peluquería canina. <br > • Implementar funcionalidades para registrar visualizar, editar y eliminar información de perros y sus dueños. <br > • Diseñar una interfaz gráfica amigable e intuitiva con Swing. <br > • Asegurar la calidad del código mediante el uso de buenas prácticas y estándares de desarrollo. <br >"
     },
-    "home": {
-        "title": "Estudiante de 2do año de Desarrollo de Software | Desarrollador Back End | Desarrollador Front End",
-        "text": "👋 Hola, soy <span class=\"profile__description__word\">Kevin Maximiliano Palma Romero</span>, un desarrollador apasionado de Argentina.<br><br>💻 Me encanta aprender, programar y resolverproblemas, siempre con disciplina, atención a los detalles y trabajo en equipo.<br /><br /> ❤️ Más allá de la tecnología, me encanta el anime,los videojuegos, leer y mantenerme activo entrenando. ¡Esos pequeños momentos también me inspiran!<br /><br />"
+    "project2": {
+      "title": "Buscador de libros",
+      "rol": "Desarrollador Back End",
+      "date": "Diciembre 2024",
+      "description": "• Implementar un buscador de libros eficiente y funcional. <br > • Integrar la API Gutendex para obtener datos de libros. <br > • Diseñar una arquitectura basada en patrones como model, repository y service. <br > • Gestionar una base de datos PostgreSQL para almacenar y consultar información. <br >"
     },
-    "projects": {
-        "title": "Proyectos",
-        "project1": {
-            "title": "Peluquería canina",
-            "rol": "Desarrollador Back End",
-            "date": "Enero 2025",
-            "description": "• Desarrollar una aplicación para la gestión de una peluquería canina. <br /> • Implementar funcionalidades para registrar visualizar, editar y eliminar información de perros y sus dueños. <br /> • Diseñar una interfaz gráfica amigable e intuitiva con Swing. <br /> • Asegurar la calidad del código mediante el uso de buenas prácticas y estándares de desarrollo. <br />"
-        },
-        "project2": {
-            "title": "Buscador de libros",
-            "rol": "Desarrollador Back End",
-            "date": "Diciembre 2024",
-            "description": "• Implementar un buscador de libros eficiente y funcional. <br /> • Integrar la API Gutendex para obtener datos de libros. <br /> • Diseñar una arquitectura basada en patrones como model, repository y service. <br /> • Gestionar una base de datos PostgreSQL para almacenar y consultar información. <br />"
-        },
-        "project3": {
-            "title": "Conversor de moneda",
-            "rol": "Desarrollador Back End",
-            "date": "Octubre 2024",
-            "description": "• Crear un conversor de monedas con Java. <br /> • Manejar la API ExchangeRate-API. <br /> • Utilizar paquetes, librerías e importaciones. <br /> • Manejo de errores. <br />"
-        },
-        "project4": {
-            "title": "Encriptador de texto",
-            "rol": "Desarrollador Front End",
-            "date": "Agosto 2024",
-            "description": "• Crear un encriptador con Javascript. <br /> • Crear un desencriptador con Javascript. <br /> • Implementar el diseño hecho en Figma a código con HTML y CSS. <br /> • Realizar diseño responsivo para distintas resoluciones de pantalla. <br />"
-        },
-        "project5": {
-            "title": "Almacen de comida",
-            "rol": "Desarrollador Front End",
-            "date": "Marzo 2024",
-            "description": "• Diseñar y estructurar las páginas web utilizando HTML. <br /> • Estilizar y dar formato visual con CSS para asegurar una experiencia atractiva y funcional. <br />"
-        }
+    "project3": {
+      "title": "Conversor de moneda",
+      "rol": "Desarrollador Back End",
+      "date": "Octubre 2024",
+      "description": "• Crear un conversor de monedas con Java. <br > • Manejar la API ExchangeRate-API. <br > • Utilizar paquetes, librerías e importaciones. <br > • Manejar errores. <br >"
     },
-    "about": {
-        "title": "Sobre mi",
-        "subtitle": "Comprometido con la innovación y el crecimiento",
-        "text": "💡 Actualmente cursando el <span class=\"aboutme__info__text__word\">segundo año de la Tecnicatura Superior en Desarrollo de Software.</span> Mi objetivo es abrirme camino en el mundo de la programación, aplicando tanto conocimientos técnicos como habilidades interpersonales que potencien los proyectos en los que participo.<br /><br /> 🌱 Manejo una <span class=\"aboutme__info__text__word\">sólida base técnica</span> en HTML, CSS, Tailwind CSS, JavaScript, Java, Spring, PostgreSQL y MySQL. También tengo experiencia utilizando Git, GitHub, Postman, Notion, Jira y Trello, lo que me permite colaborar de forma organizada y ágil en cualquier entorno.<br /><br /> 🤝 Me considero una <span class=\"aboutme__info__text__word\">persona con habilidades clave</span> para el trabajo en equipo, gestionando tiempos y recursos con eficacia. Me esfuerzo por comunicarme claramente, escuchar activamente y aplicar un pensamiento crítico orientado a soluciones. Además, mantengo un <span class=\"aboutme__info__text__word\">fuerte compromiso</span> con la ética profesional, la negociación efectiva y la adaptabilidad en entornos cambiantes.<br /><br /> 🌐 Soy hablante <span class=\"aboutme__info__text__word\">nativo de español</span> y tengo un nivel <span class=\"aboutme__info__text__word\">intermedio alto (B2) de inglés</span>, lo que me facilita participar en proyectos internacionales y seguir aprendiendo de fuentes globales.<br /><br /> 💻 Mi meta es seguir creciendo como programador y <span class=\"aboutme__info__text__word\">aportar valor en cada desafío que enfrente</span>, combinando pasión por la tecnología con habilidades humanas que marquen la diferencia.<br /><br /> 🚀 Estoy <span class=\"aboutme__info__text__word\">listo para dar el siguiente paso</span> en mi carrera y formar parte de equipos que impacten positivamente en la industria.<br /><br />"
+    "project4": {
+      "title": "Encriptador de texto",
+      "rol": "Desarrollador Front End",
+      "date": "Agosto 2024",
+      "description": "• Crear un encriptador con Javascript. <br > • Crear un desencriptador con Javascript. <br > • Implementar el diseño hecho en Figma a código con HTML y CSS. <br > • Realizar diseño responsivo para distintas resoluciones de pantalla. <br >"
     },
-    "contact": {
-        "title": "Contacto",
-        "text": "📧 Si estás buscando a alguien con habilidades técnicas sólidas, capacidad de aprendizaje continuo y dedicación para superar expectativas, no dudes en contactarme <br /><br />¡Estoy listo para formar parte de tu equipo y aportar al crecimiento de tu empresa!"
-    },
-    "skills": {
-        "title": "Habilidades",
-        "hard-skills": {
-            "title": "Habilidades Técnicas"
-        },
-        "soft-skills": {
-            "title": "Habilidades Blandas",
-            "teamwok": "Trabajo en equipo",
-            "planning": "Planificación y Gestión del Tiempo",
-            "critical-thinking": "Pensamiento Crítico",
-            "ethics": "Ética Profesional",
-            "communication": "Comunicación y Escucha Activa",
-            "negotiation": "Negociación",
-            "adaptability": "Adaptabilidad"
-        },
-        "languages": {
-            "title": "Languages",
-            "spanish": "Español (Nativo)",
-            "english": "Inglés (Intermedio Alto B2)"
-        }
-    },
-    "footer": {
-        "text": "⌨️ con ❤️ por Kevin Maximiliano Palma Romero | 2025"
+    "project5": {
+      "title": "Almacen de comida",
+      "rol": "Desarrollador Front End",
+      "date": "Marzo 2024",
+      "description": "• Diseñar y estructurar las páginas web utilizando HTML. <br > • Estilizar y dar formato visual con CSS para asegurar una experiencia atractiva y funcional. <br >"
     }
+  },
+  "about": {
+    "title": "Sobre mi",
+    "subtitle1": "Formación Académica",
+    "text1": "💡 Actualmente cursando el <span class=\"aboutme__info__text__word\">segundo año de la Tecnicatura Superior en Desarrollo de Software.</span> Mi objetivo es abrirme camino en el mundo de la programación, aplicando tanto conocimientos técnicos como habilidades interpersonales que potencien los proyectos en los que participo.<br><br>",
+    "subtitle2": "Conocimientos Técnicos",
+    "text2": "🌱 Manejo una <span class=\"aboutme__info__text__word\">sólida base técnica</span> en HTML, CSS, Tailwind CSS, JavaScript, Java, Spring, PostgreSQL y MySQL. También tengo experiencia utilizando Git, GitHub, Postman, Notion, Jira y Trello, lo que me permite colaborar de forma organizada y ágil en cualquier entorno.<br><br>",
+    "subtitle3": "Habilidades Interpersonales",
+    "text3": "🤝 Me considero una <span class=\"aboutme__info__text__word\">persona con habilidades clave</span> para el trabajo en equipo, gestionando tiempos y recursos con eficacia. Me esfuerzo por comunicarme claramente, escuchar activamente y aplicar un pensamiento crítico orientado a soluciones. Además, mantengo un <span class=\"aboutme__info__text__word\">fuerte compromiso</span> con la ética profesional, la negociación efectiva y la adaptabilidad en entornos cambiantes.<br><br> ",
+    "subtitle4": "Idiomas",
+    "text4": "🌐 Soy hablante <span class=\"aboutme__info__text__word\">nativo de español</span> y tengo un nivel <span class=\"aboutme__info__text__word\">intermedio alto (B2) de inglés</span>, lo que me facilita participar en proyectos internacionales y seguir aprendiendo de fuentes globales.<br><br> ",
+    "subtitle5": "Objetivo Profesional",
+    "text5": "💻 Mi meta es seguir creciendo como programador y <span class=\"aboutme__info__text__word\">aportar valor en cada desafío que enfrente</span>, combinando pasión por la tecnología con habilidades humanas que marquen la diferencia.<br ><br > 🚀 Estoy <span class=\"aboutme__info__text__word\">listo para dar el siguiente paso</span> en mi carrera y formar parte de equipos que impacten positivamente en la industria.<br><br>"
+  },
+  "contact": {
+    "title": "Contacto",
+    "text": "📧 Si estás buscando a alguien con habilidades técnicas sólidas, capacidad de aprendizaje continuo y dedicación para superar expectativas, no dudes en contactarme <br ><br >¡Estoy listo para formar parte de tu equipo y aportar al crecimiento de tu empresa!"
+  },
+  "skills": {
+    "title": "Habilidades",
+    "hard-skills": {
+      "title": "Habilidades Técnicas"
+    },
+    "soft-skills": {
+      "title": "Habilidades Blandas",
+      "teamwok": "Trabajo en equipo",
+      "planning": "Planificación y Gestión del Tiempo",
+      "critical-thinking": "Pensamiento Crítico",
+      "ethics": "Ética Profesional",
+      "communication": "Comunicación y Escucha Activa",
+      "negotiation": "Negociación",
+      "adaptability": "Adaptabilidad"
+    },
+    "languages": {
+      "title": "Languages",
+      "spanish": "Español (Nativo)",
+      "english": "Inglés (Intermedio Alto B2)"
+    }
+  },
+  "footer": {
+    "text": "⌨️ con ❤️ por Kevin Maximiliano Palma Romero | 2025"
+  }
 }
