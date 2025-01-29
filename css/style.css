@@ -1093,7 +1093,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: var(--primary-color-dark);
+    color: var(--black-color);
 }
 
 @media (min-width: 1200px) {
@@ -1119,7 +1119,7 @@ a {
 }
 
 .skill__container__tool--darkmode {
-    color: var(--primary-color);
+    color: var(--white-color);
 }
 
 .skill__tool__text {
