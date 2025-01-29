@@ -1020,7 +1020,7 @@ a {
 
 @media (min-width: 1200px) {
     .skills__container {
-        width: 80%;
+        width: 60%;
         animation-range: entry 0 cover 40%, exit 0 cover 100%;
     }
 }
@@ -1084,7 +1084,8 @@ a {
 
 @media (min-width: 1200px) {
     .skill__container {
-        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        gap: 2rem;
     }
 }
 
@@ -1093,6 +1094,12 @@ a {
     flex-direction: column;
     align-items: center;
     color: var(--primary-color-dark);
+}
+
+@media (min-width: 1200px) {
+    .skill__container__tool {
+        width: 10%;
+    }
 }
 
 .skill__container__tool__text {
