@@ -1,6 +1,7 @@
 const modeIcon = document.getElementById("toggle-mode-label");
 
 const header = document.querySelector(".header");
+const navSections = document.querySelector(".nav__sections");
 const profileTitle = document.querySelector(".profile__title");
 const profileDesc = document.querySelector(".profile__description");
 const skillsTitle = document.querySelector(".skills__title");
@@ -58,6 +59,7 @@ const darkMode = () => {
         `;
 
     header.classList.add("header--darkmode");
+    navSections.classList.add("nav__sections--darkmode");
     profileTitle.classList.add("profile__title--darkmode");
     profileDesc.classList.add("profile__description--darkmode");
     profileDescWord.classList.add("profile__description__word--darkmode");
@@ -197,6 +199,7 @@ const lightMode = () => {
             `;
 
     header.classList.remove("header--darkmode");
+    navSections.classList.remove("nav__sections--darkmode");
     profileTitle.classList.remove("profile__title--darkmode");
     profileDesc.classList.remove("profile__description--darkmode");
     profileDescWord.classList.remove("profile__description__word--darkmode");

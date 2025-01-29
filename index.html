@@ -3,8 +3,9 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Welcome to my portfolio" />
         <title>Kevin portfolio</title>
-        <link rel="stylesheet" href="styles/style.css" />
+        <link rel="stylesheet" href="./css/style.css" />
         <link rel="icon" type="ico" href="./assets/ico/portfolioIco.ico" />
     </head>
     <body>
@@ -15,6 +16,12 @@
             </a>
 
             <nav class="nav">
+                <label for="menu" class="nav__menu">
+                    <img src="./assets/svg/menu-svg/menu.svg" alt="menu" />
+                </label>
+
+                <input type="checkbox" id="menu" />
+
                 <ul class="nav__sections">
                     <li class="sections__section">
                         <a
@@ -394,6 +401,12 @@
                             />
 
                             <img
+                                src="./assets/svg/skills/hard-skills-svg/postman.svg"
+                                alt="Postman"
+                                title="Postman"
+                            />
+
+                            <img
                                 src="./assets/svg/skills/hard-skills-svg/git.svg"
                                 alt="Git"
                                 title="Git"
@@ -492,6 +505,12 @@
                                 src="./assets/svg/skills/hard-skills-svg/java.svg"
                                 alt="Java"
                                 title="Java"
+                            />
+
+                            <img
+                                src="./assets/svg/skills/hard-skills-svg/postman.svg"
+                                alt="Postman"
+                                title="Postman"
                             />
 
                             <img
@@ -788,8 +807,8 @@
                             <span>sólida base técnica</span>
                             en HTML, CSS, Tailwind CSS, JavaScript, Java,
                             Spring, PostgreSQL y MySQL. También tengo
-                            experiencia utilizando Git, GitHub, Notion, Jira y
-                            Trello, lo que me permite colaborar de forma
+                            experiencia utilizando Git, GitHub, Postman, Notion,
+                            Jira y Trello, lo que me permite colaborar de forma
                             organizada y ágil en cualquier entorno.<br /><br />
 
                             🤝 Me considero una
@@ -852,7 +871,7 @@
                                     alt="Spring"
                                     title="Spring"
                                 />
-                                <p>Spring</p>
+                                <p class="skill__container__tool__text">Spring</p>
                             </div>
 
                             <div class="skill__container__tool">
@@ -861,7 +880,7 @@
                                     alt="Java"
                                     title="Java"
                                 />
-                                <p>Java</p>
+                                <p class="skill__container__tool__text">Java</p>
                             </div>
 
                             <div class="skill__container__tool">
@@ -870,7 +889,7 @@
                                     alt="JavaScript"
                                     title="JavaScript"
                                 />
-                                <p>JavaScript</p>
+                                <p class="skill__container__tool__text">JavaScript</p>
                             </div>
 
                             <div class="skill__container__tool">
@@ -879,7 +898,7 @@
                                     alt="Tailwind CSS"
                                     title="Tailwind CSS"
                                 />
-                                <p>Tailwind CSS</p>
+                                <p class="skill__container__tool__text">Tailwind CSS</p>
                             </div>
 
                             <div class="skill__container__tool">
@@ -888,7 +907,7 @@
                                     alt="CSS"
                                     title="CSS"
                                 />
-                                <p>CSS</p>
+                                <p class="skill__container__tool__text">CSS</p>
                             </div>
 
                             <div class="skill__container__tool">
@@ -897,7 +916,7 @@
                                     alt="HTML"
                                     title="HTML"
                                 />
-                                <p>HTML</p>
+                                <p class="skill__container__tool__text">HTML</p>
                             </div>
 
                             <div class="skill__container__tool">
@@ -906,7 +925,7 @@
                                     alt="PostgreSQL"
                                     title="PostgreSQL"
                                 />
-                                <p>PostgreSQL</p>
+                                <p class="skill__container__tool__text">PostgreSQL</p>
                             </div>
 
                             <div class="skill__container__tool">
@@ -915,7 +934,16 @@
                                     alt="MySQL"
                                     title="MySQL"
                                 />
-                                <p>MySQL</p>
+                                <p class="skill__container__tool__text">MySQL</p>
+                            </div>
+
+                            <div class="skill__container__tool">
+                                <img
+                                    src="./assets/svg/skills/hard-skills-svg/postman.svg"
+                                    alt="Postman"
+                                    title="Postman"
+                                />
+                                <p class="skill__container__tool__text">Postman</p>
                             </div>
 
                             <div class="skill__container__tool">
@@ -924,7 +952,7 @@
                                     alt="Git"
                                     title="Git"
                                 />
-                                <p>Git</p>
+                                <p class="skill__container__tool__text">Git</p>
                             </div>
 
                             <div class="skill__container__tool">
@@ -933,7 +961,7 @@
                                     alt="Visual Studio Code"
                                     title="Visual Studio Code"
                                 />
-                                <p>VS Code</p>
+                                <p class="skill__container__tool__text">VS Code</p>
                             </div>
 
                             <div class="skill__container__tool">
@@ -942,7 +970,7 @@
                                     alt="IntelliJ"
                                     title="IntelliJ"
                                 />
-                                <p>IntelliJ</p>
+                                <p class="skill__container__tool__text">IntelliJ</p>
                             </div>
 
                             <div class="skill__container__tool">
@@ -951,7 +979,7 @@
                                     alt="Apache Netbeans"
                                     title="Apache Netbeans"
                                 />
-                                <p>Netbeans</p>
+                                <p class="skill__container__tool__text">Netbeans</p>
                             </div>
 
                             <div class="skill__container__tool">
@@ -960,7 +988,7 @@
                                     alt="Trello"
                                     title="Trello"
                                 />
-                                <p>Trello</p>
+                                <p class="skill__container__tool__text">Trello</p>
                             </div>
                         </div>
                     </div>
@@ -1224,10 +1252,10 @@
             </section>
         </main>
         <footer class="footer">
-            <p data-section="footer" data-value="text">
+            <p class="footer__text" data-section="footer" data-value="text">
                 ⌨️ con ❤️ por Kevin Maximiliano Palma Romero | 2025
             </p>
         </footer>
-        <script src="./scripts/main.js" type="module"></script>
+        <script src="./js/main.js" type="module"></script>
     </body>
 </html>
