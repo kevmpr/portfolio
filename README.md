@@ -28,6 +28,8 @@
 
 ☕ **Java** : Lenguaje principal que utilizo para construir aplicaciones y soluciones eficientes.
 
+📘 **TypeScript** : Superset de JavaScript que me permite escribir código más robusto y mantenible.
+
 ✨ **JavaScript** : Para añadir interactividad a las aplicaciones web.
 
 🎨 **Tailwind CSS** : Herramienta para diseñar interfaces modernas y responsivas.
@@ -44,11 +46,7 @@
 
 🧰 **Git** : Sistema de control de versiones para gestionar y compartir código.
 
-🖥️ **Visual Studio Code** : Editor de código ligero y eficiente.
-
-💡 **IntelliJ** : IDE poderoso para proyectos Java.
-
-🚀 **Apache Netbeans** : IDE utilizado para desarrollar aplicaciones de escritorio y web.
+🐳 **Docker** : Plataforma para crear, ejecutar y desplegar aplicaciones en contenedores de forma eficiente.
 
 📋 **Trello** : Herramienta para gestionar tareas y proyectos de manera organizada.
 
