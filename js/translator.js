@@ -1,4 +1,6 @@
 const langIcon = document.getElementById("toggle-language-label");
+const cvProfile = document.getElementById("cv-profile");
+const cvContact = document.getElementById("cv-contact");
 const textsToChange = document.querySelectorAll("[data-section]");
 
 const englishMode = async () => {
@@ -9,6 +11,9 @@ const englishMode = async () => {
             alt="English Language"
         />
     `;
+
+    cvProfile.setAttribute("href", "./assets/files/CV Kevin Maximiliano Palma Romero - Developer 2025.pdf");
+    cvContact.setAttribute("href", "./assets/files/CV Kevin Maximiliano Palma Romero - Developer 2025.pdf");
 
     const requestJson = await fetch("./assets/languages/en.json");
     const texts = await requestJson.json();
@@ -34,6 +39,9 @@ const spanishMode = async () => {
             alt="Spanish Language"
         />
     `;
+
+    cvProfile.setAttribute("href", "./assets/files/CV Kevin Maximiliano Palma Romero - Desarrollador 2025.pdf");
+    cvContact.setAttribute("href", "./assets/files/CV Kevin Maximiliano Palma Romero - Desarrollador 2025.pdf");
 
     const requestJson = await fetch("./assets/languages/es.json");
     const texts = await requestJson.json();

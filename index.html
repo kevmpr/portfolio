@@ -66,10 +66,10 @@
     </header>
     <main class="main">
         <section class="main__profile" id="profile">
-            <img class="profile__image" src="./assets/img/fotoPerfil.webp" alt="profile">
+            <img class="profile__image" src="./assets/img/profilePhoto.webp" alt="profile">
             <div class="profile__info">
                 <h1 class="profile__title" data-section="home" data-value="title">
-                    Estudiante de 2do año de Desarrollo de Software |
+                    Estudiante Avanzado de Desarrollo de Software |
                     Desarrollador Back End | Desarrollador Front End
                 </h1>
                 <p class="profile__description" data-section="home" data-value="text">
@@ -100,8 +100,8 @@
                         <img src="./assets/svg/contact-svg/github.svg" alt="Github profile">
                     </a>
 
-                    <a href="./assets/files/CVKevinMaximilianoPalmaRomeroDesarrolladorBackEnd2025.pdf" target="_blank"
-                        class="profile__links__link">
+                    <a href="./assets/files/CV Kevin Maximiliano Palma Romero - Desarrollador 2025.pdf" target="_blank"
+                        class="profile__links__link" id="cv-profile">
                         <img src="./assets/svg/contact-svg/cv-pdf.svg" alt="Curriculum Vitae">
                     </a>
                 </div>
@@ -115,26 +115,94 @@
 
             <div class="projects__container">
                 <div class="project">
-                    <img class="project__img" src="./assets/img/projectDogGrooming.webp" alt="project1" loading="lazy">
+                    <img class="project__img" src="./assets/img/projectInventoryManagement.webp" alt="project6" loading="lazy">
 
                     <div class="project__text">
                         <div>
-                            <h3 class="project__text__title" data-section="projects" data-value="project1"
+                            <h3 class="project__text__title" data-section="projects" data-value="project6"
                                 data-info="title">
-                                Peluquería canina
+                                Gestión de inventario
                             </h3>
 
-                            <p class="project__text__subtitle" data-section="projects" data-value="project1"
+                            <p class="project__text__subtitle" data-section="projects" data-value="project6"
                                 data-info="rol">
                                 Desarrollador Back End
                             </p>
 
-                            <p class="project__text__subtitle" data-section="projects" data-value="project1"
+                            <p class="project__text__subtitle" data-section="projects" data-value="project6"
+                                data-info="date">
+                                Abril 2025
+                            </p>
+                        </div>
+                        <p class="project__text__description" data-section="projects" data-value="project6"
+                            data-info="description">
+                            • Desarrollar un sistema de gestión de productos, clientes y ventas con arquitectura multicapas. <br>
+                            • Implementar CRUD con relaciones entre entidades usando JPA/Hibernate y PostgreSQL. <br>
+                            • Automatizar el despliegue con Docker y Render, resolver errores de conexión y configuración. <br>
+                            • Aplicar buenas prácticas, patrones de diseño y gestionar dependencias con Maven.
+                            <br>
+                        </p>
+                    </div>
+
+                    <div class="project__links">
+                        <a href="https://inventory-management-app-gjwi.onrender.com" target="_blank"
+                            class="project__links__link webLink"><img src="./assets/svg/link-svg/web.svg" alt="Web site"
+                                title="Web site" loading="lazy">
+                        </a>
+
+                        <a href="https://github.com/kevmpr/inventory_management_app" target="_blank"
+                            class="project__links__link repositoryLink"><img src="./assets/svg/link-svg/repository.svg"
+                                alt="Repository" title="Repository" loading="lazy">
+                        </a>
+
+                        <a href="https://www.linkedin.com/posts/kevin-m-palma-r_inventory-management-activity-7320111920328368129-xqm8?utm_source=share&utm_medium=member_desktop&rcm=ACoAADQyJ4QBoNuIcINL9k7qNgBaf-W5E-reiE8"
+                            target="_blank" class="project__links__link presentationLink"><img
+                                src="./assets/svg/link-svg/presentation.svg" alt="Presentation" title="Presentation"
+                                loading="lazy">
+                        </a>
+                    </div>
+
+                    <div class="project__tools">
+                        <img src="./assets/svg/skills/hard-skills-svg/spring.svg" alt="Spring" title="Spring"
+                            loading="lazy" width="40px" height="40px">
+
+                        <img src="./assets/svg/skills/hard-skills-svg/postgresql.svg" alt="PostgreSQL"
+                            title="PostgreSQL" loading="lazy" width="40px" height="40px">
+
+                        <img src="./assets/svg/skills/hard-skills-svg/postman.svg" alt="Postman" title="Postman"
+                            loading="lazy" width="35px" height="35px">
+
+                        <img src="./assets/svg/skills/hard-skills-svg/docker.svg" alt="Docker" title="Docker"
+                            loading="lazy" width="35px" height="35px">
+
+                        <img src="./assets/svg/skills/hard-skills-svg/git.svg" alt="Git" title="Git" loading="lazy" width="45px" height="45px">
+
+                        <img src="./assets/svg/skills/hard-skills-svg/trello.svg" alt="Trello" title="Trello"
+                            loading="lazy" width="40px" height="40px">
+                    </div>
+                </div>
+                
+                <div class="project">
+                    <img class="project__img" src="./assets/img/projectDogGrooming.webp" alt="project5" loading="lazy">
+
+                    <div class="project__text">
+                        <div>
+                            <h3 class="project__text__title" data-section="projects" data-value="project5"
+                                data-info="title">
+                                Peluquería canina
+                            </h3>
+
+                            <p class="project__text__subtitle" data-section="projects" data-value="project5"
+                                data-info="rol">
+                                Desarrollador Back End
+                            </p>
+
+                            <p class="project__text__subtitle" data-section="projects" data-value="project5"
                                 data-info="date">
                                 Enero 2025
                             </p>
                         </div>
-                        <p class="project__text__description" data-section="projects" data-value="project1"
+                        <p class="project__text__description" data-section="projects" data-value="project5"
                             data-info="description">
                             • Desarrollar una aplicación para la gestión de
                             una peluquería canina. <br>
@@ -163,43 +231,40 @@
                     </div>
 
                     <div class="project__tools">
-                        <img src="./assets/svg/skills/hard-skills-svg/java.svg" alt="Java" title="Java" loading="lazy">
+                        <img src="./assets/svg/skills/hard-skills-svg/java.svg" alt="Java" title="Java" loading="lazy" width="45px" height="45px">
 
                         <img src="./assets/svg/skills/hard-skills-svg/mysql.svg" alt="MySQL" title="MySQL"
-                            loading="lazy">
+                            loading="lazy" width="50px" height="50px">
 
-                        <img src="./assets/svg/skills/hard-skills-svg/git.svg" alt="Git" title="Git" loading="lazy">
-
-                        <img src="./assets/svg/skills/hard-skills-svg/netbeans.svg" alt="Apache Netbeans"
-                            title="Apache Netbeans" loading="lazy">
+                        <img src="./assets/svg/skills/hard-skills-svg/git.svg" alt="Git" title="Git" loading="lazy" width="45px" height="45px">
 
                         <img src="./assets/svg/skills/hard-skills-svg/trello.svg" alt="Trello" title="Trello"
-                            loading="lazy">
+                            loading="lazy" width="40px" height="40px">
                     </div>
                 </div>
 
                 <div class="project">
-                    <img class="project__img" src="./assets/img/projectBuscadorLibros.webp" alt="project1"
+                    <img class="project__img" src="./assets/img/projectBuscadorLibros.webp" alt="project4"
                         loading="lazy">
 
                     <div class="project__text">
                         <div>
-                            <h3 class="project__text__title" data-section="projects" data-value="project2"
+                            <h3 class="project__text__title" data-section="projects" data-value="project4"
                                 data-info="title">
                                 Buscador de libros
                             </h3>
 
-                            <p class="project__text__subtitle" data-section="projects" data-value="project2"
+                            <p class="project__text__subtitle" data-section="projects" data-value="project4"
                                 data-info="rol">
                                 Desarrollador Back End
                             </p>
 
-                            <p class="project__text__subtitle" data-section="projects" data-value="project2"
+                            <p class="project__text__subtitle" data-section="projects" data-value="project4"
                                 data-info="date">
                                 Diciembre 2024
                             </p>
                         </div>
-                        <p class="project__text__description" data-section="projects" data-value="project2"
+                        <p class="project__text__description" data-section="projects" data-value="project4"
                             data-info="description">
                             • Implementar un buscador de libros eficiente y
                             funcional. <br>
@@ -227,26 +292,23 @@
 
                     <div class="project__tools">
                         <img src="./assets/svg/skills/hard-skills-svg/spring.svg" alt="Spring" title="Spring"
-                            loading="lazy">
+                            loading="lazy" width="40px" height="40px">
 
                         <img src="./assets/svg/skills/hard-skills-svg/postgresql.svg" alt="PostgreSQL"
-                            title="PostgreSQL" loading="lazy">
+                            title="PostgreSQL" loading="lazy" width="40px" height="40px">
 
                         <img src="./assets/svg/skills/hard-skills-svg/postman.svg" alt="Postman" title="Postman"
-                            loading="lazy">
+                            loading="lazy" width="35px" height="35px">
 
-                        <img src="./assets/svg/skills/hard-skills-svg/git.svg" alt="Git" title="Git" loading="lazy">
-
-                        <img src="./assets/svg/skills/hard-skills-svg/intellij.svg" alt="IntelliJ" title="IntelliJ"
-                            loading="lazy">
+                        <img src="./assets/svg/skills/hard-skills-svg/git.svg" alt="Git" title="Git" loading="lazy" width="45px" height="45px">
 
                         <img src="./assets/svg/skills/hard-skills-svg/trello.svg" alt="Trello" title="Trello"
-                            loading="lazy">
+                            loading="lazy" width="40px" height="40px">
                     </div>
                 </div>
 
                 <div class="project">
-                    <img class="project__img" src="./assets/img/projectConversorMoneda.webp" alt="project1"
+                    <img class="project__img" src="./assets/img/projectConversorMoneda.webp" alt="project3"
                         loading="lazy">
 
                     <div class="project__text">
@@ -290,42 +352,39 @@
                     </div>
 
                     <div class="project__tools">
-                        <img src="./assets/svg/skills/hard-skills-svg/java.svg" alt="Java" title="Java" loading="lazy">
+                        <img src="./assets/svg/skills/hard-skills-svg/java.svg" alt="Java" title="Java" loading="lazy" width="45px" height="45px">
 
                         <img src="./assets/svg/skills/hard-skills-svg/postman.svg" alt="Postman" title="Postman"
-                            loading="lazy">
+                            loading="lazy" width="35px" height="35px">
 
-                        <img src="./assets/svg/skills/hard-skills-svg/git.svg" alt="Git" title="Git" loading="lazy">
-
-                        <img src="./assets/svg/skills/hard-skills-svg/intellij.svg" alt="IntelliJ" title="IntelliJ"
-                            loading="lazy">
+                        <img src="./assets/svg/skills/hard-skills-svg/git.svg" alt="Git" title="Git" loading="lazy" width="45px" height="45px">
 
                         <img src="./assets/svg/skills/hard-skills-svg/trello.svg" alt="Trello" title="Trello"
-                            loading="lazy">
+                            loading="lazy" width="40px" height="40px">
                     </div>
                 </div>
 
                 <div class="project">
-                    <img class="project__img" src="./assets/img/projectEncriptador.webp" alt="project1" loading="lazy">
+                    <img class="project__img" src="./assets/img/projectEncriptador.webp" alt="project2" loading="lazy">
 
                     <div class="project__text">
                         <div>
-                            <h3 class="project__text__title" data-section="projects" data-value="project4"
+                            <h3 class="project__text__title" data-section="projects" data-value="project2"
                                 data-info="title">
                                 Encriptador de texto
                             </h3>
 
-                            <p class="project__text__subtitle" data-section="projects" data-value="project4"
+                            <p class="project__text__subtitle" data-section="projects" data-value="project2"
                                 data-info="rol">
                                 Desarrollador Front End
                             </p>
 
-                            <p class="project__text__subtitle" data-section="projects" data-value="project4"
+                            <p class="project__text__subtitle" data-section="projects" data-value="project2"
                                 data-info="date">
                                 Agosto 2024
                             </p>
                         </div>
-                        <p class="project__text__description" data-section="projects" data-value="project4"
+                        <p class="project__text__description" data-section="projects" data-value="project2"
                             data-info="description">
                             • Crear un encriptador con Javascript. <br>
                             • Crear un desencriptador con Javascript. <br>
@@ -357,19 +416,16 @@
 
                     <div class="project__tools">
                         <img src="./assets/svg/skills/hard-skills-svg/js.svg" alt="JavaScript" title="JavaScript"
-                            loading="lazy">
+                            loading="lazy" width="40px" height="40px">
 
-                        <img src="./assets/svg/skills/hard-skills-svg/css.svg" alt="CSS" title="CSS" loading="lazy">
+                        <img src="./assets/svg/skills/hard-skills-svg/css.svg" alt="CSS" title="CSS" loading="lazy" width="40px" height="40px">
 
-                        <img src="./assets/svg/skills/hard-skills-svg/html.svg" alt="HTML" title="HTML" loading="lazy">
+                        <img src="./assets/svg/skills/hard-skills-svg/html.svg" alt="HTML" title="HTML" loading="lazy" width="40px" height="40px">
 
-                        <img src="./assets/svg/skills/hard-skills-svg/git.svg" alt="Git" title="Git" loading="lazy">
-
-                        <img src="./assets/svg/skills/hard-skills-svg/vscode.svg" alt="Visual Studio Code"
-                            title="Visual Studio Code" loading="lazy">
+                        <img src="./assets/svg/skills/hard-skills-svg/git.svg" alt="Git" title="Git" loading="lazy" width="45px" height="45px">
 
                         <img src="./assets/svg/skills/hard-skills-svg/trello.svg" alt="Trello" title="Trello"
-                            loading="lazy">
+                            loading="lazy" width="40px" height="40px">
                     </div>
                 </div>
 
@@ -378,22 +434,22 @@
 
                     <div class="project__text">
                         <div>
-                            <h3 class="project__text__title" data-section="projects" data-value="project5"
+                            <h3 class="project__text__title" data-section="projects" data-value="project1"
                                 data-info="title">
                                 Almacen de comida
                             </h3>
 
-                            <p class="project__text__subtitle" data-section="projects" data-value="project5"
+                            <p class="project__text__subtitle" data-section="projects" data-value="project1"
                                 data-info="rol">
                                 Desarrollador Front End
                             </p>
 
-                            <p class="project__text__subtitle" data-section="projects" data-value="project5"
+                            <p class="project__text__subtitle" data-section="projects" data-value="project1"
                                 data-info="date">
                                 Marzo 2024
                             </p>
                         </div>
-                        <p class="project__text__description" data-section="projects" data-value="project5"
+                        <p class="project__text__description" data-section="projects" data-value="project1"
                             data-info="description">
                             • Diseñar y estructurar las páginas web
                             utilizando HTML. <br>
@@ -417,17 +473,14 @@
                     </div>
 
                     <div class="project__tools">
-                        <img src="./assets/svg/skills/hard-skills-svg/css.svg" alt="CSS" title="CSS" loading="lazy">
+                        <img src="./assets/svg/skills/hard-skills-svg/css.svg" alt="CSS" title="CSS" loading="lazy" width="40px" height="40px">
 
-                        <img src="./assets/svg/skills/hard-skills-svg/html.svg" alt="HTML" title="HTML" loading="lazy">
+                        <img src="./assets/svg/skills/hard-skills-svg/html.svg" alt="HTML" title="HTML" loading="lazy" width="40px" height="40px">
 
-                        <img src="./assets/svg/skills/hard-skills-svg/git.svg" alt="Git" title="Git" loading="lazy">
-
-                        <img src="./assets/svg/skills/hard-skills-svg/vscode.svg" alt="Visual Studio Code"
-                            title="Visual Studio Code" loading="lazy">
+                        <img src="./assets/svg/skills/hard-skills-svg/git.svg" alt="Git" title="Git" loading="lazy" width="45px" height="45px">
 
                         <img src="./assets/svg/skills/hard-skills-svg/trello.svg" alt="Trello" title="Trello"
-                            loading="lazy">
+                            loading="lazy" width="40px" height="40px">
                     </div>
                 </div>
             </div>
@@ -446,12 +499,12 @@
 
                     <p class="aboutme__info__text" data-section="about" data-value="text1">💡 Actualmente cursando
                         el
-                        <span>segundo año de la Tecnicatura Superior en
+                        <span>segundo año, segundo cuatrimestre de la Tecnicatura Superior en
                             Desarrollo de Software.</span>
                         Mi objetivo es abrirme camino en el mundo de la
                         programación, aplicando tanto conocimientos técnicos
                         como habilidades interpersonales que potencien los
-                        proyectos en los que participo.<br><br>
+                        proyectos en los que participo. Materias aprobadas: 14/23<br><br>
                     </p>
                 </article>
 
@@ -462,9 +515,9 @@
 
                     <p class="aboutme__info__text" data-section="about" data-value="text2">🌱 Manejo una
                         <span>sólida base técnica</span>
-                        en HTML, CSS, Tailwind CSS, JavaScript, Java,
+                        en HTML, CSS, Tailwind CSS, JavaScript, TypeScript, Java,
                         Spring, PostgreSQL y MySQL. También tengo
-                        experiencia utilizando Git, GitHub, Postman, Notion,
+                        experiencia utilizando Git, GitHub, Docker, Postman, Notion,
                         Jira y Trello, lo que me permite colaborar de forma
                         organizada y ágil en cualquier entorno.<br><br>
                     </p>
@@ -532,7 +585,7 @@
                     <div class="skill__container">
                         <div class="skill__container__tool">
                             <img src="./assets/svg/skills/hard-skills-svg/spring.svg" alt="Spring" title="Spring"
-                                loading="lazy">
+                                loading="lazy" width="40px" height="40px">
                             <p class="skill__container__tool__text">
                                 Spring
                             </p>
@@ -540,13 +593,21 @@
 
                         <div class="skill__container__tool">
                             <img src="./assets/svg/skills/hard-skills-svg/java.svg" alt="Java" title="Java"
-                                loading="lazy">
+                                loading="lazy" width="40px" height="40px">
                             <p class="skill__container__tool__text">Java</p>
                         </div>
 
                         <div class="skill__container__tool">
+                            <img src="./assets/svg/skills/hard-skills-svg/typescript.svg" alt="TypeScript" title="TypeScript"
+                                loading="lazy" width="40px" height="40px">
+                            <p class="skill__container__tool__text">
+                                TypeScript
+                            </p>
+                        </div>
+
+                        <div class="skill__container__tool">
                             <img src="./assets/svg/skills/hard-skills-svg/js.svg" alt="JavaScript" title="JavaScript"
-                                loading="lazy">
+                                loading="lazy" width="40px" height="40px">
                             <p class="skill__container__tool__text">
                                 JavaScript
                             </p>
@@ -554,26 +615,26 @@
 
                         <div class="skill__container__tool">
                             <img src="./assets/svg/skills/hard-skills-svg/tailwind.svg" alt="Tailwind CSS"
-                                title="Tailwind CSS" loading="lazy">
+                                title="Tailwind CSS" loading="lazy" width="40px" height="40px">
                             <p class="skill__container__tool__text">
                                 Tailwind CSS
                             </p>
                         </div>
 
                         <div class="skill__container__tool">
-                            <img src="./assets/svg/skills/hard-skills-svg/css.svg" alt="CSS" title="CSS" loading="lazy">
+                            <img src="./assets/svg/skills/hard-skills-svg/css.svg" alt="CSS" title="CSS" loading="lazy" width="40px" height="40px">
                             <p class="skill__container__tool__text">CSS</p>
                         </div>
 
                         <div class="skill__container__tool">
                             <img src="./assets/svg/skills/hard-skills-svg/html.svg" alt="HTML" title="HTML"
-                                loading="lazy">
+                                loading="lazy" width="40px" height="40px">
                             <p class="skill__container__tool__text">HTML</p>
                         </div>
 
                         <div class="skill__container__tool">
                             <img src="./assets/svg/skills/hard-skills-svg/postgresql.svg" alt="PostgreSQL"
-                                title="PostgreSQL" loading="lazy">
+                                title="PostgreSQL" loading="lazy" width="40px" height="40px">
                             <p class="skill__container__tool__text">
                                 PostgreSQL
                             </p>
@@ -581,52 +642,36 @@
 
                         <div class="skill__container__tool">
                             <img src="./assets/svg/skills/hard-skills-svg/mysql.svg" alt="MySQL" title="MySQL"
-                                loading="lazy">
+                                loading="lazy" width="40px" height="40px">
                             <p class="skill__container__tool__text">
                                 MySQL
                             </p>
                         </div>
 
                         <div class="skill__container__tool">
+                            <img src="./assets/svg/skills/hard-skills-svg/docker.svg" alt="Docker" title="Docker"
+                                loading="lazy" width="40px" height="40px">
+                            <p class="skill__container__tool__text">
+                                Docker
+                            </p>
+                        </div>
+
+                        <div class="skill__container__tool">
                             <img src="./assets/svg/skills/hard-skills-svg/postman.svg" alt="Postman" title="Postman"
-                                loading="lazy">
+                                loading="lazy" width="40px" height="40px">
                             <p class="skill__container__tool__text">
                                 Postman
                             </p>
                         </div>
 
                         <div class="skill__container__tool">
-                            <img src="./assets/svg/skills/hard-skills-svg/git.svg" alt="Git" title="Git" loading="lazy">
+                            <img src="./assets/svg/skills/hard-skills-svg/git.svg" alt="Git" title="Git" loading="lazy" width="40px" height="40px">
                             <p class="skill__container__tool__text">Git</p>
                         </div>
 
                         <div class="skill__container__tool">
-                            <img src="./assets/svg/skills/hard-skills-svg/vscode.svg" alt="Visual Studio Code"
-                                title="Visual Studio Code" loading="lazy">
-                            <p class="skill__container__tool__text">
-                                VS Code
-                            </p>
-                        </div>
-
-                        <div class="skill__container__tool">
-                            <img src="./assets/svg/skills/hard-skills-svg/intellij.svg" alt="IntelliJ" title="IntelliJ"
-                                loading="lazy">
-                            <p class="skill__container__tool__text">
-                                IntelliJ
-                            </p>
-                        </div>
-
-                        <div class="skill__container__tool">
-                            <img src="./assets/svg/skills/hard-skills-svg/netbeans.svg" alt="Apache Netbeans"
-                                title="Apache Netbeans" loading="lazy">
-                            <p class="skill__container__tool__text">
-                                Netbeans
-                            </p>
-                        </div>
-
-                        <div class="skill__container__tool">
                             <img src="./assets/svg/skills/hard-skills-svg/trello.svg" alt="Trello" title="Trello"
-                                loading="lazy">
+                                loading="lazy" width="40px" height="40px">
                             <p class="skill__container__tool__text">
                                 Trello
                             </p>
@@ -766,8 +811,8 @@
                         Github
                     </a>
 
-                    <a href="./assets/files/CVKevinMaximilianoPalmaRomeroDesarrolladorBackEnd2025.pdf" target=" _blank"
-                        class="contact__info__links__link cvLink" data-section="contact" data-value="cv">
+                    <a href="./assets/files/CV Kevin Maximiliano Palma Romero - Desarrollador 2025.pdf" target=" _blank"
+                        class="contact__info__links__link cvLink" data-section="contact" data-value="cv" id="cv-contact">
                         <img src="./assets/svg/contact-svg/cv-pdf.svg" alt="Curriculum Vitae" loading="lazy">
 
                         CV
