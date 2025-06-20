@@ -16,7 +16,7 @@ export class PortfolioMenuComponent {
       // icon: 'fa-solid fa-house',
     },
     {
-      route: 'about',
+      route: 'aboutme',
       label: 'About me',
       // icon: 'fa-solid fa-note-sticky',
     },
