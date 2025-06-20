@@ -11,33 +11,34 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 export class PortfolioMenuComponent {
   menuOptions: MenuOption[] = [
     {
-      route: '/home',
+      route: 'home',
       label: 'Home',
       // icon: 'fa-solid fa-house',
     },
     {
-      route: '/projects',
+      route: 'about',
+      label: 'About me',
+      // icon: 'fa-solid fa-note-sticky',
+    },
+    {
+      route: 'projects',
       label: 'Projects',
       // icon: 'fa-solid fa-table',
     },
     {
-      route: '/about',
-      label: 'About Me',
-      // icon: 'fa-solid fa-note-sticky',
-    },
-    {
-      route: '/skills',
+      route: 'skills',
       label: 'Skills',
       // icon: 'fa-solid fa-note-sticky',
     },
     {
-      route: '/contact',
+      route: 'contact',
       label: 'Contact',
       // icon: 'fa-solid fa-note-sticky',
     },
   ];
 
-  title = computed(() => {
-    return '{-} Kevin';
-  });
+  // title = computed(() => {
+  //   return '{-} kevmpr';
+  //   // return '{-} Kevin';
+  // });
 }

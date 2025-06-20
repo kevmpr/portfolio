@@ -12,6 +12,11 @@ export const routes: Routes = [
           import('./porfolio/pages/home-page/home-page.component'),
       },
       {
+        path: 'contact',
+        loadComponent: () =>
+          import('./porfolio/pages/contact-page/contact-page.component'),
+      },
+      {
         path: '**',
         redirectTo: 'home',
       }

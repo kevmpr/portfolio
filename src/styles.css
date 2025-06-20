@@ -1,5 +1,6 @@
-@import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+@import "animate.css";
 
 body {
   padding: 0;
@@ -35,3 +36,14 @@ body {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.shadow-button{
+  box-shadow: -3px 5px 1px 1px #090979;
+}
+/*
+.img-vanished{
+  mask-image: linear-gradient(
+    black 99%,
+    transparent
+  )
+} */
