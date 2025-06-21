@@ -1,0 +1,79 @@
+<div
+  class="flex flex-col items-center justify-start w-full h-full animate__animated animate__fadeIn animate__faster"
+>
+  <div class="flex flex-col items-center justify-center gap-10 w-7/12 py-10">
+    <div class="flex flex-col items-center justify-center w-full">
+      <section class="flex flex-col items-center justify-center gap-2 w-2/3">
+        <h1 class="text-3xl font-bold bg-home-title text-center">
+          From Idea to Code
+        </h1>
+
+        <p class="text-xl font-medium text-[#090979] text-center">
+          Each project is the result of curiosity, research, and hands-on
+          problem-solving — transforming ideas into scalable and meaningful
+          digital solutions.
+        </p>
+      </section>
+
+      <div
+        class="grid grid-cols-2 p-8 justify-items-center gap-4 items-center w-full"
+      >
+        @for(project of projectsPortfolio(); track $index){
+        <div
+          class="flex flex-col gap-4 bg-white/30 backdrop-blur-2xl rounded-4xl p-8 w-full h-full"
+        >
+          <img
+            [src]="project.routeImg"
+            [alt]="project.title"
+            class="w-full object-cover rounded-xl"
+          />
+
+          <div class="flex flex-col gap-4">
+            <section>
+              <h2 class="text-xl font-bold bg-home-title">
+                {{ project.title }}
+              </h2>
+              <p class="text-xm font-medium text-[#090979] italic">
+                {{ project.rol }}
+              </p>
+              <p class="text-xm font-medium text-[#090979] italic">
+                {{ project.date }}
+              </p>
+            </section>
+
+            <div class="flex flex-col gap-1 text-medium">
+              @for(text of project.description; track $index){
+              <p>{{ text }}</p>
+              }
+            </div>
+          </div>
+
+          <div class="grid grid-cols-3 gap-6 justify-items-center p-4">
+            @for(tool of project.tools; track $index){
+            <div
+              class="flex flex-col items-center justify-center gap-2 text-[#090979] text-xm font-bold hover:scale-110 transition-transform duration-300 ease-in-out"
+            >
+              <img [src]="tool.route" [alt]="tool.label" class="w-[3rem]" />
+              <p>{{ tool.label }}</p>
+            </div>
+            }
+          </div>
+
+          <div
+            class="flex flex-wrap w-full justify-evenly items-center gap-y-9"
+          >
+            @for(link of project.urls; track $index){
+            <a
+              [href]="link.url"
+              target="_blank"
+              class="px-8 py-3 bg-blue-700 text-gray-200 hover:text-white hover:bg-blue-600 hover:cursor-pointer text-xm font-bold rounded-4xl text-center w-[40%] shadow-button animate__animated animate__pulse animate__infinite animate__slower"
+              >{{ link.label }}</a
+            >
+            }
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

@@ -8,9 +8,3 @@ export interface SkillOptionDark {
   routeDark: string;
   label: string;
 }
-
-export interface itemSkill {
-  route: string;
-  label: string;
-}
-
