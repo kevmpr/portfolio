@@ -1,10 +1,10 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  computed,
   signal,
 } from '@angular/core';
 import { Project } from '../../interfaces/project.interface';
+import confetti from 'canvas-confetti';
 
 @Component({
   selector: 'app-projects-page',
@@ -185,7 +185,7 @@ export default class ProjectsPageComponent {
       {
         route: 'assets/svg/hard-skills/trello.svg',
         label: 'Trello',
-      }
+      },
     ],
   };
 
@@ -193,7 +193,7 @@ export default class ProjectsPageComponent {
     title: 'Text Encryptor',
     routeImg: 'assets/img/projects/projectTextEncryptor.webp',
     urls: [
-       {
+      {
         url: 'https://kevmpr.github.io/encriptadorONE/index.html',
         label: 'Web Site',
       },
@@ -234,22 +234,22 @@ export default class ProjectsPageComponent {
       {
         route: 'assets/svg/hard-skills/trello.svg',
         label: 'Trello',
-      }
-    ]
+      },
+    ],
   };
 
-   projectFoodStore: Project = {
+  projectFoodStore: Project = {
     title: 'Food Store',
     routeImg: 'assets/img/projects/projectFoodStore.webp',
     urls: [
-       {
+      {
         url: 'https://kevmpr.github.io/almacen_kelma/',
         label: 'Web Site',
       },
       {
         url: 'https://github.com/kevmpr/almacen_kelma',
         label: 'GitHub',
-      }
+      },
     ],
     rol: 'Front End Developer',
     date: 'March 2024',
@@ -273,8 +273,8 @@ export default class ProjectsPageComponent {
       {
         route: 'assets/svg/hard-skills/trello.svg',
         label: 'Trello',
-      }
-    ]
+      },
+    ],
   };
 
   projectsPortfolio = signal<Project[]>([
@@ -283,6 +283,37 @@ export default class ProjectsPageComponent {
     this.projectBookFinder,
     this.projectCurrencyConverter,
     this.projectTextEncryptor,
-    this.projectFoodStore
+    this.projectFoodStore,
   ]);
+
+  startConfetti() {
+      const duration = 3 * 1000; // 3 seconds
+      const animationEnd = Date.now() + duration;
+      const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+      const interval = setInterval(() => {
+        const timeLeft = animationEnd - Date.now();
+
+        if (timeLeft <= 0) {
+          clearInterval(interval);
+          return;
+        }
+
+        const particleCount = 50 * (timeLeft / duration);
+        const randomInRange = (min: number, max: number) =>
+          Math.random() * (max - min) + min;
+
+        confetti({
+          ...defaults,
+          particleCount,
+          origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 }
+        });
+
+        confetti({
+          ...defaults,
+          particleCount,
+          origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 }
+        });
+      }, 250);
+    }
 }

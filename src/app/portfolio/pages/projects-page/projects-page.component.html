@@ -28,7 +28,7 @@
             class="w-full object-cover rounded-xl"
           />
 
-          <div class="flex flex-col gap-4">
+          <div class="flex flex-col gap-4 h-1/2">
             <section>
               <h2 class="text-xl font-bold bg-home-title">
                 {{ project.title }}
@@ -51,7 +51,8 @@
           <div class="grid grid-cols-3 gap-6 justify-items-center p-4">
             @for(tool of project.tools; track $index){
             <div
-              class="flex flex-col items-center justify-center gap-2 text-[#090979] text-xm font-bold hover:scale-110 transition-transform duration-300 ease-in-out"
+              class="flex flex-col items-center justify-center gap-2 text-[#090979] text-xm font-bold hover:cursor-pointer hover:scale-110 transition-transform duration-300 ease-in-out"
+              (click)="startConfetti()"
             >
               <img [src]="tool.route" [alt]="tool.label" class="w-[3rem]" />
               <p>{{ tool.label }}</p>
@@ -60,13 +61,13 @@
           </div>
 
           <div
-            class="flex flex-wrap w-full justify-evenly items-center gap-y-9"
+            class="flex flex-wrap w-full justify-evenly items-center gap-y-9 gap-x-5"
           >
             @for(link of project.urls; track $index){
             <a
               [href]="link.url"
               target="_blank"
-              class="px-8 py-3 bg-blue-700 text-gray-200 hover:text-white hover:bg-blue-600 hover:cursor-pointer text-xm font-bold rounded-4xl text-center w-[40%] shadow-button animate__animated animate__pulse animate__infinite animate__slower"
+              class="px-4 py-3 bg-blue-700 text-white hover:bg-blue-800 hover:cursor-pointer text-xm font-bold rounded-4xl text-center w-[30%] shadow-button animate__animated animate__pulse animate__infinite animate__slower"
               >{{ link.label }}</a
             >
             }

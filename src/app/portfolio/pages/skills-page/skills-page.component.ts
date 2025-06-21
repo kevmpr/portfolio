@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { SkillOption, SkillOptionDark } from '../../interfaces/skill.interface';
+import confetti from 'canvas-confetti';
 
 @Component({
   selector: 'app-skills-page',
@@ -51,10 +52,10 @@ export default class SkillsPageComponent {
     {
       route: 'assets/svg/hard-skills/spring.svg',
       label: 'Spring',
-    }
+    },
   ];
 
-   hardSkillDBOptions: SkillOption[] = [
+  hardSkillDBOptions: SkillOption[] = [
     {
       route: 'assets/svg/hard-skills/postgresql.svg',
       label: 'PostgreSQL',
@@ -62,7 +63,7 @@ export default class SkillsPageComponent {
     {
       route: 'assets/svg/hard-skills/mysql.svg',
       label: 'MySQL',
-    }
+    },
   ];
 
   hardSkillCloudOptions: SkillOption[] = [
@@ -73,7 +74,7 @@ export default class SkillsPageComponent {
     {
       route: 'assets/svg/hard-skills/aws.svg',
       label: 'AWS',
-    }
+    },
   ];
 
   hardSkillToolOptions: SkillOption[] = [
@@ -92,7 +93,7 @@ export default class SkillsPageComponent {
     {
       route: 'assets/svg/hard-skills/postman.svg',
       label: 'Postman',
-    }
+    },
   ];
 
   softSkill1Options: SkillOptionDark[] = [
@@ -123,7 +124,7 @@ export default class SkillsPageComponent {
       route: 'assets/svg/soft-skills/adaptability.svg',
       routeDark: 'assets/svg/soft-skills/adaptability-dark.svg',
       label: 'Adaptability',
-    }
+    },
   ];
 
   softSkill3Options: SkillOptionDark[] = [
@@ -136,7 +137,7 @@ export default class SkillsPageComponent {
       route: 'assets/svg/soft-skills/proethics.svg',
       routeDark: 'assets/svg/soft-skills/proethics-dark.svg',
       label: 'Professional Ethics',
-    }
+    },
   ];
 
   languageOptions: SkillOption[] = [
@@ -147,8 +148,26 @@ export default class SkillsPageComponent {
     {
       route: 'assets/svg/languages/english.svg',
       label: 'English (Upper intermediate B2)',
-    }
+    },
   ];
 
-  //hover:scale-110 transition-transform duration-300 ease-in-out
+  launchConfetti(): void {
+    confetti({
+      particleCount: 100,
+      spread: 60,
+      origin: { x: 0, y: 1 }, // Bottom-left
+      angle: 60, // Shoots toward the center
+      gravity: 0.8
+    });
+
+    // Top-right corner
+    confetti({
+      particleCount: 100,
+      spread: 60,
+      origin: { x: 1, y: 1 }, // Bottom-right
+      angle: 120, // Shoots toward the center
+      gravity: 0.8
+    });
+  }
 }
+
