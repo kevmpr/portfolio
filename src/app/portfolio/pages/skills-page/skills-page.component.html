@@ -1,0 +1,175 @@
+<div
+  class="flex flex-col items-center justify-start w-full h-full animate__animated animate__fadeIn animate__faster"
+>
+  <div class="flex flex-col items-center justify-center gap-10 w-3/4 py-10">
+    <h1 class="text-3xl font-bold bg-home-title text-center">My Tech Stack</h1>
+
+    <section class="flex flex-col items-center justify-center gap-4 w-full">
+      <div>
+        <h3 class="text-2xl font-bold text-[#090979] text-center">Hard Skills</h3>
+        <p class="text-xl font-medium text-[#090979] text-center">These are the technologies and tools I work with daily to build scalable, modern, and efficient solutions.</p>
+      </div>
+
+      <div
+        class="grid grid-cols-2 gap-12 w-full p-8"
+      >
+        <section class="flex flex-col gap-4 items-center bg-white/30 backdrop-blur-2xl rounded-4xl p-8 ">
+          <h2 class="text-3xl font-bold bg-home-title">
+            Frontend
+          </h2>
+
+          <div class="grid grid-cols-3 gap-8 justify-items-center text-center">
+            @for(frontOptions of hardSkillFrontOptions; track $index) {
+              <div class="flex flex-col items-center justify-center text-[#090979] w-[7rem] hover:scale-110 transition-transform duration-300 ease-in-out">
+                <img src="{{frontOptions.route}}" alt="{{frontOptions.label}} icon" class="w-16 h-16 " />
+                <p class="text-xm font-bold">{{frontOptions.label}}</p>
+              </div>
+            }
+          </div>
+        </section>
+
+        <section class="flex flex-col gap-4 items-center bg-white/30 backdrop-blur-2xl rounded-4xl p-8">
+          <h2 class="text-3xl font-bold bg-home-title text-center">
+            Backend
+          </h2>
+
+          <div class="grid grid-cols-2 gap-8 justify-items-center text-center">
+            @for(backOptions of hardSkillBackOptions; track $index) {
+              <div class="flex flex-col items-center justify-center text-[#090979] w-[7rem] hover:scale-110 transition-transform duration-300 ease-in-out">
+                <img src="{{backOptions.route}}" alt="{{backOptions.label}} icon" class="w-16 h-16" />
+                <p class="text-xm font-bold">{{backOptions.label}}</p>
+              </div>
+            }
+          </div>
+        </section>
+
+        <section class="flex flex-col gap-4 items-center bg-white/30 backdrop-blur-2xl rounded-4xl p-8">
+          <h2 class="text-3xl font-bold bg-home-title text-center">
+            Data Bases
+          </h2>
+
+          <div class="grid grid-cols-2 gap-8 justify-items-center text-center">
+            @for(dbOptions of hardSkillDBOptions; track $index) {
+              <div class="flex flex-col items-center justify-center text-[#090979] w-[7rem] hover:scale-110 transition-transform duration-300 ease-in-out">
+                <img src="{{dbOptions.route}}" alt="{{dbOptions.label}} icon" class="w-16 h-16" />
+                <p class="text-xm font-bold">{{dbOptions.label}}</p>
+              </div>
+            }
+          </div>
+        </section>
+
+        <section class="flex flex-col gap-4 items-center bg-white/30 backdrop-blur-2xl rounded-4xl p-8">
+          <h2 class="text-3xl font-bold bg-home-title text-center">
+            Cloud
+          </h2>
+
+          <div class="grid grid-cols-2 gap-8 justify-items-center text-center">
+            @for(cloudOptions of hardSkillCloudOptions; track $index) {
+              <div class="flex flex-col items-center justify-center text-[#090979] w-[7rem] hover:scale-110 transition-transform duration-300 ease-in-out">
+                <img src="{{cloudOptions.route}}" alt="{{cloudOptions.label}} icon" class="w-16 h-16" />
+                <p class="text-xm font-bold">{{cloudOptions.label}}</p>
+              </div>
+            }
+          </div>
+        </section>
+
+        <section class="flex flex-col gap-4 items-center bg-white/30 backdrop-blur-2xl rounded-4xl p-8">
+          <h2 class="text-3xl font-bold bg-home-title">
+            Tools
+          </h2>
+
+          <div class="grid grid-cols-2 gap-8 justify-items-center text-center">
+            @for(toolOptions of hardSkillToolOptions; track $index) {
+              <div class="flex flex-col items-center justify-center text-[#090979] w-[7rem] hover:scale-110 transition-transform duration-300 ease-in-out">
+                <img src="{{toolOptions.route}}" alt="{{toolOptions.label}} icon" class="w-16 h-16" />
+                <p class="text-xm font-bold">{{toolOptions.label}}</p>
+              </div>
+            }
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="flex flex-col items-center justify-center gap-4 w-full">
+      <div>
+        <h3 class="text-2xl font-bold text-[#090979] text-center">Soft Skills</h3>
+        <p class="text-xl font-medium text-[#090979] text-center">Beyond code, I bring mindset and attitude to every team and challenge.</p>
+      </div>
+
+      <div
+        class="grid grid-cols-2 gap-12 w-full p-8"
+      >
+        <section class="flex flex-col gap-4 items-center bg-white/30 backdrop-blur-2xl rounded-4xl p-8">
+          <h2 class="text-3xl font-bold bg-home-title text-center">
+            Collaboration & Communication
+          </h2>
+
+          <div class="grid grid-cols-3 gap-8 justify-items-center text-center">
+            @for(softOptions of softSkill1Options; track $index) {
+              <div class="flex flex-col items-center justify-center text-[#090979] w-[7rem] hover:scale-110 transition-transform duration-300 ease-in-out">
+                <img src="{{softOptions.route}}" alt="{{softOptions.label}} icon" class="w-16 h-16" />
+                <p class="text-xm font-bold">{{softOptions.label}}</p>
+              </div>
+            }
+          </div>
+        </section>
+
+        <section class="flex flex-col gap-4 items-center bg-white/30 backdrop-blur-2xl rounded-4xl p-8">
+          <h2 class="text-3xl font-bold bg-home-title text-center">
+            Cognitive & Problem-Solving
+          </h2>
+
+          <div class="grid grid-cols-2 gap-8 justify-items-center text-center">
+            @for(softOptions of softSkill2Options; track $index) {
+              <div class="flex flex-col items-center justify-center text-[#090979] w-[7rem] hover:scale-110 transition-transform duration-300 ease-in-out">
+                <img src="{{softOptions.route}}" alt="{{softOptions.label}} icon" class="w-16 h-16" />
+                <p class="text-xm font-bold">{{softOptions.label}}</p>
+              </div>
+            }
+          </div>
+        </section>
+
+        <section class="flex flex-col gap-4 items-center bg-white/30 backdrop-blur-2xl rounded-4xl p-8">
+          <h2 class="text-3xl font-bold bg-home-title text-center">
+            Organisation & Accountability
+          </h2>
+
+          <div class="grid grid-cols-2 gap-8 justify-items-center text-center">
+            @for(softOptions of softSkill3Options; track $index) {
+              <div class="flex flex-col items-center justify-center text-[#090979] w-[7rem] hover:scale-110 transition-transform duration-300 ease-in-out">
+                <img src="{{softOptions.route}}" alt="{{softOptions.label}} icon" class="w-16 h-16" />
+                <p class="text-xm font-bold">{{softOptions.label}}</p>
+              </div>
+            }
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="flex flex-col items-center justify-center gap-4 w-full">
+      <div>
+        <h3 class="text-2xl font-bold text-[#090979] text-center">Languages</h3>
+        <p class="text-xl font-medium text-[#090979] text-center">Communication is key — especially in diverse, global environments.</p>
+      </div>
+
+      <div
+        class="grid grid-cols-1 p-8 items-center justify-items-center"
+      >
+        <section class="flex flex-col gap-4 items-center bg-white/30 backdrop-blur-2xl rounded-4xl p-8">
+          <h2 class="text-3xl font-bold bg-home-title text-center">
+            Multilingual Communication
+          </h2>
+
+          <div class="grid grid-cols-2 gap-8 justify-items-center text-center">
+            @for(languageOption of languageOptions; track $index) {
+              <div class="flex flex-col items-center justify-center text-[#090979] w-[8rem] hover:scale-110 transition-transform duration-300 ease-in-out">
+                <img src="{{languageOption.route}}" alt="{{languageOption.label}} icon" class="w-16 h-16" />
+                <p class="text-xm font-bold">{{languageOption.label}}</p>
+              </div>
+            }
+          </div>
+        </section>
+      </div>
+    </section>
+  </div>
+</div>

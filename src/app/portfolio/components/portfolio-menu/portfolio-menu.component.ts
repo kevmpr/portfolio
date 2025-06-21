@@ -36,9 +36,4 @@ export class PortfolioMenuComponent {
       // icon: 'fa-solid fa-note-sticky',
     },
   ];
-
-  // title = computed(() => {
-  //   return '{-} kevmpr';
-  //   // return '{-} Kevin';
-  // });
 }
