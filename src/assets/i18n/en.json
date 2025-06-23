@@ -1,0 +1,198 @@
+{
+  "menu": {
+    "home": "Home",
+    "aboutMe": "About me",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "home": {
+    "rol": "Cloud Engineer Trainee | Full Stack Developer | Advanced Software Development Student",
+    "description": {
+      "text1": "👋 Hi, I'm a passionate developer from Argentina.",
+      "text2": "💻 I love learning, coding, and solving problems, always with discipline, attention to detail, and teamwork.",
+      "text3": "❤️ Beyond technology, I enjoy anime, video games, reading, and staying active through training. These little moments also inspire me!"
+    },
+    "button": "Download CV"
+  },
+  "aboutMe": {
+    "profile": {
+      "title": "Driven by Code, Powered by Curiosity",
+      "location": "Ciudad Autónoma de Buenos Aires, Argentina",
+      "description": {
+        "text1": "💡 I'm a passionate Full Stack Developer and Cloud Engineer Trainee from Argentina, currently pursuing an Advanced Technical Degree in Software Development .",
+
+        "text2": "💻 At just 22 years old, I bring a unique blend of technical proficiency, adaptability, and genuine curiosity that drives me to constantly push my limits and deliver meaningful solutions.",
+
+        "text3": "🌱 I thrive in dynamic environments where learning and collaboration are key. My current focus is on cloud technologies—especially Microsoft Azure—where I'm gaining hands-on experience with scalable and secure architectures. On the development side, I work confidently across the full stack: from building robust back-end services with Java, Spring Boot, Node.js, and Express.js, to crafting responsive front-end interfaces using Angular, TypeScript, and Tailwind CSS.",
+
+        "text4": "🤝 I'm well-versed in tools like Docker, Git, Postman, and collaborative platforms like GitHub, Jira, and Notion, which help me integrate seamlessly into agile teams and contribute effectively from day one. Whether I'm debugging code, deploying to the cloud, or participating in code reviews, I bring a results-driven mindset and strong communication skills that foster trust and high performance.",
+
+        "text5": "🌐 Fluent in Spanish and with an upper-intermediate (B2) level of English, I'm comfortable working in diverse, international teams and always eager to learn from those around me.",
+
+        "text6": "🚀 If you're looking for someone who's not just technically skilled but also deeply invested in personal and professional growth, let's connect. I'm excited to bring value, learn fast, and grow even faster."
+      }
+    },
+    "education": {
+      "title": "Education",
+      "location": "Instituto de Formación Técnica Superior N° 11",
+      "rol": "Higher Technician in Software Development",
+      "interval": "Aug 2023 - Nov 2025",
+      "description": {
+        "text1": "🎓 I'm currently in the second year, second semester of an Advanced Technical Degree in Software Development, a rigorous programme focused on real-world application of programming, systems analysis, and cloud-based solutions.",
+        "text2": "✒️ With 14 out of 23 subjects already completed, I've built a strong foundation in computer science fundamentals, object-oriented programming, databases, and agile methodologies. My academic journey blends technical depth with practical skills, preparing me to face challenges with both precision and adaptability.",
+        "text3": "📚 Right now, I'm focused on subjects that reflect where the industry is heading:",
+        "text4a": "• Web Systems Development - Back End",
+        "text4b": "• Web Systems Development - Front End",
+        "text4c": "• Software Engineering",
+        "text4d": "• Development and Implementation of Cloud Systems",
+        "text5": "💼 This curriculum aligns perfectly with my hands-on experience in full-stack development and cloud engineering. It allows me to continuously connect what I learn in the classroom with what I build in the real world."
+      }
+    },
+    "experience": {
+      "title": "Experience",
+      "location": "Readymind",
+      "rol": "Cloud Engineer Trainee",
+      "interval": "May 2025 - Present",
+      "description": {
+        "text1": "📊 I'm currently enrolled in a 4-month intensive training programme focused on cloud technologies, data, and low-code development, with a strong emphasis on Microsoft Azure.",
+        "text2": "🧰 This hands-on experience is helping me build solid foundations in cloud infrastructure and scalable architectures. I'm preparing for the AZ-900 (Azure Fundamentals) certification, with AZ-104 (Azure Administrator) as my next milestone to deepen my skills in cloud management.",
+        "text3": "🧠 More than just theory, this programme is sharpening my ability to think strategically, solve real-world problems, and contribute effectively in team-driven environments—paving the way for my future in cloud engineering."
+      }
+    }
+  },
+  "projects": {
+    "title": "From Idea to Code",
+    "description": "Each project is the result of curiosity, research, and hands-on problem-solving — transforming ideas into scalable and meaningful digital solutions.",
+    "list": {
+      "inventoryManagement": {
+        "title": "Inventory Management",
+        "rol": "Back End Developer",
+        "interval": "April 2025",
+        "description": {
+          "text1": "• Develop a product, customer, and sales management system using a multi-layered architecture.",
+          "text2": "• Implement CRUD operations with entity relationships using JPA/Hibernate and PostgreSQL.",
+          "text3": "• Automate deployment with Docker and Render, solving connection and configuration issues.",
+          "text4": "• Apply best practices, design patterns, and manage dependencies with Maven."
+        }
+      },
+      "dogGrooming": {
+        "title": "Dog Grooming",
+        "rol": "Back End Developer",
+        "interval": "January 2025",
+        "description": {
+          "text1": "• Develop an application for managing a dog grooming service.",
+          "text2": "• Implement functionalities to register, view, edit, and delete information about dogs and their owners.",
+          "text3": "• Design a user-friendly and intuitive graphical interface using Swing.",
+          "text4": "• Ensure code quality by applying good practices and development standards."
+        }
+      },
+      "bookFinder": {
+        "title": "Book Finder",
+        "rol": "Back End Developer",
+        "interval": "December 2024",
+        "description": {
+          "text1": "• Implement an efficient and functional book search engine.",
+          "text2": "• Integrate the Gutendex API to retrieve book data.",
+          "text3": "• Design an architecture based on patterns such as model, repository, and service.",
+          "text4": "• Manage a PostgreSQL database to store and query information."
+        }
+      },
+      "currencyConverter": {
+        "title": "Currency Converter",
+        "rol": "Back End Developer",
+        "interval": "October 2024",
+        "description": {
+          "text1": "• Create a currency converter with Java.",
+          "text2": "• Handle the ExchangeRate-API.",
+          "text3": "• Use packages, libraries, and imports.",
+          "text4": "• Handle errors."
+        }
+      },
+      "textEncryptor": {
+        "title": "Text Encryptor",
+        "rol": "Front End Developer",
+        "interval": "August 2024",
+        "description": {
+          "text1": "• Create an encryptor using JavaScript.",
+          "text2": "• Create a decryptor using JavaScript.",
+          "text3": "• Implement the design made in Figma into code using HTML and CSS.",
+          "text4": "• Create a responsive design for different screen resolutions."
+        }
+      },
+      "foodStore": {
+        "title": "Food Store",
+        "rol": "Front End Developer",
+        "interval": "March 2024",
+        "description": {
+          "text1": "• Design and structure web pages using HTML.",
+          "text2": "• Style and format with CSS to ensure an attractive and functional user experience."
+        }
+      }
+    }
+  },
+  "skills": {
+    "title": "My Tech Stack",
+    "listSkills": {
+      "hardSkills": {
+        "subtitle": "Hard Skills",
+        "text": "These are the technologies and tools I work with daily to build scalable, modern, and efficient solutions.",
+        "listItems": {
+          "frontEnd": "Front End",
+          "backEnd": "Back End",
+          "databases": "Databases",
+          "cloud": "Cloud",
+          "tools": "Tools"
+        }
+      },
+      "softSkills": {
+        "subtitle": "Soft Skills",
+        "text": "Beyond code, I bring mindset and attitude to every team and challenge.",
+        "listItems": {
+          "collaborationCommunication": {
+            "title": "Collaboration & Communication",
+            "listSubItems": {
+              "teamwork": "Teamwork",
+              "communicationActiveListening": "Communication and Active Listening",
+              "negotiation": "Negotiation"
+            }
+          },
+          "cognitiveProblemSolving": {
+            "title": "Cognitive & Problem-Solving",
+            "listSubItems": {
+              "criticalThinking": "Critical Thinking",
+              "adaptability": "Adaptability"
+            }
+          },
+          "organisationAccountability": {
+            "title": "Organisation & Accountability",
+            "listSubItems": {
+              "planningTimeManagement": "Planning and Time Management",
+              "professionalEthics": "Professional Ethics"
+            }
+          }
+        }
+      },
+      "languages": {
+        "subtitle": "Languages",
+        "text": "Communication is key — especially in diverse, global environments.",
+        "listItems": {
+          "multilingualCommunication": {
+            "title": "Multilingual Communication",
+            "listSubItems": {
+              "spanish": "Spanish (Native)",
+              "english": "English (Upper intermediate B2)"
+            }
+          }
+        }
+      }
+    }
+  },
+  "contact": {
+    "title":"Get in Touch",
+    "description": {
+      "text1": "📧 If you're looking for someone with solid technical skills, a continuous learning mindset, and dedication to exceeding expectations, don't hesitate to contact me.",
+      "text2": "❤️ I'm ready to join your team and contribute to your company's growth!"
+    }
+  }
+}

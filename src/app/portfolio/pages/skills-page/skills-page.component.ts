@@ -2,10 +2,11 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { SkillOption } from '../../interfaces/skill.interface';
 import confetti from 'canvas-confetti';
 import { ThemeService } from '../../services/theme.service';
+import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-skills-page',
-  imports: [],
+  imports: [TranslocoModule],
   templateUrl: './skills-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -103,17 +104,17 @@ export default class SkillsPageComponent {
     {
       routeImg: 'assets/svg/soft-skills/teamwork.svg',
       routeImgDark: 'assets/svg/soft-skills/teamwork-dark.svg',
-      label: 'Teamwork',
+      label: 'teamwork',
     },
     {
       routeImg: 'assets/svg/soft-skills/communication.svg',
       routeImgDark: 'assets/svg/soft-skills/communication-dark.svg',
-      label: 'Communication and Active Listening',
+      label: 'communicationActiveListening',
     },
     {
       routeImg: 'assets/svg/soft-skills/negotiation.svg',
       routeImgDark: 'assets/svg/soft-skills/negotiation-dark.svg',
-      label: 'Negotiation',
+      label: 'negotiation',
     },
   ];
 
@@ -121,12 +122,12 @@ export default class SkillsPageComponent {
     {
       routeImg: 'assets/svg/soft-skills/criticalthinking.svg',
       routeImgDark: 'assets/svg/soft-skills/criticalthinking-dark.svg',
-      label: 'Critical Thinking',
+      label: 'criticalThinking',
     },
     {
       routeImg: 'assets/svg/soft-skills/adaptability.svg',
       routeImgDark: 'assets/svg/soft-skills/adaptability-dark.svg',
-      label: 'Adaptability',
+      label: 'adaptability',
     },
   ];
 
@@ -134,23 +135,23 @@ export default class SkillsPageComponent {
     {
       routeImg: 'assets/svg/soft-skills/planningtime.svg',
       routeImgDark: 'assets/svg/soft-skills/planningtime-dark.svg',
-      label: 'Planning and Time Management',
+      label: 'planningTimeManagement',
     },
     {
       routeImg: 'assets/svg/soft-skills/proethics.svg',
       routeImgDark: 'assets/svg/soft-skills/proethics-dark.svg',
-      label: 'Professional Ethics',
+      label: 'professionalEthics',
     },
   ];
 
   languageOptions: SkillOption[] = [
     {
-      routeImg: 'assets/svg/languages/spanish.svg',
-      label: 'Spanish (Native)',
+      routeImg: 'assets/svg/spanish.svg',
+      label: 'spanish',
     },
     {
-      routeImg: 'assets/svg/languages/english.svg',
-      label: 'English (Upper intermediate B2)',
+      routeImg: 'assets/svg/english.svg',
+      label: 'english',
     },
   ];
 

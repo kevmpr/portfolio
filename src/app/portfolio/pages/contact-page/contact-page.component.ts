@@ -2,9 +2,11 @@ import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/cor
 import confetti from 'canvas-confetti';
 import { Contact } from '../../interfaces/contact.interface';
 import { ThemeService } from '../../services/theme.service';
+import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-contact-page',
+  imports: [TranslocoModule],
   templateUrl: './contact-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
