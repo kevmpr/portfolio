@@ -1,20 +1,18 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  signal,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { Project } from '../../interfaces/project.interface';
 import confetti from 'canvas-confetti';
+import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-projects-page',
-  imports: [],
+  imports: [TranslocoModule],
   templateUrl: './projects-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class ProjectsPageComponent {
   projectInventoryManagement: Project = {
-    title: 'Inventory Management',
+    key: 'inventoryManagement',
+    title: 'title',
     routeImg: 'assets/img/projects/projectInventoryManagement.webp',
     urls: [
       {
@@ -26,13 +24,13 @@ export default class ProjectsPageComponent {
         label: 'LinkedIn',
       },
     ],
-    rol: 'Back End Developer',
-    date: 'April 2025',
+    rol: 'rol',
+    date: 'interval',
     description: [
-      '• Develop a product, customer, and sales management system using a multi-layered architecture.',
-      '• Implement CRUD operations with entity relationships using JPA/Hibernate and PostgreSQL.',
-      '• Automate deployment with Docker and Render, solving connection and configuration issues.',
-      '• Apply best practices, design patterns, and manage dependencies with Maven.',
+      'text1',
+      'text2',
+      'text3',
+      'text4',
     ],
     tools: [
       {
@@ -63,7 +61,8 @@ export default class ProjectsPageComponent {
   };
 
   projectDogGrooming: Project = {
-    title: 'Dog Grooming',
+    key: 'dogGrooming',
+    title: 'title',
     routeImg: 'assets/img/projects/projectDogGrooming.webp',
     urls: [
       {
@@ -75,13 +74,13 @@ export default class ProjectsPageComponent {
         label: 'LinkedIn',
       },
     ],
-    rol: 'Back End Developer',
-    date: 'January 2025',
+    rol: 'rol',
+    date: 'interval',
     description: [
-      '• Develop an application for managing a dog grooming service.',
-      '• Implement functionalities to register, view, edit, and delete information about dogs and their owners.',
-      '• Design a user-friendly and intuitive graphical interface using Swing.',
-      '• Ensure code quality by applying good practices and development standards.',
+      'text1',
+      'text2',
+      'text3',
+      'text4',
     ],
     tools: [
       {
@@ -104,7 +103,8 @@ export default class ProjectsPageComponent {
   };
 
   projectBookFinder: Project = {
-    title: 'Book Finder',
+    key: 'bookFinder',
+    title: 'title',
     routeImg: 'assets/img/projects/projectBookFinder.webp',
     urls: [
       {
@@ -116,13 +116,13 @@ export default class ProjectsPageComponent {
         label: 'LinkedIn',
       },
     ],
-    rol: 'Back End Developer',
-    date: 'December 2024',
+    rol: 'rol',
+    date: 'interval',
     description: [
-      '• Implement an efficient and functional book search engine.',
-      '• Integrate the Gutendex API to retrieve book data.',
-      '• Design an architecture based on patterns such as model, repository, and service.',
-      '• Manage a PostgreSQL database to store and query information.',
+      'text1',
+      'text2',
+      'text3',
+      'text4',
     ],
     tools: [
       {
@@ -149,7 +149,8 @@ export default class ProjectsPageComponent {
   };
 
   projectCurrencyConverter: Project = {
-    title: 'Currency Converter',
+    key: 'currencyConverter',
+    title: 'title',
     routeImg: 'assets/img/projects/projectCurrencyConverter.webp',
     urls: [
       {
@@ -161,13 +162,13 @@ export default class ProjectsPageComponent {
         label: 'LinkedIn',
       },
     ],
-    rol: 'Back End Developer',
-    date: 'October 2024',
+    rol: 'rol',
+    date: 'interval',
     description: [
-      '• Create a currency converter with Java.',
-      '• Handle the ExchangeRate-API.',
-      '• Use packages, libraries, and imports.',
-      '• Handle errors.',
+      'text1',
+      'text2',
+      'text3',
+      'text4',
     ],
     tools: [
       {
@@ -190,7 +191,8 @@ export default class ProjectsPageComponent {
   };
 
   projectTextEncryptor: Project = {
-    title: 'Text Encryptor',
+    key: 'textEncryptor',
+    title: 'title',
     routeImg: 'assets/img/projects/projectTextEncryptor.webp',
     urls: [
       {
@@ -206,13 +208,13 @@ export default class ProjectsPageComponent {
         label: 'LinkedIn',
       },
     ],
-    rol: 'Front End Developerr',
-    date: 'August 2024',
+    rol: 'rol',
+    date: 'interval',
     description: [
-      '• Create an encryptor using JavaScript.',
-      '• Create a decryptor using JavaScript.',
-      '• Implement the design made in Figma into code using HTML and CSS.',
-      '• Create a responsive design for different screen resolutions.',
+      'text1',
+      'text2',
+      'text3',
+      'text4',
     ],
     tools: [
       {
@@ -239,7 +241,8 @@ export default class ProjectsPageComponent {
   };
 
   projectFoodStore: Project = {
-    title: 'Food Store',
+    key: 'foodStore',
+    title: 'title',
     routeImg: 'assets/img/projects/projectFoodStore.webp',
     urls: [
       {
@@ -251,11 +254,11 @@ export default class ProjectsPageComponent {
         label: 'GitHub',
       },
     ],
-    rol: 'Front End Developer',
-    date: 'March 2024',
+    rol: 'rol',
+    date: 'interval',
     description: [
-      '• Design and structure web pages using HTML.',
-      '• Style and format with CSS to ensure an attractive and functional user experience.',
+      'text1',
+      'text2',
     ],
     tools: [
       {
@@ -287,33 +290,33 @@ export default class ProjectsPageComponent {
   ]);
 
   startConfetti() {
-      const duration = 3 * 1000; // 3 seconds
-      const animationEnd = Date.now() + duration;
-      const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+    const duration = 3 * 1000; // 3 seconds
+    const animationEnd = Date.now() + duration;
+    const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
 
-      const interval = setInterval(() => {
-        const timeLeft = animationEnd - Date.now();
+    const interval = setInterval(() => {
+      const timeLeft = animationEnd - Date.now();
 
-        if (timeLeft <= 0) {
-          clearInterval(interval);
-          return;
-        }
+      if (timeLeft <= 0) {
+        clearInterval(interval);
+        return;
+      }
 
-        const particleCount = 50 * (timeLeft / duration);
-        const randomInRange = (min: number, max: number) =>
-          Math.random() * (max - min) + min;
+      const particleCount = 50 * (timeLeft / duration);
+      const randomInRange = (min: number, max: number) =>
+        Math.random() * (max - min) + min;
 
-        confetti({
-          ...defaults,
-          particleCount,
-          origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 }
-        });
+      confetti({
+        ...defaults,
+        particleCount,
+        origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
+      });
 
-        confetti({
-          ...defaults,
-          particleCount,
-          origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 }
-        });
-      }, 250);
-    }
+      confetti({
+        ...defaults,
+        particleCount,
+        origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
+      });
+    }, 250);
+  }
 }

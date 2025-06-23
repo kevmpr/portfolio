@@ -1,0 +1,198 @@
+{
+  "menu": {
+    "home": "Inicio",
+    "aboutMe": "Sobre mi",
+    "projects": "Proyectos",
+    "skills": "Habilidades",
+    "contact": "Contacto"
+  },
+  "home": {
+    "rol": "Trainee en Ingenieria en la Nube | Desarrollador Full Stack | Estudiante avanzado de Desarrollo de Software",
+    "description": {
+      "text1": "👋 Hola, soy un desarrollador apasionado de Argentina.",
+      "text2": "💻 Me encanta aprender, programar y resolver problemas, siempre con disciplina, atención al detalle y trabajo en equipo.",
+      "text3": "❤️ Más allá de la tecnología, disfruto del anime, los videojuegos, la lectura y mantenerme activo entrenando. ¡Estos pequeños momentos también me inspiran!"
+    },
+    "button": "Descargar CV"
+  },
+  "aboutMe": {
+    "profile": {
+      "title": "Impulsado por el Código, Motivado por la Curiosidad",
+      "location": "Ciudad Autónoma de Buenos Aires, Argentina",
+      "description": {
+        "text1": "💡 Soy un apasionado Desarrollador Full Stack y Trainee en Cloud Engineering de Argentina, actualmente cursando una Tecnicatura Superior en Desarrollo de Software.",
+
+        "text2": "💻 Con tan solo 22 años, aporto una combinación única de habilidades técnicas, adaptabilidad y una genuina curiosidad que me impulsa a superarme constantemente y ofrecer soluciones con propósito.",
+
+        "text3": "🌱 Me desenvuelvo con soltura en entornos dinámicos donde el aprendizaje y la colaboración son clave. Actualmente estoy enfocado en tecnologías cloud —especialmente Microsoft Azure—, donde estoy adquiriendo experiencia práctica en arquitecturas escalables y seguras. En el desarrollo, trabajo con confianza en todo el stack: desde construir servicios backend robustos con Java, Spring Boot, Node.js y Express.js, hasta crear interfaces frontend responsivas con Angular, TypeScript y Tailwind CSS.",
+
+        "text4": "🤝 Tengo dominio de herramientas como Docker, Git, Postman y plataformas colaborativas como GitHub, Jira y Notion, que me permiten integrarme sin problemas a equipos ágiles y contribuir de forma efectiva desde el primer día. Ya sea depurando código, desplegando en la nube o participando en revisiones de código, aporto una mentalidad orientada a resultados y habilidades comunicativas que generan confianza y alto rendimiento.",
+
+        "text5": "🌐 Hablo español con fluidez y tengo un nivel intermedio-alto (B2) de inglés, lo que me permite trabajar cómodamente en equipos diversos e internacionales, siempre con ganas de aprender de quienes me rodean.",
+
+        "text6": "🚀 Si buscás a alguien no solo con habilidades técnicas, sino también comprometido con el crecimiento personal y profesional, conectemos. Estoy entusiasmado por aportar valor, aprender rápido y crecer aún más rápido."
+      }
+    },
+    "education": {
+      "title": "Educación",
+      "location": "Instituto de Formación Técnica Superior N.º 11",
+      "rol": "Técnico Superior en Desarrollo de Software",
+      "interval": "Ago 2023 - Nov 2025",
+      "description": {
+        "text1": "🎓 Actualmente curso el segundo año, segundo cuatrimestre, de una Tecnicatura Superior en Desarrollo de Software, un programa riguroso enfocado en la aplicación real de la programación, el análisis de sistemas y las soluciones en la nube.",
+        "text2": "✒️ Con 14 de 23 materias ya aprobadas, he construido una base sólida en fundamentos de la computación, programación orientada a objetos, bases de datos y metodologías ágiles. Mi recorrido académico combina profundidad técnica con habilidades prácticas, preparándome para enfrentar desafíos con precisión y adaptabilidad.",
+        "text3": "📚 Ahora estoy enfocado en materias que reflejan hacia dónde va la industria:",
+        "text4a": "• Desarrollo de Sistemas Web - Back End",
+        "text4b": "• Desarrollo de Sistemas Web - Front End",
+        "text4c": "• Ingeniería de Software",
+        "text4d": "• Desarrollo e Implementación de Sistemas en la Nube",
+        "text5": "💼 Este plan de estudios se alinea perfectamente con mi experiencia práctica en desarrollo full stack e ingenieria en la nube, permitiéndome conectar constantemente lo aprendido en clase con lo que construyo en el mundo real."
+      }
+    },
+    "experience": {
+      "title": "Experiencia",
+      "location": "Readymind",
+      "rol": "Trainee en Ingenieria en la Nube",
+      "interval": "Mayo 2025 - Presente",
+      "description": {
+        "text1": "📊 Actualmente participo en un programa intensivo de 4 meses enfocado en tecnologías cloud, datos y desarrollo low-code, con fuerte énfasis en Microsoft Azure.",
+        "text2": "🧰 Esta experiencia práctica me está ayudando a construir una base sólida en infraestructura cloud y arquitecturas escalables. Me estoy preparando para la certificación AZ-900 (Azure Fundamentals), y tengo como próximo objetivo la AZ-104 (Azure Administrator) para profundizar mis habilidades en gestión cloud.",
+        "text3": "🧠 Más allá de la teoría, este programa está perfeccionando mi capacidad para pensar estratégicamente, resolver problemas reales y contribuir eficazmente en entornos colaborativos, allanando el camino para mi futuro en la ingeniería cloud."
+      }
+    }
+  },
+  "projects": {
+    "title": "De la Idea al Código",
+    "description": "Cada proyecto es el resultado de la curiosidad, la investigación y la resolución práctica de problemas, transformando ideas en soluciones digitales escalables y con propósito.",
+    "list": {
+      "inventoryManagement": {
+        "title": "Gestión de Inventario",
+        "rol": "Desarrollador Back End",
+        "interval": "Abril 2025",
+        "description": {
+          "text1": "• Desarrollar un sistema de gestión de productos, clientes y ventas utilizando una arquitectura multicapa.",
+          "text2": "• Implementar operaciones CRUD con relaciones entre entidades usando JPA/Hibernate y PostgreSQL.",
+          "text3": "• Automatizar el despliegue con Docker y Render, resolviendo problemas de conexión y configuración.",
+          "text4": "• Aplicar buenas prácticas, patrones de diseño y gestionar dependencias con Maven."
+        }
+      },
+      "dogGrooming": {
+        "title": "Peluquería Canina",
+        "rol": "Desarrollador Back End",
+        "interval": "Enero 2025",
+        "description": {
+          "text1": "• Desarrollar una aplicación para gestionar un servicio de peluquería canina.",
+          "text2": "• Implementar funcionalidades para registrar, ver, editar y eliminar información sobre perros y sus dueños.",
+          "text3": "• Diseñar una interfaz gráfica intuitiva y fácil de usar utilizando Swing.",
+          "text4": "• Garantizar la calidad del código aplicando buenas prácticas y estándares de desarrollo."
+        }
+      },
+      "bookFinder": {
+        "title": "Buscador de Libros",
+        "rol": "Desarrollador Back End",
+        "interval": "Diciembre 2024",
+        "description": {
+          "text1": "• Implementar un motor de búsqueda de libros eficiente y funcional.",
+          "text2": "• Integrar la API de Gutendex para obtener datos de libros.",
+          "text3": "• Diseñar una arquitectura basada en patrones como modelo, repositorio y servicio.",
+          "text4": "• Gestionar una base de datos PostgreSQL para almacenar y consultar información."
+        }
+      },
+      "currencyConverter": {
+        "title": "Conversor de Moneda",
+        "rol": "Desarrollador Back End",
+        "interval": "Octubre 2024",
+        "description": {
+          "text1": "• Crear un conversor de moneda con Java.",
+          "text2": "• Manejar la API ExchangeRate.",
+          "text3": "• Utilizar paquetes, librerías e imports.",
+          "text4": "• Manejar errores."
+        }
+      },
+      "textEncryptor": {
+        "title": "Encriptador de Texto",
+        "rol": "Desarrollador Front End",
+        "interval": "Agosto 2024",
+        "description": {
+          "text1": "• Crear un encriptador usando JavaScript.",
+          "text2": "• Crear un desencriptador usando JavaScript.",
+          "text3": "• Implementar el diseño realizado en Figma en código usando HTML y CSS.",
+          "text4": "• Crear un diseño responsive para diferentes resoluciones de pantalla."
+        }
+      },
+      "foodStore": {
+        "title": "Tienda de Comida",
+        "rol": "Desarrollador Front End",
+        "interval": "Marzo 2024",
+        "description": {
+          "text1": "• Diseñar y estructurar páginas web usando HTML.",
+          "text2": "• Estilizar y dar formato con CSS para garantizar una experiencia de usuario atractiva y funcional."
+        }
+      }
+    }
+  },
+  "skills": {
+    "title": "Mi stack tecnológico",
+    "listSkills": {
+      "hardSkills": {
+        "subtitle": "Habilidades Técnicas",
+        "text": "Estas son las tecnologías y herramientas que uso a diario para construir soluciones modernas, escalables y eficientes.",
+        "listItems": {
+          "frontEnd": "Front End",
+          "backEnd": "Back End",
+          "databases": "Bases de Datos",
+          "cloud": "Cloud",
+          "tools": "Herramientas"
+        }
+      },
+      "softSkills": {
+        "subtitle": "Habilidades Blandas",
+        "text": "Más allá del código, aporto mentalidad y actitud a cada equipo y desafío.",
+        "listItems": {
+          "collaborationCommunication": {
+            "title": "Colaboración y Comunicación",
+            "listSubItems": {
+              "teamwork": "Trabajo en equipo",
+              "communicationActiveListening": "Comunicación y escucha activa",
+              "negotiation": "Negociación"
+            }
+          },
+          "cognitiveProblemSolving": {
+            "title": "Cognitivas y Resolución de Problemas",
+            "listSubItems": {
+              "criticalThinking": "Pensamiento crítico",
+              "adaptability": "Adaptabilidad"
+            }
+          },
+          "organisationAccountability": {
+            "title": "Organización y Responsabilidad",
+            "listSubItems": {
+              "planningTimeManagement": "Planificación y gestión del tiempo",
+              "professionalEthics": "Ética profesional"
+            }
+          }
+        }
+      },
+      "languages": {
+        "subtitle": "Idiomas",
+        "text": "La comunicación es clave — especialmente en entornos diversos y globales.",
+        "listItems": {
+          "multilingualCommunication": {
+            "title": "Comunicación multilingüe",
+            "listSubItems": {
+              "spanish": "Español (Nativo)",
+              "english": "Inglés (Intermedio alto B2)"
+            }
+          }
+        }
+      }
+    }
+  },
+  "contact": {
+    "title": "Ponete en contacto",
+    "description": {
+      "text1": "📧 Si estás buscando a alguien con habilidades técnicas sólidas, mentalidad de aprendizaje continuo y compromiso por superar expectativas, no dudes en contactarme.",
+      "text2": "❤️ ¡Estoy listo para unirme a tu equipo y contribuir al crecimiento de tu empresa!"
+    }
+  }
+}

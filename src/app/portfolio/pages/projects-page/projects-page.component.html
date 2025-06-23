@@ -6,17 +6,13 @@
       <section class="flex flex-col items-center justify-center gap-2 w-2/3">
         <h1
           class="text-3xl font-bold text-center bg-gradient-to-r from-[#090979] to-[#0d92f4] bg-clip-text text-transparent dark:from-[#0d92f4] dark:to-[#ffffff]"
-        >
-          From Idea to Code
-        </h1>
+          [transloco]="'projects.title'"
+        ></h1>
 
         <p
           class="text-xl font-medium text-[#090979] text-center dark:text-[#0d92f4]"
-        >
-          Each project is the result of curiosity, research, and hands-on
-          problem-solving — transforming ideas into scalable and meaningful
-          digital solutions.
-        </p>
+          [transloco]="'projects.description'"
+        ></p>
       </section>
 
       <div
@@ -36,24 +32,23 @@
             <section>
               <h2
                 class="text-xl font-bold bg-gradient-to-r from-[#090979] to-[#0d92f4] bg-clip-text text-transparent dark:from-[#0d92f4] dark:to-[#ffffff]"
-              >
-                {{ project.title }}
-              </h2>
+                [transloco]="'projects.list.' + project.key + '.' + project.title"
+              ></h2>
               <p
                 class="text-xm font-medium text-[#090979] italic dark:text-[#0d92f4]"
+                [transloco]="'projects.list.' + project.key + '.' + project.rol"
               >
-                {{ project.rol }}
               </p>
               <p
                 class="text-xm font-medium text-[#090979] italic dark:text-[#0d92f4]"
+                [transloco]="'projects.list.' + project.key + '.' + project.date"
               >
-                {{ project.date }}
               </p>
             </section>
 
             <div class="flex flex-col gap-1 text-medium dark:text-white">
               @for(text of project.description; track $index){
-              <p>{{ text }}</p>
+              <p [transloco]="'projects.list.' + project.key + '.description.' + text"></p>
               }
             </div>
           </div>

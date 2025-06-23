@@ -6,8 +6,8 @@
     <p class="text-xl font-bold text-white w-full">kevmpr</p>
   </div>
 
-  <nav>
-    <ul class="flex items-center gap-8">
+  <nav class="w-1/3">
+    <ul class="flex items-center justify-center gap-8">
       @for(option of menuOptions; track option.route){
       <li
         class="text-gray-300 border-transparent hover:text-gray-100 transition-transform duration-200 ease-in-out"
@@ -16,22 +16,50 @@
           [routerLink]="option.route"
           [routerLinkActive]="['text-white']"
           class="w-full px-2 flex items-center no-underline text-xm font-semibold"
-          >{{ option.label }}
+          [transloco]="'menu.' + option.label"
+        >
         </a>
       </li>
       }
     </ul>
   </nav>
 
-  <div>
+  <div class="flex items-center justify-center gap-4">
     <button
       (click)="onToggleTheme()"
-      class="flex items-center justify-center"
+      class="flex items-center justify-center hover:cursor-pointer"
     >
       @if(theme.darkMode()){
-        <img src="assets/svg/dark-mode.svg" alt="dark mode" class="w-[2rem] transition-transform duration-300 ease-in-out">
+      <img
+        src="assets/svg/dark-mode.svg"
+        alt="dark mode"
+        class="w-[2rem] transition-transform duration-300 ease-in-out"
+      />
       } @else {
-        <img src="assets/svg/light-mode.svg" alt="light mode" class="w-[2rem] transition-transform duration-300 ease-in-out">
+      <img
+        src="assets/svg/light-mode.svg"
+        alt="light mode"
+        class="w-[2rem] transition-transform duration-300 ease-in-out"
+      />
+      }
+    </button>
+
+    <button
+      class="flex items-center justify-center hover:cursor-pointer"
+      (click)="onToggleLanguage()"
+    >
+      @if(langService.currentLang === 'en'){
+      <img
+        src="assets/svg/english.svg"
+        alt="english"
+        class="w-[2rem] transition-transform duration-300 ease-in-out"
+      />
+      } @else {
+      <img
+        src="assets/svg/spanish.svg"
+        alt="spanish"
+        class="w-[2rem] transition-transform duration-300 ease-in-out"
+      />
       }
     </button>
   </div>

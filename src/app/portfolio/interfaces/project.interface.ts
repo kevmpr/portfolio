@@ -1,6 +1,7 @@
 import { SkillOption } from "./skill.interface";
 
 export interface Project {
+  key: string;
   routeImg: string;
   urls: ProjectLink[];
   title: string;

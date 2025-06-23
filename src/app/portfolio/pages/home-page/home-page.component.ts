@@ -6,9 +6,11 @@ import {
 } from '@angular/core';
 import confetti from 'canvas-confetti';
 import { ThemeService } from '../../services/theme.service';
+import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-home-page',
+  imports: [TranslocoModule],
   templateUrl: './home-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

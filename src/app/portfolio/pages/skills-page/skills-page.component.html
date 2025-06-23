@@ -4,17 +4,19 @@
   <div class="flex flex-col items-center justify-center gap-10 w-3/4 py-10">
     <h1
       class="text-3xl font-bold text-center bg-gradient-to-r from-[#090979] to-[#0d92f4] bg-clip-text text-transparent dark:from-[#0d92f4] dark:to-[#ffffff]"
-    >
-      My Tech Stack
-    </h1>
+      [transloco]="'skills.title'"
+    ></h1>
 
     <section class="flex flex-col items-center justify-center gap-4 w-full">
       <div class="text-[#090979] dark:text-[#0d92f4]">
-        <h3 class="text-2xl font-bold text-center">Hard Skills</h3>
-        <p class="text-xl font-medium text-center">
-          These are the technologies and tools I work with daily to build
-          scalable, modern, and efficient solutions.
-        </p>
+        <h3
+          class="text-2xl font-bold text-center"
+          [transloco]="'skills.listSkills.hardSkills.subtitle'"
+        ></h3>
+        <p
+          class="text-xl font-medium text-center"
+          [transloco]="'skills.listSkills.hardSkills.text'"
+        ></p>
       </div>
 
       <div class="grid grid-cols-2 gap-12 w-full p-8">
@@ -23,9 +25,8 @@
         >
           <h2
             class="text-2xl font-bold text-center bg-gradient-to-r from-[#090979] to-[#0d92f4] bg-clip-text text-transparent dark:from-[#0d92f4] dark:to-[#ffffff]"
-          >
-            Frontend
-          </h2>
+            [transloco]="'skills.listSkills.hardSkills.listItems.frontEnd'"
+          ></h2>
 
           <div class="grid grid-cols-3 gap-8 justify-items-center text-center">
             @for(frontOptions of hardSkillFrontOptions; track $index) {
@@ -49,9 +50,8 @@
         >
           <h2
             class="text-2xl font-bold text-center bg-gradient-to-r from-[#090979] to-[#0d92f4] bg-clip-text text-transparent dark:from-[#0d92f4] dark:to-[#ffffff]"
-          >
-            Backend
-          </h2>
+            [transloco]="'skills.listSkills.hardSkills.listItems.backEnd'"
+          ></h2>
 
           <div class="grid grid-cols-2 gap-8 justify-items-center text-center">
             @for(backOptions of hardSkillBackOptions; track $index) {
@@ -75,9 +75,8 @@
         >
           <h2
             class="text-2xl font-bold text-center bg-gradient-to-r from-[#090979] to-[#0d92f4] bg-clip-text text-transparent dark:from-[#0d92f4] dark:to-[#ffffff]"
-          >
-            Data Base
-          </h2>
+            [transloco]="'skills.listSkills.hardSkills.listItems.databases'"
+          ></h2>
 
           <div class="grid grid-cols-2 gap-8 justify-items-center text-center">
             @for(dbOptions of hardSkillDBOptions; track $index) {
@@ -101,9 +100,8 @@
         >
           <h2
             class="text-2xl font-bold text-center bg-gradient-to-r from-[#090979] to-[#0d92f4] bg-clip-text text-transparent dark:from-[#0d92f4] dark:to-[#ffffff]"
-          >
-            Cloud
-          </h2>
+            [transloco]="'skills.listSkills.hardSkills.listItems.cloud'"
+          ></h2>
 
           <div class="grid grid-cols-2 gap-8 justify-items-center text-center">
             @for(cloudOptions of hardSkillCloudOptions; track $index) {
@@ -127,9 +125,8 @@
         >
           <h2
             class="text-2xl font-bold text-center bg-gradient-to-r from-[#090979] to-[#0d92f4] bg-clip-text text-transparent dark:from-[#0d92f4] dark:to-[#ffffff]"
-          >
-            Tools
-          </h2>
+            [transloco]="'skills.listSkills.hardSkills.listItems.tools'"
+          ></h2>
 
           <div class="grid grid-cols-2 gap-8 justify-items-center text-center">
             @for(toolOptions of hardSkillToolOptions; track $index) {
@@ -152,10 +149,14 @@
 
     <section class="flex flex-col items-center justify-center gap-4 w-full">
       <div class="text-[#090979] dark:text-[#0d92f4]">
-        <h3 class="text-2xl font-bold text-center">Soft Skills</h3>
-        <p class="text-xl font-medium text-center">
-          Beyond code, I bring mindset and attitude to every team and challenge.
-        </p>
+        <h3
+          class="text-2xl font-bold text-center"
+          [transloco]="'skills.listSkills.softSkills.subtitle'"
+        ></h3>
+        <p
+          class="text-xl font-medium text-center"
+          [transloco]="'skills.listSkills.softSkills.text'"
+        ></p>
       </div>
 
       <div class="grid grid-cols-2 gap-12 w-full p-8">
@@ -164,9 +165,10 @@
         >
           <h2
             class="text-2xl font-bold text-center bg-gradient-to-r from-[#090979] to-[#0d92f4] bg-clip-text text-transparent dark:from-[#0d92f4] dark:to-[#ffffff]"
-          >
-            Collaboration & Communication
-          </h2>
+            [transloco]="
+              'skills.listSkills.softSkills.listItems.collaborationCommunication.title'
+            "
+          ></h2>
 
           <div class="grid grid-cols-3 gap-8 justify-items-center text-center">
             @for(softOptions of softSkill1Options; track $index) {
@@ -188,7 +190,13 @@
               />
               }
 
-              <p class="text-xm font-bold">{{ softOptions.label }}</p>
+              <p
+                class="text-xm font-bold"
+                [transloco]="
+                  'skills.listSkills.softSkills.listItems.collaborationCommunication.listSubItems.' +
+                  softOptions.label
+                "
+              ></p>
             </div>
             }
           </div>
@@ -199,9 +207,10 @@
         >
           <h2
             class="text-2xl font-bold text-center bg-gradient-to-r from-[#090979] to-[#0d92f4] bg-clip-text text-transparent dark:from-[#0d92f4] dark:to-[#ffffff]"
-          >
-            Cognitive & Problem-Solving
-          </h2>
+            [transloco]="
+              'skills.listSkills.softSkills.listItems.cognitiveProblemSolving.title'
+            "
+          ></h2>
 
           <div class="grid grid-cols-2 gap-8 justify-items-center text-center">
             @for(softOptions of softSkill2Options; track $index) {
@@ -223,7 +232,13 @@
               />
               }
 
-              <p class="text-xm font-bold">{{ softOptions.label }}</p>
+              <p
+                class="text-xm font-bold"
+                [transloco]="
+                  'skills.listSkills.softSkills.listItems.cognitiveProblemSolving.listSubItems.' +
+                  softOptions.label
+                "
+              ></p>
             </div>
             }
           </div>
@@ -234,9 +249,10 @@
         >
           <h2
             class="text-2xl font-bold text-center bg-gradient-to-r from-[#090979] to-[#0d92f4] bg-clip-text text-transparent dark:from-[#0d92f4] dark:to-[#ffffff]"
-          >
-            Organisation & Accountability
-          </h2>
+            [transloco]="
+              'skills.listSkills.softSkills.listItems.organisationAccountability.title'
+            "
+          ></h2>
 
           <div class="grid grid-cols-2 gap-8 justify-items-center text-center">
             @for(softOptions of softSkill3Options; track $index) {
@@ -258,7 +274,13 @@
               />
               }
 
-              <p class="text-xm font-bold">{{ softOptions.label }}</p>
+              <p
+                class="text-xm font-bold"
+                [transloco]="
+                  'skills.listSkills.softSkills.listItems.organisationAccountability.listSubItems.' +
+                  softOptions.label
+                "
+              ></p>
             </div>
             }
           </div>
@@ -268,10 +290,14 @@
 
     <section class="flex flex-col items-center justify-center gap-4 w-full">
       <div class="text-[#090979] dark:text-[#0d92f4]">
-        <h3 class="text-2xl font-bold text-center">Languages</h3>
-        <p class="text-xl font-medium text-center">
-          Communication is key — especially in diverse, global environments.
-        </p>
+        <h3
+          class="text-2xl font-bold text-center"
+          [transloco]="'skills.listSkills.languages.subtitle'"
+        ></h3>
+        <p
+          class="text-xl font-medium text-center"
+          [transloco]="'skills.listSkills.languages.text'"
+        ></p>
       </div>
 
       <div class="grid grid-cols-1 p-8 items-center justify-items-center">
@@ -280,9 +306,10 @@
         >
           <h2
             class="text-2xl font-bold text-center bg-gradient-to-r from-[#090979] to-[#0d92f4] bg-clip-text text-transparent dark:from-[#0d92f4] dark:to-[#ffffff]"
-          >
-            Multilingual Communication
-          </h2>
+            [transloco]="
+              'skills.listSkills.languages.listItems.multilingualCommunication.title'
+            "
+          ></h2>
 
           <div class="grid grid-cols-2 gap-8 justify-items-center text-center">
             @for(languageOption of languageOptions; track $index) {
@@ -295,7 +322,13 @@
                 alt="{{ languageOption.label }} icon"
                 class="w-14 h-14"
               />
-              <p class="text-xm font-bold">{{ languageOption.label }}</p>
+              <p
+                class="text-xm font-bold"
+                [transloco]="
+                  'skills.listSkills.languages.listItems.multilingualCommunication.listSubItems.' +
+                  languageOption.label
+                "
+              ></p>
             </div>
             }
           </div>
