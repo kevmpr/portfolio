@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component, computed } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import type { MenuOption } from '../../interfaces/menu.interface';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-portfolio-menu',
@@ -9,6 +10,10 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PortfolioMenuComponent {
+  constructor(private themeService: ThemeService) {}
+
+  theme = inject(ThemeService);
+
   menuOptions: MenuOption[] = [
     {
       route: 'home',
@@ -36,4 +41,8 @@ export class PortfolioMenuComponent {
       // icon: 'fa-solid fa-note-sticky',
     },
   ];
+
+  onToggleTheme(): void {
+    this.themeService.toggleTheme();
+  }
 }

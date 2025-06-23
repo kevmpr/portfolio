@@ -1,5 +1,11 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  signal,
+} from '@angular/core';
 import confetti from 'canvas-confetti';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-home-page',
@@ -7,45 +13,54 @@ import confetti from 'canvas-confetti';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class HomePageComponent {
+  theme = inject(ThemeService);
   name: string = '<Kevin Maximiliano Palma Romero/>';
 
+
   startSnow() {
-  const duration = 1.5 * 1000; // 1.5 seconds
-  const animationEnd = Date.now() + duration;
-  let skew = 1;
+    const colors = signal<string[]>([]);
 
-  const randomInRange = (min: number, max: number): number =>
-    Math.random() * (max - min) + min;
-
-  const frame = () => {
-    const timeLeft = animationEnd - Date.now();
-
-    // SHORTER tick duration
-    const ticks = Math.max(80, 150 * (timeLeft / duration)); // reduced max from 500 to 150
-    skew = Math.max(0.8, skew - 0.01); // faster skew decay
-
-    confetti({
-      particleCount: 1,
-      startVelocity: 0,
-      ticks, // lifetime
-      origin: {
-        x: Math.random(),
-        y: (Math.random() * skew) - 0.2
-      },
-      colors: ['#090979'],
-      shapes: ['circle'],
-      gravity: randomInRange(0.6, 0.8), // faster fall
-      scalar: randomInRange(0.4, 1),
-      drift: randomInRange(-0.4, 0.4),
-      zIndex: 0
-    });
-
-    if (timeLeft > 0) {
-      requestAnimationFrame(frame);
+    if (this.theme.darkMode()) {
+      colors.set(['#ffffff']); // light-blue & white
+    } else {
+      colors.set(['#090979']); // blue & white
     }
-  };
 
-  frame(); // start animation
-}
+    const duration = 1.5 * 1000; // 1.5 seconds
+    const animationEnd = Date.now() + duration;
+    let skew = 1;
 
+    const randomInRange = (min: number, max: number): number =>
+      Math.random() * (max - min) + min;
+
+    const frame = () => {
+      const timeLeft = animationEnd - Date.now();
+
+      // SHORTER tick duration
+      const ticks = Math.max(80, 150 * (timeLeft / duration)); // reduced max from 500 to 150
+      skew = Math.max(0.8, skew - 0.01); // faster skew decay
+
+      confetti({
+        particleCount: 1,
+        startVelocity: 0,
+        ticks, // lifetime
+        origin: {
+          x: Math.random(),
+          y: Math.random() * skew - 0.2,
+        },
+        colors: colors(),
+        shapes: ['circle'],
+        gravity: randomInRange(0.6, 0.8), // faster fall
+        scalar: randomInRange(0.4, 1),
+        drift: randomInRange(-0.4, 0.4),
+        zIndex: 0,
+      });
+
+      if (timeLeft > 0) {
+        requestAnimationFrame(frame);
+      }
+    };
+
+    frame(); // start animation
+  }
 }

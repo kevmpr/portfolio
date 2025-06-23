@@ -9,9 +9,13 @@
   />
 
   <section class="w-1/3 flex flex-col gap-4">
-    <h1 class="text-3xl font-bold bg-home-title text-start">Get in Touch</h1>
+    <h1
+      class="text-3xl font-bold text-start bg-gradient-to-r from-[#090979] to-[#0d92f4] bg-clip-text text-transparent dark:from-[#0d92f4] dark:to-[#ffffff]"
+    >
+      Get in Touch
+    </h1>
 
-    <div class="text-xl flex flex-col gap-2 text-start">
+    <div class="text-xl flex flex-col gap-2 text-start dark:text-white">
       <p>
         📧 If you're looking for someone with solid technical skills, a
         continuous learning mindset, and dedication to exceeding expectations,
@@ -25,46 +29,30 @@
     <div
       class="flex justify-center gap-6 text-xl rounded-4xl p-4 shadow-lg animate__animated animate__pulse animate__infinite animate__slower"
     >
-      <a
-        href="mailto:kev.mpr03@gmail.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="flex items-center gap-2 hover:text-blue-600"
-      >
-        <img src="assets/svg/email.svg" alt="Email account" />
-        <p>Email</p>
-      </a>
+      @for(link of contactLinks; track $index){
+        @if(link.routeImgDark && theme.darkMode()){
+          <a
+            [href]="link.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-2 hover:text-blue-600 dark:text-gray-300 dark:hover:text-white"
+          >
+            <img [src]="link.routeImgDark" [alt]="link.label" />
+            <p>{{ link.label }}</p>
+          </a>
+        } @else {
 
-      <a
-        href="https://www.linkedin.com/in/kevin-m-palma-r/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="flex items-center gap-2 hover:text-blue-600"
-      >
-        <img src="assets/svg/linkedin.svg" alt="LinkedIn profile" />
-        <p>LinkedIn</p>
-      </a>
-
-      <a
-        href="https://github.com/kevmpr"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="flex items-center gap-2 hover:text-blue-600"
-      >
-        <img src="assets/svg/github-light.svg" alt="Github profile" />
-        <p>Github</p>
-      </a>
-
-      <a
-        href="./assets/files/CV Kevin Maximiliano Palma Romero - Desarrollador 2025.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="flex items-center gap-2 hover:text-blue-600"
-        id="cv-profile"
-      >
-        <img src="assets/svg/cv.svg" alt="Curriculum Vitae" />
-        <p>CV</p>
-      </a>
+          <a
+            [href]="link.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-2 hover:text-blue-600 dark:text-gray-300 dark:hover:text-white"
+          >
+            <img [src]="link.routeImg" [alt]="link.label" />
+            <p>{{ link.label }}</p>
+          </a>
+        }
+      }
     </div>
   </section>
 </div>
