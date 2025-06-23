@@ -36,27 +36,27 @@ export default class ProjectsPageComponent {
     ],
     tools: [
       {
-        route: 'assets/svg/hard-skills/spring.svg',
+        routeImg: 'assets/svg/hard-skills/spring.svg',
         label: 'Spring Boot',
       },
       {
-        route: 'assets/svg/hard-skills/postgresql.svg',
+        routeImg: 'assets/svg/hard-skills/postgresql.svg',
         label: 'PostgreSQL',
       },
       {
-        route: 'assets/svg/hard-skills/docker.svg',
+        routeImg: 'assets/svg/hard-skills/docker.svg',
         label: 'Docker',
       },
       {
-        route: 'assets/svg/hard-skills/git.svg',
+        routeImg: 'assets/svg/hard-skills/git.svg',
         label: 'Git',
       },
       {
-        route: 'assets/svg/hard-skills/postman.svg',
+        routeImg: 'assets/svg/hard-skills/postman.svg',
         label: 'Postman',
       },
       {
-        route: 'assets/svg/hard-skills/trello.svg',
+        routeImg: 'assets/svg/hard-skills/trello.svg',
         label: 'Trello',
       },
     ],
@@ -85,19 +85,19 @@ export default class ProjectsPageComponent {
     ],
     tools: [
       {
-        route: 'assets/svg/hard-skills/java.svg',
+        routeImg: 'assets/svg/hard-skills/java.svg',
         label: 'Java',
       },
       {
-        route: 'assets/svg/hard-skills/mysql.svg',
+        routeImg: 'assets/svg/hard-skills/mysql.svg',
         label: 'MySQL',
       },
       {
-        route: 'assets/svg/hard-skills/git.svg',
+        routeImg: 'assets/svg/hard-skills/git.svg',
         label: 'Git',
       },
       {
-        route: 'assets/svg/hard-skills/trello.svg',
+        routeImg: 'assets/svg/hard-skills/trello.svg',
         label: 'Trello',
       },
     ],
@@ -126,23 +126,23 @@ export default class ProjectsPageComponent {
     ],
     tools: [
       {
-        route: 'assets/svg/hard-skills/spring.svg',
+        routeImg: 'assets/svg/hard-skills/spring.svg',
         label: 'Spring',
       },
       {
-        route: 'assets/svg/hard-skills/postgresql.svg',
+        routeImg: 'assets/svg/hard-skills/postgresql.svg',
         label: 'PostgreSQL',
       },
       {
-        route: 'assets/svg/hard-skills/git.svg',
+        routeImg: 'assets/svg/hard-skills/git.svg',
         label: 'Git',
       },
       {
-        route: 'assets/svg/hard-skills/postman.svg',
+        routeImg: 'assets/svg/hard-skills/postman.svg',
         label: 'Postman',
       },
       {
-        route: 'assets/svg/hard-skills/trello.svg',
+        routeImg: 'assets/svg/hard-skills/trello.svg',
         label: 'Trello',
       },
     ],
@@ -171,19 +171,19 @@ export default class ProjectsPageComponent {
     ],
     tools: [
       {
-        route: 'assets/svg/hard-skills/java.svg',
+        routeImg: 'assets/svg/hard-skills/java.svg',
         label: 'Java',
       },
       {
-        route: 'assets/svg/hard-skills/git.svg',
+        routeImg: 'assets/svg/hard-skills/git.svg',
         label: 'Git',
       },
       {
-        route: 'assets/svg/hard-skills/postman.svg',
+        routeImg: 'assets/svg/hard-skills/postman.svg',
         label: 'Postman',
       },
       {
-        route: 'assets/svg/hard-skills/trello.svg',
+        routeImg: 'assets/svg/hard-skills/trello.svg',
         label: 'Trello',
       },
     ],
@@ -216,23 +216,23 @@ export default class ProjectsPageComponent {
     ],
     tools: [
       {
-        route: 'assets/svg/hard-skills/javascript.svg',
+        routeImg: 'assets/svg/hard-skills/javascript.svg',
         label: 'Javascript',
       },
       {
-        route: 'assets/svg/hard-skills/css.svg',
+        routeImg: 'assets/svg/hard-skills/css.svg',
         label: 'CSS',
       },
       {
-        route: 'assets/svg/hard-skills/html.svg',
+        routeImg: 'assets/svg/hard-skills/html.svg',
         label: 'HTML',
       },
       {
-        route: 'assets/svg/hard-skills/git.svg',
+        routeImg: 'assets/svg/hard-skills/git.svg',
         label: 'Git',
       },
       {
-        route: 'assets/svg/hard-skills/trello.svg',
+        routeImg: 'assets/svg/hard-skills/trello.svg',
         label: 'Trello',
       },
     ],
@@ -259,19 +259,19 @@ export default class ProjectsPageComponent {
     ],
     tools: [
       {
-        route: 'assets/svg/hard-skills/css.svg',
+        routeImg: 'assets/svg/hard-skills/css.svg',
         label: 'CSS',
       },
       {
-        route: 'assets/svg/hard-skills/html.svg',
+        routeImg: 'assets/svg/hard-skills/html.svg',
         label: 'HTML',
       },
       {
-        route: 'assets/svg/hard-skills/git.svg',
+        routeImg: 'assets/svg/hard-skills/git.svg',
         label: 'Git',
       },
       {
-        route: 'assets/svg/hard-skills/trello.svg',
+        routeImg: 'assets/svg/hard-skills/trello.svg',
         label: 'Trello',
       },
     ],

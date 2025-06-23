@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { SkillOption, SkillOptionDark } from '../../interfaces/skill.interface';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { SkillOption } from '../../interfaces/skill.interface';
 import confetti from 'canvas-confetti';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-skills-page',
@@ -9,144 +10,146 @@ import confetti from 'canvas-confetti';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class SkillsPageComponent {
+  theme = inject(ThemeService)
+
   hardSkillFrontOptions: SkillOption[] = [
     {
-      route: 'assets/svg/hard-skills/html.svg',
+      routeImg: 'assets/svg/hard-skills/html.svg',
       label: 'HTML',
     },
     {
-      route: 'assets/svg/hard-skills/css.svg',
+      routeImg: 'assets/svg/hard-skills/css.svg',
       label: 'CSS',
     },
     {
-      route: 'assets/svg/hard-skills/tailwind.svg',
+      routeImg: 'assets/svg/hard-skills/tailwind.svg',
       label: 'Tailwind CSS',
     },
     {
-      route: 'assets/svg/hard-skills/javascript.svg',
+      routeImg: 'assets/svg/hard-skills/javascript.svg',
       label: 'Javascript',
     },
     {
-      route: 'assets/svg/hard-skills/typescript.svg',
+      routeImg: 'assets/svg/hard-skills/typescript.svg',
       label: 'Typescript',
     },
     {
-      route: 'assets/svg/hard-skills/angular.svg',
+      routeImg: 'assets/svg/hard-skills/angular.svg',
       label: 'Angular',
     },
   ];
 
   hardSkillBackOptions: SkillOption[] = [
     {
-      route: 'assets/svg/hard-skills/nodejs.svg',
+      routeImg: 'assets/svg/hard-skills/nodejs.svg',
       label: 'Node JS',
     },
     {
-      route: 'assets/svg/hard-skills/express.svg',
+      routeImg: 'assets/svg/hard-skills/express.svg',
       label: 'Express JS',
     },
     {
-      route: 'assets/svg/hard-skills/java.svg',
+      routeImg: 'assets/svg/hard-skills/java.svg',
       label: 'Java',
     },
     {
-      route: 'assets/svg/hard-skills/spring.svg',
+      routeImg: 'assets/svg/hard-skills/spring.svg',
       label: 'Spring',
     },
   ];
 
   hardSkillDBOptions: SkillOption[] = [
     {
-      route: 'assets/svg/hard-skills/postgresql.svg',
+      routeImg: 'assets/svg/hard-skills/postgresql.svg',
       label: 'PostgreSQL',
     },
     {
-      route: 'assets/svg/hard-skills/mysql.svg',
+      routeImg: 'assets/svg/hard-skills/mysql.svg',
       label: 'MySQL',
     },
   ];
 
   hardSkillCloudOptions: SkillOption[] = [
     {
-      route: 'assets/svg/hard-skills/azure.svg',
+      routeImg: 'assets/svg/hard-skills/azure.svg',
       label: 'Azure',
     },
     {
-      route: 'assets/svg/hard-skills/aws.svg',
+      routeImg: 'assets/svg/hard-skills/aws.svg',
       label: 'AWS',
     },
   ];
 
   hardSkillToolOptions: SkillOption[] = [
     {
-      route: 'assets/svg/hard-skills/docker.svg',
+      routeImg: 'assets/svg/hard-skills/docker.svg',
       label: 'Docker',
     },
     {
-      route: 'assets/svg/hard-skills/git.svg',
+      routeImg: 'assets/svg/hard-skills/git.svg',
       label: 'Git',
     },
     {
-      route: 'assets/svg/hard-skills/trello.svg',
+      routeImg: 'assets/svg/hard-skills/trello.svg',
       label: 'Trello',
     },
     {
-      route: 'assets/svg/hard-skills/postman.svg',
+      routeImg: 'assets/svg/hard-skills/postman.svg',
       label: 'Postman',
     },
   ];
 
-  softSkill1Options: SkillOptionDark[] = [
+  softSkill1Options: SkillOption[] = [
     {
-      route: 'assets/svg/soft-skills/teamwork.svg',
-      routeDark: 'assets/svg/soft-skills/teamwork-dark.svg',
+      routeImg: 'assets/svg/soft-skills/teamwork.svg',
+      routeImgDark: 'assets/svg/soft-skills/teamwork-dark.svg',
       label: 'Teamwork',
     },
     {
-      route: 'assets/svg/soft-skills/communication.svg',
-      routeDark: 'assets/svg/soft-skills/communication-dark.svg',
+      routeImg: 'assets/svg/soft-skills/communication.svg',
+      routeImgDark: 'assets/svg/soft-skills/communication-dark.svg',
       label: 'Communication and Active Listening',
     },
     {
-      route: 'assets/svg/soft-skills/negotiation.svg',
-      routeDark: 'assets/svg/soft-skills/negotiation-dark.svg',
+      routeImg: 'assets/svg/soft-skills/negotiation.svg',
+      routeImgDark: 'assets/svg/soft-skills/negotiation-dark.svg',
       label: 'Negotiation',
     },
   ];
 
-  softSkill2Options: SkillOptionDark[] = [
+  softSkill2Options: SkillOption[] = [
     {
-      route: 'assets/svg/soft-skills/criticalthinking.svg',
-      routeDark: 'assets/svg/soft-skills/criticalthinking-dark.svg',
+      routeImg: 'assets/svg/soft-skills/criticalthinking.svg',
+      routeImgDark: 'assets/svg/soft-skills/criticalthinking-dark.svg',
       label: 'Critical Thinking',
     },
     {
-      route: 'assets/svg/soft-skills/adaptability.svg',
-      routeDark: 'assets/svg/soft-skills/adaptability-dark.svg',
+      routeImg: 'assets/svg/soft-skills/adaptability.svg',
+      routeImgDark: 'assets/svg/soft-skills/adaptability-dark.svg',
       label: 'Adaptability',
     },
   ];
 
-  softSkill3Options: SkillOptionDark[] = [
+  softSkill3Options: SkillOption[] = [
     {
-      route: 'assets/svg/soft-skills/planningtime.svg',
-      routeDark: 'assets/svg/soft-skills/planningtime-dark.svg',
+      routeImg: 'assets/svg/soft-skills/planningtime.svg',
+      routeImgDark: 'assets/svg/soft-skills/planningtime-dark.svg',
       label: 'Planning and Time Management',
     },
     {
-      route: 'assets/svg/soft-skills/proethics.svg',
-      routeDark: 'assets/svg/soft-skills/proethics-dark.svg',
+      routeImg: 'assets/svg/soft-skills/proethics.svg',
+      routeImgDark: 'assets/svg/soft-skills/proethics-dark.svg',
       label: 'Professional Ethics',
     },
   ];
 
   languageOptions: SkillOption[] = [
     {
-      route: 'assets/svg/languages/spanish.svg',
+      routeImg: 'assets/svg/languages/spanish.svg',
       label: 'Spanish (Native)',
     },
     {
-      route: 'assets/svg/languages/english.svg',
+      routeImg: 'assets/svg/languages/english.svg',
       label: 'English (Upper intermediate B2)',
     },
   ];

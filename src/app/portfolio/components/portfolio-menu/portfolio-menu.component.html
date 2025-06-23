@@ -1,5 +1,5 @@
 <header
-  class="flex items-center justify-evenly gap-4 bg-[#bac5db] w-full h-full px-2 py-5 bg-nav"
+  class="flex items-center justify-evenly gap-4 w-full h-full px-2 py-5 bg-gradient-to-r from-[#020024] via-[#090979] to-[#0d92f4] dark:bg-transparent dark:from-transparent dark:via-transparent dark:to-transparent"
 >
   <div class="flex items-center justify-center gap-2 text-center">
     <img src="assets/img/nika.webp" alt="portfolio logo" class="w-12" />
@@ -22,4 +22,17 @@
       }
     </ul>
   </nav>
+
+  <div>
+    <button
+      (click)="onToggleTheme()"
+      class="flex items-center justify-center"
+    >
+      @if(theme.darkMode()){
+        <img src="assets/svg/dark-mode.svg" alt="dark mode" class="w-[2rem] transition-transform duration-300 ease-in-out">
+      } @else {
+        <img src="assets/svg/light-mode.svg" alt="light mode" class="w-[2rem] transition-transform duration-300 ease-in-out">
+      }
+    </button>
+  </div>
 </header>

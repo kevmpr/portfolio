@@ -4,11 +4,15 @@
   <div class="flex flex-col items-center justify-center gap-10 w-7/12 py-10">
     <div class="flex flex-col items-center justify-center w-full">
       <section class="flex flex-col items-center justify-center gap-2 w-2/3">
-        <h1 class="text-3xl font-bold bg-home-title text-center">
+        <h1
+          class="text-3xl font-bold text-center bg-gradient-to-r from-[#090979] to-[#0d92f4] bg-clip-text text-transparent dark:from-[#0d92f4] dark:to-[#ffffff]"
+        >
           From Idea to Code
         </h1>
 
-        <p class="text-xl font-medium text-[#090979] text-center">
+        <p
+          class="text-xl font-medium text-[#090979] text-center dark:text-[#0d92f4]"
+        >
           Each project is the result of curiosity, research, and hands-on
           problem-solving — transforming ideas into scalable and meaningful
           digital solutions.
@@ -20,7 +24,7 @@
       >
         @for(project of projectsPortfolio(); track $index){
         <div
-          class="flex flex-col gap-4 bg-white/30 backdrop-blur-2xl rounded-4xl p-8 w-full h-full"
+          class="flex flex-col gap-4 bg-white/30 backdrop-blur-2xl rounded-4xl p-8 w-full h-full dark:bg-white/10"
         >
           <img
             [src]="project.routeImg"
@@ -30,18 +34,24 @@
 
           <div class="flex flex-col gap-4 h-1/2">
             <section>
-              <h2 class="text-xl font-bold bg-home-title">
+              <h2
+                class="text-xl font-bold bg-gradient-to-r from-[#090979] to-[#0d92f4] bg-clip-text text-transparent dark:from-[#0d92f4] dark:to-[#ffffff]"
+              >
                 {{ project.title }}
               </h2>
-              <p class="text-xm font-medium text-[#090979] italic">
+              <p
+                class="text-xm font-medium text-[#090979] italic dark:text-[#0d92f4]"
+              >
                 {{ project.rol }}
               </p>
-              <p class="text-xm font-medium text-[#090979] italic">
+              <p
+                class="text-xm font-medium text-[#090979] italic dark:text-[#0d92f4]"
+              >
                 {{ project.date }}
               </p>
             </section>
 
-            <div class="flex flex-col gap-1 text-medium">
+            <div class="flex flex-col gap-1 text-medium dark:text-white">
               @for(text of project.description; track $index){
               <p>{{ text }}</p>
               }
@@ -51,10 +61,10 @@
           <div class="grid grid-cols-3 gap-6 justify-items-center p-4">
             @for(tool of project.tools; track $index){
             <div
-              class="flex flex-col items-center justify-center gap-2 text-[#090979] text-xm font-bold hover:cursor-pointer hover:scale-110 transition-transform duration-300 ease-in-out"
+              class="flex flex-col items-center justify-center gap-2 text-[#090979] text-xm font-bold hover:cursor-pointer hover:scale-110 transition-transform duration-300 ease-in-out dark:text-white"
               (click)="startConfetti()"
             >
-              <img [src]="tool.route" [alt]="tool.label" class="w-[3rem]" />
+              <img [src]="tool.routeImg" [alt]="tool.label" class="w-[3rem]" />
               <p>{{ tool.label }}</p>
             </div>
             }

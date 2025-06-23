@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 @import "animate.css";
 
 body {
@@ -14,27 +15,6 @@ body {
 }
 .scroll-hidden::-webkit-scrollbar {
   display: none; /* Chrome, Safari y Opera */
-}
-
-.bg-nav{
-  background: #020024;
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(9, 9, 121, 1) 35%,
-    rgba(13, 146, 244, 1) 100%
-  );
-}
-
-.bg-home-title{
-  background: -webkit-linear-gradient(
-    0,
-    #090979,
-    #0d92f4
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .shadow-button{
