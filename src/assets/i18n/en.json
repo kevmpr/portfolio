@@ -64,6 +64,11 @@
   "projects": {
     "title": "From Idea to Code",
     "description": "Each project is the result of curiosity, research, and hands-on problem-solving — transforming ideas into scalable and meaningful digital solutions.",
+    "links": {
+      "repository": "Repository",
+      "post": "Post",
+      "website": "Website"
+    },
     "list": {
       "inventoryManagement": {
         "title": "Inventory Management",

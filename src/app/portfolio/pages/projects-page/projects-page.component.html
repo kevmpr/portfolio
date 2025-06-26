@@ -74,7 +74,7 @@
             [href]="link.url"
             target="_blank"
             class="w-full md:w-[30%] px-4 py-3 bg-blue-700 text-white hover:bg-blue-800 hover:cursor-pointer text-xm font-bold rounded-4xl text-center shadow-button animate__animated animate__pulse animate__infinite animate__slower"
-            >{{ link.label }}</a
+            >{{ "projects.links." + link.label | transloco}}</a
           >
           }
         </div>

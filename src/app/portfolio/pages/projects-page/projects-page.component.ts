@@ -17,11 +17,11 @@ export default class ProjectsPageComponent {
     urls: [
       {
         url: 'https://github.com/kevmpr/inventory_management_app',
-        label: 'GitHub',
+        label: 'repository',
       },
       {
         url: 'https://www.linkedin.com/posts/kevin-m-palma-r_inventory-management-activity-7320111920328368129-xqm8?utm_source=share&utm_medium=member_desktop&rcm=ACoAADQyJ4QBoNuIcINL9k7qNgBaf-W5E-reiE8',
-        label: 'LinkedIn',
+        label: 'post',
       },
     ],
     rol: 'rol',
@@ -67,11 +67,11 @@ export default class ProjectsPageComponent {
     urls: [
       {
         url: 'https://github.com/kevmpr/dogGrooming',
-        label: 'GitHub',
+        label: 'repository',
       },
       {
         url: 'https://www.linkedin.com/posts/kevin-m-palma-r_java-mysql-programaciaejn-activity-7284639078170398720-bCV8?utm_source=share&utm_medium=member_desktop',
-        label: 'LinkedIn',
+        label: 'post',
       },
     ],
     rol: 'rol',
@@ -109,11 +109,11 @@ export default class ProjectsPageComponent {
     urls: [
       {
         url: 'https://github.com/kevmpr/literAluraOne',
-        label: 'GitHub',
+        label: 'repository',
       },
       {
         url: 'https://www.linkedin.com/posts/kevin-m-palma-r_aluralatam-oraclenexteducation-java-activity-7277028539122528257-nEly?utm_source=share&utm_medium=member_desktop',
-        label: 'LinkedIn',
+        label: 'post',
       },
     ],
     rol: 'rol',
@@ -155,11 +155,11 @@ export default class ProjectsPageComponent {
     urls: [
       {
         url: 'https://github.com/kevmpr/conversorMonedaOne',
-        label: 'GitHub',
+        label: 'repository',
       },
       {
         url: 'https://www.linkedin.com/posts/kevin-m-palma-r_aluralatam-oraclenexteducation-activity-7253125316636790784-ta60?utm_source=share&utm_medium=member_desktop',
-        label: 'LinkedIn',
+        label: 'post',
       },
     ],
     rol: 'rol',
@@ -197,15 +197,15 @@ export default class ProjectsPageComponent {
     urls: [
       {
         url: 'https://kevmpr.github.io/encriptadorONE/index.html',
-        label: 'Web Site',
+        label: 'website',
       },
       {
         url: 'https://github.com/kevmpr/encriptadorONE',
-        label: 'GitHub',
+        label: 'repository',
       },
       {
         url: 'https://www.linkedin.com/posts/kevin-m-palma-r_aluralatam-oraclenexteducation-activity-7225571404170035201-Vyls?utm_source=share&utm_medium=member_desktop',
-        label: 'LinkedIn',
+        label: 'post',
       },
     ],
     rol: 'rol',
@@ -247,11 +247,11 @@ export default class ProjectsPageComponent {
     urls: [
       {
         url: 'https://kevmpr.github.io/almacen_kelma/',
-        label: 'Web Site',
+        label: 'website',
       },
       {
         url: 'https://github.com/kevmpr/almacen_kelma',
-        label: 'GitHub',
+        label: 'repository',
       },
     ],
     rol: 'rol',

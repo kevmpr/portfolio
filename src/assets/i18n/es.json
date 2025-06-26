@@ -64,6 +64,11 @@
   "projects": {
     "title": "De la Idea al Código",
     "description": "Cada proyecto es el resultado de la curiosidad, la investigación y la resolución práctica de problemas, transformando ideas en soluciones digitales escalables y con propósito.",
+    "links": {
+      "repository": "Repositorio",
+      "post": "Publicación",
+      "website": "Sitio Web"
+    },
     "list": {
       "inventoryManagement": {
         "title": "Gestión de Inventario",
