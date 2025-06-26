@@ -39,6 +39,7 @@
           [routerLinkActive]="['text-white']"
           class="w-full px-2 flex items-center no-underline text-xm font-semibold"
           [transloco]="'menu.' + option.label"
+          (click)="toggleMenu()"
         >
         </a>
       </li>
