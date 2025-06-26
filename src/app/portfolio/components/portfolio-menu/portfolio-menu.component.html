@@ -27,7 +27,7 @@
 
   @if(this.menuService.isMenuActive()){
   <nav
-    class="absolute top-[70px] left-0 w-full h-[calc(100vh-70px)] z-50 flex flex-col items-center justify-center bg-gradient-to-r from-[#020024] via-[#090979] to-[#0d92f4] dark:bg-black dark:from-transparent dark:via-transparent dark:to-transparent lg:hidden"
+    class="absolute top-[70px] left-0 w-full h-[calc(100vh-70px)] z-50 flex flex-col items-center justify-center bg-gradient-to-r from-[#020024] via-[#090979] to-[#0d92f4] dark:bg-black dark:from-transparent dark:via-transparent dark:to-transparent lg:hidden animate__animated animate__fadeIn animate__faster"
   >
     <ul class="flex flex-col items-center justify-center gap-8">
       @for(option of menuOptions; track option.route){
