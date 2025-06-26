@@ -1,6 +1,12 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component } from '@angular/core';
-import { PortfolioMenuComponent } from "../../components/portfolio-menu/portfolio-menu.component";
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+} from '@angular/core';
+import { PortfolioMenuComponent } from '../../components/portfolio-menu/portfolio-menu.component';
 import { RouterOutlet } from '@angular/router';
+import { MenuService } from '../../services/menu.service';
 
 declare var FinisherHeader: any;
 
@@ -11,6 +17,7 @@ declare var FinisherHeader: any;
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class PortfolioPageComponent implements AfterViewInit {
+  menuService = inject(MenuService);
 
   ngAfterViewInit(): void {
     this.initFinisherHeader();
