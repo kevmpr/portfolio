@@ -11,6 +11,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { provideTransloco } from '@jsverse/transloco';
 import { AvailableLanguages } from './portfolio/lang/transloco-config';
 import { TranslocoHttpLoader } from './portfolio/lang/transloco-loader';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -27,5 +28,9 @@ export const appConfig: ApplicationConfig = {
       },
       loader: TranslocoHttpLoader,
     }),
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy, // Use HashLocationStrategy for routing
+    }
   ],
 };
