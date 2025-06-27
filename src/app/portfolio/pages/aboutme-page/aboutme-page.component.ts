@@ -24,12 +24,7 @@ export default class AboutmePageComponent {
   descriptionEducation: Description[] = [
     { text: 'text1' },
     { text: 'text2' },
-    { text: 'text3' },
-    { text: 'text4a' },
-    { text: 'text4b' },
-    { text: 'text4c' },
-    { text: 'text4d' },
-    { text: 'text5' },
+    { text: 'text3' }
   ];
 
   descriptionExperience: Description[] = [
