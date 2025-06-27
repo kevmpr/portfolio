@@ -3,12 +3,14 @@ import {
   Component,
   computed,
   inject,
+  signal,
 } from '@angular/core';
 import type { MenuOption } from '../../interfaces/menu.interface';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ThemeService } from '../../services/theme.service';
 import { TranslocoModule } from '@jsverse/transloco';
 import { LanguageService } from '../../services/language.service';
+import { MenuService } from '../../services/menu.service';
 
 @Component({
   selector: 'app-portfolio-menu',
@@ -17,12 +19,9 @@ import { LanguageService } from '../../services/language.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PortfolioMenuComponent {
-  constructor(
-    private themeService: ThemeService,
-    public langService: LanguageService
-  ) {}
-
-  theme = inject(ThemeService);
+  themeService = inject(ThemeService);
+  langService = inject(LanguageService);
+  menuService = inject(MenuService);
 
   menuOptions: MenuOption[] = [
     {
@@ -52,11 +51,17 @@ export class PortfolioMenuComponent {
     },
   ];
 
-  onToggleTheme(): void {
+  toggleTheme(): void {
     this.themeService.toggleTheme();
   }
 
-  onToggleLanguage() {
+  toggleLanguage():void {
     this.langService.onToggleLanguage();
   }
+
+  //menu for mobile view
+  toggleMenu(): void {
+    this.menuService.toggleMenu();
+  }
+
 }

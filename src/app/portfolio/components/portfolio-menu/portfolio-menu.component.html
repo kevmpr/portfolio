@@ -1,12 +1,94 @@
 <header
-  class="flex items-center justify-evenly gap-4 w-full h-full px-2 py-5 bg-gradient-to-r from-[#020024] via-[#090979] to-[#0d92f4] dark:bg-transparent dark:from-transparent dark:via-transparent dark:to-transparent"
+  class="flex items-center justify-evenly gap-4 w-full h-full px-2 py-5 bg-gradient-to-r from-[#020024] via-[#090979] to-[#0d92f4] dark:bg-transparent dark:from-transparent dark:via-transparent dark:to-transparent relative z-50"
 >
   <div class="flex items-center justify-center gap-2 text-center">
     <img src="assets/img/nika.webp" alt="portfolio logo" class="w-12" />
     <p class="text-xl font-bold text-white w-full">kevmpr</p>
   </div>
 
-  <nav class="w-1/3">
+  <button
+    class="flex items-center justify-center hover:cursor-pointer stroke-white fill-white text-white lg:hidden"
+    (click)="toggleMenu()"
+  >
+    @if(this.menuService.isMenuActive()){
+    <img
+      src="assets/svg/exit-menu.svg"
+      alt="open menu"
+      class="w-[2rem] transition-transform duration-300 ease-in-out stroke-white fill-white text-white"
+    />
+    } @else {
+    <img
+      src="assets/svg/open-menu.svg"
+      alt="exit menu"
+      class="w-[2rem] transition-transform duration-300 ease-in-out stroke-white fill-white"
+    />
+    }
+  </button>
+
+  @if(this.menuService.isMenuActive()){
+  <nav
+    class="absolute top-[70px] left-0 w-full h-[calc(100vh-70px)] z-50 flex flex-col items-center justify-center bg-gradient-to-r from-[#020024] via-[#090979] to-[#0d92f4] dark:bg-black dark:from-transparent dark:via-transparent dark:to-transparent lg:hidden animate__animated animate__fadeIn animate__faster"
+  >
+    <ul class="flex flex-col items-center justify-center gap-8">
+      @for(option of menuOptions; track option.route){
+      <li
+        class="text-gray-300 border-transparent hover:text-gray-100 transition-transform duration-200 ease-in-out"
+      >
+        <a
+          [routerLink]="option.route"
+          [routerLinkActive]="['text-white']"
+          class="w-full px-2 flex items-center no-underline text-xm font-semibold"
+          [transloco]="'menu.' + option.label"
+          (click)="toggleMenu()"
+        >
+        </a>
+      </li>
+      }
+    </ul>
+
+    <div class="flex flex-col items-center justify-evenly gap-5 py-5">
+      <button
+        (click)="toggleTheme()"
+        class="flex items-center justify-center hover:cursor-pointer"
+      >
+        @if(themeService.darkMode()){
+        <img
+          src="assets/svg/dark-mode.svg"
+          alt="dark mode"
+          class="w-[2.5rem] transition-transform duration-300 ease-in-out"
+        />
+        } @else {
+        <img
+          src="assets/svg/light-mode.svg"
+          alt="light mode"
+          class="w-[2.5rem] transition-transform duration-300 ease-in-out"
+        />
+        }
+      </button>
+
+      <button
+        class="flex items-center justify-center hover:cursor-pointer"
+        (click)="toggleLanguage()"
+      >
+        @if(langService.currentLang === 'en'){
+        <img
+          src="assets/svg/english.svg"
+          alt="english"
+          class="w-[2.5rem] transition-transform duration-300 ease-in-out"
+        />
+        } @else {
+        <img
+          src="assets/svg/spanish.svg"
+          alt="spanish"
+          class="w-[2.5rem] transition-transform duration-300 ease-in-out"
+        />
+        }
+      </button>
+    </div>
+  </nav>
+  }
+
+  <nav class="hidden lg:block lg:w-2/3 2xl:w-1/3">
     <ul class="flex items-center justify-center gap-8">
       @for(option of menuOptions; track option.route){
       <li
@@ -24,12 +106,12 @@
     </ul>
   </nav>
 
-  <div class="flex items-center justify-center gap-4">
+  <div class="hidden lg:flex lg:items-center lg-justify-center lg:gap-4">
     <button
-      (click)="onToggleTheme()"
+      (click)="toggleTheme()"
       class="flex items-center justify-center hover:cursor-pointer"
     >
-      @if(theme.darkMode()){
+      @if(themeService.darkMode()){
       <img
         src="assets/svg/dark-mode.svg"
         alt="dark mode"
@@ -46,7 +128,7 @@
 
     <button
       class="flex items-center justify-center hover:cursor-pointer"
-      (click)="onToggleLanguage()"
+      (click)="toggleLanguage()"
     >
       @if(langService.currentLang === 'en'){
       <img

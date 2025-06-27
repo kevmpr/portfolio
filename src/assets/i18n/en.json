@@ -13,14 +13,15 @@
       "text2": "💻 I love learning, coding, and solving problems, always with discipline, attention to detail, and teamwork.",
       "text3": "❤️ Beyond technology, I enjoy anime, video games, reading, and staying active through training. These little moments also inspire me!"
     },
-    "button": "Download CV"
+    "button": "Download CV",
+    "cv": "assets/cv/CV_Kevin_Maximiliano_Palma_Romero_Developer_2025.pdf"
   },
   "aboutMe": {
     "profile": {
       "title": "Driven by Code, Powered by Curiosity",
       "location": "Ciudad Autónoma de Buenos Aires, Argentina",
       "description": {
-        "text1": "💡 I'm a passionate Full Stack Developer and Cloud Engineer Trainee from Argentina, currently pursuing an Advanced Technical Degree in Software Development .",
+        "text1": "💡 I'm a passionate Full Stack Developer and Cloud Engineer Trainee from Argentina, currently pursuing an Advanced Technical Degree in Software Development.",
 
         "text2": "💻 At just 22 years old, I bring a unique blend of technical proficiency, adaptability, and genuine curiosity that drives me to constantly push my limits and deliver meaningful solutions.",
 
@@ -36,17 +37,12 @@
     "education": {
       "title": "Education",
       "location": "Instituto de Formación Técnica Superior N° 11",
-      "rol": "Higher Technician in Software Development",
+      "rol": "Advanced Technical Degree in Software Development",
       "interval": "Aug 2023 - Nov 2025",
       "description": {
-        "text1": "🎓 I'm currently in the second year, second semester of an Advanced Technical Degree in Software Development, a rigorous programme focused on real-world application of programming, systems analysis, and cloud-based solutions.",
-        "text2": "✒️ With 14 out of 23 subjects already completed, I've built a strong foundation in computer science fundamentals, object-oriented programming, databases, and agile methodologies. My academic journey blends technical depth with practical skills, preparing me to face challenges with both precision and adaptability.",
-        "text3": "📚 Right now, I'm focused on subjects that reflect where the industry is heading:",
-        "text4a": "• Web Systems Development - Back End",
-        "text4b": "• Web Systems Development - Front End",
-        "text4c": "• Software Engineering",
-        "text4d": "• Development and Implementation of Cloud Systems",
-        "text5": "💼 This curriculum aligns perfectly with my hands-on experience in full-stack development and cloud engineering. It allows me to continuously connect what I learn in the classroom with what I build in the real world."
+        "text1": "🎓 I will soon begin the third year, first semester of the Advanced Technical Degree in Software Development, a rigorous programme focused on real-world application of programming, systems analysis, and cloud-based solutions.",
+        "text2": "✒️ With 18 out of 23 subjects already completed, I've built a strong foundation in computer science fundamentals, object-oriented programming, databases, and agile methodologies. My academic journey blends technical depth with practical skills, preparing me to face challenges with both precision and adaptability.",
+        "text3": "💼 This curriculum aligns perfectly with my hands-on experience in full-stack development and cloud engineering. It allows me to continuously connect what I learn in the classroom with what I build in the real world."
       }
     },
     "experience": {
@@ -64,6 +60,11 @@
   "projects": {
     "title": "From Idea to Code",
     "description": "Each project is the result of curiosity, research, and hands-on problem-solving — transforming ideas into scalable and meaningful digital solutions.",
+    "links": {
+      "repository": "Repository",
+      "post": "Post",
+      "website": "Website"
+    },
     "list": {
       "inventoryManagement": {
         "title": "Inventory Management",
@@ -180,8 +181,8 @@
           "multilingualCommunication": {
             "title": "Multilingual Communication",
             "listSubItems": {
-              "spanish": "Spanish (Native)",
-              "english": "English (Upper intermediate B2)"
+              "spanish": "Spanish (native)",
+              "english": "English (upper-intermediate B2)"
             }
           }
         }

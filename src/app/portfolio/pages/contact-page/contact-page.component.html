@@ -1,26 +1,28 @@
 <div
-  class="w-full h-full flex justify-center items-center gap-10 animate__animated animate__fadeIn animate__faster"
+  class="w-full h-full flex flex-col lg:flex-row justify-center items-center gap-4 lg:gap-10 animate__animated animate__fadeIn animate__faster"
 >
   <img
     src="assets/img/contactImg.webp"
     alt="contact me"
-    class="w-1/5 hover:cursor-pointer hover:scale-102 transition-transform duration-300 ease-in-out"
+    class="w-[60%] md:w-1/3 lg:w-[40%] xl:w-1/5 hover:cursor-pointer hover:scale-102 transition-transform duration-300 ease-in-out"
     (click)="startSchoolPride()"
   />
 
-  <section class="w-1/3 flex flex-col gap-4">
+  <section class="w-3/4 lg:w-1/3 xl:2/3 flex flex-col gap-4">
     <h1
-      class="text-3xl font-bold text-start bg-gradient-to-r from-[#090979] to-[#0d92f4] bg-clip-text text-transparent dark:from-[#0d92f4] dark:to-[#ffffff]"
+      class="text-2xl lg:text-3xl font-bold text-start bg-gradient-to-r from-[#090979] to-[#0d92f4] bg-clip-text text-transparent dark:from-[#0d92f4] dark:to-[#ffffff]"
       [transloco]="'contact.title'"
     ></h1>
 
-    <div class="text-xl flex flex-col gap-2 text-start dark:text-white">
+    <div
+      class="text-xm lg:text-xl flex flex-col gap-2 text-start dark:text-white"
+    >
       <p [transloco]="'contact.description.text1'"></p>
       <p [transloco]="'contact.description.text2'"></p>
     </div>
 
     <div
-      class="flex justify-center gap-6 text-xl rounded-4xl p-4 shadow-lg animate__animated animate__pulse animate__infinite animate__slower"
+      class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4 gap-3 justify-center justify-items-center items-center text-xm rounded-4xl lg:p-4 shadow-lg animate__animated animate__pulse animate__infinite animate__slower"
     >
       @for(link of contactLinks; track $index){ @if(link.routeImgDark &&
       theme.darkMode()){
@@ -31,6 +33,16 @@
         class="flex items-center gap-2 hover:text-blue-600 dark:text-gray-300 dark:hover:text-white"
       >
         <img [src]="link.routeImgDark" [alt]="link.label" />
+        <p>{{ link.label }}</p>
+      </a>
+      } @else { @if(link.label === 'CV'){
+      <a
+        [href]="link.url | transloco"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-2 hover:text-blue-600 dark:text-gray-300 dark:hover:text-white"
+      >
+        <img [src]="link.routeImg" [alt]="link.label" />
         <p>{{ link.label }}</p>
       </a>
       } @else {
@@ -44,7 +56,7 @@
         <img [src]="link.routeImg" [alt]="link.label" />
         <p>{{ link.label }}</p>
       </a>
-      } }
+      } } }
     </div>
   </section>
 </div>

@@ -28,11 +28,11 @@ export default class SkillsPageComponent {
     },
     {
       routeImg: 'assets/svg/hard-skills/javascript.svg',
-      label: 'Javascript',
+      label: 'JavaScript',
     },
     {
       routeImg: 'assets/svg/hard-skills/typescript.svg',
-      label: 'Typescript',
+      label: 'TypeScript',
     },
     {
       routeImg: 'assets/svg/hard-skills/angular.svg',
@@ -43,11 +43,11 @@ export default class SkillsPageComponent {
   hardSkillBackOptions: SkillOption[] = [
     {
       routeImg: 'assets/svg/hard-skills/nodejs.svg',
-      label: 'Node JS',
+      label: 'Node.js',
     },
     {
       routeImg: 'assets/svg/hard-skills/express.svg',
-      label: 'Express JS',
+      label: 'Express.js',
     },
     {
       routeImg: 'assets/svg/hard-skills/java.svg',

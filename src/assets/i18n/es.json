@@ -7,20 +7,21 @@
     "contact": "Contacto"
   },
   "home": {
-    "rol": "Trainee en Ingenieria en la Nube | Desarrollador Full Stack | Estudiante avanzado de Desarrollo de Software",
+    "rol": "Trainee en Ingeniería en la Nube | Desarrollador Full Stack | Estudiante avanzado de Desarrollo de Software",
     "description": {
       "text1": "👋 Hola, soy un desarrollador apasionado de Argentina.",
       "text2": "💻 Me encanta aprender, programar y resolver problemas, siempre con disciplina, atención al detalle y trabajo en equipo.",
       "text3": "❤️ Más allá de la tecnología, disfruto del anime, los videojuegos, la lectura y mantenerme activo entrenando. ¡Estos pequeños momentos también me inspiran!"
     },
-    "button": "Descargar CV"
+    "button": "Descargar CV",
+    "cv": "assets/cv/CV_Kevin_Maximiliano_Palma_Romero_Desarrollador_2025.pdf"
   },
   "aboutMe": {
     "profile": {
       "title": "Impulsado por el Código, Motivado por la Curiosidad",
       "location": "Ciudad Autónoma de Buenos Aires, Argentina",
       "description": {
-        "text1": "💡 Soy un apasionado Desarrollador Full Stack y Trainee en Cloud Engineering de Argentina, actualmente cursando una Tecnicatura Superior en Desarrollo de Software.",
+        "text1": "💡 Soy un apasionado Desarrollador Full Stack y Trainee en Ingeniería en la Nube de Argentina, actualmente cursando una Tecnicatura Superior en Desarrollo de Software.",
 
         "text2": "💻 Con tan solo 22 años, aporto una combinación única de habilidades técnicas, adaptabilidad y una genuina curiosidad que me impulsa a superarme constantemente y ofrecer soluciones con propósito.",
 
@@ -39,20 +40,15 @@
       "rol": "Técnico Superior en Desarrollo de Software",
       "interval": "Ago 2023 - Nov 2025",
       "description": {
-        "text1": "🎓 Actualmente curso el segundo año, segundo cuatrimestre, de una Tecnicatura Superior en Desarrollo de Software, un programa riguroso enfocado en la aplicación real de la programación, el análisis de sistemas y las soluciones en la nube.",
-        "text2": "✒️ Con 14 de 23 materias ya aprobadas, he construido una base sólida en fundamentos de la computación, programación orientada a objetos, bases de datos y metodologías ágiles. Mi recorrido académico combina profundidad técnica con habilidades prácticas, preparándome para enfrentar desafíos con precisión y adaptabilidad.",
-        "text3": "📚 Ahora estoy enfocado en materias que reflejan hacia dónde va la industria:",
-        "text4a": "• Desarrollo de Sistemas Web - Back End",
-        "text4b": "• Desarrollo de Sistemas Web - Front End",
-        "text4c": "• Ingeniería de Software",
-        "text4d": "• Desarrollo e Implementación de Sistemas en la Nube",
-        "text5": "💼 Este plan de estudios se alinea perfectamente con mi experiencia práctica en desarrollo full stack e ingenieria en la nube, permitiéndome conectar constantemente lo aprendido en clase con lo que construyo en el mundo real."
+        "text1": "🎓 Pronto cursaré el tercer año, primer cuatrimestre, de la Tecnicatura Superior en Desarrollo de Software, un programa riguroso enfocado en la aplicación real de la programación, el análisis de sistemas y las soluciones en la nube.",
+        "text2": "✒️ Con 18 de 23 materias ya aprobadas, he construido una base sólida en fundamentos de la computación, programación orientada a objetos, bases de datos y metodologías ágiles. Mi recorrido académico combina profundidad técnica con habilidades prácticas, preparándome para enfrentar desafíos con precisión y adaptabilidad.",
+        "text3": "💼 Este plan de estudios se alinea perfectamente con mi experiencia práctica en desarrollo full stack e ingenieria en la nube, permitiéndome conectar constantemente lo aprendido en clase con lo que construyo en el mundo real."
       }
     },
     "experience": {
       "title": "Experiencia",
       "location": "Readymind",
-      "rol": "Trainee en Ingenieria en la Nube",
+      "rol": "Trainee en Ingeniería en la Nube",
       "interval": "Mayo 2025 - Presente",
       "description": {
         "text1": "📊 Actualmente participo en un programa intensivo de 4 meses enfocado en tecnologías cloud, datos y desarrollo low-code, con fuerte énfasis en Microsoft Azure.",
@@ -64,6 +60,11 @@
   "projects": {
     "title": "De la Idea al Código",
     "description": "Cada proyecto es el resultado de la curiosidad, la investigación y la resolución práctica de problemas, transformando ideas en soluciones digitales escalables y con propósito.",
+    "links": {
+      "repository": "Repositorio",
+      "post": "Publicación",
+      "website": "Sitio Web"
+    },
     "list": {
       "inventoryManagement": {
         "title": "Gestión de Inventario",
@@ -180,8 +181,8 @@
           "multilingualCommunication": {
             "title": "Comunicación multilingüe",
             "listSubItems": {
-              "spanish": "Español (Nativo)",
-              "english": "Inglés (Intermedio alto B2)"
+              "spanish": "Español (nativo)",
+              "english": "Inglés (intermedio alto B2)"
             }
           }
         }

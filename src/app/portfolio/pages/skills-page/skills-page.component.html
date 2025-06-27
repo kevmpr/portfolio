@@ -1,34 +1,34 @@
 <div
   class="flex flex-col items-center justify-start w-full h-full animate__animated animate__fadeIn animate__faster"
 >
-  <div class="flex flex-col items-center justify-center gap-10 w-3/4 py-10">
+  <div class="flex flex-col items-center justify-center gap-10 w-[90%] md:w-2/3 lg:w-3/4 py-10">
     <h1
-      class="text-3xl font-bold text-center bg-gradient-to-r from-[#090979] to-[#0d92f4] bg-clip-text text-transparent dark:from-[#0d92f4] dark:to-[#ffffff]"
+      class="text-2xl lg:text-3xl font-bold text-center bg-gradient-to-r from-[#090979] to-[#0d92f4] bg-clip-text text-transparent dark:from-[#0d92f4] dark:to-[#ffffff]"
       [transloco]="'skills.title'"
     ></h1>
 
     <section class="flex flex-col items-center justify-center gap-4 w-full">
       <div class="text-[#090979] dark:text-[#0d92f4]">
         <h3
-          class="text-2xl font-bold text-center"
+          class="text-xl lg:text-2xl font-bold text-center"
           [transloco]="'skills.listSkills.hardSkills.subtitle'"
         ></h3>
         <p
-          class="text-xl font-medium text-center"
+          class="text-xm lg:text-xl font-medium text-center"
           [transloco]="'skills.listSkills.hardSkills.text'"
         ></p>
       </div>
 
-      <div class="grid grid-cols-2 gap-12 w-full p-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 w-full p-5 lg:p-8">
         <section
           class="flex flex-col gap-4 items-center bg-white/30 backdrop-blur-2xl rounded-4xl p-8 dark:bg-white/10"
         >
           <h2
-            class="text-2xl font-bold text-center bg-gradient-to-r from-[#090979] to-[#0d92f4] bg-clip-text text-transparent dark:from-[#0d92f4] dark:to-[#ffffff]"
+            class="text-xl lg:text-2xl font-bold text-center bg-gradient-to-r from-[#090979] to-[#0d92f4] bg-clip-text text-transparent dark:from-[#0d92f4] dark:to-[#ffffff]"
             [transloco]="'skills.listSkills.hardSkills.listItems.frontEnd'"
           ></h2>
 
-          <div class="grid grid-cols-3 gap-8 justify-items-center text-center">
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-8 justify-items-center text-center">
             @for(frontOptions of hardSkillFrontOptions; track $index) {
             <div
               class="flex flex-col items-center justify-center gap-1 text-[#090979] w-[7rem] hover:cursor-pointer hover:scale-110 transition-transform duration-300 ease-in-out dark:text-white"
@@ -39,7 +39,7 @@
                 alt="{{ frontOptions.label }} icon"
                 class="w-14 h-14"
               />
-              <p class="text-xm font-bold">{{ frontOptions.label }}</p>
+              <p class="text-xm font-medium lg:font-bold">{{ frontOptions.label }}</p>
             </div>
             }
           </div>
@@ -49,7 +49,7 @@
           class="flex flex-col gap-4 items-center bg-white/30 backdrop-blur-2xl rounded-4xl p-8 dark:bg-white/10"
         >
           <h2
-            class="text-2xl font-bold text-center bg-gradient-to-r from-[#090979] to-[#0d92f4] bg-clip-text text-transparent dark:from-[#0d92f4] dark:to-[#ffffff]"
+            class="text-xl lg:text-2xl font-bold text-center bg-gradient-to-r from-[#090979] to-[#0d92f4] bg-clip-text text-transparent dark:from-[#0d92f4] dark:to-[#ffffff]"
             [transloco]="'skills.listSkills.hardSkills.listItems.backEnd'"
           ></h2>
 
@@ -64,7 +64,7 @@
                 alt="{{ backOptions.label }} icon"
                 class="w-14 h-14"
               />
-              <p class="text-xm font-bold">{{ backOptions.label }}</p>
+              <p class="text-xm font-medium lg:font-bold">{{ backOptions.label }}</p>
             </div>
             }
           </div>
@@ -74,7 +74,7 @@
           class="flex flex-col gap-4 items-center bg-white/30 backdrop-blur-2xl rounded-4xl p-8 dark:bg-white/10"
         >
           <h2
-            class="text-2xl font-bold text-center bg-gradient-to-r from-[#090979] to-[#0d92f4] bg-clip-text text-transparent dark:from-[#0d92f4] dark:to-[#ffffff]"
+            class="text-xl lg:text-2xl font-bold text-center bg-gradient-to-r from-[#090979] to-[#0d92f4] bg-clip-text text-transparent dark:from-[#0d92f4] dark:to-[#ffffff]"
             [transloco]="'skills.listSkills.hardSkills.listItems.databases'"
           ></h2>
 
@@ -89,7 +89,7 @@
                 alt="{{ dbOptions.label }} icon"
                 class="w-14 h-14"
               />
-              <p class="text-xm font-bold">{{ dbOptions.label }}</p>
+              <p class="text-xm font-medium lg:font-bold">{{ dbOptions.label }}</p>
             </div>
             }
           </div>
@@ -99,7 +99,7 @@
           class="flex flex-col gap-4 items-center bg-white/30 backdrop-blur-2xl rounded-4xl p-8 dark:bg-white/10"
         >
           <h2
-            class="text-2xl font-bold text-center bg-gradient-to-r from-[#090979] to-[#0d92f4] bg-clip-text text-transparent dark:from-[#0d92f4] dark:to-[#ffffff]"
+            class="text-xl lg:text-2xl font-bold text-center bg-gradient-to-r from-[#090979] to-[#0d92f4] bg-clip-text text-transparent dark:from-[#0d92f4] dark:to-[#ffffff]"
             [transloco]="'skills.listSkills.hardSkills.listItems.cloud'"
           ></h2>
 
@@ -114,7 +114,7 @@
                 alt="{{ cloudOptions.label }} icon"
                 class="w-14 h-14"
               />
-              <p class="text-xm font-bold">{{ cloudOptions.label }}</p>
+              <p class="text-xm font-medium lg:font-bold">{{ cloudOptions.label }}</p>
             </div>
             }
           </div>
@@ -124,7 +124,7 @@
           class="flex flex-col gap-4 items-center bg-white/30 backdrop-blur-2xl rounded-4xl p-8 dark:bg-white/10"
         >
           <h2
-            class="text-2xl font-bold text-center bg-gradient-to-r from-[#090979] to-[#0d92f4] bg-clip-text text-transparent dark:from-[#0d92f4] dark:to-[#ffffff]"
+            class="text-xl lg:text-2xl font-bold text-center bg-gradient-to-r from-[#090979] to-[#0d92f4] bg-clip-text text-transparent dark:from-[#0d92f4] dark:to-[#ffffff]"
             [transloco]="'skills.listSkills.hardSkills.listItems.tools'"
           ></h2>
 
@@ -139,7 +139,7 @@
                 alt="{{ toolOptions.label }} icon"
                 class="w-14 h-14"
               />
-              <p class="text-xm font-bold">{{ toolOptions.label }}</p>
+              <p class="text-xm font-medium lg:font-bold">{{ toolOptions.label }}</p>
             </div>
             }
           </div>
@@ -150,27 +150,27 @@
     <section class="flex flex-col items-center justify-center gap-4 w-full">
       <div class="text-[#090979] dark:text-[#0d92f4]">
         <h3
-          class="text-2xl font-bold text-center"
+          class="text-xl lg:text-2xl font-bold text-center"
           [transloco]="'skills.listSkills.softSkills.subtitle'"
         ></h3>
         <p
-          class="text-xl font-medium text-center"
+          class="text-xm lg:text-xl font-medium text-center"
           [transloco]="'skills.listSkills.softSkills.text'"
         ></p>
       </div>
 
-      <div class="grid grid-cols-2 gap-12 w-full p-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 w-full p-5 lg:p-8">
         <section
           class="flex flex-col gap-4 items-center bg-white/30 backdrop-blur-2xl rounded-4xl p-8 dark:bg-white/10"
         >
           <h2
-            class="text-2xl font-bold text-center bg-gradient-to-r from-[#090979] to-[#0d92f4] bg-clip-text text-transparent dark:from-[#0d92f4] dark:to-[#ffffff]"
+            class="text-xl lg:text-2xl font-bold text-center bg-gradient-to-r from-[#090979] to-[#0d92f4] bg-clip-text text-transparent dark:from-[#0d92f4] dark:to-[#ffffff]"
             [transloco]="
               'skills.listSkills.softSkills.listItems.collaborationCommunication.title'
             "
           ></h2>
 
-          <div class="grid grid-cols-3 gap-8 justify-items-center text-center">
+          <div class="grid grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center text-center">
             @for(softOptions of softSkill1Options; track $index) {
             <div
               class="flex flex-col items-center justify-center gap-1 text-[#090979] w-[7rem] hover:cursor-pointer hover:scale-110 transition-transform duration-300 ease-in-out dark:text-white"
@@ -191,7 +191,7 @@
               }
 
               <p
-                class="text-xm font-bold"
+                class="text-xm font-medium lg:font-bold"
                 [transloco]="
                   'skills.listSkills.softSkills.listItems.collaborationCommunication.listSubItems.' +
                   softOptions.label
@@ -206,7 +206,7 @@
           class="flex flex-col gap-4 items-center bg-white/30 backdrop-blur-2xl rounded-4xl p-8 dark:bg-white/10"
         >
           <h2
-            class="text-2xl font-bold text-center bg-gradient-to-r from-[#090979] to-[#0d92f4] bg-clip-text text-transparent dark:from-[#0d92f4] dark:to-[#ffffff]"
+            class="text-xl lg:text-2xl font-bold text-center bg-gradient-to-r from-[#090979] to-[#0d92f4] bg-clip-text text-transparent dark:from-[#0d92f4] dark:to-[#ffffff]"
             [transloco]="
               'skills.listSkills.softSkills.listItems.cognitiveProblemSolving.title'
             "
@@ -233,7 +233,7 @@
               }
 
               <p
-                class="text-xm font-bold"
+                class="text-xm font-medium lg:font-bold"
                 [transloco]="
                   'skills.listSkills.softSkills.listItems.cognitiveProblemSolving.listSubItems.' +
                   softOptions.label
@@ -248,7 +248,7 @@
           class="flex flex-col gap-4 items-center bg-white/30 backdrop-blur-2xl rounded-4xl p-8 dark:bg-white/10"
         >
           <h2
-            class="text-2xl font-bold text-center bg-gradient-to-r from-[#090979] to-[#0d92f4] bg-clip-text text-transparent dark:from-[#0d92f4] dark:to-[#ffffff]"
+            class="text-xl lg:text-2xl font-bold text-center bg-gradient-to-r from-[#090979] to-[#0d92f4] bg-clip-text text-transparent dark:from-[#0d92f4] dark:to-[#ffffff]"
             [transloco]="
               'skills.listSkills.softSkills.listItems.organisationAccountability.title'
             "
@@ -275,7 +275,7 @@
               }
 
               <p
-                class="text-xm font-bold"
+                class="text-xm font-medium lg:font-bold"
                 [transloco]="
                   'skills.listSkills.softSkills.listItems.organisationAccountability.listSubItems.' +
                   softOptions.label
@@ -291,21 +291,21 @@
     <section class="flex flex-col items-center justify-center gap-4 w-full">
       <div class="text-[#090979] dark:text-[#0d92f4]">
         <h3
-          class="text-2xl font-bold text-center"
+          class="text-xl lg:text-2xl font-bold text-center"
           [transloco]="'skills.listSkills.languages.subtitle'"
         ></h3>
         <p
-          class="text-xl font-medium text-center"
+          class="text-xm lg:text-xl font-medium text-center"
           [transloco]="'skills.listSkills.languages.text'"
         ></p>
       </div>
 
-      <div class="grid grid-cols-1 p-8 items-center justify-items-center">
+      <div class="grid grid-cols-1 items-center justify-items-center gap-8 lg:gap-12 w-full p-5 lg:p-8">
         <section
           class="flex flex-col gap-4 items-center bg-white/30 backdrop-blur-2xl rounded-4xl p-8 dark:bg-white/10"
         >
           <h2
-            class="text-2xl font-bold text-center bg-gradient-to-r from-[#090979] to-[#0d92f4] bg-clip-text text-transparent dark:from-[#0d92f4] dark:to-[#ffffff]"
+            class="text-xl lg:text-2xl font-bold text-center bg-gradient-to-r from-[#090979] to-[#0d92f4] bg-clip-text text-transparent dark:from-[#0d92f4] dark:to-[#ffffff]"
             [transloco]="
               'skills.listSkills.languages.listItems.multilingualCommunication.title'
             "
@@ -314,7 +314,7 @@
           <div class="grid grid-cols-2 gap-8 justify-items-center text-center">
             @for(languageOption of languageOptions; track $index) {
             <div
-              class="flex flex-col items-center justify-center gap-1 text-[#090979] w-[9rem] hover:cursor-pointer hover:scale-110 transition-transform duration-300 ease-in-out dark:text-white"
+              class="flex flex-col items-center justify-center gap-1 text-[#090979] w-full hover:cursor-pointer hover:scale-110 transition-transform duration-300 ease-in-out dark:text-white"
               (click)="launchConfetti()"
             >
               <img
@@ -323,7 +323,7 @@
                 class="w-14 h-14"
               />
               <p
-                class="text-xm font-bold"
+                class="text-xm font-medium lg:font-bold"
                 [transloco]="
                   'skills.listSkills.languages.listItems.multilingualCommunication.listSubItems.' +
                   languageOption.label

@@ -7,6 +7,7 @@ import {
 import confetti from 'canvas-confetti';
 import { ThemeService } from '../../services/theme.service';
 import { TranslocoModule } from '@jsverse/transloco';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-home-page',
@@ -16,6 +17,7 @@ import { TranslocoModule } from '@jsverse/transloco';
 })
 export default class HomePageComponent {
   theme = inject(ThemeService);
+  language = inject(LanguageService)
   name: string = '<Kevin Maximiliano Palma Romero/>';
 
 
