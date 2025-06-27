@@ -7,20 +7,21 @@
     "contact": "Contacto"
   },
   "home": {
-    "rol": "Trainee en Ingenieria en la Nube | Desarrollador Full Stack | Estudiante avanzado de Desarrollo de Software",
+    "rol": "Trainee en Ingeniería en la Nube | Desarrollador Full Stack | Estudiante avanzado de Desarrollo de Software",
     "description": {
       "text1": "👋 Hola, soy un desarrollador apasionado de Argentina.",
       "text2": "💻 Me encanta aprender, programar y resolver problemas, siempre con disciplina, atención al detalle y trabajo en equipo.",
       "text3": "❤️ Más allá de la tecnología, disfruto del anime, los videojuegos, la lectura y mantenerme activo entrenando. ¡Estos pequeños momentos también me inspiran!"
     },
-    "button": "Descargar CV"
+    "button": "Descargar CV",
+    "cv": "assets/cv/CV_Kevin_Maximiliano_Palma_Romero_Desarrollador_2025.pdf"
   },
   "aboutMe": {
     "profile": {
       "title": "Impulsado por el Código, Motivado por la Curiosidad",
       "location": "Ciudad Autónoma de Buenos Aires, Argentina",
       "description": {
-        "text1": "💡 Soy un apasionado Desarrollador Full Stack y Trainee en Cloud Engineering de Argentina, actualmente cursando una Tecnicatura Superior en Desarrollo de Software.",
+        "text1": "💡 Soy un apasionado Desarrollador Full Stack y Trainee en Ingeniería en la Nube de Argentina, actualmente cursando una Tecnicatura Superior en Desarrollo de Software.",
 
         "text2": "💻 Con tan solo 22 años, aporto una combinación única de habilidades técnicas, adaptabilidad y una genuina curiosidad que me impulsa a superarme constantemente y ofrecer soluciones con propósito.",
 
@@ -52,7 +53,7 @@
     "experience": {
       "title": "Experiencia",
       "location": "Readymind",
-      "rol": "Trainee en Ingenieria en la Nube",
+      "rol": "Trainee en Ingeniería en la Nube",
       "interval": "Mayo 2025 - Presente",
       "description": {
         "text1": "📊 Actualmente participo en un programa intensivo de 4 meses enfocado en tecnologías cloud, datos y desarrollo low-code, con fuerte énfasis en Microsoft Azure.",
@@ -185,8 +186,8 @@
           "multilingualCommunication": {
             "title": "Comunicación multilingüe",
             "listSubItems": {
-              "spanish": "Español (Nativo)",
-              "english": "Inglés (Intermedio alto B2)"
+              "spanish": "Español (nativo)",
+              "english": "Inglés (intermedio alto B2)"
             }
           }
         }

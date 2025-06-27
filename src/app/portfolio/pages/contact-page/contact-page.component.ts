@@ -33,7 +33,7 @@ export default class ContactPageComponent {
     {
       routeImg: 'assets/svg/cv.svg',
       label: 'CV',
-      url: 'mailto:kev.mpr03@gmail.com',
+      url: 'home.cv',
     },
   ];
 

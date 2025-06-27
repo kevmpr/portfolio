@@ -13,7 +13,8 @@
       "text2": "💻 I love learning, coding, and solving problems, always with discipline, attention to detail, and teamwork.",
       "text3": "❤️ Beyond technology, I enjoy anime, video games, reading, and staying active through training. These little moments also inspire me!"
     },
-    "button": "Download CV"
+    "button": "Download CV",
+    "cv": "assets/cv/CV_Kevin_Maximiliano_Palma_Romero_Developer_2025.pdf"
   },
   "aboutMe": {
     "profile": {
@@ -185,8 +186,8 @@
           "multilingualCommunication": {
             "title": "Multilingual Communication",
             "listSubItems": {
-              "spanish": "Spanish (Native)",
-              "english": "English (Upper intermediate B2)"
+              "spanish": "Spanish (native)",
+              "english": "English (upper-intermediate B2)"
             }
           }
         }

@@ -219,7 +219,7 @@ export default class ProjectsPageComponent {
     tools: [
       {
         routeImg: 'assets/svg/hard-skills/javascript.svg',
-        label: 'Javascript',
+        label: 'JavaScript',
       },
       {
         routeImg: 'assets/svg/hard-skills/css.svg',
