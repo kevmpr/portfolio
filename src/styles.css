@@ -17,6 +17,6 @@ body {
   display: none; /* Chrome, Safari y Opera */
 }
 
-.shadow-button{
+.shadow-button {
   box-shadow: -3px 5px 1px 1px #090979;
 }

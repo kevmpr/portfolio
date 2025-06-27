@@ -18,13 +18,19 @@ declare var FinisherHeader: any;
 })
 export default class PortfolioPageComponent implements AfterViewInit {
   menuService = inject(MenuService);
+  private prefersReducedMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+  ).matches;
+  private animationTimeoutId: ReturnType<typeof setTimeout> | null = null;
+  private finisherInstance: any = null; // 👈 Guardamos la instancia activa
 
   ngAfterViewInit(): void {
+    this.patchFinisherHeaderIfNeeded(); // 👈 Agrega esto
+
     this.initFinisherHeader();
 
-    // Detecta cambio en la clase "dark" en tiempo real
     const observer = new MutationObserver(() => {
-      this.reInitFinisherHeader();
+      this.stopAndScheduleNewAnimation();
     });
 
     observer.observe(document.documentElement, {
@@ -33,20 +39,62 @@ export default class PortfolioPageComponent implements AfterViewInit {
     });
   }
 
-  private reInitFinisherHeader(): void {
-    const canvas = document.querySelector('canvas.finisher-canvas');
-    if (canvas) canvas.remove();
+  private patchFinisherHeaderIfNeeded(): void {
+    if (typeof FinisherHeader?.prototype?.destroy !== 'function') {
+      // Agrega método destroy()
+      FinisherHeader.prototype.destroy = function () {
+        if (this.c && this.c.parentNode) {
+          this.c.parentNode.removeChild(this.c);
+        }
+        this.__shouldStop = true;
+      };
 
-    this.initFinisherHeader();
+      // Sobrescribe el método 'an' (animación)
+      const originalAnimate = FinisherHeader.prototype.an;
+      FinisherHeader.prototype.an = function () {
+        if (this.__shouldStop) return;
+        requestAnimationFrame(this.an.bind(this));
+        this.x.clearRect(0, 0, this.o.c.w, this.o.c.h);
+        for (let i = 0; i < this.o.ac; i++) {
+          this.ps[i].an(this.x, this.o.c.w, this.o.c.h);
+        }
+      };
+    }
+  }
+
+  private stopAndScheduleNewAnimation(): void {
+    if (
+      this.finisherInstance &&
+      typeof this.finisherInstance.destroy === 'function'
+    ) {
+      this.finisherInstance.destroy();
+      this.finisherInstance = null;
+    }
+
+    const canvas = document.getElementById('finisher-canvas');
+    if (canvas) {
+      canvas.remove();
+    }
+
+    if (this.animationTimeoutId) {
+      clearTimeout(this.animationTimeoutId);
+      this.animationTimeoutId = null;
+    }
+
+    this.animationTimeoutId = setTimeout(() => {
+      this.initFinisherHeader();
+    }, 3000);
   }
 
   private initFinisherHeader(): void {
+    if (this.prefersReducedMotion) return;
+
     const isDarkMode = document.documentElement.classList.contains('dark');
 
     const config = isDarkMode
       ? {
           // 🌑 Universo (modo oscuro)
-          count: 100,
+          count: 50,
           size: { min: 2, max: 8, pulse: 0 },
           speed: {
             x: { min: 0, max: 0.1 },
@@ -74,7 +122,7 @@ export default class PortfolioPageComponent implements AfterViewInit {
             y: { min: 0, max: 0.5 },
           },
           colors: {
-            background: '#ffffff',
+            background: '#EEEEF9',
             particles: ['#efedf8', '#f2dfdf', '#d3dbf2', '#d8eedb'],
           },
           blending: 'lighten',
