@@ -31,8 +31,7 @@
                 "output": "."
               }
             ],
-            "styles": ["src/styles.css"],
-            "scripts": ["node_modules/preline/dist/index.js"]
+            "styles": ["src/styles.css"]
           },
           "configurations": {
             "production": {
@@ -48,7 +47,15 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "optimization": {
+                "scripts": true,
+                "styles": true,
+                "fonts": true
+              },
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true
             },
             "development": {
               "optimization": false,
