@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
+import confetti from 'canvas-confetti';
 import { Contact } from '../../interfaces/contact.interface';
 import { ThemeService } from '../../services/theme.service';
 import { TranslocoModule } from '@jsverse/transloco';
@@ -36,9 +37,7 @@ export default class ContactPageComponent {
     },
   ];
 
-  async startSchoolPride() {
-    const { default: confetti } = await import('canvas-confetti');
-
+  startSchoolPride(): void {
     const duration = 1 * 1000;
     const animationEnd = Date.now() + duration;
 

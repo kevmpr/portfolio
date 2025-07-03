@@ -5,7 +5,7 @@
     class="flex flex-col items-center justify-center gap-10 w-[90%] md:w-3/4 xl:w-7/12 py-10"
   >
     <section
-      class="flex flex-col items-center justify-center gap-4 w-full lg:w-3/4 xl:w-3/4 min-h-20rem"
+      class="flex flex-col items-center justify-center gap-2 w-full lg:w-3/4 xl:w-[55%]"
     >
       <h1
         class="text-2xl lg:text-3xl font-bold text-center bg-gradient-to-r from-[#090979] to-[#0d92f4] bg-clip-text text-transparent dark:from-[#0d92f4] dark:to-[#ffffff]"
@@ -19,7 +19,7 @@
     </section>
 
     <div
-      class="flex flex-col items-center justify-center gap-2 w-full lg:w-3/4 xl:w-2/3"
+      class="flex flex-col items-center justify-center gap-2 w-full lg:w-3/4 xl:w-[55%]"
     >
       <select
         id="bar-select"
@@ -35,10 +35,10 @@
       </select>
 
       <div
-        class="hidden sm:flex border-b border-transparent dark:border-transparent w-full justify-center items-center pt-10"
+        class="hidden sm:flex border-b border-gray-200 dark:border-neutral-700 w-full justify-center items-center"
       >
         <nav
-          class="relative z-0 flex border border-gray-200 rounded-4xl overflow-hidden dark:border-neutral-700 justify-center items-center w-full bg-white/30 dark:bg-white/10"
+          class="relative z-0 flex border border-gray-200 rounded-xl overflow-hidden dark:border-neutral-700 justify-center items-center w-full bg-white/30 dark:bg-white/10"
           aria-label="Tabs"
           role="tablist"
           aria-orientation="horizontal"
@@ -118,26 +118,26 @@
         </nav>
       </div>
 
-      <div class="w-full min-h-full">
+      <div class="mt-3 w-full">
         @for(project of projectsPortfolio(); track $index){ @if($index === 0) {
         <div
           [id]="'bar-with-underline-' + ($index + 1)"
           role="tabpanel"
           aria-labelledby="bar-with-underline-item-1"
-          class="animate__animated animate__jackInTheBox animate__faster inset-0 transition-opacity duration-500"
+          class="animate__animated animate__jackInTheBox animate__faster"
         >
           <div
             class="flex flex-col gap-4 bg-white/30 dark:bg-white/10 backdrop-blur-2xl rounded-4xl w-full lg:w-full h-full justify-center"
           >
             <div
-              class="relative w-full h-full group overflow-hidden hover:cursor-pointer"
+              class="relative w-full h-[3/4] group overflow-hidden hover:cursor-pointer"
               (click)="toggleLinks(project.title)"
               #projectContainer
             >
               <img
                 [src]="project.routeImg"
                 [alt]="project.title"
-                class="w-full h-20rem lg:h-full object-cover rounded-t-4xl transition-opacity duration-300"
+                class="w-full h-[13rem] md:h-full object-cover rounded-t-4xl transition-opacity duration-300"
                 [ngClass]="{
                   'opacity-70': activeProjectId === project.title,
                   'group-hover:opacity-70': activeProjectId !== project.title
@@ -164,7 +164,7 @@
               </div>
             </div>
 
-            <div class="flex flex-col gap-4 h-3/4 p-6 py-2 justify-center">
+            <div class="flex flex-col gap-4 h-3/4 p-6 py-2">
               <section>
                 <h2
                   class="text-xl font-bold bg-gradient-to-r from-[#090979] to-[#0d92f4] bg-clip-text text-transparent dark:from-[#0d92f4] dark:to-[#ffffff]"
@@ -220,21 +220,21 @@
         <div
           [id]="'bar-with-underline-' + ($index + 1)"
           role="tabpanel"
-          class="hidden animate__animated animate__jackInTheBox animate__faster inset-0 transition-opacity duration-500"
+          class="hidden animate__animated animate__jackInTheBox animate__faster"
           aria-labelledby="bar-with-underline-item-2"
         >
           <div
-            class="flex flex-col gap-4 bg-white/30 backdrop-blur-2xl rounded-4xl w-full lg:w-full h-full dark:bg-white/10 justify-center"
+            class="flex flex-col gap-4 bg-white/30 backdrop-blur-2xl rounded-4xl w-full lg:w-full h-full dark:bg-white/10"
           >
             <div
-              class="relative w-full h-full group overflow-hidden hover:cursor-pointer"
+              class="relative w-full h-[3/4] group overflow-hidden hover:cursor-pointer"
               (click)="toggleLinks(project.title)"
               #projectContainer
             >
               <img
                 [src]="project.routeImg"
                 [alt]="project.title"
-                class="w-full object-cover h-20rem lg:h-full rounded-t-4xl transition-opacity duration-300"
+                class="w-full object-cover h-[13rem] md:h-full rounded-t-4xl transition-opacity duration-300"
                 loading="lazy"
                 [ngClass]="{
                   'opacity-70': activeProjectId === project.title,
@@ -262,7 +262,7 @@
               </div>
             </div>
 
-            <div class="flex flex-col gap-4 h-3/4 p-6 py-2 justify-center">
+            <div class="flex flex-col gap-4 h-3/4 p-6 py-2">
               <section>
                 <h2
                   class="text-xl font-bold bg-gradient-to-r from-[#090979] to-[#0d92f4] bg-clip-text text-transparent dark:from-[#0d92f4] dark:to-[#ffffff]"

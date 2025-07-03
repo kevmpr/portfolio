@@ -4,6 +4,7 @@ import {
   inject,
   signal,
 } from '@angular/core';
+import confetti from 'canvas-confetti';
 import { ThemeService } from '../../services/theme.service';
 import { TranslocoModule } from '@jsverse/transloco';
 import { LanguageService } from '../../services/language.service';
@@ -16,11 +17,11 @@ import { LanguageService } from '../../services/language.service';
 })
 export default class HomePageComponent {
   theme = inject(ThemeService);
-  language = inject(LanguageService);
+  language = inject(LanguageService)
   name: string = '<Kevin Maximiliano Palma Romero/>';
 
-  async startSnow() {
-    const { default: confetti } = await import('canvas-confetti');
+
+  startSnow() {
     const colors = signal<string[]>([]);
 
     if (this.theme.darkMode()) {

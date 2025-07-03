@@ -4,12 +4,12 @@ import {
   ElementRef,
   HostListener,
   inject,
-  OnInit,
   QueryList,
   signal,
   ViewChildren,
 } from '@angular/core';
 import { Project } from '../../interfaces/project.interface';
+import confetti from 'canvas-confetti';
 import { TranslocoModule } from '@jsverse/transloco';
 import { ThemeService } from '../../services/theme.service';
 import { NgClass } from '@angular/common';
@@ -28,15 +28,14 @@ export default class ProjectsPageComponent {
   @ViewChildren('projectContainer') projectRefs!: QueryList<ElementRef>;
 
   toggleLinks(projectId: string): void {
-    this.activeProjectId =
-      this.activeProjectId === projectId ? null : projectId;
+    this.activeProjectId = this.activeProjectId === projectId ? null : projectId;
   }
 
   @HostListener('document:click', ['$event'])
   handleClickOutside(event: MouseEvent): void {
     if (!this.projectRefs || this.projectRefs.length === 0) return;
 
-    const clickedInside = this.projectRefs.some((ref) =>
+    const clickedInside = this.projectRefs.some(ref =>
       ref.nativeElement.contains(event.target)
     );
     if (!clickedInside) {
@@ -321,9 +320,7 @@ export default class ProjectsPageComponent {
     this.projectFoodStore,
   ]);
 
-  async startConfetti() {
-    const { default: confetti } = await import('canvas-confetti');
-
+  startConfetti() {
     const duration = 3 * 1000; // 3 seconds
     const animationEnd = Date.now() + duration;
     const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
