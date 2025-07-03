@@ -2,6 +2,8 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 @import "animate.css";
+@import "preline/variants.css";
+
 
 body {
   padding: 0;

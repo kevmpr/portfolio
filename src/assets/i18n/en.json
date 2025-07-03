@@ -67,6 +67,7 @@
     },
     "list": {
       "inventoryManagement": {
+        "number": "N°1",
         "title": "Inventory Management",
         "rol": "Back End Developer",
         "interval": "April 2025",
@@ -78,6 +79,7 @@
         }
       },
       "dogGrooming": {
+        "number": "N°2",
         "title": "Dog Grooming",
         "rol": "Back End Developer",
         "interval": "January 2025",
@@ -89,6 +91,7 @@
         }
       },
       "bookFinder": {
+        "number": "N°3",
         "title": "Book Finder",
         "rol": "Back End Developer",
         "interval": "December 2024",
@@ -100,6 +103,7 @@
         }
       },
       "currencyConverter": {
+        "number": "N°4",
         "title": "Currency Converter",
         "rol": "Back End Developer",
         "interval": "October 2024",
@@ -111,6 +115,7 @@
         }
       },
       "textEncryptor": {
+        "number": "N°5",
         "title": "Text Encryptor",
         "rol": "Front End Developer",
         "interval": "August 2024",
@@ -122,6 +127,7 @@
         }
       },
       "foodStore": {
+        "number": "N°6",
         "title": "Food Store",
         "rol": "Front End Developer",
         "interval": "March 2024",

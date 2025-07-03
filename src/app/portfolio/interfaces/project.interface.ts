@@ -13,5 +13,7 @@ export interface Project {
 
 interface ProjectLink {
   url: string;
+  routeImg: string;
+  routeImgDark?: string;
   label: string;
 }

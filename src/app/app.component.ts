@@ -1,7 +1,6 @@
-import { Component, inject } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
-import { AvailableLanguages } from './portfolio/lang/transloco-config';
+import { Component } from '@angular/core';
+import { RouterOutlet, Router, Event, NavigationEnd } from '@angular/router';
+import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +9,15 @@ import { AvailableLanguages } from './portfolio/lang/transloco-config';
 })
 export class AppComponent {
   protected title = 'portfolio';
+
+  constructor(private router: Router) {
+  }
+
+  ngOnInit() {
+    this.router.events.subscribe((event: Event) => {
+      if (event instanceof NavigationEnd) {
+        setTimeout(() => window.HSStaticMethods.autoInit(), 100);
+      }
+    });
+  }
 }
