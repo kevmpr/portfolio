@@ -1,15 +1,48 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  HostListener,
+  inject,
+  QueryList,
+  signal,
+  ViewChildren,
+} from '@angular/core';
 import { Project } from '../../interfaces/project.interface';
 import confetti from 'canvas-confetti';
 import { TranslocoModule } from '@jsverse/transloco';
+import { ThemeService } from '../../services/theme.service';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-projects-page',
-  imports: [TranslocoModule],
+  imports: [TranslocoModule, NgClass],
   templateUrl: './projects-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class ProjectsPageComponent {
+  themeService = inject(ThemeService);
+
+  activeProjectId: string | null = null;
+
+  @ViewChildren('projectContainer') projectRefs!: QueryList<ElementRef>;
+
+  toggleLinks(projectId: string): void {
+    this.activeProjectId = this.activeProjectId === projectId ? null : projectId;
+  }
+
+  @HostListener('document:click', ['$event'])
+  handleClickOutside(event: MouseEvent): void {
+    if (!this.projectRefs || this.projectRefs.length === 0) return;
+
+    const clickedInside = this.projectRefs.some(ref =>
+      ref.nativeElement.contains(event.target)
+    );
+    if (!clickedInside) {
+      this.activeProjectId = null;
+    }
+  }
+
   projectInventoryManagement: Project = {
     key: 'inventoryManagement',
     title: 'title',
@@ -17,21 +50,20 @@ export default class ProjectsPageComponent {
     urls: [
       {
         url: 'https://github.com/kevmpr/inventory_management_app',
+        routeImg: 'assets/svg/github-light.svg',
+        routeImgDark: 'assets/svg/github-dark.svg',
         label: 'repository',
       },
       {
         url: 'https://www.linkedin.com/posts/kevin-m-palma-r_inventory-management-activity-7320111920328368129-xqm8?utm_source=share&utm_medium=member_desktop&rcm=ACoAADQyJ4QBoNuIcINL9k7qNgBaf-W5E-reiE8',
+        routeImg: 'assets/svg/post-light.svg',
+        routeImgDark: 'assets/svg/post-dark.svg',
         label: 'post',
       },
     ],
     rol: 'rol',
     date: 'interval',
-    description: [
-      'text1',
-      'text2',
-      'text3',
-      'text4',
-    ],
+    description: ['text1', 'text2', 'text3', 'text4'],
     tools: [
       {
         routeImg: 'assets/svg/hard-skills/spring.svg',
@@ -67,21 +99,20 @@ export default class ProjectsPageComponent {
     urls: [
       {
         url: 'https://github.com/kevmpr/dogGrooming',
+        routeImg: 'assets/svg/github-light.svg',
+        routeImgDark: 'assets/svg/github-dark.svg',
         label: 'repository',
       },
       {
         url: 'https://www.linkedin.com/posts/kevin-m-palma-r_java-mysql-programaciaejn-activity-7284639078170398720-bCV8?utm_source=share&utm_medium=member_desktop',
+        routeImg: 'assets/svg/post-light.svg',
+        routeImgDark: 'assets/svg/post-dark.svg',
         label: 'post',
       },
     ],
     rol: 'rol',
     date: 'interval',
-    description: [
-      'text1',
-      'text2',
-      'text3',
-      'text4',
-    ],
+    description: ['text1', 'text2', 'text3', 'text4'],
     tools: [
       {
         routeImg: 'assets/svg/hard-skills/java.svg',
@@ -109,21 +140,20 @@ export default class ProjectsPageComponent {
     urls: [
       {
         url: 'https://github.com/kevmpr/literAluraOne',
+        routeImg: 'assets/svg/github-light.svg',
+        routeImgDark: 'assets/svg/github-dark.svg',
         label: 'repository',
       },
       {
         url: 'https://www.linkedin.com/posts/kevin-m-palma-r_aluralatam-oraclenexteducation-java-activity-7277028539122528257-nEly?utm_source=share&utm_medium=member_desktop',
+        routeImg: 'assets/svg/post-light.svg',
+        routeImgDark: 'assets/svg/post-dark.svg',
         label: 'post',
       },
     ],
     rol: 'rol',
     date: 'interval',
-    description: [
-      'text1',
-      'text2',
-      'text3',
-      'text4',
-    ],
+    description: ['text1', 'text2', 'text3', 'text4'],
     tools: [
       {
         routeImg: 'assets/svg/hard-skills/spring.svg',
@@ -155,21 +185,20 @@ export default class ProjectsPageComponent {
     urls: [
       {
         url: 'https://github.com/kevmpr/conversorMonedaOne',
+        routeImg: 'assets/svg/github-light.svg',
+        routeImgDark: 'assets/svg/github-dark.svg',
         label: 'repository',
       },
       {
         url: 'https://www.linkedin.com/posts/kevin-m-palma-r_aluralatam-oraclenexteducation-activity-7253125316636790784-ta60?utm_source=share&utm_medium=member_desktop',
+        routeImg: 'assets/svg/post-light.svg',
+        routeImgDark: 'assets/svg/post-dark.svg',
         label: 'post',
       },
     ],
     rol: 'rol',
     date: 'interval',
-    description: [
-      'text1',
-      'text2',
-      'text3',
-      'text4',
-    ],
+    description: ['text1', 'text2', 'text3', 'text4'],
     tools: [
       {
         routeImg: 'assets/svg/hard-skills/java.svg',
@@ -197,25 +226,26 @@ export default class ProjectsPageComponent {
     urls: [
       {
         url: 'https://kevmpr.github.io/encriptadorONE/index.html',
+        routeImg: 'assets/svg/web-light.svg',
+        routeImgDark: 'assets/svg/web-dark.svg',
         label: 'website',
       },
       {
         url: 'https://github.com/kevmpr/encriptadorONE',
+        routeImg: 'assets/svg/github-light.svg',
+        routeImgDark: 'assets/svg/github-dark.svg',
         label: 'repository',
       },
       {
         url: 'https://www.linkedin.com/posts/kevin-m-palma-r_aluralatam-oraclenexteducation-activity-7225571404170035201-Vyls?utm_source=share&utm_medium=member_desktop',
+        routeImg: 'assets/svg/post-light.svg',
+        routeImgDark: 'assets/svg/post-dark.svg',
         label: 'post',
       },
     ],
     rol: 'rol',
     date: 'interval',
-    description: [
-      'text1',
-      'text2',
-      'text3',
-      'text4',
-    ],
+    description: ['text1', 'text2', 'text3', 'text4'],
     tools: [
       {
         routeImg: 'assets/svg/hard-skills/javascript.svg',
@@ -247,19 +277,20 @@ export default class ProjectsPageComponent {
     urls: [
       {
         url: 'https://kevmpr.github.io/almacen_kelma/',
+        routeImg: 'assets/svg/web-light.svg',
+        routeImgDark: 'assets/svg/web-dark.svg',
         label: 'website',
       },
       {
         url: 'https://github.com/kevmpr/almacen_kelma',
+        routeImg: 'assets/svg/github-light.svg',
+        routeImgDark: 'assets/svg/github-dark.svg',
         label: 'repository',
       },
     ],
     rol: 'rol',
     date: 'interval',
-    description: [
-      'text1',
-      'text2',
-    ],
+    description: ['text1', 'text2'],
     tools: [
       {
         routeImg: 'assets/svg/hard-skills/css.svg',
