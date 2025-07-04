@@ -9,7 +9,6 @@ import {
   ViewChildren,
 } from '@angular/core';
 import { Project } from '../../interfaces/project.interface';
-import confetti from 'canvas-confetti';
 import { TranslocoModule } from '@jsverse/transloco';
 import { ThemeService } from '../../services/theme.service';
 import { NgClass } from '@angular/common';
@@ -22,24 +21,49 @@ import { NgClass } from '@angular/common';
 })
 export default class ProjectsPageComponent {
   themeService = inject(ThemeService);
+  selectedTabIndex = 0;
+  activeIndex = signal(0);
 
   activeProjectId: string | null = null;
 
+  hoveredProjectId: string | null = null;
+
+  isActive(index: number): boolean {
+    const tabId = `bar-with-underline-${index + 1}`;
+    const activeElement = document.querySelector(
+      '[role="tab"][aria-selected="true"]'
+    );
+    return activeElement?.getAttribute('data-hs-tab') === `#${tabId}`;
+  }
+
   @ViewChildren('projectContainer') projectRefs!: QueryList<ElementRef>;
 
+  @ViewChildren('linksContainer') linksContainers!: QueryList<ElementRef>;
+
   toggleLinks(projectId: string): void {
-    this.activeProjectId = this.activeProjectId === projectId ? null : projectId;
+    this.activeProjectId =
+      this.activeProjectId === projectId ? null : projectId;
   }
 
   @HostListener('document:click', ['$event'])
   handleClickOutside(event: MouseEvent): void {
     if (!this.projectRefs || this.projectRefs.length === 0) return;
 
-    const clickedInside = this.projectRefs.some(ref =>
+    const clickedInside = this.projectRefs.some((ref) =>
       ref.nativeElement.contains(event.target)
     );
     if (!clickedInside) {
       this.activeProjectId = null;
+    }
+  }
+
+  handleLinkClick(event: MouseEvent, projectId: string): void {
+    const isAlreadyActive = this.activeProjectId === projectId;
+
+    if (!isAlreadyActive) {
+      event.preventDefault();
+      event.stopPropagation();
+      this.activeProjectId = projectId;
     }
   }
 
@@ -320,7 +344,9 @@ export default class ProjectsPageComponent {
     this.projectFoodStore,
   ]);
 
-  startConfetti() {
+  async startConfetti() {
+    const { default: confetti } = await import('canvas-confetti');
+
     const duration = 3 * 1000; // 3 seconds
     const animationEnd = Date.now() + duration;
     const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
