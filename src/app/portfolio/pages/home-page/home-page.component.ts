@@ -2,6 +2,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   inject,
+  OnInit,
   signal,
 } from '@angular/core';
 import { ThemeService } from '../../services/theme.service';
@@ -14,11 +15,18 @@ import { LanguageService } from '../../services/language.service';
   templateUrl: './home-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export default class HomePageComponent {
+export default class HomePageComponent implements OnInit {
   theme = inject(ThemeService);
-  language = inject(LanguageService)
+  language = inject(LanguageService);
   name: string = '<Kevin Maximiliano Palma Romero/>';
 
+  ngOnInit(): void {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'image';
+    link.href = 'assets/img/profileImg.webp';
+    document.head.appendChild(link);
+  }
 
   async startSnow(): Promise<void> {
     const { default: confetti } = await import('canvas-confetti');

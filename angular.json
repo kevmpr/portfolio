@@ -31,8 +31,7 @@
                 "output": "."
               }
             ],
-            "styles": ["src/styles.css"],
-            "scripts": ["node_modules/preline/dist/index.js"]
+            "styles": ["src/styles.css"]
           },
           "configurations": {
             "production": {
