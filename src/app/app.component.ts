@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet, Router, Event, NavigationEnd } from '@angular/router';
 import { TranslocoModule } from '@jsverse/transloco';
 
@@ -7,7 +7,7 @@ import { TranslocoModule } from '@jsverse/transloco';
   imports: [RouterOutlet, TranslocoModule],
   templateUrl: './app.component.html',
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   protected title = 'portfolio';
 
   constructor(private router: Router) {

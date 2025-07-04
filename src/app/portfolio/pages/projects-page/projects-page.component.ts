@@ -20,7 +20,7 @@ import { NgClass } from '@angular/common';
   templateUrl: './projects-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export default class ProjectsPageComponent {
+export default class ProjectsPageComponent implements AfterViewInit {
   themeService = inject(ThemeService);
   selectedTabIndex = 0;
   activeIndex = signal(0);
@@ -35,6 +35,10 @@ export default class ProjectsPageComponent {
       '[role="tab"][aria-selected="true"]'
     );
     return activeElement?.getAttribute('data-hs-tab') === `#${tabId}`;
+  }
+
+  ngAfterViewInit(): void {
+    (window as any).HSStaticMethods?.autoInit?.();
   }
 
   @ViewChildren('projectContainer') projectRefs!: QueryList<ElementRef>;
