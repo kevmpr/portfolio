@@ -21,9 +21,9 @@
       "title": "Driven by Code, Powered by Curiosity",
       "location": "Ciudad Autónoma de Buenos Aires, Argentina",
       "description": {
-        "text1": "💡 I'm a passionate Full Stack Developer and Cloud Engineer Trainee from Argentina, currently pursuing an Advanced Technical Degree in Software Development.",
+        "text1": "💡 I'm a passionate Full Stack Developer and Cloud Engineer Trainee from Argentina, currently pursuing an Advanced Technician in Software Development.",
 
-        "text2": "💻 At just 22 years old, I bring a unique blend of technical proficiency, adaptability, and genuine curiosity that drives me to constantly push my limits and deliver meaningful solutions.",
+        "text2": "💻 I bring a unique blend of technical proficiency, adaptability, and genuine curiosity that drives me to constantly push my limits and deliver meaningful solutions.",
 
         "text3": "🌱 I thrive in dynamic environments where learning and collaboration are key. My current focus is on cloud technologies—especially Microsoft Azure—where I'm gaining hands-on experience with scalable and secure architectures. On the development side, I work confidently across the full stack: from building robust back-end services with Java, Spring Boot, Node.js, and Express.js, to crafting responsive front-end interfaces using Angular, TypeScript, and Tailwind CSS.",
 
@@ -36,8 +36,8 @@
     },
     "education": {
       "title": "Education",
-      "location": "Instituto de Formación Técnica Superior N° 11",
-      "rol": "Advanced Technical Degree in Software Development",
+      "location": "Instituto de Formación Técnica Superior N°11",
+      "rol": "Advanced Technician in Software Development",
       "interval": "Aug 2023 - Nov 2025",
       "description": {
         "text1": "🎓 I will soon begin the third year, first semester of the Advanced Technical Degree in Software Development, a rigorous programme focused on real-world application of programming, systems analysis, and cloud-based solutions.",
