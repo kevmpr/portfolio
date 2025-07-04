@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { SkillOption } from '../../interfaces/skill.interface';
-import confetti from 'canvas-confetti';
 import { ThemeService } from '../../services/theme.service';
 import { TranslocoModule } from '@jsverse/transloco';
 
@@ -155,7 +154,9 @@ export default class SkillsPageComponent {
     },
   ];
 
-  launchConfetti(): void {
+  async launchConfetti(): Promise<void> {
+    const { default: confetti } = await import('canvas-confetti');
+
     confetti({
       particleCount: 100,
       spread: 60,

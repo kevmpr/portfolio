@@ -8,8 +8,6 @@ import { PortfolioMenuComponent } from '../../components/portfolio-menu/portfoli
 import { RouterOutlet } from '@angular/router';
 import { MenuService } from '../../services/menu.service';
 
-declare var FinisherHeader: any;
-
 @Component({
   selector: 'app-portfolio-page',
   imports: [RouterOutlet, PortfolioMenuComponent],
@@ -22,11 +20,9 @@ export default class PortfolioPageComponent implements AfterViewInit {
     '(prefers-reduced-motion: reduce)'
   ).matches;
   private animationTimeoutId: ReturnType<typeof setTimeout> | null = null;
-  private finisherInstance: any = null; // 👈 Guardamos la instancia activa
+  private finisherInstance: any = null;
 
   ngAfterViewInit(): void {
-    this.patchFinisherHeaderIfNeeded(); // 👈 Agrega esto
-
     this.initFinisherHeader();
 
     const observer = new MutationObserver(() => {
@@ -40,8 +36,13 @@ export default class PortfolioPageComponent implements AfterViewInit {
   }
 
   private patchFinisherHeaderIfNeeded(): void {
-    if (typeof FinisherHeader?.prototype?.destroy !== 'function') {
-      // Agrega método destroy()
+    const FinisherHeader = (window as any).FinisherHeader;
+    if (!FinisherHeader) {
+      console.warn('⚠️ FinisherHeader is not yet loaded.');
+      return;
+    }
+
+    if (typeof FinisherHeader.prototype.destroy !== 'function') {
       FinisherHeader.prototype.destroy = function () {
         if (this.c && this.c.parentNode) {
           this.c.parentNode.removeChild(this.c);
@@ -49,8 +50,6 @@ export default class PortfolioPageComponent implements AfterViewInit {
         this.__shouldStop = true;
       };
 
-      // Sobrescribe el método 'an' (animación)
-      const originalAnimate = FinisherHeader.prototype.an;
       FinisherHeader.prototype.an = function () {
         if (this.__shouldStop) return;
         requestAnimationFrame(this.an.bind(this));
@@ -86,8 +85,68 @@ export default class PortfolioPageComponent implements AfterViewInit {
     }, 3000);
   }
 
-  private initFinisherHeader(): void {
+  private loadFinisherHeaderScript(): Promise<void> {
+    return new Promise((resolve, reject) => {
+      if ((window as any).FinisherHeader) {
+        resolve();
+        return;
+      }
+
+      const supportsES6 = (() => {
+        try {
+          new Function('(class Test {})');
+          return true;
+        } catch {
+          return false;
+        }
+      })();
+
+      const script = document.createElement('script');
+      if (supportsES6) {
+        script.type = 'module';
+        script.src = 'assets/animations/finisher-header.es6.js';
+      } else {
+        script.src = 'assets/animations/finisher-header.es5.min.js';
+        script.defer = true;
+      }
+
+      script.onload = () => {
+        // Wait until window.FinisherHeader is defined (with a retry loop)
+        const checkInterval = setInterval(() => {
+          if ((window as any).FinisherHeader) {
+            clearInterval(checkInterval);
+            resolve();
+          }
+        }, 50);
+
+        // Optional timeout to reject if it never appears
+        setTimeout(() => {
+          clearInterval(checkInterval);
+          if (!(window as any).FinisherHeader) {
+            reject(
+              new Error('FinisherHeader did not load after script onload')
+            );
+          }
+        }, 3000);
+      };
+
+      script.onerror = () =>
+        reject(new Error('Failed to load FinisherHeader script'));
+
+      document.head.appendChild(script);
+    });
+  }
+
+  private async initFinisherHeader(): Promise<void> {
     if (this.prefersReducedMotion) return;
+
+    try {
+      await this.loadFinisherHeaderScript();
+      this.patchFinisherHeaderIfNeeded();
+    } catch (err) {
+      console.error(err);
+      return;
+    }
 
     const isDarkMode = document.documentElement.classList.contains('dark');
 
@@ -132,7 +191,8 @@ export default class PortfolioPageComponent implements AfterViewInit {
         };
 
     setTimeout(() => {
-      new FinisherHeader(config);
+      const Constructor = (window as any).FinisherHeader;
+      this.finisherInstance = new Constructor(config);
     }, 100);
   }
 }
