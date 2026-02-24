@@ -92,23 +92,11 @@ const t = useTranslations(lang);
         const encoded = card.getAttribute('data-value');
         if (!encoded || !type) return;
         const decoded = atob(encoded);
-        const revealEl = card.querySelector('.contact-reveal');
 
         if (type === 'email') {
           window.location.href = 'mailto:' + decoded;
         } else {
           window.open(decoded, '_blank', 'noopener,noreferrer');
-        }
-
-        if (revealEl) {
-          if (type === 'email') {
-            revealEl.textContent = decoded;
-          } else if (type === 'linkedin') {
-            revealEl.textContent = 'kevin-m-palma-r';
-          } else if (type === 'github') {
-            revealEl.textContent = 'kevmpr';
-          }
-          revealEl.classList.add('underline');
         }
       };
       card.addEventListener('click', handler);
