@@ -1,0 +1,72 @@
+---
+import ProjectCard from './ProjectCard.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const projects = [
+  {
+    titleKey: 'project1.title' as const,
+    descKey: 'project1.description' as const,
+    roleKey: 'project1.role' as const,
+    tech: ['Astro', 'Tailwind CSS', 'TypeScript', 'i18n'],
+    github: 'https://github.com/kevmpr',
+    demo: '#',
+  },
+  {
+    titleKey: 'project2.title' as const,
+    descKey: 'project2.description' as const,
+    roleKey: 'project2.role' as const,
+    tech: ['Azure', 'PowerShell', 'ARM Templates', 'CAF'],
+    github: 'https://github.com/kevmpr',
+    linkedin: 'https://www.linkedin.com/in/kevin-m-palma-r/',
+  },
+  {
+    titleKey: 'project3.title' as const,
+    descKey: 'project3.description' as const,
+    roleKey: 'project3.role' as const,
+    tech: ['Azure Migrate', 'VNets', 'NSG', 'RBAC'],
+    linkedin: 'https://www.linkedin.com/in/kevin-m-palma-r/',
+  },
+];
+---
+
+<section id="projects" class="relative py-20 lg:py-28">
+  <!-- Background decoration -->
+  <div class="absolute inset-0 pointer-events-none overflow-hidden">
+    <div class="absolute top-0 right-0 w-72 h-72 bg-primary-400/10 dark:bg-primary-500/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-accent-400/10 dark:bg-accent-500/5 rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section header -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl sm:text-5xl font-bold mb-4">
+        <span class="bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent">
+          {t('projects.title')}
+        </span>
+      </h2>
+    </div>
+
+    <!-- Projects grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {projects.map((project) => (
+        <ProjectCard
+          title={t(project.titleKey)}
+          description={t(project.descKey)}
+          role={t(project.roleKey)}
+          tech={project.tech}
+          github={project.github}
+          demo={project.demo}
+          linkedin={project.linkedin}
+          viewCode={t('projects.viewCode')}
+          viewDemo={t('projects.viewDemo')}
+          viewLinkedIn={t('projects.viewLinkedIn')}
+          roleLabel={t('projects.role')}
+          techLabel={t('projects.tech')}
+        />
+      ))}
+    </div>
+  </div>
+</section>
