@@ -84,7 +84,7 @@ const t = useTranslations(lang);
 </section>
 
 <script>
-  document.addEventListener('astro:page-load', () => {
+  document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('[data-contact-type]');
     cards.forEach(card => {
       const handler = () => {
@@ -100,7 +100,6 @@ const t = useTranslations(lang);
           window.open(decoded, '_blank', 'noopener,noreferrer');
         }
 
-        // Show the value briefly after click
         if (revealEl) {
           if (type === 'email') {
             revealEl.textContent = decoded;
