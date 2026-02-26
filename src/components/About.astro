@@ -15,7 +15,7 @@ const certifications = [
 <section id="about" class="relative py-20 lg:py-28">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Section header -->
-    <div class="text-center mb-16">
+    <div class="text-center mb-16 reveal">
       <h2 class="text-4xl sm:text-5xl font-bold mb-4">
         <span class="bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent">
           {t('about.title')}
@@ -27,7 +27,7 @@ const certifications = [
     </div>
 
     <!-- Certifications -->
-    <div class="mb-16">
+    <div class="mb-16 reveal">
       <h3 class="text-2xl font-bold text-center mb-8 text-slate-700 dark:text-slate-200">
         {t('about.certifications')}
       </h3>
@@ -63,7 +63,7 @@ const certifications = [
     <div class="grid md:grid-cols-2 gap-8">
 
       <!-- Education Timeline -->
-      <div>
+      <div class="reveal">
         <h3 class="text-2xl font-bold mb-8 flex items-center gap-3 text-slate-700 dark:text-slate-200">
           <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center">
             <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -80,11 +80,11 @@ const certifications = [
           <div class="absolute left-[11px] top-2 bottom-2 w-0.5 bg-gradient-to-b from-primary-500 to-primary-300 dark:from-primary-400 dark:to-primary-700"></div>
 
           <!-- UADE (newest - top) -->
-          <div class="relative mb-8 last:mb-0">
+          <div class="relative mb-8 last:mb-0 reveal">
             <!-- Timeline dot -->
             <div class="absolute -left-8 top-1 w-6 h-6 rounded-full bg-gradient-to-br from-primary-500 to-primary-700 border-4 border-white dark:border-slate-900 shadow-md z-10"></div>
             <div class="group/card relative p-[1px] rounded-2xl bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 hover:from-primary-400 hover:to-accent-400 transition-all duration-500">
-              <div class="p-5 rounded-2xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-md shadow-lg hover:shadow-xl transition-all duration-300">
+              <div class="p-5 rounded-2xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-md shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
                 <div class="flex items-start justify-between mb-2">
                   <h4 class="font-bold text-slate-800 dark:text-slate-100">{t('edu.uade.title')}</h4>
                   <span class="px-2 py-0.5 text-xs rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 font-medium whitespace-nowrap ml-2">
@@ -99,11 +99,11 @@ const certifications = [
           </div>
 
           <!-- IFTS N°11 (older - bottom) -->
-          <div class="relative">
+          <div class="relative reveal" style="--reveal-delay: 150ms">
             <!-- Timeline dot -->
             <div class="absolute -left-8 top-1 w-6 h-6 rounded-full bg-gradient-to-br from-primary-400 to-primary-600 border-4 border-white dark:border-slate-900 shadow-md z-10"></div>
             <div class="group/card relative p-[1px] rounded-2xl bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 hover:from-primary-400 hover:to-accent-400 transition-all duration-500">
-              <div class="p-5 rounded-2xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-md shadow-lg hover:shadow-xl transition-all duration-300">
+              <div class="p-5 rounded-2xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-md shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
                 <div class="flex items-start justify-between mb-2">
                   <h4 class="font-bold text-slate-800 dark:text-slate-100">{t('edu.ifts.title')}</h4>
                   <span class="px-2 py-0.5 text-xs rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 font-medium whitespace-nowrap ml-2">
@@ -128,7 +128,7 @@ const certifications = [
       </div>
 
       <!-- Experience Timeline -->
-      <div>
+      <div class="reveal" style="--reveal-delay: 200ms">
         <h3 class="text-2xl font-bold mb-8 flex items-center gap-3 text-slate-700 dark:text-slate-200">
           <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-500 to-primary-600 flex items-center justify-center">
             <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -143,11 +143,11 @@ const certifications = [
           <div class="absolute left-[11px] top-2 bottom-2 w-0.5 bg-gradient-to-b from-accent-500 to-primary-400 dark:from-accent-400 dark:to-primary-700"></div>
 
           <!-- Azure Cloud Engineer (newest - top) -->
-          <div class="relative mb-8 last:mb-0">
+          <div class="relative mb-8 last:mb-0 reveal">
             <!-- Timeline dot -->
             <div class="absolute -left-8 top-1 w-6 h-6 rounded-full bg-gradient-to-br from-accent-500 to-primary-600 border-4 border-white dark:border-slate-900 shadow-md z-10"></div>
             <div class="group/card relative p-[1px] rounded-2xl bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 hover:from-primary-400 hover:to-accent-400 transition-all duration-500">
-              <div class="p-5 rounded-2xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-md shadow-lg hover:shadow-xl transition-all duration-300">
+              <div class="p-5 rounded-2xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-md shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
                 <div class="flex items-start justify-between mb-2">
                   <h4 class="font-bold text-slate-800 dark:text-slate-100">{t('exp.azure.title')}</h4>
                   <span class="px-2 py-0.5 text-xs rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 font-medium whitespace-nowrap ml-2">
@@ -168,11 +168,11 @@ const certifications = [
           </div>
 
           <!-- Cloud Engineer (older - bottom) -->
-          <div class="relative">
+          <div class="relative reveal" style="--reveal-delay: 150ms">
             <!-- Timeline dot -->
             <div class="absolute -left-8 top-1 w-6 h-6 rounded-full bg-gradient-to-br from-primary-400 to-accent-400 border-4 border-white dark:border-slate-900 shadow-md z-10"></div>
             <div class="group/card relative p-[1px] rounded-2xl bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 hover:from-primary-400 hover:to-accent-400 transition-all duration-500">
-              <div class="p-5 rounded-2xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-md shadow-lg hover:shadow-xl transition-all duration-300">
+              <div class="p-5 rounded-2xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-md shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
                 <h4 class="font-bold text-slate-800 dark:text-slate-100 mb-2">{t('exp.cloud.title')}</h4>
                 <p class="text-primary-600 dark:text-primary-400 font-medium text-sm">{t('exp.cloud.company')}</p>
                 <p class="text-slate-400 dark:text-slate-500 text-xs mt-1">
