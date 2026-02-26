@@ -2,12 +2,15 @@
 
 Personal portfolio website for **Kevin Maximiliano Palma Romero**, Azure Cloud Engineer at Readymind. Built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
 
+🔗 **Live:** [kevin-m-palma-r.vercel.app](https://kevin-m-palma-r.vercel.app/)
+
 ## ✨ Features
 
 - **🌐 Internationalization (i18n)** — Full support for English and Spanish
 - **🌙 Dark Mode** — Toggle between light and dark themes
 - **🎨 Glassmorphism Design** — Modern, premium UI with backdrop blur and gradients
 - **📱 Fully Responsive** — Optimized for mobile, tablet, and desktop
+- **✨ Scroll-Reveal Animations** — Sections and cards fade in with staggered delays on scroll
 - **📄 CV Download** — Language-aware resume download (ES/EN)
 - **🔒 Contact Privacy** — Email, LinkedIn, and GitHub are hidden from bots and only revealed on click
 - **📜 Timeline Layout** — Education and experience displayed as vertical timelines
@@ -18,8 +21,8 @@ Personal portfolio website for **Kevin Maximiliano Palma Romero**, Azure Cloud E
 |---|---|
 | **Hero** | Introduction with role badge, bio, and CTA buttons |
 | **About** | Certifications (linked to Microsoft Learn), education timeline, experience timeline |
-| **Projects** | Project cards with role, tech stack, and links |
-| **Skills** | Technical skills, soft skills, and languages — all in categorized card format |
+| **Cloud Solutions** | 5 case study cards with Challenge/Solution narrative format and distinct icons |
+| **Skills** | Technical skills, soft skills, and languages — categorized cards with gradient hover effects |
 | **Contact** | Privacy-first contact cards (click to reveal) |
 
 ## 🛠️ Tech Stack
@@ -27,7 +30,7 @@ Personal portfolio website for **Kevin Maximiliano Palma Romero**, Azure Cloud E
 - **Framework:** [Astro](https://astro.build/) v5
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/) v3
 - **Language:** TypeScript
-- **Deployment:** Static site (SSG)
+- **Deployment:** [Vercel](https://vercel.com/)
 
 ## 🏗️ Project Structure
 
@@ -41,7 +44,8 @@ Personal portfolio website for **Kevin Maximiliano Palma Romero**, Azure Cloud E
 │   ├── components/
 │   │   ├── Hero.astro
 │   │   ├── About.astro
-│   │   ├── Projects.astro
+│   │   ├── Projects.astro          # Cloud Solutions section
+│   │   ├── CaseStudyCard.astro     # Narrative case study card
 │   │   ├── Skills.astro
 │   │   ├── Contact.astro
 │   │   ├── Navbar.astro
@@ -51,7 +55,7 @@ Personal portfolio website for **Kevin Maximiliano Palma Romero**, Azure Cloud E
 │   ├── i18n/
 │   │   └── utils.ts        # Translation strings (ES/EN)
 │   ├── layouts/
-│   │   └── Layout.astro
+│   │   └── Layout.astro     # Global layout + scroll-reveal system
 │   └── pages/
 │       ├── es/index.astro   # Spanish page
 │       ├── en/index.astro   # English page
