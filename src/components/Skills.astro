@@ -13,7 +13,7 @@ const technicalSkills = [
   {
     category: 'Networking & Security',
     icon: '🔒',
-    skills: ['Azure Networking', 'AZ-700', 'RBAC', 'Azure Advisor', 'Azure Resource Graph', 'FinOps'],
+    skills: ['Azure Networking', 'RBAC', 'Azure Advisor', 'Azure Resource Graph', 'FinOps'],
   },
   {
     category: 'Automation & Tools',
@@ -65,7 +65,7 @@ const languageCategory = {
 <section id="skills" class="relative py-20 lg:py-28">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Section header -->
-    <div class="text-center mb-16">
+    <div class="text-center mb-16 reveal">
       <h2 class="text-4xl sm:text-5xl font-bold mb-4">
         <span class="bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent">
           {t('skills.title')}
@@ -75,22 +75,26 @@ const languageCategory = {
 
     <!-- Technical Skills -->
     <div class="mb-12">
-      <h3 class="text-2xl font-bold mb-8 text-center text-slate-700 dark:text-slate-200">
+      <h3 class="text-2xl font-bold mb-8 text-center text-slate-700 dark:text-slate-200 reveal">
         {t('skills.technical')}
       </h3>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {technicalSkills.map((category) => (
-          <div class="p-5 rounded-2xl bg-white/60 dark:bg-slate-800/60 backdrop-blur-md border border-slate-200/50 dark:border-slate-700/50 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-            <div class="flex items-center gap-3 mb-4">
-              <span class="text-2xl">{category.icon}</span>
-              <h4 class="font-bold text-slate-800 dark:text-slate-100 text-sm">{category.category}</h4>
-            </div>
-            <div class="flex flex-wrap gap-1.5">
-              {category.skills.map((skill) => (
-                <span class="px-2.5 py-1 text-xs font-medium rounded-lg bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 border border-primary-100 dark:border-primary-800/30 hover:bg-primary-100 dark:hover:bg-primary-900/40 transition-colors">
-                  {skill}
-                </span>
-              ))}
+        {technicalSkills.map((category, i) => (
+          <div class="reveal h-full" style={`--reveal-delay: ${i * 100}ms`}>
+            <div class="skill-card group relative p-[1px] rounded-2xl bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 hover:from-primary-400 hover:to-accent-400 transition-all duration-500 h-full">
+              <div class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md rounded-2xl p-5 h-full hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-primary-500/10 dark:hover:shadow-primary-400/10">
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="text-2xl">{category.icon}</span>
+                  <h4 class="font-bold text-slate-800 dark:text-slate-100 text-sm">{category.category}</h4>
+                </div>
+                <div class="flex flex-wrap gap-1.5">
+                  {category.skills.map((skill) => (
+                    <span class="px-2.5 py-1 text-xs font-medium rounded-lg bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 border border-primary-100 dark:border-primary-800/30 hover:bg-primary-100 dark:hover:bg-primary-900/40 transition-colors">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         ))}
@@ -99,22 +103,26 @@ const languageCategory = {
 
     <!-- Soft Skills -->
     <div class="mb-12">
-      <h3 class="text-2xl font-bold mb-8 text-center text-slate-700 dark:text-slate-200">
+      <h3 class="text-2xl font-bold mb-8 text-center text-slate-700 dark:text-slate-200 reveal">
         {t('skills.soft')}
       </h3>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {softSkillCategories.map((cat) => (
-          <div class="p-5 rounded-2xl bg-white/60 dark:bg-slate-800/60 backdrop-blur-md border border-slate-200/50 dark:border-slate-700/50 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-            <div class="flex items-center gap-3 mb-4">
-              <span class="text-2xl">{cat.icon}</span>
-              <h4 class="font-bold text-slate-800 dark:text-slate-100 text-sm">{t(cat.categoryKey)}</h4>
-            </div>
-            <div class="flex flex-wrap gap-1.5">
-              {cat.skills.map((skillKey) => (
-                <span class="px-2.5 py-1 text-xs font-medium rounded-lg bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 border border-primary-100 dark:border-primary-800/30 hover:bg-primary-100 dark:hover:bg-primary-900/40 transition-colors">
-                  {t(skillKey)}
-                </span>
-              ))}
+        {softSkillCategories.map((cat, i) => (
+          <div class="reveal h-full" style={`--reveal-delay: ${i * 100}ms`}>
+            <div class="skill-card group relative p-[1px] rounded-2xl bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 hover:from-primary-400 hover:to-accent-400 transition-all duration-500 h-full">
+              <div class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md rounded-2xl p-5 h-full hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-primary-500/10 dark:hover:shadow-primary-400/10">
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="text-2xl">{cat.icon}</span>
+                  <h4 class="font-bold text-slate-800 dark:text-slate-100 text-sm">{t(cat.categoryKey)}</h4>
+                </div>
+                <div class="flex flex-wrap gap-1.5">
+                  {cat.skills.map((skillKey) => (
+                    <span class="px-2.5 py-1 text-xs font-medium rounded-lg bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 border border-primary-100 dark:border-primary-800/30 hover:bg-primary-100 dark:hover:bg-primary-900/40 transition-colors">
+                      {t(skillKey)}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         ))}
@@ -123,21 +131,25 @@ const languageCategory = {
 
     <!-- Languages -->
     <div>
-      <h3 class="text-2xl font-bold mb-8 text-center text-slate-700 dark:text-slate-200">
+      <h3 class="text-2xl font-bold mb-8 text-center text-slate-700 dark:text-slate-200 reveal">
         {t('skills.languages')}
       </h3>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        <div class="p-5 rounded-2xl bg-white/60 dark:bg-slate-800/60 backdrop-blur-md border border-slate-200/50 dark:border-slate-700/50 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-          <div class="flex items-center gap-3 mb-4">
-            <span class="text-2xl">{languageCategory.icon}</span>
-            <h4 class="font-bold text-slate-800 dark:text-slate-100 text-sm">{t(languageCategory.categoryKey)}</h4>
-          </div>
-          <div class="flex flex-wrap gap-1.5">
-            {languageCategory.skills.map((skillKey) => (
-              <span class="px-2.5 py-1 text-xs font-medium rounded-lg bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 border border-primary-100 dark:border-primary-800/30 hover:bg-primary-100 dark:hover:bg-primary-900/40 transition-colors">
-                {t(skillKey)}
-              </span>
-            ))}
+        <div class="reveal">
+          <div class="skill-card group relative p-[1px] rounded-2xl bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 hover:from-primary-400 hover:to-accent-400 transition-all duration-500">
+            <div class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md rounded-2xl p-5 h-full hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-primary-500/10 dark:hover:shadow-primary-400/10">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="text-2xl">{languageCategory.icon}</span>
+                <h4 class="font-bold text-slate-800 dark:text-slate-100 text-sm">{t(languageCategory.categoryKey)}</h4>
+              </div>
+              <div class="flex flex-wrap gap-1.5">
+                {languageCategory.skills.map((skillKey) => (
+                  <span class="px-2.5 py-1 text-xs font-medium rounded-lg bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 border border-primary-100 dark:border-primary-800/30 hover:bg-primary-100 dark:hover:bg-primary-900/40 transition-colors">
+                    {t(skillKey)}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>

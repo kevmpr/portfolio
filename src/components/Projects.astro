@@ -1,33 +1,45 @@
 ---
-import ProjectCard from './ProjectCard.astro';
+import CaseStudyCard from './CaseStudyCard.astro';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const projects = [
+const caseStudies = [
   {
-    titleKey: 'project1.title' as const,
-    descKey: 'project1.description' as const,
-    roleKey: 'project1.role' as const,
-    tech: ['Astro', 'Tailwind CSS', 'TypeScript', 'i18n'],
-    github: 'https://github.com/kevmpr',
-    demo: '#',
+    titleKey: 'case1.title' as const,
+    challengeKey: 'case1.challenge' as const,
+    solutionKey: 'case1.solution' as const,
+    tech: ['Azure RBAC', 'PowerShell'],
+    icon: 'shield',
   },
   {
-    titleKey: 'project2.title' as const,
-    descKey: 'project2.description' as const,
-    roleKey: 'project2.role' as const,
-    tech: ['Azure', 'PowerShell', 'ARM Templates', 'CAF'],
-    github: 'https://github.com/kevmpr',
-    linkedin: 'https://www.linkedin.com/in/kevin-m-palma-r/',
+    titleKey: 'case2.title' as const,
+    challengeKey: 'case2.challenge' as const,
+    solutionKey: 'case2.solution' as const,
+    tech: ['Azure Resource Graph', 'Cloudockit', 'Governance'],
+    icon: 'search',
   },
   {
-    titleKey: 'project3.title' as const,
-    descKey: 'project3.description' as const,
-    roleKey: 'project3.role' as const,
-    tech: ['Azure Migrate', 'VNets', 'NSG', 'RBAC'],
-    linkedin: 'https://www.linkedin.com/in/kevin-m-palma-r/',
+    titleKey: 'case3.title' as const,
+    challengeKey: 'case3.challenge' as const,
+    solutionKey: 'case3.solution' as const,
+    tech: ['Azure Backup', 'App Service Cloning', 'Disaster Recovery'],
+    icon: 'migrate',
+  },
+  {
+    titleKey: 'case4.title' as const,
+    challengeKey: 'case4.challenge' as const,
+    solutionKey: 'case4.solution' as const,
+    tech: ['Azure Cost Management', 'Excel/PowerBI', 'FinOps'],
+    icon: 'cost',
+  },
+  {
+    titleKey: 'case5.title' as const,
+    challengeKey: 'case5.challenge' as const,
+    solutionKey: 'case5.solution' as const,
+    tech: ['Technical Writing', 'Canva', 'Cloud Adoption Framework (CAF)'],
+    icon: 'document',
   },
 ];
 ---
@@ -41,31 +53,29 @@ const projects = [
 
   <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Section header -->
-    <div class="text-center mb-16">
+    <div class="text-center mb-16 reveal">
       <h2 class="text-4xl sm:text-5xl font-bold mb-4">
         <span class="bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent">
-          {t('projects.title')}
+          {t('casestudies.title')}
         </span>
       </h2>
     </div>
 
-    <!-- Projects grid -->
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {projects.map((project) => (
-        <ProjectCard
-          title={t(project.titleKey)}
-          description={t(project.descKey)}
-          role={t(project.roleKey)}
-          tech={project.tech}
-          github={project.github}
-          demo={project.demo}
-          linkedin={project.linkedin}
-          viewCode={t('projects.viewCode')}
-          viewDemo={t('projects.viewDemo')}
-          viewLinkedIn={t('projects.viewLinkedIn')}
-          roleLabel={t('projects.role')}
-          techLabel={t('projects.tech')}
-        />
+    <!-- Case Studies grid -->
+    <div class="grid md:grid-cols-2 gap-6">
+      {caseStudies.map((cs, i) => (
+        <div class="reveal" style={`--reveal-delay: ${i * 120}ms`}>
+          <CaseStudyCard
+            title={t(cs.titleKey)}
+            challenge={t(cs.challengeKey)}
+            solution={t(cs.solutionKey)}
+            tech={cs.tech}
+            icon={cs.icon}
+            challengeLabel={t('casestudies.challengeLabel')}
+            solutionLabel={t('casestudies.solutionLabel')}
+            stackLabel={t('casestudies.stackLabel')}
+          />
+        </div>
       ))}
     </div>
   </div>

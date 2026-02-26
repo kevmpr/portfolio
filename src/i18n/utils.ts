@@ -10,7 +10,7 @@ export const translations = {
         // Nav
         'nav.home': 'Inicio',
         'nav.about': 'Sobre mí',
-        'nav.projects': 'Proyectos',
+        'nav.projects': 'Soluciones Cloud',
         'nav.skills': 'Habilidades',
         'nav.contact': 'Contacto',
 
@@ -57,26 +57,32 @@ export const translations = {
         'exp.cloud.location': 'Remoto',
         'exp.cloud.description': 'Contribuir en iniciativas internas orientadas a Microsoft Azure, low-code y soluciones de datos, adquiriendo experiencia base dentro del ecosistema Microsoft.\nObtener experiencia práctica en servicios principales de Azure mediante laboratorios técnicos y ejercicios guiados.\nAplicar conceptos fundamentales de infraestructura cloud, operación y buenas prácticas en entornos controlados.\nDesarrollar comprensión de arquitectura cloud, gobierno básico y modelos de despliegue como preparación para responsabilidades de infraestructura.',
 
-        // Projects
-        'projects.title': 'Proyectos',
-        'projects.role': 'Rol',
-        'projects.tech': 'Tecnologías',
-        'projects.viewCode': 'Ver código',
-        'projects.viewDemo': 'Ver demo',
-        'projects.viewLinkedIn': 'LinkedIn',
+        // Case Studies
+        'casestudies.title': 'Desafíos y Soluciones Cloud',
+        'casestudies.challengeLabel': 'Desafío',
+        'casestudies.solutionLabel': 'Solución',
+        'casestudies.stackLabel': 'Stack',
 
-        // Project entries
-        'project1.title': 'Portfolio Personal',
-        'project1.description': 'Landing page de portafolio profesional construida con Astro y Tailwind CSS. Incluye soporte i18n, dark mode y diseño glassmorphism.',
-        'project1.role': 'Desarrollador Frontend',
+        // Case Study entries
+        'case1.title': 'Automatización de Seguridad y Gobernanza',
+        'case1.challenge': 'Necesidad de auditar permisos excesivos y garantizar cumplimiento de políticas de seguridad en múltiples suscripciones.',
+        'case1.solution': 'Desarrollo de scripts avanzados en PowerShell para generar reportes automatizados de asignaciones RBAC y detectar anomalías de acceso.',
 
-        'project2.title': 'Infraestructura Azure con IaC',
-        'project2.description': 'Despliegue automatizado de infraestructura cloud en Azure utilizando buenas prácticas del Cloud Adoption Framework.',
-        'project2.role': 'Cloud Engineer',
+        'case2.title': 'Análisis de Infraestructura y Plan de Remediación',
+        'case2.challenge': 'Falta de visibilidad sobre recursos huérfanos y configuraciones no óptimas en un entorno Azure en crecimiento.',
+        'case2.solution': 'Implementación de un análisis profundo utilizando Cloudockit y Azure Resource Graph (ARG) para inventariar activos y generar un plan de acción correctivo.',
 
-        'project3.title': 'Migración Cross-Subscription',
-        'project3.description': 'Proyecto de consultoría para migración de recursos entre subscripciones de Azure, incluyendo VMs, VNets y bases de datos.',
-        'project3.role': 'Azure Cloud Engineer',
+        'case3.title': 'Migración Compleja Cross-Subscription',
+        'case3.challenge': 'Mover recursos críticos entre grupos de recursos y suscripciones diferentes con mínimo tiempo de inactividad, donde el movimiento nativo no era soportado.',
+        'case3.solution': 'Ejecución de una estrategia de migración basada en backups de bases de datos, clonación de App Services y recreación de recursos mediante IaC en el destino.',
+
+        'case4.title': 'Optimización de Costos (FinOps)',
+        'case4.challenge': 'Dificultad para estimar y controlar el gasto en entornos de nube dinámicos.',
+        'case4.solution': 'Diseño y generación de calculadoras personalizadas y reportes de estimación de costos para alinear el gasto técnico con el presupuesto del negocio.',
+
+        'case5.title': 'Comunicación Técnica y Documentación',
+        'case5.challenge': 'Brecha de comunicación entre los equipos técnicos y los stakeholders de negocio sobre arquitecturas complejas.',
+        'case5.solution': 'Creación de documentación detallada y presentaciones visuales de alto impacto (Canva/Diagrams) para facilitar la toma de decisiones y el entendimiento del CAF (Cloud Adoption Framework).',
 
         // Skills
         'skills.title': 'Habilidades',
@@ -120,7 +126,7 @@ export const translations = {
         // Nav
         'nav.home': 'Home',
         'nav.about': 'About',
-        'nav.projects': 'Projects',
+        'nav.projects': 'Cloud Solutions',
         'nav.skills': 'Skills',
         'nav.contact': 'Contact',
 
@@ -167,26 +173,32 @@ export const translations = {
         'exp.cloud.location': 'Remote',
         'exp.cloud.description': 'Contributing to internal initiatives focused on Microsoft Azure, low-code, and data solutions, acquiring foundational experience within the Microsoft ecosystem.\nGaining hands-on experience with core Azure services through technical labs and guided exercises.\nApplying fundamental cloud infrastructure, operations, and best practice concepts in controlled environments.\nDeveloping understanding of cloud architecture, basic governance, and deployment models as preparation for infrastructure responsibilities.',
 
-        // Projects
-        'projects.title': 'Projects',
-        'projects.role': 'Role',
-        'projects.tech': 'Technologies',
-        'projects.viewCode': 'View code',
-        'projects.viewDemo': 'View demo',
-        'projects.viewLinkedIn': 'LinkedIn',
+        // Case Studies
+        'casestudies.title': 'Cloud Solutions & Case Studies',
+        'casestudies.challengeLabel': 'Challenge',
+        'casestudies.solutionLabel': 'Solution',
+        'casestudies.stackLabel': 'Stack',
 
-        // Project entries
-        'project1.title': 'Personal Portfolio',
-        'project1.description': 'Professional portfolio landing page built with Astro and Tailwind CSS. Includes i18n support, dark mode, and glassmorphism design.',
-        'project1.role': 'Frontend Developer',
+        // Case Study entries
+        'case1.title': 'Security Automation & Governance',
+        'case1.challenge': 'Need to audit excessive permissions and ensure compliance with security policies across multiple subscriptions.',
+        'case1.solution': 'Development of advanced PowerShell scripts to generate automated RBAC assignment reports and detect access anomalies.',
 
-        'project2.title': 'Azure Infrastructure with IaC',
-        'project2.description': 'Automated cloud infrastructure deployment on Azure using Cloud Adoption Framework best practices.',
-        'project2.role': 'Cloud Engineer',
+        'case2.title': 'Infrastructure Analysis & Remediation Plan',
+        'case2.challenge': 'Lack of visibility into orphaned resources and suboptimal configurations in a growing Azure environment.',
+        'case2.solution': 'Implementation of a deep analysis using Cloudockit and Azure Resource Graph (ARG) to inventory assets and generate a corrective action plan.',
 
-        'project3.title': 'Cross-Subscription Migration',
-        'project3.description': 'Consulting project for Azure resource migration between subscriptions, including VMs, VNets, and databases.',
-        'project3.role': 'Azure Cloud Engineer',
+        'case3.title': 'Complex Cross-Subscription Migration',
+        'case3.challenge': 'Moving critical resources across resource groups and different subscriptions with minimum downtime, where native movement was not supported.',
+        'case3.solution': 'Execution of a migration strategy based on database backups, App Service cloning, and resource recreation via IaC at the destination.',
+
+        'case4.title': 'Cost Optimization (FinOps)',
+        'case4.challenge': 'Difficulty estimating and controlling spending in dynamic cloud environments.',
+        'case4.solution': 'Design and generation of custom calculators and cost estimation reports to align technical spending with business budgets.',
+
+        'case5.title': 'Technical Communication & Documentation',
+        'case5.challenge': 'Communication gap between technical teams and business stakeholders regarding complex architectures.',
+        'case5.solution': 'Creation of detailed documentation and high-impact visual presentations (Canva/Diagrams) to facilitate decision-making and CAF (Cloud Adoption Framework) understanding.',
 
         // Skills
         'skills.title': 'Skills',
