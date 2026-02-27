@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
-  integrations: [tailwind()],
+  integrations: [tailwind({ applyBaseStyles: false })],
   i18n: {
     defaultLocale: 'es',
     locales: ['es', 'en'],
@@ -10,4 +10,16 @@ export default defineConfig({
       prefixDefaultLocale: true,
     },
   },
+  vite: {
+    build: {
+      cssMinify: 'esbuild',
+      minify: 'terser',
+      terserOptions: {
+        compress: {
+          drop_console: true,
+          drop_debugger: true
+        }
+      }
+    }
+  }
 });

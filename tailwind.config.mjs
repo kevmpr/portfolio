@@ -28,11 +28,11 @@ export default {
                 },
             },
             animation: {
-                'float': 'float 6s ease-in-out infinite',
-                'float-delayed': 'float 6s ease-in-out 2s infinite',
+                'float': 'float 8s ease-in-out infinite',
+                'float-delayed': 'float 8s ease-in-out 2s infinite',
                 'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                 'gradient': 'gradient 8s ease infinite',
-                'border-spin': 'border-spin 3s linear infinite',
+                'border-spin': 'border-spin 5s linear infinite',
             },
             keyframes: {
                 float: {
