@@ -75,24 +75,24 @@ const certifications = [
           {t('about.education')}
         </h3>
 
-        <div class="relative pl-8">
-          <!-- Timeline line -->
-          <div class="absolute left-[11px] top-2 bottom-2 w-0.5 bg-gradient-to-b from-primary-500 to-primary-300 dark:from-primary-400 dark:to-primary-700"></div>
+        <div class="edu-timeline relative pl-10">
+          <!-- Timeline line - spans from first dot center to last dot center -->
+          <div class="edu-timeline-line absolute left-[11px] w-0.5 bg-gradient-to-b from-primary-400 to-primary-300 dark:from-primary-500 dark:to-primary-700"></div>
 
           <!-- UADE (newest - top) -->
-          <div class="relative mb-8 last:mb-0 reveal">
-            <!-- Timeline dot -->
-            <div class="absolute -left-8 top-1 w-6 h-6 rounded-full bg-gradient-to-br from-primary-500 to-primary-700 border-4 border-white dark:border-slate-900 shadow-md z-10"></div>
-            <div class="group/card relative p-[1px] rounded-2xl bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 hover:from-primary-400 hover:to-accent-400 transition-all duration-500">
+          <div class="relative mb-10 reveal">
+            <!-- Timeline dot - vertically centered on title -->
+            <div class="edu-dot absolute -left-10 w-6 h-6 rounded-full bg-primary-500 border-[3px] border-white dark:border-slate-900 shadow-[0_0_0_3px_rgba(59,130,246,0.15)] z-10" style="top: 1.15rem;"></div>
+            <div class="group/card relative p-[1px] rounded-2xl bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 hover:from-primary-400 hover:to-accent-400 dark:hover:from-primary-400 dark:hover:to-accent-400 transition-all duration-500">
               <div class="p-5 rounded-2xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-md shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
                 <div class="flex items-start justify-between mb-2">
-                  <h4 class="font-bold text-slate-800 dark:text-slate-100">{t('edu.uade.title')}</h4>
-                  <span class="px-2 py-0.5 text-xs rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 font-medium whitespace-nowrap ml-2">
+                  <h4 class="font-bold text-slate-800 dark:text-slate-100 text-[1.05rem] leading-snug">{t('edu.uade.title')}</h4>
+                  <span class="px-2.5 py-0.5 text-xs rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 font-semibold whitespace-nowrap ml-3">
                     {t('edu.uade.status')}
                   </span>
                 </div>
                 <p class="text-primary-600 dark:text-primary-400 font-medium text-sm">{t('edu.uade.institution')}</p>
-                <p class="text-slate-500 dark:text-slate-400 text-xs mt-1">{t('edu.uade.period')}</p>
+                <p class="text-slate-400 dark:text-slate-500 text-xs mt-1">{t('edu.uade.period')}</p>
                 <p class="text-slate-600 dark:text-slate-300 text-sm mt-3 leading-relaxed">{t('edu.uade.description')}</p>
               </div>
             </div>
@@ -100,20 +100,20 @@ const certifications = [
 
           <!-- IFTS N°11 (older - bottom) -->
           <div class="relative reveal" style="--reveal-delay: 150ms">
-            <!-- Timeline dot -->
-            <div class="absolute -left-8 top-1 w-6 h-6 rounded-full bg-gradient-to-br from-primary-400 to-primary-600 border-4 border-white dark:border-slate-900 shadow-md z-10"></div>
-            <div class="group/card relative p-[1px] rounded-2xl bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 hover:from-primary-400 hover:to-accent-400 transition-all duration-500">
+            <!-- Timeline dot - vertically centered on title -->
+            <div class="edu-dot absolute -left-10 w-6 h-6 rounded-full bg-primary-500 border-[3px] border-white dark:border-slate-900 shadow-[0_0_0_3px_rgba(59,130,246,0.15)] z-10" style="top: 1.15rem;"></div>
+            <div class="group/card relative p-[1px] rounded-2xl bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 hover:from-primary-400 hover:to-accent-400 dark:hover:from-primary-400 dark:hover:to-accent-400 transition-all duration-500">
               <div class="p-5 rounded-2xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-md shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
                 <div class="flex items-start justify-between mb-2">
-                  <h4 class="font-bold text-slate-800 dark:text-slate-100">{t('edu.ifts.title')}</h4>
-                  <span class="px-2 py-0.5 text-xs rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 font-medium whitespace-nowrap ml-2">
+                  <h4 class="font-bold text-slate-800 dark:text-slate-100 text-[1.05rem] leading-snug">{t('edu.ifts.title')}</h4>
+                  <span class="px-2.5 py-0.5 text-xs rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 font-semibold whitespace-nowrap ml-3">
                     {t('edu.ifts.status')}
                   </span>
                 </div>
                 <p class="text-primary-600 dark:text-primary-400 font-medium text-sm">{t('edu.ifts.institution')}</p>
-                <p class="text-slate-500 dark:text-slate-400 text-xs mt-1">{t('edu.ifts.period')}</p>
+                <p class="text-slate-400 dark:text-slate-500 text-xs mt-1">{t('edu.ifts.period')}</p>
                 <p class="text-slate-600 dark:text-slate-300 text-sm mt-3 leading-relaxed">{t('edu.ifts.description')}</p>
-                <ul class="mt-2 space-y-1">
+                <ul class="mt-3 space-y-1.5">
                   {t('edu.ifts.details').split('\n').map((item) => (
                     <li class="text-slate-500 dark:text-slate-400 text-xs leading-relaxed flex items-start gap-2">
                       <span class="text-primary-500 mt-0.5">•</span>
@@ -138,24 +138,24 @@ const certifications = [
           {t('about.experience')}
         </h3>
 
-        <div class="relative pl-8">
-          <!-- Timeline line -->
-          <div class="absolute left-[11px] top-2 bottom-2 w-0.5 bg-gradient-to-b from-accent-500 to-primary-400 dark:from-accent-400 dark:to-primary-700"></div>
+        <div class="exp-timeline relative pl-10">
+          <!-- Timeline line - spans from first dot center to last dot center -->
+          <div class="exp-timeline-line absolute left-[11px] w-0.5 bg-gradient-to-b from-accent-500 to-primary-400 dark:from-accent-400 dark:to-primary-700"></div>
 
           <!-- Azure Cloud Engineer (newest - top) -->
-          <div class="relative mb-8 last:mb-0 reveal">
+          <div class="relative mb-10 reveal">
             <!-- Timeline dot -->
-            <div class="absolute -left-8 top-1 w-6 h-6 rounded-full bg-gradient-to-br from-accent-500 to-primary-600 border-4 border-white dark:border-slate-900 shadow-md z-10"></div>
-            <div class="group/card relative p-[1px] rounded-2xl bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 hover:from-primary-400 hover:to-accent-400 transition-all duration-500">
+            <div class="exp-dot absolute -left-10 w-6 h-6 rounded-full bg-accent-500 border-[3px] border-white dark:border-slate-900 shadow-[0_0_0_3px_rgba(6,182,212,0.15)] z-10" style="top: 1.15rem;"></div>
+            <div class="group/card relative p-[1px] rounded-2xl bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 hover:from-primary-400 hover:to-accent-400 dark:hover:from-primary-400 dark:hover:to-accent-400 transition-all duration-500">
               <div class="p-5 rounded-2xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-md shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
                 <div class="flex items-start justify-between mb-2">
-                  <h4 class="font-bold text-slate-800 dark:text-slate-100">{t('exp.azure.title')}</h4>
-                  <span class="px-2 py-0.5 text-xs rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 font-medium whitespace-nowrap ml-2">
+                  <h4 class="font-bold text-slate-800 dark:text-slate-100 text-[1.05rem] leading-snug">{t('exp.azure.title')}</h4>
+                  <span class="px-2.5 py-0.5 text-xs rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 font-semibold whitespace-nowrap ml-3">
                     {t('exp.azure.type')}
                   </span>
                 </div>
                 <p class="text-primary-600 dark:text-primary-400 font-medium text-sm">{t('exp.azure.company')}</p>
-                <p class="text-slate-500 dark:text-slate-400 text-xs mt-1">
+                <p class="text-slate-400 dark:text-slate-500 text-xs mt-1">
                   {t('exp.azure.period')} · {t('exp.azure.location')}
                 </p>
                 <div class="mt-3 space-y-2">
@@ -170,12 +170,14 @@ const certifications = [
           <!-- Cloud Engineer (older - bottom) -->
           <div class="relative reveal" style="--reveal-delay: 150ms">
             <!-- Timeline dot -->
-            <div class="absolute -left-8 top-1 w-6 h-6 rounded-full bg-gradient-to-br from-primary-400 to-accent-400 border-4 border-white dark:border-slate-900 shadow-md z-10"></div>
-            <div class="group/card relative p-[1px] rounded-2xl bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 hover:from-primary-400 hover:to-accent-400 transition-all duration-500">
+            <div class="exp-dot absolute -left-10 w-6 h-6 rounded-full bg-accent-500 border-[3px] border-white dark:border-slate-900 shadow-[0_0_0_3px_rgba(6,182,212,0.15)] z-10" style="top: 1.15rem;"></div>
+            <div class="group/card relative p-[1px] rounded-2xl bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 hover:from-primary-400 hover:to-accent-400 dark:hover:from-primary-400 dark:hover:to-accent-400 transition-all duration-500">
               <div class="p-5 rounded-2xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-md shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-                <h4 class="font-bold text-slate-800 dark:text-slate-100 mb-2">{t('exp.cloud.title')}</h4>
+                <div class="flex items-start justify-between mb-2">
+                  <h4 class="font-bold text-slate-800 dark:text-slate-100 text-[1.05rem] leading-snug">{t('exp.cloud.title')}</h4>
+                </div>
                 <p class="text-primary-600 dark:text-primary-400 font-medium text-sm">{t('exp.cloud.company')}</p>
-                <p class="text-slate-500 dark:text-slate-400 text-xs mt-1">
+                <p class="text-slate-400 dark:text-slate-500 text-xs mt-1">
                   {t('exp.cloud.period')} · {t('exp.cloud.location')}
                 </p>
                 <div class="mt-3 space-y-2">
@@ -192,3 +194,61 @@ const certifications = [
     </div>
   </div>
 </section>
+
+<script>
+  function positionTimelineLines() {
+    const timelines = [
+      { container: '.edu-timeline', line: '.edu-timeline-line', dots: '.edu-dot' },
+      { container: '.exp-timeline', line: '.exp-timeline-line', dots: '.exp-dot' },
+    ];
+
+    // Phase 1: Batch ALL reads (no DOM writes here)
+    const measurements = [];
+    for (const { container, line, dots } of timelines) {
+      const containerEl = document.querySelector(container);
+      const lineEl = document.querySelector(line) as HTMLElement | null;
+      const dotEls = containerEl?.querySelectorAll(dots);
+
+      if (!containerEl || !lineEl || !dotEls || dotEls.length < 2) continue;
+
+      const containerRect = containerEl.getBoundingClientRect();
+      const firstDot = dotEls[0].getBoundingClientRect();
+      const lastDot = dotEls[dotEls.length - 1].getBoundingClientRect();
+
+      const firstCenter = (firstDot.top + firstDot.height / 2) - containerRect.top;
+      const lastCenter = (lastDot.top + lastDot.height / 2) - containerRect.top;
+
+      measurements.push({ lineEl, top: firstCenter, height: lastCenter - firstCenter });
+    }
+
+    // Phase 2: Batch ALL writes (no DOM reads here)
+    for (const { lineEl, top, height } of measurements) {
+      lineEl.style.top = `${top}px`;
+      lineEl.style.height = `${height}px`;
+    }
+  }
+
+  // Debounced resize handler
+  let resizeTimer: number;
+  function onResize() {
+    clearTimeout(resizeTimer);
+    resizeTimer = window.setTimeout(() => {
+      requestAnimationFrame(positionTimelineLines);
+    }, 150);
+  }
+
+  // Initial positioning
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      requestAnimationFrame(positionTimelineLines);
+    });
+  } else {
+    requestAnimationFrame(positionTimelineLines);
+  }
+
+  window.addEventListener('resize', onResize, { passive: true });
+
+  document.fonts?.ready?.then(() => {
+    requestAnimationFrame(positionTimelineLines);
+  });
+</script>
