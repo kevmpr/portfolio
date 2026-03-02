@@ -39,7 +39,8 @@ const t = useTranslations(lang);
         <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
           <a
             href="#contact"
-            class="group inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-500 hover:to-accent-500 text-white font-semibold shadow-lg shadow-primary-500/25 hover:shadow-primary-500/40 transition-all duration-300 hover:-translate-y-0.5"
+            class="group inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-500 hover:to-accent-500 text-white font-semibold shadow-lg shadow-primary-500/25 hover:shadow-primary-500/40 transition-[transform,box-shadow,background-color] duration-300 hover:-translate-y-0.5"
+            aria-label="Go to contact section"
           >
             {t('hero.contact')}
             <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -49,7 +50,8 @@ const t = useTranslations(lang);
           <a
             href={`/cv/${lang}/CV Kevin Maximiliano Palma Romero - Azure Cloud Engineer 2026.pdf`}
             download
-            class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-white/60 dark:bg-slate-800/60 backdrop-blur-md border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-semibold hover:bg-white dark:hover:bg-slate-700 transition-all duration-300 hover:-translate-y-0.5"
+            class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-semibold hover:bg-white dark:hover:bg-slate-700 transition-[transform,background-color] duration-300 hover:-translate-y-0.5"
+            aria-label="Download CV as PDF"
           >
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>

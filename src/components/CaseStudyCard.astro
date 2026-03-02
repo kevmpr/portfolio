@@ -38,8 +38,8 @@ const icons: Record<string, { viewBox: string; path: string }> = {
 const selectedIcon = icons[icon] || icons.shield;
 ---
 
-<div class="group relative p-[1px] rounded-2xl bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 hover:from-primary-400 hover:to-accent-400 dark:hover:from-primary-400 dark:hover:to-accent-400 transition-all duration-500">
-  <div class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md rounded-2xl p-6 h-full flex flex-col hover:-translate-y-2 transition-all duration-300 shadow-lg hover:shadow-2xl">
+<div class="group relative p-[1px] rounded-2xl bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 hover:from-primary-400 hover:to-accent-400 dark:hover:from-primary-400 dark:hover:to-accent-400 transition-colors duration-500">
+  <div class="bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm rounded-2xl p-6 h-full flex flex-col hover:-translate-y-2 transition-[transform,box-shadow] duration-300 shadow-lg hover:shadow-2xl">
     <!-- Header -->
     <div class="flex items-start gap-3 mb-5">
       <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center flex-shrink-0">

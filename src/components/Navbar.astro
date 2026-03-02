@@ -7,8 +7,8 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-  <div class="bg-white/70 dark:bg-slate-900/70 backdrop-blur-md border-b border-white/20 dark:border-slate-700/30">
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50">
+  <div class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm border-b border-white/20 dark:border-slate-700/30">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
@@ -48,7 +48,7 @@ const t = useTranslations(lang);
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-t border-white/20 dark:border-slate-700/30">
+    <div id="mobile-menu" class="md:hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm border-t border-white/20 dark:border-slate-700/30 overflow-hidden transition-[max-height,opacity] duration-300 ease-out max-h-0 opacity-0">
       <div class="px-4 py-3 space-y-1">
         <a href={`/${lang}/#home`} class="mobile-nav-link">{t('nav.home')}</a>
         <a href={`/${lang}/#about`} class="mobile-nav-link">{t('nav.about')}</a>
@@ -62,11 +62,23 @@ const t = useTranslations(lang);
 
 <style>
   .nav-link {
-    @apply px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-all duration-200;
+    @apply px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors duration-200;
   }
   .mobile-nav-link {
-    @apply block px-3 py-2 rounded-lg text-base font-medium text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-all duration-200;
+    @apply block px-3 py-2 rounded-lg text-base font-medium text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/20;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 0.25s ease, transform 0.25s ease, background-color 0.2s, color 0.2s;
   }
+  #mobile-menu.menu-open .mobile-nav-link {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  #mobile-menu.menu-open .mobile-nav-link:nth-child(1) { transition-delay: 50ms; }
+  #mobile-menu.menu-open .mobile-nav-link:nth-child(2) { transition-delay: 100ms; }
+  #mobile-menu.menu-open .mobile-nav-link:nth-child(3) { transition-delay: 150ms; }
+  #mobile-menu.menu-open .mobile-nav-link:nth-child(4) { transition-delay: 200ms; }
+  #mobile-menu.menu-open .mobile-nav-link:nth-child(5) { transition-delay: 250ms; }
 </style>
 
 <script>
@@ -75,18 +87,29 @@ const t = useTranslations(lang);
   const menuIcon = document.getElementById('menu-icon');
   const closeIcon = document.getElementById('close-icon');
 
+  function openMenu() {
+    if (!mobileMenu) return;
+    mobileMenu.classList.remove('max-h-0', 'opacity-0');
+    mobileMenu.classList.add('max-h-96', 'opacity-100', 'menu-open');
+    menuIcon?.classList.add('hidden');
+    closeIcon?.classList.remove('hidden');
+  }
+
+  function closeMenu() {
+    if (!mobileMenu) return;
+    mobileMenu.classList.remove('max-h-96', 'opacity-100', 'menu-open');
+    mobileMenu.classList.add('max-h-0', 'opacity-0');
+    menuIcon?.classList.remove('hidden');
+    closeIcon?.classList.add('hidden');
+  }
+
   mobileMenuBtn?.addEventListener('click', () => {
-    mobileMenu?.classList.toggle('hidden');
-    menuIcon?.classList.toggle('hidden');
-    closeIcon?.classList.toggle('hidden');
+    const isOpen = mobileMenu?.classList.contains('menu-open');
+    isOpen ? closeMenu() : openMenu();
   });
 
   // Close mobile menu when clicking a link
   mobileMenu?.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu?.classList.add('hidden');
-      menuIcon?.classList.remove('hidden');
-      closeIcon?.classList.add('hidden');
-    });
+    link.addEventListener('click', closeMenu);
   });
 </script>

@@ -27,14 +27,15 @@ const t = useTranslations(lang);
     <!-- Contact cards -->
     <div class="grid sm:grid-cols-3 gap-6">
       <!-- Email -->
-      <div class="group relative p-[1px] rounded-2xl bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 hover:from-primary-400 hover:to-accent-400 dark:hover:from-primary-400 dark:hover:to-accent-400 transition-all duration-500">
+      <div class="group relative p-[1px] rounded-2xl bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 hover:from-primary-400 hover:to-accent-400 dark:hover:from-primary-400 dark:hover:to-accent-400 transition-colors duration-500">
         <div
           id="contact-email"
-          class="p-6 rounded-2xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-md shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 text-center cursor-pointer h-full"
+          class="p-6 rounded-2xl bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-[transform,box-shadow] duration-300 text-center cursor-pointer h-full"
           data-contact-type="email"
           data-value="a2V2Lm1wcjAzQG91dGxvb2suY29t"
           role="button"
           tabindex="0"
+          aria-label="Send email"
         >
           <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-gradient-to-br from-red-400 to-pink-500 flex items-center justify-center group-hover:scale-110 transition-transform">
             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -47,14 +48,15 @@ const t = useTranslations(lang);
       </div>
 
       <!-- LinkedIn -->
-      <div class="group relative p-[1px] rounded-2xl bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 hover:from-primary-400 hover:to-accent-400 dark:hover:from-primary-400 dark:hover:to-accent-400 transition-all duration-500">
+      <div class="group relative p-[1px] rounded-2xl bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 hover:from-primary-400 hover:to-accent-400 dark:hover:from-primary-400 dark:hover:to-accent-400 transition-colors duration-500">
         <div
           id="contact-linkedin"
-          class="p-6 rounded-2xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-md shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 text-center cursor-pointer h-full"
+          class="p-6 rounded-2xl bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-[transform,box-shadow] duration-300 text-center cursor-pointer h-full"
           data-contact-type="linkedin"
           data-value="aHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2luL2tldmluLW0tcGFsbWEtci8="
           role="button"
           tabindex="0"
+          aria-label="Open LinkedIn profile"
         >
           <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center group-hover:scale-110 transition-transform">
             <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -67,14 +69,15 @@ const t = useTranslations(lang);
       </div>
 
       <!-- GitHub -->
-      <div class="group relative p-[1px] rounded-2xl bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 hover:from-primary-400 hover:to-accent-400 dark:hover:from-primary-400 dark:hover:to-accent-400 transition-all duration-500">
+      <div class="group relative p-[1px] rounded-2xl bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 hover:from-primary-400 hover:to-accent-400 dark:hover:from-primary-400 dark:hover:to-accent-400 transition-colors duration-500">
         <div
           id="contact-github"
-          class="p-6 rounded-2xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-md shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 text-center cursor-pointer h-full"
+          class="p-6 rounded-2xl bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-[transform,box-shadow] duration-300 text-center cursor-pointer h-full"
           data-contact-type="github"
           data-value="aHR0cHM6Ly9naXRodWIuY29tL2tldm1wcg=="
           role="button"
           tabindex="0"
+          aria-label="Open GitHub profile"
         >
           <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-gradient-to-br from-gray-700 to-gray-900 dark:from-gray-500 dark:to-gray-700 flex items-center justify-center group-hover:scale-110 transition-transform">
             <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -90,28 +93,26 @@ const t = useTranslations(lang);
 </section>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('[data-contact-type]');
-    cards.forEach(card => {
-      const handler = () => {
-        const type = card.getAttribute('data-contact-type');
-        const encoded = card.getAttribute('data-value');
-        if (!encoded || !type) return;
-        const decoded = atob(encoded);
+  const cards = document.querySelectorAll('[data-contact-type]');
+  cards.forEach(card => {
+    const handler = () => {
+      const type = card.getAttribute('data-contact-type');
+      const encoded = card.getAttribute('data-value');
+      if (!encoded || !type) return;
+      const decoded = atob(encoded);
 
-        if (type === 'email') {
-          window.location.href = 'mailto:' + decoded;
-        } else {
-          window.open(decoded, '_blank', 'noopener,noreferrer');
-        }
-      };
-      card.addEventListener('click', handler);
-      card.addEventListener('keydown', (e: Event) => {
-        if ((e as KeyboardEvent).key === 'Enter' || (e as KeyboardEvent).key === ' ') {
-          e.preventDefault();
-          handler();
-        }
-      });
+      if (type === 'email') {
+        window.location.href = 'mailto:' + decoded;
+      } else {
+        window.open(decoded, '_blank', 'noopener,noreferrer');
+      }
+    };
+    card.addEventListener('click', handler);
+    card.addEventListener('keydown', (e: Event) => {
+      if ((e as KeyboardEvent).key === 'Enter' || (e as KeyboardEvent).key === ' ') {
+        e.preventDefault();
+        handler();
+      }
     });
   });
 </script>
