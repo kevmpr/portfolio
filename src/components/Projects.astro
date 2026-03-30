@@ -10,6 +10,7 @@ const caseStudies = [
     titleKey: 'case1.title' as const,
     challengeKey: 'case1.challenge' as const,
     solutionKey: 'case1.solution' as const,
+    impactKey: 'projects.impact1' as const,
     tech: ['Azure RBAC', 'PowerShell'],
     icon: 'shield',
   },
@@ -17,6 +18,7 @@ const caseStudies = [
     titleKey: 'case2.title' as const,
     challengeKey: 'case2.challenge' as const,
     solutionKey: 'case2.solution' as const,
+    impactKey: 'projects.impact2' as const,
     tech: ['Azure Resource Graph', 'Cloudockit', 'Governance'],
     icon: 'search',
   },
@@ -24,6 +26,7 @@ const caseStudies = [
     titleKey: 'case3.title' as const,
     challengeKey: 'case3.challenge' as const,
     solutionKey: 'case3.solution' as const,
+    impactKey: 'projects.impact3' as const,
     tech: ['Azure Backup', 'App Service Cloning', 'Disaster Recovery'],
     icon: 'migrate',
   },
@@ -31,6 +34,7 @@ const caseStudies = [
     titleKey: 'case4.title' as const,
     challengeKey: 'case4.challenge' as const,
     solutionKey: 'case4.solution' as const,
+    impactKey: 'projects.impact4' as const,
     tech: ['Azure Cost Management', 'Excel/PowerBI', 'FinOps'],
     icon: 'cost',
   },
@@ -38,6 +42,7 @@ const caseStudies = [
     titleKey: 'case5.title' as const,
     challengeKey: 'case5.challenge' as const,
     solutionKey: 'case5.solution' as const,
+    impactKey: 'projects.impact5' as const,
     tech: ['Technical Writing', 'Canva', 'Cloud Adoption Framework (CAF)'],
     icon: 'document',
   },
@@ -59,22 +64,32 @@ const caseStudies = [
           {t('casestudies.title')}
         </span>
       </h2>
+      <p class="text-base text-slate-500 dark:text-slate-400 max-w-xl mx-auto">
+        {t('casestudies.subtitle')}
+      </p>
     </div>
 
-    <!-- Case Studies grid -->
-    <div class="grid md:grid-cols-2 gap-6">
+    <!-- Case Studies grid: 2 columns, 5th card centered full-width -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       {caseStudies.map((cs, i) => (
-        <div class="reveal" style={`--reveal-delay: ${i * 120}ms`}>
-          <CaseStudyCard
-            title={t(cs.titleKey)}
-            challenge={t(cs.challengeKey)}
-            solution={t(cs.solutionKey)}
-            tech={cs.tech}
-            icon={cs.icon}
-            challengeLabel={t('casestudies.challengeLabel')}
-            solutionLabel={t('casestudies.solutionLabel')}
-            stackLabel={t('casestudies.stackLabel')}
-          />
+        <div
+          class={`reveal${i === 4 ? ' md:col-span-2' : ''}`}
+          style={`--reveal-delay: ${i * 120}ms`}
+        >
+          <div class={i === 4 ? 'max-w-lg mx-auto w-full' : ''}>
+            <CaseStudyCard
+              title={t(cs.titleKey)}
+              challenge={t(cs.challengeKey)}
+              solution={t(cs.solutionKey)}
+              impact={t(cs.impactKey)}
+              impactLabel={t('projects.impact.label')}
+              tech={cs.tech}
+              icon={cs.icon}
+              challengeLabel={t('casestudies.challengeLabel')}
+              solutionLabel={t('casestudies.solutionLabel')}
+              stackLabel={t('casestudies.stackLabel')}
+            />
+          </div>
         </div>
       ))}
     </div>

@@ -59,7 +59,20 @@ const lang = getLangFromUrl(Astro.url);
     </script>
     <title>{title}</title>
   </head>
-  <body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 font-sans transition-colors duration-300 overflow-x-hidden">
+  <body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 font-sans transition-colors duration-300 overflow-x-hidden bg-dot-pattern">
+    <!-- Scroll progress bar -->
+    <div id="scroll-progress" style="position:fixed;top:0;left:0;width:0%;height:3px;z-index:100;background:linear-gradient(to right,#3b82f6,#06b6d4);transition:width 0.1s linear;pointer-events:none;"></div>
+
+    <!-- Ambient background layer — fixed, behind all content -->
+    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none" aria-hidden="true">
+      <!-- Top-left ambient blob -->
+      <div class="absolute -top-40 -left-40 w-[700px] h-[700px] rounded-full bg-primary-500/8 dark:bg-primary-500/10 blur-[120px] animate-float"></div>
+      <!-- Bottom-right ambient blob -->
+      <div class="absolute -bottom-40 -right-40 w-[600px] h-[600px] rounded-full bg-accent-500/8 dark:bg-accent-500/10 blur-[120px] animate-float-delayed"></div>
+      <!-- Center ambient blob -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-violet-500/5 dark:bg-violet-500/8 blur-[100px] animate-pulse-slow"></div>
+    </div>
+
     <Navbar />
     <main>
       <slot />
@@ -74,6 +87,20 @@ const lang = getLangFromUrl(Astro.url);
           document.documentElement.classList.add('dark');
         } else {
           document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
+
+    <script is:inline>
+      // Scroll progress bar
+      (function() {
+        const bar = document.getElementById('scroll-progress');
+        if (bar) {
+          window.addEventListener('scroll', function() {
+            const scrolled = window.scrollY;
+            const total = document.documentElement.scrollHeight - window.innerHeight;
+            bar.style.width = (total > 0 ? (scrolled / total) * 100 : 0) + '%';
+          }, { passive: true });
         }
       })();
     </script>

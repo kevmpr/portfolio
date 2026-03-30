@@ -21,6 +21,15 @@ export const translations = {
         'hero.bio': 'Azure Cloud Engineer en Readymind, especializado en infraestructura, networking y gobierno sobre Microsoft Azure. Combino ejecución técnica hands-on con interacción con clientes y documentación alineada al Cloud Adoption Framework (CAF).',
         'hero.cta': 'Descargar CV',
         'hero.contact': 'Contáctame',
+        'hero.roles': 'Azure Cloud Engineer|Especialista en Infraestructura Cloud|Analista FinOps',
+        'hero.stat1.value': '4',
+        'hero.stat1.label': 'Certificaciones Azure',
+        'hero.stat2.value': '1+',
+        'hero.stat2.label': 'Años en Cloud',
+        'hero.stat3.value': '5+',
+        'hero.stat3.label': 'Proyectos Cloud',
+        'hero.stat4.value': 'B2',
+        'hero.stat4.label': 'Inglés',
 
         // About
         'about.title': 'Sobre mí',
@@ -28,6 +37,8 @@ export const translations = {
         'about.education': 'Educación',
         'about.experience': 'Experiencia',
         'about.certifications': 'Certificaciones',
+        'about.current': 'Actual',
+        'about.techused': 'Tecnologías',
 
         // Education entries
         'edu.uade.title': 'Ingeniería en Informática',
@@ -59,9 +70,16 @@ export const translations = {
 
         // Case Studies
         'casestudies.title': 'Desafíos y Soluciones Cloud',
+        'casestudies.subtitle': 'Casos reales de infraestructura, gobernanza y optimización en Microsoft Azure.',
         'casestudies.challengeLabel': 'Desafío',
         'casestudies.solutionLabel': 'Solución',
         'casestudies.stackLabel': 'Stack',
+        'projects.impact.label': 'Resultado',
+        'projects.impact1': 'Reducción del 80% en tiempo de asignación de permisos',
+        'projects.impact2': 'Visibilidad completa de 200+ recursos Azure en un solo reporte',
+        'projects.impact3': 'Migración sin downtime de 15+ VMs entre suscripciones',
+        'projects.impact4': 'Identificación de 30% de ahorro en costos de infraestructura',
+        'projects.impact5': 'Documentación técnica adoptada por el equipo como estándar',
 
         // Case Study entries
         'case1.title': 'Automatización de Seguridad y Gobernanza',
@@ -113,14 +131,18 @@ export const translations = {
         'contact.email': 'Email',
         'contact.linkedin': 'LinkedIn',
         'contact.github': 'GitHub',
-        'contact.reveal': 'Click para ver',
-        'contact.emailDesc': 'Enviame un correo',
-        'contact.linkedinDesc': 'Conectemos',
-        'contact.githubDesc': 'Mirá mis repos',
+        'contact.emailSubtitle': 'Enviar correo',
+        'contact.linkedinSubtitle': 'Ver perfil',
+        'contact.githubSubtitle': 'Ver proyectos',
+        'contact.heading': 'Hablemos',
+        'contact.subheading': '¿Tenés un proyecto en mente?',
+        'contact.description': 'Estoy disponible para roles de cloud, consultoría técnica o colaboraciones.',
+        'contact.cta': 'Enviar un mensaje',
 
         // Footer
         'footer.text': 'Programado con ❤️ por Kevin',
         'footer.rights': 'Todos los derechos reservados.',
+        'footer.madeWith': 'Hecho con ♥ usando Astro y Tailwind CSS',
     },
     en: {
         // Nav
@@ -137,6 +159,15 @@ export const translations = {
         'hero.bio': 'Azure Cloud Engineer at Readymind, specialized in infrastructure, networking, and governance on Microsoft Azure. I combine hands-on technical execution with client interaction and documentation aligned with the Cloud Adoption Framework (CAF).',
         'hero.cta': 'Download CV',
         'hero.contact': 'Contact me',
+        'hero.roles': 'Azure Cloud Engineer|Cloud Infrastructure Specialist|FinOps Analyst',
+        'hero.stat1.value': '4',
+        'hero.stat1.label': 'Azure Certifications',
+        'hero.stat2.value': '1+',
+        'hero.stat2.label': 'Years in Cloud',
+        'hero.stat3.value': '5+',
+        'hero.stat3.label': 'Cloud Projects',
+        'hero.stat4.value': 'B2',
+        'hero.stat4.label': 'English',
 
         // About
         'about.title': 'About me',
@@ -144,6 +175,8 @@ export const translations = {
         'about.education': 'Education',
         'about.experience': 'Experience',
         'about.certifications': 'Certifications',
+        'about.current': 'Current',
+        'about.techused': 'Tech used',
 
         // Education entries
         'edu.uade.title': 'Computer Engineering',
@@ -175,9 +208,16 @@ export const translations = {
 
         // Case Studies
         'casestudies.title': 'Cloud Solutions & Case Studies',
+        'casestudies.subtitle': 'Real-world cases of infrastructure, governance, and optimization on Microsoft Azure.',
         'casestudies.challengeLabel': 'Challenge',
         'casestudies.solutionLabel': 'Solution',
         'casestudies.stackLabel': 'Stack',
+        'projects.impact.label': 'Impact',
+        'projects.impact1': '80% reduction in permission assignment time',
+        'projects.impact2': 'Full visibility of 200+ Azure resources in a single report',
+        'projects.impact3': 'Zero-downtime migration of 15+ VMs across subscriptions',
+        'projects.impact4': 'Identified 30% infrastructure cost savings',
+        'projects.impact5': 'Technical documentation adopted as team standard',
 
         // Case Study entries
         'case1.title': 'Security Automation & Governance',
@@ -229,14 +269,18 @@ export const translations = {
         'contact.email': 'Email',
         'contact.linkedin': 'LinkedIn',
         'contact.github': 'GitHub',
-        'contact.reveal': 'Click to reveal',
-        'contact.emailDesc': 'Send me an email',
-        'contact.linkedinDesc': "Let's connect",
-        'contact.githubDesc': 'Check my repos',
+        'contact.emailSubtitle': 'Send email',
+        'contact.linkedinSubtitle': 'View profile',
+        'contact.githubSubtitle': 'View projects',
+        'contact.heading': "Let's talk",
+        'contact.subheading': 'Got a project in mind?',
+        'contact.description': 'Available for cloud roles, technical consulting, or collaborations.',
+        'contact.cta': 'Send a message',
 
         // Footer
         'footer.text': 'Built with ❤️ by Kevin',
         'footer.rights': 'All rights reserved.',
+        'footer.madeWith': 'Made with ♥ using Astro & Tailwind CSS',
     },
 } as const;
 
