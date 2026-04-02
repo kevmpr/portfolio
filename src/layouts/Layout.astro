@@ -58,6 +58,7 @@ const lang = getLangFromUrl(Astro.url);
     }
     </script>
     <title>{title}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
   </head>
   <body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 font-sans transition-colors duration-300 overflow-x-hidden bg-dot-pattern">
     <!-- Scroll progress bar -->
@@ -80,10 +81,10 @@ const lang = getLangFromUrl(Astro.url);
     <Footer />
 
     <script is:inline>
-      // Dark mode initialization - runs before paint to avoid flash
+      // Dark mode initialization — light is the default, dark only if explicitly chosen
       (function() {
         const theme = localStorage.getItem('theme');
-        if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        if (theme === 'dark') {
           document.documentElement.classList.add('dark');
         } else {
           document.documentElement.classList.remove('dark');

@@ -8,59 +8,66 @@ const t = useTranslations(lang);
 ---
 
 <section id="home" class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
-  <!-- Animated background blobs + dot pattern overlay -->
-  <div class="absolute inset-0 overflow-hidden pointer-events-none">
-    <!-- Dot pattern overlay -->
-    <div class="absolute inset-0 bg-dot-pattern opacity-60"></div>
-    <!-- Blobs — larger and more colorful -->
-    <div class="absolute -top-60 -right-60 w-[500px] h-[500px] bg-primary-400/30 dark:bg-primary-500/15 rounded-full blur-3xl animate-float" style="will-change: transform, opacity; contain: layout paint style;"></div>
-    <div class="absolute -bottom-60 -left-60 w-[600px] h-[600px] bg-accent-400/25 dark:bg-accent-500/15 rounded-full blur-3xl animate-float-delayed" style="will-change: transform, opacity; contain: layout paint style;"></div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-primary-300/10 dark:bg-primary-600/8 rounded-full blur-3xl animate-pulse-slow" style="will-change: transform, opacity; contain: layout paint style;"></div>
-    <!-- Aurora strip -->
-    <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(to right,rgba(59,130,246,0.08),rgba(6,182,212,0.08),rgba(139,92,246,0.08));transform:rotate(-10deg) scaleX(2);filter:blur(80px);top:20%;height:60%;"></div>
+  <!-- Very subtle background — let global Layout blobs do the heavy lifting -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+    <div class="absolute inset-0 bg-dot-pattern opacity-30"></div>
+    <div class="absolute -top-48 -right-48 w-[480px] h-[480px] bg-primary-400/10 dark:bg-primary-500/8 rounded-full blur-3xl animate-float" style="will-change:transform;"></div>
+    <div class="absolute -bottom-48 -left-48 w-[400px] h-[400px] bg-accent-400/8 dark:bg-accent-500/6 rounded-full blur-3xl animate-float-delayed" style="will-change:transform;"></div>
   </div>
 
   <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-    <div class="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-16">
-      <!-- Text Content -->
+    <div class="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-20">
+
+      <!-- ── Text Content ── -->
       <div class="flex-1 text-center lg:text-left">
-        <p class="text-primary-600 dark:text-primary-400 font-semibold text-lg mb-2 tracking-wide">
-          {t('hero.greeting')}
-        </p>
-        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold mb-4 leading-tight">
-          <span class="bg-gradient-to-r from-slate-900 via-primary-600 to-accent-500 dark:from-white dark:via-primary-300 dark:to-accent-400 bg-clip-text text-transparent" style="background-size:200% auto;animation:gradient-x 8s ease infinite;">
+
+        <!-- Name -->
+        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold mb-4 leading-tight tracking-tight">
+          <span class="bg-gradient-to-br from-slate-900 to-primary-700 dark:from-white dark:to-primary-300 bg-clip-text text-transparent">
             {t('hero.name')}
           </span>
         </h1>
-        <!-- Status badge — glassmorphism pill -->
-        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm border border-slate-200 dark:border-slate-700 shadow-sm mb-6">
-          <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+
+        <!-- Tagline — the positioning statement -->
+        <p class="text-xl sm:text-2xl font-semibold text-slate-600 dark:text-slate-300 mb-6 leading-snug max-w-xl mx-auto lg:mx-0">
+          {t('hero.tagline')}
+        </p>
+
+        <!-- Status badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-slate-200 dark:border-slate-700 shadow-sm mb-6">
+          <div class="relative w-2 h-2">
+            <div class="absolute inset-0 rounded-full bg-emerald-400 animate-ping opacity-75"></div>
+            <div class="relative w-2 h-2 rounded-full bg-emerald-500"></div>
+          </div>
           <span class="text-slate-700 dark:text-slate-200 font-semibold text-sm">
             {t('hero.role')} @ Readymind
           </span>
         </div>
-        <p class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed mb-6 max-w-xl mx-auto lg:mx-0">
+
+        <!-- Bio -->
+        <p class="text-slate-500 dark:text-slate-400 text-base leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
           {t('hero.bio')}
         </p>
 
+        <!-- CTAs -->
         <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
           <a
             href="#contact"
-            class="group inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-500 hover:to-accent-500 text-white font-semibold shadow-lg shadow-primary-500/25 hover:shadow-primary-500/40 transition-[transform,box-shadow,background-color] duration-300 hover:-translate-y-0.5"
+            class="group inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-primary-600 hover:bg-primary-500 text-white font-semibold shadow-lg shadow-primary-600/25 hover:shadow-primary-500/35 transition-[transform,box-shadow,background-color] duration-300 hover:-translate-y-0.5"
             aria-label="Go to contact section"
           >
             {t('hero.contact')}
-            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
             </svg>
           </a>
           <a
             href={`/cv/${lang}/CV Kevin Maximiliano Palma Romero - Azure Cloud Engineer 2026.pdf`}
             download
-            class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-semibold hover:bg-white dark:hover:bg-slate-700 transition-[transform,background-color] duration-300 hover:-translate-y-0.5"
+            class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-semibold hover:border-slate-300 dark:hover:border-slate-600 hover:shadow-md transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-0.5"
             aria-label="Download CV as PDF"
           >
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
             </svg>
             {t('hero.cta')}
@@ -68,43 +75,71 @@ const t = useTranslations(lang);
         </div>
       </div>
 
-      <!-- Profile Photo -->
-      <div class="flex-shrink-0">
-        <div class="relative inline-flex items-center justify-center">
-          <!-- Spinning gradient ring -->
-          <div class="absolute -inset-[4px] rounded-full" style="background:conic-gradient(from 0deg,#60a5fa,#22d3ee,#8b5cf6,#60a5fa);animation:border-spin 8s linear infinite;will-change:transform;contain:layout paint style;"></div>
-          <!-- Photo -->
-          <div class="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden bg-slate-200 dark:bg-slate-800 border-4 border-white dark:border-slate-900">
-            <Image
-              src={imgProfile}
-              alt="Kevin Maximiliano Palma Romero"
-              width={384}
-              height={384}
-              format="webp"
-              quality={80}
-              class="w-full h-full object-cover"
-              loading="eager"
-            />
+      <!-- ── Profile Photo with Mouse Parallax ── -->
+      <div class="flex-shrink-0" id="photo-perspective" style="perspective:1200px;">
+        <div id="photo-tilt" style="transition:transform 0.12s ease-out;transform-style:preserve-3d;">
+          <div class="relative inline-flex items-center justify-center">
+            <!-- Azure-blue spinning ring -->
+            <div
+              class="absolute -inset-[4px] rounded-full"
+              style="background:conic-gradient(from 0deg,#0078D4,#38bdf8,#50e6ff,#0078D4);animation:border-spin 8s linear infinite;will-change:transform;"
+              aria-hidden="true"
+            ></div>
+            <!-- White gap ring -->
+            <div class="absolute -inset-[2px] rounded-full bg-white dark:bg-slate-900" aria-hidden="true"></div>
+            <!-- Photo -->
+            <div class="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden bg-slate-200 dark:bg-slate-800">
+              <Image
+                src={imgProfile}
+                alt="Kevin Maximiliano Palma Romero"
+                width={384}
+                height={384}
+                format="webp"
+                quality={80}
+                class="w-full h-full object-cover"
+                loading="eager"
+              />
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
+    </div>
   </div>
 </section>
 
+<script>
+  // Mouse parallax on hero photo
+  const perspective = document.getElementById('photo-perspective');
+  const tilt = document.getElementById('photo-tilt');
+
+  if (perspective && tilt) {
+    let rafId: number | null = null;
+    let targetX = 0;
+    let targetY = 0;
+
+    window.addEventListener('mousemove', (e) => {
+      const cx = window.innerWidth / 2;
+      const cy = window.innerHeight / 2;
+      targetX = (e.clientX - cx) / cx; // -1 to 1
+      targetY = (e.clientY - cy) / cy;
+
+      if (rafId) return;
+      rafId = requestAnimationFrame(() => {
+        rafId = null;
+        tilt.style.transform = `rotateX(${-targetY * 7}deg) rotateY(${targetX * 7}deg)`;
+      });
+    }, { passive: true });
+
+    document.addEventListener('mouseleave', () => {
+      tilt.style.transform = '';
+    });
+  }
+</script>
+
 <style>
-  @keyframes gradient-x {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-  }
-  @keyframes pulse-glow {
-    0%, 100% { opacity: 0.6; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.05); }
-  }
   @keyframes border-spin {
-    0% { transform: rotate(0deg); }
+    0%   { transform: rotate(0deg);   }
     100% { transform: rotate(360deg); }
   }
 </style>
-

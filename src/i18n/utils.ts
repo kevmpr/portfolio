@@ -17,6 +17,7 @@ export const translations = {
         // Hero
         'hero.greeting': 'Hola, soy',
         'hero.name': 'Kevin Maximiliano Palma Romero',
+        'hero.tagline': 'Diseño infraestructuras Azure resilientes, escalables y optimizadas en costos.',
         'hero.role': 'Azure Cloud Engineer',
         'hero.bio': 'Azure Cloud Engineer en Readymind, especializado en infraestructura, networking y gobierno sobre Microsoft Azure. Combino ejecución técnica hands-on con interacción con clientes y documentación alineada al Cloud Adoption Framework (CAF).',
         'hero.cta': 'Descargar CV',
@@ -39,6 +40,11 @@ export const translations = {
         'about.certifications': 'Certificaciones',
         'about.current': 'Actual',
         'about.techused': 'Tecnologías',
+        'about.changelog': 'Historial',
+        'changelog.uade': 'Ingeniería en Informática',
+        'changelog.azure': 'Azure Cloud Engineer',
+        'changelog.cloud': 'Cloud Engineer',
+        'changelog.ifts': 'Tecnicatura en Desarrollo de Software',
 
         // Education entries
         'edu.uade.title': 'Ingeniería en Informática',
@@ -104,6 +110,7 @@ export const translations = {
 
         // Skills
         'skills.title': 'Habilidades',
+        'skills.description': 'Tecnologías, herramientas y competencias que aplico en proyectos reales de infraestructura cloud.',
         'skills.technical': 'Habilidades Técnicas',
         'skills.soft': 'Habilidades Blandas',
         'skills.languages': 'Idiomas',
@@ -155,6 +162,7 @@ export const translations = {
         // Hero
         'hero.greeting': "Hi, I'm",
         'hero.name': 'Kevin Maximiliano Palma Romero',
+        'hero.tagline': 'I design resilient, scalable, and cost-optimized Azure infrastructures.',
         'hero.role': 'Azure Cloud Engineer',
         'hero.bio': 'Azure Cloud Engineer at Readymind, specialized in infrastructure, networking, and governance on Microsoft Azure. I combine hands-on technical execution with client interaction and documentation aligned with the Cloud Adoption Framework (CAF).',
         'hero.cta': 'Download CV',
@@ -177,6 +185,11 @@ export const translations = {
         'about.certifications': 'Certifications',
         'about.current': 'Current',
         'about.techused': 'Tech used',
+        'about.changelog': 'Timeline',
+        'changelog.uade': 'Computer Engineering',
+        'changelog.azure': 'Azure Cloud Engineer',
+        'changelog.cloud': 'Cloud Engineer',
+        'changelog.ifts': 'Software Development Technician',
 
         // Education entries
         'edu.uade.title': 'Computer Engineering',
@@ -242,6 +255,7 @@ export const translations = {
 
         // Skills
         'skills.title': 'Skills',
+        'skills.description': 'Technologies, tools and skills I apply in real cloud infrastructure projects.',
         'skills.technical': 'Technical Skills',
         'skills.soft': 'Soft Skills',
         'skills.languages': 'Languages',
