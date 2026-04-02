@@ -5,48 +5,49 @@ import imgProfile from '../assets/imgProfile.png';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const isEs = lang === 'es';
 ---
 
-<section id="home" class="relative min-h-screen overflow-hidden">
-  <div class="flex flex-col lg:flex-row min-h-screen">
+<section id="home" class="relative min-h-screen flex items-center bg-white dark:bg-slate-900 overflow-hidden">
+  <!-- Subtle dot texture -->
+  <div class="absolute inset-0 bg-dot-pattern opacity-20 dark:opacity-10 pointer-events-none" aria-hidden="true"></div>
+  <!-- Very soft ambient glow -->
+  <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-primary-400/5 dark:bg-primary-500/8 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
 
-    <!-- ── Left Panel ── -->
-    <div class="relative flex-1 flex flex-col justify-center px-8 sm:px-12 lg:px-14 xl:px-24 pt-28 pb-14 bg-white dark:bg-slate-950">
-      <!-- Subtle dot texture -->
-      <div class="absolute inset-0 bg-dot-pattern opacity-30 pointer-events-none" aria-hidden="true"></div>
+  <div class="relative max-w-6xl mx-auto px-6 sm:px-8 lg:px-16 w-full py-28 lg:py-0 min-h-screen flex items-center">
+    <div class="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-20 w-full">
 
-      <div class="relative max-w-xl">
+      <!-- ── Left: Text ── -->
+      <div class="flex-1 min-w-0 text-center lg:text-left">
 
-        <!-- Name — oversized split -->
-        <h1 class="text-6xl sm:text-7xl xl:text-8xl font-extrabold leading-[0.88] mb-6 tracking-tight">
-          <span class="block text-slate-900 dark:text-white">Kevin</span>
-          <span class="block text-primary-600 dark:text-primary-400">Palma<span class="text-slate-300 dark:text-slate-600">.</span></span>
+        <!-- Accent line -->
+        <div class="w-10 h-0.5 bg-primary-500 mb-6 mx-auto lg:mx-0"></div>
+
+        <!-- Heading -->
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 text-slate-900 dark:text-white">
+          {isEs ? 'Hola, soy' : "Hi, I'm"}<br/>
+          Kevin Palma.
         </h1>
 
-        <!-- Status badge -->
-        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 mb-5">
-          <div class="relative w-2 h-2">
+        <!-- Role badge -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 mb-5">
+          <div class="relative w-1.5 h-1.5">
             <div class="absolute inset-0 rounded-full bg-emerald-400 animate-ping opacity-75"></div>
-            <div class="relative w-2 h-2 rounded-full bg-emerald-500"></div>
+            <div class="relative w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
           </div>
-          <span class="text-slate-600 dark:text-slate-300 font-semibold text-sm">{t('hero.role')} @ Readymind</span>
+          <span class="text-slate-600 dark:text-slate-300 font-medium text-xs">{t('hero.role')} @ Readymind</span>
         </div>
 
-        <!-- Tagline -->
-        <p class="text-lg sm:text-xl font-semibold text-slate-600 dark:text-slate-300 mb-4 leading-snug">
-          {t('hero.tagline')}
-        </p>
-
         <!-- Bio -->
-        <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-8 max-w-md">
+        <p class="text-slate-500 dark:text-slate-400 text-base leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0">
           {t('hero.bio')}
         </p>
 
         <!-- CTAs -->
-        <div class="flex flex-col sm:flex-row gap-3">
+        <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-10">
           <a
             href="#contact"
-            class="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-primary-600 hover:bg-primary-500 text-white font-semibold shadow-lg shadow-primary-600/25 hover:shadow-primary-500/35 transition-[transform,box-shadow,background-color] duration-300 hover:-translate-y-0.5"
+            class="group inline-flex items-center justify-center gap-2 px-7 py-3 rounded-lg bg-primary-600 hover:bg-primary-500 text-white font-semibold shadow-md shadow-primary-600/20 hover:shadow-primary-500/30 transition-[transform,box-shadow,background-color] duration-300 hover:-translate-y-0.5 text-sm"
             aria-label="Go to contact section"
           >
             {t('hero.contact')}
@@ -57,7 +58,7 @@ const t = useTranslations(lang);
           <a
             href={`/cv/${lang}/CV Kevin Maximiliano Palma Romero - Azure Cloud Engineer 2026.pdf`}
             download
-            class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-semibold hover:border-slate-300 dark:hover:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-[transform,box-shadow,border-color,background-color] duration-300 hover:-translate-y-0.5"
+            class="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-semibold hover:border-slate-300 dark:hover:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all duration-300 hover:-translate-y-0.5 text-sm"
             aria-label="Download CV"
           >
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -67,75 +68,45 @@ const t = useTranslations(lang);
           </a>
         </div>
 
-        <!-- Stats row -->
-        <div class="flex gap-10 mt-10 pt-8 border-t border-slate-100 dark:border-slate-800/80">
+        <!-- Stats -->
+        <div class="flex gap-10 justify-center lg:justify-start">
           <div>
             <p class="text-3xl font-black text-slate-900 dark:text-white tabular-nums leading-none">{t('hero.stat1.value')}</p>
-            <p class="text-xs text-slate-400 dark:text-slate-500 mt-1 leading-snug max-w-[80px]">{t('hero.stat1.label')}</p>
+            <p class="text-xs text-slate-400 dark:text-slate-500 mt-1.5 leading-snug">{t('hero.stat1.label')}</p>
           </div>
+          <div class="w-px bg-slate-200 dark:bg-slate-700 self-stretch"></div>
           <div>
             <p class="text-3xl font-black text-slate-900 dark:text-white tabular-nums leading-none">{t('hero.stat2.value')}</p>
-            <p class="text-xs text-slate-400 dark:text-slate-500 mt-1 leading-snug max-w-[80px]">{t('hero.stat2.label')}</p>
+            <p class="text-xs text-slate-400 dark:text-slate-500 mt-1.5 leading-snug">{t('hero.stat2.label')}</p>
           </div>
+          <div class="w-px bg-slate-200 dark:bg-slate-700 self-stretch"></div>
           <div>
             <p class="text-3xl font-black text-slate-900 dark:text-white tabular-nums leading-none">{t('hero.stat3.value')}</p>
-            <p class="text-xs text-slate-400 dark:text-slate-500 mt-1 leading-snug max-w-[80px]">{t('hero.stat3.label')}</p>
+            <p class="text-xs text-slate-400 dark:text-slate-500 mt-1.5 leading-snug">{t('hero.stat3.label')}</p>
           </div>
         </div>
 
       </div>
-    </div>
 
-    <!-- ── Right Panel — Azure Blue ── -->
-    <div class="relative flex w-full lg:w-[42%] xl:w-[44%] min-h-[55vw] lg:min-h-screen items-center justify-center bg-primary-600 dark:bg-primary-700 overflow-hidden">
-
-      <!-- Decorative geometry -->
-      <div class="absolute top-16 left-10 w-3 h-3 rotate-45 bg-white/15" aria-hidden="true"></div>
-      <div class="absolute top-32 right-24 w-2 h-2 rounded-full bg-white/15" aria-hidden="true"></div>
-      <div class="absolute bottom-28 left-20 w-2 h-2 rotate-45 bg-white/10" aria-hidden="true"></div>
-      <div class="absolute bottom-48 right-14 w-3 h-3 rounded-full bg-white/10" aria-hidden="true"></div>
-      <!-- Large subtle circle behind photo -->
-      <div class="absolute w-[500px] h-[500px] rounded-full border border-white/8 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" aria-hidden="true"></div>
-      <div class="absolute w-[380px] h-[380px] rounded-full border border-white/5 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" aria-hidden="true"></div>
-
-      <!-- Photo with mouse parallax -->
-      <div id="photo-perspective" class="relative z-10" style="perspective:1200px;">
+      <!-- ── Right: Photo ── -->
+      <div class="flex-shrink-0" id="photo-perspective" style="perspective:1200px;">
         <div id="photo-tilt" style="transition:transform 0.12s ease-out;transform-style:preserve-3d;">
-          <div class="relative inline-flex items-center justify-center">
-            <!-- White spinning ring — pops on blue bg -->
-            <div
-              class="absolute -inset-[4px] rounded-full"
-              style="background:conic-gradient(from 0deg,rgba(255,255,255,0.85),rgba(255,255,255,0.15),rgba(255,255,255,0.85));animation:border-spin 8s linear infinite;will-change:transform;"
-              aria-hidden="true"
-            ></div>
-            <!-- Gap ring matching panel bg -->
-            <div class="absolute -inset-[2px] rounded-full bg-primary-600 dark:bg-primary-700" aria-hidden="true"></div>
-            <!-- Photo -->
-            <div class="relative w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 rounded-full overflow-hidden">
-              <Image
-                src={imgProfile}
-                alt="Kevin Maximiliano Palma Romero"
-                width={384}
-                height={384}
-                format="webp"
-                quality={80}
-                class="w-full h-full object-cover"
-                loading="eager"
-              />
-            </div>
+          <div class="w-60 h-60 sm:w-72 sm:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full overflow-hidden ring-4 ring-slate-100 dark:ring-slate-800 bg-slate-200 dark:bg-slate-800">
+            <Image
+              src={imgProfile}
+              alt="Kevin Maximiliano Palma Romero"
+              width={400}
+              height={400}
+              format="webp"
+              quality={85}
+              class="w-full h-full object-cover"
+              loading="eager"
+            />
           </div>
         </div>
       </div>
 
-      <!-- Vertical "AZURE CLOUD" — right edge -->
-      <div class="absolute right-5 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-center gap-3" aria-hidden="true">
-        <div class="w-px h-14 bg-white/20"></div>
-        <span class="text-white/35 text-[9px] font-bold tracking-[0.3em] uppercase" style="writing-mode:vertical-rl;text-orientation:mixed;">AZURE CLOUD</span>
-        <div class="w-px h-14 bg-white/20"></div>
-      </div>
-
     </div>
-
   </div>
 </section>
 
@@ -145,7 +116,6 @@ const t = useTranslations(lang);
 
   if (perspective && tilt) {
     let rafId: number | null = null;
-
     window.addEventListener('mousemove', (e) => {
       const cx = window.innerWidth / 2;
       const cy = window.innerHeight / 2;
@@ -154,19 +124,11 @@ const t = useTranslations(lang);
       if (rafId) return;
       rafId = requestAnimationFrame(() => {
         rafId = null;
-        tilt.style.transform = `rotateX(${-ty * 7}deg) rotateY(${tx * 7}deg)`;
+        tilt.style.transform = `rotateX(${-ty * 6}deg) rotateY(${tx * 6}deg)`;
       });
     }, { passive: true });
-
     document.addEventListener('mouseleave', () => {
       tilt.style.transform = '';
     });
   }
 </script>
-
-<style>
-  @keyframes border-spin {
-    0%   { transform: rotate(0deg);   }
-    100% { transform: rotate(360deg); }
-  }
-</style>
