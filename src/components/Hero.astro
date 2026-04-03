@@ -20,17 +20,22 @@ const isEs = lang === 'es';
       <!-- ── Left: Text ── -->
       <div class="flex-1 min-w-0 text-center lg:text-left">
 
-        <!-- Accent line -->
-        <div class="w-10 h-0.5 bg-primary-500 mb-6 mx-auto lg:mx-0"></div>
+        <!-- Accent line + label -->
+        <div class="hero-item flex items-center gap-3 mb-6 justify-center lg:justify-start" style="--i:0">
+          <div class="w-10 h-0.5 bg-primary-500"></div>
+          <span class="text-sm font-semibold tracking-widest uppercase text-primary-500">
+            {isEs ? 'Portafolio' : 'Portfolio'}
+          </span>
+        </div>
 
         <!-- Heading -->
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 text-slate-900 dark:text-white">
+        <h1 class="hero-item text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-4 text-slate-900 dark:text-white" style="--i:1">
           {isEs ? 'Hola, soy' : "Hi, I'm"}<br/>
-          Kevin Palma.
+          Kevin Maximiliano <span class="whitespace-nowrap">Palma Romero.</span>
         </h1>
 
         <!-- Role badge -->
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 mb-5">
+        <div class="hero-item inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 mb-5" style="--i:2">
           <div class="relative w-1.5 h-1.5">
             <div class="absolute inset-0 rounded-full bg-emerald-400 animate-ping opacity-75"></div>
             <div class="relative w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
@@ -39,15 +44,15 @@ const isEs = lang === 'es';
         </div>
 
         <!-- Bio -->
-        <p class="text-slate-500 dark:text-slate-400 text-base leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0">
+        <p class="hero-item text-slate-500 dark:text-slate-400 text-base leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0" style="--i:3">
           {t('hero.bio')}
         </p>
 
         <!-- CTAs -->
-        <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+        <div class="hero-item flex flex-col sm:flex-row gap-3 justify-center lg:justify-start" style="--i:4">
           <a
             href="#contact"
-            class="group inline-flex items-center justify-center gap-2 px-7 py-3 rounded-lg bg-primary-600 hover:bg-primary-500 text-white font-semibold shadow-md shadow-primary-600/20 hover:shadow-primary-500/30 transition-[transform,box-shadow,background-color] duration-300 hover:-translate-y-0.5 text-sm"
+            class="group inline-flex items-center justify-center gap-2 px-7 py-3 rounded-lg bg-primary-600 hover:bg-primary-500 text-white dark:bg-white dark:text-primary-600 dark:hover:bg-slate-100 font-semibold transition-all duration-300 hover:-translate-y-0.5 text-sm"
             aria-label="Go to contact section"
           >
             {t('hero.contact')}
@@ -58,7 +63,7 @@ const isEs = lang === 'es';
           <a
             href={`/cv/${lang}/CV Kevin Maximiliano Palma Romero - Azure Cloud Engineer 2026.pdf`}
             download
-            class="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-semibold hover:border-slate-300 dark:hover:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all duration-300 hover:-translate-y-0.5 text-sm"
+            class="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 text-slate-700 dark:text-slate-200 font-semibold hover:border-primary-300 dark:hover:border-primary-700 hover:text-primary-600 dark:hover:text-primary-400 transition-all duration-300 hover:-translate-y-0.5 text-sm"
             aria-label="Download CV"
           >
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -72,7 +77,7 @@ const isEs = lang === 'es';
       </div>
 
       <!-- ── Right: Photo ── -->
-      <div class="flex-shrink-0" id="photo-perspective" style="perspective:1200px;">
+      <div class="hero-item flex-shrink-0" id="photo-perspective" style="perspective:1200px; --i:2">
         <div id="photo-tilt" style="transition:transform 0.12s ease-out;transform-style:preserve-3d;">
           <div class="w-60 h-60 sm:w-72 sm:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full overflow-hidden ring-4 ring-slate-100 dark:ring-slate-800 bg-slate-200 dark:bg-slate-800">
             <Image
@@ -91,9 +96,54 @@ const isEs = lang === 'es';
 
     </div>
   </div>
+
+  <!-- ── Scroll indicator ── -->
+  <div class="scroll-indicator absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+    <span class="text-xs font-medium tracking-widest uppercase text-slate-400 dark:text-slate-500">Scroll</span>
+    <!-- Mouse icon -->
+    <div class="mouse-icon w-5 h-8 rounded-full border-2 border-slate-300 dark:border-slate-600 flex justify-center pt-1.5">
+      <div class="scroll-dot w-0.5 h-1.5 rounded-full bg-slate-400 dark:bg-slate-500"></div>
+    </div>
+  </div>
 </section>
 
+<style>
+  /* ── Entrance animations ── */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-item {
+    opacity: 0;
+    animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: calc(100ms + var(--i, 0) * 120ms);
+  }
+
+  /* ── Scroll indicator mouse ── */
+  @keyframes scroll-dot {
+    0%   { transform: translateY(0); opacity: 1; }
+    30%  { transform: translateY(6px); opacity: 0.2; }
+    60%  { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+
+  .scroll-dot {
+    animation: scroll-dot 2.8s ease-in-out infinite;
+  }
+
+  /* Hide scroll indicator once user scrolls */
+  .scroll-indicator {
+    transition: opacity 0.4s ease;
+  }
+  .scroll-indicator.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+</style>
+
 <script>
+  // ── 3D tilt on photo ──
   const perspective = document.getElementById('photo-perspective');
   const tilt = document.getElementById('photo-tilt');
 
@@ -113,5 +163,17 @@ const isEs = lang === 'es';
     document.addEventListener('mouseleave', () => {
       tilt.style.transform = '';
     });
+  }
+
+  // ── Hide scroll indicator on scroll ──
+  const indicator = document.querySelector('.scroll-indicator');
+  if (indicator) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 80) {
+        indicator.classList.add('hidden');
+      } else {
+        indicator.classList.remove('hidden');
+      }
+    }, { passive: true });
   }
 </script>

@@ -3,109 +3,178 @@ import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+const isEs = lang === 'es';
+
 ---
 
-<section id="contact" class="relative py-24 lg:py-32 overflow-hidden" style="content-visibility: auto; contain-intrinsic-size: auto 600px;">
-  <!-- Background decoration blobs -->
-  <div class="absolute inset-0 pointer-events-none overflow-hidden">
-    <div class="absolute -top-32 -left-32 w-[500px] h-[500px] bg-primary-500/5 dark:bg-primary-500/5 rounded-full blur-3xl" style="will-change: transform, opacity;"></div>
-    <div class="absolute -bottom-32 -right-32 w-[500px] h-[500px] bg-accent-500/5 dark:bg-accent-500/5 rounded-full blur-3xl" style="will-change: transform, opacity;"></div>
-  </div>
+<section id="contact" class="relative py-20 lg:py-28 bg-slate-50 dark:bg-slate-900/40">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8">
 
-  <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Two-column content -->
+    <div class="flex flex-col lg:flex-row gap-14 lg:gap-24 items-center">
 
-    <!-- Part 1: CTA Hero Block -->
-    <div class="text-center mb-16">
-      <!-- Large heading -->
-      <h2 class="text-5xl md:text-6xl font-extrabold text-slate-900 dark:text-white mb-4 leading-tight">
-        {t('contact.heading')}
-      </h2>
+      <!-- Left: header + description + CTA -->
+      <div class="flex-1 contact-left">
+        <div class="contact-header flex items-center gap-3 mb-4">
+          <div class="w-10 h-0.5 bg-primary-500"></div>
+          <span class="text-sm font-semibold tracking-widest uppercase text-primary-500">
+            {isEs ? 'Contacto' : 'Contact'}
+          </span>
+        </div>
+        <h2 class="text-4xl lg:text-5xl font-black text-slate-900 dark:text-white mb-4">
+          {t('contact.heading')}
+        </h2>
+        <p class="text-lg text-slate-500 dark:text-slate-400 leading-relaxed mb-8">
+          {t('contact.description')}
+        </p>
 
-      <!-- Gradient subtitle -->
-      <p class="text-2xl md:text-3xl font-semibold bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent mb-5">
-        {t('contact.subheading')}
-      </p>
+        <!-- CTA button -->
+        <a
+          href="mailto:kev.mpr03@outlook.com"
+          class="contact-cta group inline-flex items-center gap-2 px-7 py-3 rounded-lg bg-primary-600 hover:bg-primary-500 text-white dark:bg-white dark:text-primary-600 dark:hover:bg-slate-100 font-semibold transition-all duration-300 hover:-translate-y-0.5 text-sm lg:inline-flex"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+          {t('contact.cta')}
+        </a>
+      </div>
 
-      <!-- Description -->
-      <p class="text-slate-600 dark:text-slate-400 text-lg max-w-xl mx-auto mb-10">
-        {t('contact.description')}
-      </p>
+      <!-- Right: contact tiles -->
+      <div class="shrink-0 w-full lg:w-96 flex flex-col gap-3">
 
-      <!-- Primary CTA button -->
-      <a
-        href="mailto:kev.mpr03@outlook.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-primary-600 to-accent-500 hover:from-primary-500 hover:to-accent-400 text-white font-semibold text-lg shadow-lg shadow-primary-500/25 hover:shadow-primary-500/40 transition-[transform,box-shadow,background-image] duration-300 hover:-translate-y-0.5"
-        aria-label="Send email"
-      >
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-        </svg>
-        {t('contact.cta')}
-      </a>
+        <!-- Email -->
+        <a
+          href="mailto:kev.mpr03@outlook.com"
+          class="contact-tile group relative flex items-center justify-between gap-4 p-5 rounded-2xl bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-lg hover:shadow-primary-500/8 transition-all duration-300 overflow-hidden"
+          style="--delay:0ms"
+        >
+          <div class="tile-accent absolute left-0 top-0 bottom-0 w-1 bg-primary-500 scale-y-0 group-hover:scale-y-100 origin-center transition-transform duration-300 rounded-l-2xl"></div>
+          <div class="flex items-center gap-4 pl-2">
+            <div class="w-12 h-12 rounded-xl bg-slate-100 dark:bg-slate-700/60 flex items-center justify-center shrink-0 group-hover:bg-primary-50 dark:group-hover:bg-primary-900/30 group-hover:scale-110 transition-all duration-300">
+              <svg style="width:22px;height:22px;" class="text-slate-500 dark:text-slate-400 group-hover:text-primary-500 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <span class="text-base font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300">
+              {t('contact.email')}
+            </span>
+          </div>
+          <svg class="w-5 h-5 text-slate-300 dark:text-slate-600 group-hover:text-primary-400 group-hover:translate-x-1 transition-all duration-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+
+        <!-- LinkedIn -->
+        <a
+          href="https://www.linkedin.com/in/kevin-m-palma-r/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="contact-tile group relative flex items-center justify-between gap-4 p-5 rounded-2xl bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-lg hover:shadow-primary-500/8 transition-all duration-300 overflow-hidden"
+          style="--delay:100ms"
+        >
+          <div class="tile-accent absolute left-0 top-0 bottom-0 w-1 bg-primary-500 scale-y-0 group-hover:scale-y-100 origin-center transition-transform duration-300 rounded-l-2xl"></div>
+          <div class="flex items-center gap-4 pl-2">
+            <div class="w-12 h-12 rounded-xl bg-slate-100 dark:bg-slate-700/60 flex items-center justify-center shrink-0 group-hover:bg-primary-50 dark:group-hover:bg-primary-900/30 group-hover:scale-110 transition-all duration-300">
+              <svg style="width:22px;height:22px;" class="text-slate-500 dark:text-slate-400 group-hover:text-primary-500 transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </div>
+            <span class="text-base font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300">
+              {t('contact.linkedin')}
+            </span>
+          </div>
+          <svg class="w-5 h-5 text-slate-300 dark:text-slate-600 group-hover:text-primary-400 group-hover:translate-x-1 transition-all duration-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+
+        <!-- GitHub -->
+        <a
+          href="https://github.com/kevmpr"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="contact-tile group relative flex items-center justify-between gap-4 p-5 rounded-2xl bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-lg hover:shadow-primary-500/8 transition-all duration-300 overflow-hidden"
+          style="--delay:200ms"
+        >
+          <div class="tile-accent absolute left-0 top-0 bottom-0 w-1 bg-primary-500 scale-y-0 group-hover:scale-y-100 origin-center transition-transform duration-300 rounded-l-2xl"></div>
+          <div class="flex items-center gap-4 pl-2">
+            <div class="w-12 h-12 rounded-xl bg-slate-100 dark:bg-slate-700/60 flex items-center justify-center shrink-0 group-hover:bg-primary-50 dark:group-hover:bg-primary-900/30 group-hover:scale-110 transition-all duration-300">
+              <svg style="width:22px;height:22px;" class="text-slate-500 dark:text-slate-400 group-hover:text-primary-500 transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </div>
+            <span class="text-base font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300">
+              {t('contact.github')}
+            </span>
+          </div>
+          <svg class="w-5 h-5 text-slate-300 dark:text-slate-600 group-hover:text-primary-400 group-hover:translate-x-1 transition-all duration-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+
+      </div>
     </div>
 
-    <!-- Part 2: Contact cards row -->
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
-
-      <!-- Email card -->
-      <a
-        href="mailto:kev.mpr03@outlook.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="group flex items-center gap-4 bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-lg hover:shadow-primary-500/10 transition-[border-color,box-shadow] duration-300"
-        aria-label="Send email"
-      >
-        <div class="shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-rose-400 to-red-500 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
-          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-          </svg>
-        </div>
-        <div class="min-w-0">
-          <p class="font-bold text-slate-800 dark:text-slate-100 text-sm">{t('contact.email')}</p>
-          <p class="text-xs text-slate-500 dark:text-slate-400 truncate">{t('contact.emailSubtitle')}</p>
-        </div>
-      </a>
-
-      <!-- LinkedIn card -->
-      <a
-        href="https://www.linkedin.com/in/kevin-m-palma-r/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="group flex items-center gap-4 bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-lg hover:shadow-primary-500/10 transition-[border-color,box-shadow] duration-300"
-        aria-label="Open LinkedIn profile"
-      >
-        <div class="shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
-          <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-          </svg>
-        </div>
-        <div class="min-w-0">
-          <p class="font-bold text-slate-800 dark:text-slate-100 text-sm">{t('contact.linkedin')}</p>
-          <p class="text-xs text-slate-500 dark:text-slate-400 truncate">{t('contact.linkedinSubtitle')}</p>
-        </div>
-      </a>
-
-      <!-- GitHub card -->
-      <a
-        href="https://github.com/kevmpr"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="group flex items-center gap-4 bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-lg hover:shadow-primary-500/10 transition-[border-color,box-shadow] duration-300"
-        aria-label="Open GitHub profile"
-      >
-        <div class="shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-slate-600 to-slate-900 dark:from-slate-400 dark:to-slate-600 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
-          <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-          </svg>
-        </div>
-        <div class="min-w-0">
-          <p class="font-bold text-slate-800 dark:text-slate-100 text-sm">{t('contact.github')}</p>
-          <p class="text-xs text-slate-500 dark:text-slate-400 truncate">{t('contact.githubSubtitle')}</p>
-        </div>
-      </a>
-
-    </div>
   </div>
 </section>
+
+<style>
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes slideLeft {
+    from { opacity: 0; transform: translateX(-28px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes slideRight {
+    from { opacity: 0; transform: translateX(28px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+
+  .contact-header {
+    opacity: 0;
+  }
+  .contact-header.animated {
+    animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .contact-left {
+    opacity: 0;
+  }
+  .contact-left.animated {
+    animation: slideLeft 0.6s cubic-bezier(0.16, 1, 0.3, 1) both 100ms;
+  }
+
+  .contact-tile {
+    opacity: 0;
+  }
+  .contact-tile.animated {
+    animation: slideRight 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: var(--delay, 0ms);
+  }
+
+  .contact-cta {
+    opacity: 0;
+  }
+  .contact-cta.animated {
+    animation: fadeUp 0.5s ease both 300ms;
+  }
+</style>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animated');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll(
+    '#contact .contact-left, #contact .contact-tile, #contact .contact-cta'
+  ).forEach((el) => io.observe(el));
+</script>

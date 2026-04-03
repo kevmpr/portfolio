@@ -6,7 +6,6 @@ const t = useTranslations(lang);
 
 const isEs = lang === 'es';
 
-// Soft skills per language
 const softSkills = isEs
   ? [
       { emoji: '🤝', label: 'Trabajo en Equipo' },
@@ -31,121 +30,129 @@ const softSkills = isEs
 ---
 
 <section id="skills" class="relative py-20 lg:py-28" style="content-visibility: auto; contain-intrinsic-size: auto 600px;">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8">
 
     <!-- Section header -->
-    <div class="text-center mb-16 reveal">
-      <h2 class="text-4xl sm:text-5xl font-bold mb-4">
-        <span class="bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent">
-          {t('skills.title')}
+    <div class="reveal mb-16 lg:mb-24 max-w-2xl">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-0.5 bg-primary-500"></div>
+        <span class="text-sm font-semibold tracking-widest uppercase text-primary-500">
+          {isEs ? 'Stack técnico' : 'Tech Stack'}
         </span>
-      </h2>
-      <p class="text-center text-slate-500 dark:text-slate-400 mt-3 max-w-2xl mx-auto text-base">
-        {t('skills.description')}
-      </p>
+      </div>
+      <h2 class="text-4xl lg:text-5xl font-black text-slate-900 dark:text-white mb-4">{t('skills.title')}</h2>
+      <p class="text-lg text-slate-500 dark:text-slate-400 leading-relaxed">{t('skills.description')}</p>
     </div>
 
     <!-- Categories -->
-    <div class="grid grid-cols-1 gap-10">
+    <div class="grid grid-cols-1 gap-0">
 
       <!-- Cloud -->
-      <div class="flex items-start gap-6 lg:gap-12 border-b border-slate-100 dark:border-slate-800 pb-8 reveal">
-        <div class="w-40 lg:w-48 shrink-0 pt-2">
+      <div class="skill-row flex items-start gap-6 lg:gap-12 border-b border-slate-100 dark:border-slate-800 pb-10 mb-10" style="--delay:0ms">
+        <div class="w-40 lg:w-48 shrink-0 pt-1.5">
           <span class="text-2xl font-black text-slate-800 dark:text-slate-100 tracking-tight uppercase">Cloud</span>
         </div>
         <div class="flex flex-wrap gap-3">
-          <!-- Devicon skills -->
-          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+          <!-- Devicon -->
+          <div class="skill-pill flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200" style="--delay:40ms">
             <i class="devicon-azure-plain colored text-xl w-6 h-6 flex items-center justify-center"></i>
             <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Azure</span>
           </div>
-          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+          <div class="skill-pill flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200" style="--delay:80ms">
             <i class="devicon-docker-plain colored text-xl w-6 h-6 flex items-center justify-center"></i>
             <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Docker</span>
           </div>
-          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+          <div class="skill-pill flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200" style="--delay:120ms">
             <i class="devicon-terraform-plain colored text-xl w-6 h-6 flex items-center justify-center"></i>
             <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Terraform</span>
           </div>
-          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+          <div class="skill-pill flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200" style="--delay:160ms">
             <i class="devicon-linux-plain text-xl w-6 h-6 flex items-center justify-center text-slate-700 dark:text-slate-200"></i>
             <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Linux</span>
           </div>
-          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+          <div class="skill-pill flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200" style="--delay:200ms">
             <i class="devicon-bash-plain colored text-xl w-6 h-6 flex items-center justify-center"></i>
             <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Bash</span>
           </div>
-          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+          <div class="skill-pill flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200" style="--delay:240ms">
             <i class="devicon-git-plain colored text-xl w-6 h-6 flex items-center justify-center"></i>
             <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Git</span>
           </div>
-          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+          <div class="skill-pill flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200" style="--delay:280ms">
             <i class="devicon-github-original text-xl w-6 h-6 flex items-center justify-center dark:invert"></i>
             <span class="text-sm font-medium text-slate-700 dark:text-slate-200">GitHub</span>
           </div>
-          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+          <div class="skill-pill flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200" style="--delay:320ms">
             <i class="devicon-vscode-plain colored text-xl w-6 h-6 flex items-center justify-center"></i>
             <span class="text-sm font-medium text-slate-700 dark:text-slate-200">VS Code</span>
           </div>
-          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+          <div class="skill-pill flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200" style="--delay:360ms">
             <i class="devicon-postman-plain colored text-xl w-6 h-6 flex items-center justify-center"></i>
             <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Postman</span>
           </div>
-          <!-- Pill-only skills (no devicon) -->
-          <div class="flex items-center px-3 py-2 rounded-xl bg-primary-500/10 dark:bg-primary-500/10 border border-primary-200 dark:border-primary-800/50 text-sm font-medium text-primary-700 dark:text-primary-300 hover:shadow-md transition-all duration-200">
-            PowerShell
+          <!-- Emoji fallback pills -->
+          <div class="skill-pill flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200" style="--delay:400ms">
+            <span class="text-base leading-none">⚡</span>
+            <span class="text-sm font-medium text-slate-700 dark:text-slate-200">PowerShell</span>
           </div>
-          <div class="flex items-center px-3 py-2 rounded-xl bg-primary-500/10 dark:bg-primary-500/10 border border-primary-200 dark:border-primary-800/50 text-sm font-medium text-primary-700 dark:text-primary-300 hover:shadow-md transition-all duration-200">
-            ARM Templates
+          <div class="skill-pill flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200" style="--delay:440ms">
+            <span class="text-base leading-none">📄</span>
+            <span class="text-sm font-medium text-slate-700 dark:text-slate-200">ARM Templates</span>
           </div>
-          <div class="flex items-center px-3 py-2 rounded-xl bg-primary-500/10 dark:bg-primary-500/10 border border-primary-200 dark:border-primary-800/50 text-sm font-medium text-primary-700 dark:text-primary-300 hover:shadow-md transition-all duration-200">
-            IaC
+          <div class="skill-pill flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200" style="--delay:480ms">
+            <span class="text-base leading-none">🏗️</span>
+            <span class="text-sm font-medium text-slate-700 dark:text-slate-200">IaC</span>
           </div>
-          <div class="flex items-center px-3 py-2 rounded-xl bg-primary-500/10 dark:bg-primary-500/10 border border-primary-200 dark:border-primary-800/50 text-sm font-medium text-primary-700 dark:text-primary-300 hover:shadow-md transition-all duration-200">
-            RBAC
+          <div class="skill-pill flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200" style="--delay:520ms">
+            <span class="text-base leading-none">🔐</span>
+            <span class="text-sm font-medium text-slate-700 dark:text-slate-200">RBAC</span>
           </div>
-          <div class="flex items-center px-3 py-2 rounded-xl bg-primary-500/10 dark:bg-primary-500/10 border border-primary-200 dark:border-primary-800/50 text-sm font-medium text-primary-700 dark:text-primary-300 hover:shadow-md transition-all duration-200">
-            FinOps
+          <div class="skill-pill flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200" style="--delay:560ms">
+            <span class="text-base leading-none">💰</span>
+            <span class="text-sm font-medium text-slate-700 dark:text-slate-200">FinOps</span>
           </div>
-          <div class="flex items-center px-3 py-2 rounded-xl bg-primary-500/10 dark:bg-primary-500/10 border border-primary-200 dark:border-primary-800/50 text-sm font-medium text-primary-700 dark:text-primary-300 hover:shadow-md transition-all duration-200">
-            Azure DevOps
+          <div class="skill-pill flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200" style="--delay:600ms">
+            <span class="text-base leading-none">🔄</span>
+            <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Azure DevOps</span>
           </div>
-          <div class="flex items-center px-3 py-2 rounded-xl bg-primary-500/10 dark:bg-primary-500/10 border border-primary-200 dark:border-primary-800/50 text-sm font-medium text-primary-700 dark:text-primary-300 hover:shadow-md transition-all duration-200">
-            VMs & VNets
+          <div class="skill-pill flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200" style="--delay:640ms">
+            <span class="text-base leading-none">🖥️</span>
+            <span class="text-sm font-medium text-slate-700 dark:text-slate-200">VMs & VNets</span>
           </div>
-          <div class="flex items-center px-3 py-2 rounded-xl bg-primary-500/10 dark:bg-primary-500/10 border border-primary-200 dark:border-primary-800/50 text-sm font-medium text-primary-700 dark:text-primary-300 hover:shadow-md transition-all duration-200">
-            Networking
+          <div class="skill-pill flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200" style="--delay:680ms">
+            <span class="text-base leading-none">🌐</span>
+            <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Networking</span>
           </div>
         </div>
       </div>
 
       <!-- Frontend -->
-      <div class="flex items-start gap-6 lg:gap-12 border-b border-slate-100 dark:border-slate-800 pb-8 reveal">
-        <div class="w-40 lg:w-48 shrink-0 pt-2">
+      <div class="skill-row flex items-start gap-6 lg:gap-12 border-b border-slate-100 dark:border-slate-800 pb-10 mb-10" style="--delay:80ms">
+        <div class="w-40 lg:w-48 shrink-0 pt-1.5">
           <span class="text-2xl font-black text-slate-800 dark:text-slate-100 tracking-tight uppercase">Frontend</span>
         </div>
         <div class="flex flex-wrap gap-3">
-          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+          <div class="skill-pill flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200" style="--delay:40ms">
             <i class="devicon-html5-plain colored text-xl w-6 h-6 flex items-center justify-center"></i>
             <span class="text-sm font-medium text-slate-700 dark:text-slate-200">HTML5</span>
           </div>
-          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+          <div class="skill-pill flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200" style="--delay:80ms">
             <i class="devicon-css3-plain colored text-xl w-6 h-6 flex items-center justify-center"></i>
             <span class="text-sm font-medium text-slate-700 dark:text-slate-200">CSS3</span>
           </div>
-          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+          <div class="skill-pill flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200" style="--delay:120ms">
             <i class="devicon-javascript-plain colored text-xl w-6 h-6 flex items-center justify-center"></i>
             <span class="text-sm font-medium text-slate-700 dark:text-slate-200">JavaScript</span>
           </div>
-          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+          <div class="skill-pill flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200" style="--delay:160ms">
             <i class="devicon-typescript-plain colored text-xl w-6 h-6 flex items-center justify-center"></i>
             <span class="text-sm font-medium text-slate-700 dark:text-slate-200">TypeScript</span>
           </div>
-          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+          <div class="skill-pill flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200" style="--delay:200ms">
             <i class="devicon-angularjs-plain colored text-xl w-6 h-6 flex items-center justify-center"></i>
             <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Angular</span>
           </div>
-          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+          <div class="skill-pill flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200" style="--delay:240ms">
             <i class="devicon-tailwindcss-original colored text-xl w-6 h-6 flex items-center justify-center"></i>
             <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Tailwind CSS</span>
           </div>
@@ -153,24 +160,24 @@ const softSkills = isEs
       </div>
 
       <!-- Backend -->
-      <div class="flex items-start gap-6 lg:gap-12 border-b border-slate-100 dark:border-slate-800 pb-8 reveal">
-        <div class="w-40 lg:w-48 shrink-0 pt-2">
+      <div class="skill-row flex items-start gap-6 lg:gap-12 border-b border-slate-100 dark:border-slate-800 pb-10 mb-10" style="--delay:160ms">
+        <div class="w-40 lg:w-48 shrink-0 pt-1.5">
           <span class="text-2xl font-black text-slate-800 dark:text-slate-100 tracking-tight uppercase">Backend</span>
         </div>
         <div class="flex flex-wrap gap-3">
-          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+          <div class="skill-pill flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200" style="--delay:40ms">
             <i class="devicon-nodejs-plain colored text-xl w-6 h-6 flex items-center justify-center"></i>
             <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Node.js</span>
           </div>
-          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+          <div class="skill-pill flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200" style="--delay:80ms">
             <i class="devicon-express-original text-xl w-6 h-6 flex items-center justify-center dark:invert"></i>
             <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Express</span>
           </div>
-          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+          <div class="skill-pill flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200" style="--delay:120ms">
             <i class="devicon-java-plain colored text-xl w-6 h-6 flex items-center justify-center"></i>
             <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Java</span>
           </div>
-          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+          <div class="skill-pill flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200" style="--delay:160ms">
             <i class="devicon-spring-plain colored text-xl w-6 h-6 flex items-center justify-center"></i>
             <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Spring</span>
           </div>
@@ -178,18 +185,18 @@ const softSkills = isEs
       </div>
 
       <!-- Databases -->
-      <div class="flex items-start gap-6 lg:gap-12 border-b border-slate-100 dark:border-slate-800 pb-8 reveal">
-        <div class="w-40 lg:w-48 shrink-0 pt-2">
+      <div class="skill-row flex items-start gap-6 lg:gap-12 border-b border-slate-100 dark:border-slate-800 pb-10 mb-10" style="--delay:240ms">
+        <div class="w-40 lg:w-48 shrink-0 pt-1.5">
           <span class="text-2xl font-black text-slate-800 dark:text-slate-100 tracking-tight uppercase">
             {isEs ? 'Bases de Datos' : 'Databases'}
           </span>
         </div>
         <div class="flex flex-wrap gap-3">
-          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+          <div class="skill-pill flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200" style="--delay:40ms">
             <i class="devicon-postgresql-plain colored text-xl w-6 h-6 flex items-center justify-center"></i>
             <span class="text-sm font-medium text-slate-700 dark:text-slate-200">PostgreSQL</span>
           </div>
-          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+          <div class="skill-pill flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200" style="--delay:80ms">
             <i class="devicon-mysql-plain colored text-xl w-6 h-6 flex items-center justify-center"></i>
             <span class="text-sm font-medium text-slate-700 dark:text-slate-200">MySQL</span>
           </div>
@@ -197,33 +204,38 @@ const softSkills = isEs
       </div>
 
       <!-- Soft Skills -->
-      <div class="flex items-start gap-6 lg:gap-12 border-b border-slate-100 dark:border-slate-800 pb-8 reveal">
-        <div class="w-40 lg:w-48 shrink-0 pt-2">
+      <div class="skill-row flex items-start gap-6 lg:gap-12 border-b border-slate-100 dark:border-slate-800 pb-10 mb-10" style="--delay:320ms">
+        <div class="w-40 lg:w-48 shrink-0 pt-1.5">
           <span class="text-2xl font-black text-slate-800 dark:text-slate-100 tracking-tight uppercase">Soft Skills</span>
         </div>
         <div class="flex flex-wrap gap-3">
-          {softSkills.map(({ emoji, label }) => (
-            <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-violet-50 dark:bg-violet-900/20 border border-violet-200 dark:border-violet-700/40 text-sm font-medium text-violet-700 dark:text-violet-300 hover:shadow-md transition-all duration-200">
-              <span>{emoji}</span>
-              <span>{label}</span>
+          {softSkills.map(({ emoji, label }, i) => (
+            <div
+              class="skill-pill flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200"
+              style={`--delay: ${i * 40}ms`}
+            >
+              <span class="text-base leading-none">{emoji}</span>
+              <span class="text-sm font-medium text-slate-700 dark:text-slate-200">{label}</span>
             </div>
           ))}
         </div>
       </div>
 
       <!-- Languages -->
-      <div class="flex items-start gap-6 lg:gap-12 reveal">
-        <div class="w-40 lg:w-48 shrink-0 pt-2">
+      <div class="skill-row flex items-start gap-6 lg:gap-12" style="--delay:400ms">
+        <div class="w-40 lg:w-48 shrink-0 pt-1.5">
           <span class="text-2xl font-black text-slate-800 dark:text-slate-100 tracking-tight uppercase">
             {isEs ? 'Idiomas' : 'Languages'}
           </span>
         </div>
         <div class="flex flex-wrap gap-3">
-          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 text-sm font-medium text-slate-700 dark:text-slate-200 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200">
-            🇪🇸 Español — Nativo
+          <div class="skill-pill flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200" style="--delay:40ms">
+            <span class="text-base leading-none">🇪🇸</span>
+            <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Español — Nativo</span>
           </div>
-          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 text-sm font-medium text-slate-700 dark:text-slate-200 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200">
-            🇬🇧 English — B2
+          <div class="skill-pill flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200" style="--delay:80ms">
+            <span class="text-base leading-none">🇬🇧</span>
+            <span class="text-sm font-medium text-slate-700 dark:text-slate-200">English — B2</span>
           </div>
         </div>
       </div>
@@ -231,3 +243,51 @@ const softSkills = isEs
     </div>
   </div>
 </section>
+
+<style>
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-24px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+  }
+  .reveal.animated {
+    animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .skill-row {
+    opacity: 0;
+  }
+  .skill-row.animated {
+    animation: slideInLeft 0.5s ease both;
+    animation-delay: var(--delay, 0ms);
+  }
+
+  .skill-pill {
+    opacity: 0;
+  }
+  .skill-pill.animated {
+    animation: fadeUp 0.4s ease both;
+    animation-delay: var(--delay, 0ms);
+  }
+</style>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animated');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('#skills .reveal, #skills .skill-row, #skills .skill-pill').forEach((el) => io.observe(el));
+</script>

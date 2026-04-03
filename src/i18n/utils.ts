@@ -144,7 +144,7 @@ export const translations = {
         'contact.githubSubtitle': 'Ver proyectos',
         'contact.heading': 'Hablemos',
         'contact.subheading': '¿Tenés un proyecto en mente?',
-        'contact.description': 'Estoy disponible para roles de cloud, consultoría técnica o colaboraciones.',
+        'contact.description': 'Si te interesa mi perfil, tenés una propuesta o simplemente querés charlar, no dudes en escribirme.',
         'contact.cta': 'Enviar un mensaje',
 
         // Footer
@@ -290,7 +290,7 @@ export const translations = {
         'contact.githubSubtitle': 'View projects',
         'contact.heading': "Let's talk",
         'contact.subheading': 'Got a project in mind?',
-        'contact.description': 'Available for cloud roles, technical consulting, or collaborations.',
+        'contact.description': 'If you like my profile, have a proposal, or just want to chat — feel free to reach out.',
         'contact.cta': 'Send a message',
 
         // Footer
