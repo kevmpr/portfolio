@@ -52,6 +52,7 @@ export const translations = {
         'edu.uade.period': 'Mar 2026 – Presente',
         'edu.uade.status': 'En curso',
         'edu.uade.description': 'Profundizando en fundamentos de ingeniería informática, arquitectura de sistemas y gestión de proyectos tecnológicos.',
+        'edu.uade.details': 'Programación I, II y III\nArquitectura de Computadores\nSistemas Operativos\nIngeniería de Software\nIngeniería de Datos I y II\nTeleinformática y Redes\nSeguridad e Integridad de la Información\nParadigma Orientado a Objetos\nInteligencia Artificial\nCiencia de Datos\nDesarrollo de Aplicaciones I y II\nDirección de Proyectos Informáticos\nArquitectura de Aplicaciones',
 
         'edu.ifts.title': 'Tecnicatura Superior en Desarrollo de Software',
         'edu.ifts.institution': 'Instituto de Formación Técnica Superior N° 11',
@@ -197,6 +198,7 @@ export const translations = {
         'edu.uade.period': 'Mar 2026 – Present',
         'edu.uade.status': 'In progress',
         'edu.uade.description': 'Deepening knowledge in computer engineering fundamentals, systems architecture, and technology project management.',
+        'edu.uade.details': 'Programming I, II & III\nComputer Architecture\nOperating Systems\nSoftware Engineering\nData Engineering I & II\nTeleinformatics & Networks\nInformation Security & Integrity\nObject-Oriented Paradigm\nArtificial Intelligence\nData Science\nApplication Development I & II\nIT Project Management\nApplication Architecture',
 
         'edu.ifts.title': 'Software Development Technician',
         'edu.ifts.institution': 'Instituto de Formación Técnica Superior N° 11',

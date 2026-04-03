@@ -4,139 +4,30 @@ import { getLangFromUrl, useTranslations } from '../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const technicalSkills: { category: string; icon: string; skills: string[]; gradient: string; iconGradient: string }[] = [
-  {
-    category: 'Cloud & Infrastructure',
-    icon: '☁️',
-    gradient: 'from-blue-500 to-cyan-500',
-    iconGradient: 'from-blue-500 to-cyan-500',
-    skills: [
-      'Microsoft Azure',
-      'AWS',
-      'Azure Virtual Machines',
-      'VNets & NSG',
-      'Azure Migrate',
-      'Private Endpoints',
-      'DNS',
-      'Application Gateway',
-    ],
-  },
-  {
-    category: 'Networking & Security',
-    icon: '🔒',
-    gradient: 'from-violet-500 to-purple-500',
-    iconGradient: 'from-violet-500 to-purple-500',
-    skills: [
-      'Azure Networking',
-      'RBAC',
-      'Azure Advisor',
-      'Azure Resource Graph',
-      'FinOps',
-    ],
-  },
-  {
-    category: 'Automation & Tools',
-    icon: '⚙️',
-    gradient: 'from-orange-500 to-amber-500',
-    iconGradient: 'from-orange-500 to-amber-500',
-    skills: [
-      'PowerShell',
-      'Docker',
-      'Git',
-      'Postman',
-      'Trello',
-      'Azure Pricing Calculator',
-    ],
-  },
-  {
-    category: 'Frontend',
-    icon: '🎨',
-    gradient: 'from-pink-500 to-rose-500',
-    iconGradient: 'from-pink-500 to-rose-500',
-    skills: [
-      'HTML',
-      'CSS',
-      'Tailwind CSS',
-      'JavaScript',
-      'TypeScript',
-      'Angular',
-    ],
-  },
-  {
-    category: 'Backend & Databases',
-    icon: '🗄️',
-    gradient: 'from-emerald-500 to-green-500',
-    iconGradient: 'from-emerald-500 to-green-500',
-    skills: [
-      'Node.js',
-      'Express.js',
-      'Java',
-      'Spring',
-      'PostgreSQL',
-      'MySQL',
-    ],
-  },
-  {
-    category: 'Azure Services',
-    icon: '🔷',
-    gradient: 'from-cyan-500 to-blue-500',
-    iconGradient: 'from-cyan-500 to-blue-500',
-    skills: [
-      'Web Apps',
-      'App Service Plans',
-      'SQL Server',
-      'MySQL Flexible Server',
-      'Function Apps',
-      'API Management',
-      'Cloudockit',
-    ],
-  },
-];
+const isEs = lang === 'es';
 
-const softSkillCategories = [
-  {
-    categoryKey: 'soft.collab' as const,
-    icon: '🤝',
-    gradient: 'from-blue-500 to-sky-500',
-    iconGradient: 'from-blue-500 to-sky-500',
-    skills: [
-      { key: 'soft.teamwork' as const,      emoji: '🤝' },
-      { key: 'soft.communication' as const, emoji: '💬' },
-      { key: 'soft.negotiation' as const,   emoji: '🎯' },
-    ],
-  },
-  {
-    categoryKey: 'soft.cognitive' as const,
-    icon: '🧠',
-    gradient: 'from-emerald-500 to-teal-500',
-    iconGradient: 'from-emerald-500 to-teal-500',
-    skills: [
-      { key: 'soft.critical' as const,      emoji: '🧠' },
-      { key: 'soft.adaptability' as const,  emoji: '⚡' },
-    ],
-  },
-  {
-    categoryKey: 'soft.organization' as const,
-    icon: '📋',
-    gradient: 'from-violet-500 to-purple-500',
-    iconGradient: 'from-violet-500 to-purple-500',
-    skills: [
-      { key: 'soft.planning' as const,      emoji: '📋' },
-      { key: 'soft.ethics' as const,        emoji: '✅' },
-    ],
-  },
-];
-
-const languageCategory = {
-  categoryKey: 'lang.multilingual' as const,
-  icon: '🌐',
-  gradient: 'from-primary-500 to-accent-500',
-  iconGradient: 'from-primary-500 to-accent-500',
-  skills: [
-    { key: 'lang.spanish' as const, badge: lang === 'en' ? 'Native' : 'Nativo' },
-    { key: 'lang.english' as const, badge: 'B2' },
-  ],
-};
+// Soft skills per language
+const softSkills = isEs
+  ? [
+      { emoji: '🤝', label: 'Trabajo en Equipo' },
+      { emoji: '🧩', label: 'Resolución de Problemas' },
+      { emoji: '🗣️', label: 'Comunicación' },
+      { emoji: '📋', label: 'Organización' },
+      { emoji: '🚀', label: 'Aprendizaje Continuo' },
+      { emoji: '🌐', label: 'Adaptabilidad' },
+      { emoji: '🎯', label: 'Negociación' },
+      { emoji: '✅', label: 'Ética Profesional' },
+    ]
+  : [
+      { emoji: '🤝', label: 'Teamwork' },
+      { emoji: '🧩', label: 'Problem Solving' },
+      { emoji: '🗣️', label: 'Communication' },
+      { emoji: '📋', label: 'Organization' },
+      { emoji: '🚀', label: 'Continuous Learning' },
+      { emoji: '🌐', label: 'Adaptability' },
+      { emoji: '🎯', label: 'Negotiation' },
+      { emoji: '✅', label: 'Professional Ethics' },
+    ];
 ---
 
 <section id="skills" class="relative py-20 lg:py-28" style="content-visibility: auto; contain-intrinsic-size: auto 600px;">
@@ -149,137 +40,194 @@ const languageCategory = {
           {t('skills.title')}
         </span>
       </h2>
-      <!-- Decorative accent line -->
-      <div class="flex items-center justify-center gap-3 mt-3">
-        <div class="h-px w-16 bg-gradient-to-r from-transparent to-primary-400 dark:to-primary-500"></div>
-        <div class="h-[3px] w-12 rounded-full bg-gradient-to-r from-primary-500 to-accent-500"></div>
-        <div class="h-px w-16 bg-gradient-to-l from-transparent to-accent-400 dark:to-accent-500"></div>
-      </div>
+      <p class="text-center text-slate-500 dark:text-slate-400 mt-3 max-w-2xl mx-auto text-base">
+        {t('skills.description')}
+      </p>
     </div>
 
-    <!-- Technical Skills -->
-    <div class="mb-12">
-      <h3 class="text-2xl font-bold mb-8 text-center text-slate-700 dark:text-slate-200 reveal">
-        {t('skills.technical')}
-      </h3>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {technicalSkills.map((category, i) => (
-          <div class="reveal h-full" style={`--reveal-delay: ${i * 100}ms`}>
-            <div class="skill-card group bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-xl transition-all duration-300 rounded-2xl overflow-hidden h-full">
-              <!-- Gradient top accent strip -->
-              <div class={`h-[3px] w-full bg-gradient-to-r ${category.gradient}`}></div>
-              <div class="p-5 h-full hover:-translate-y-1 transition-transform duration-300">
-                <!-- Card header -->
-                <div class="flex items-center gap-3 mb-4 pb-3 border-b border-slate-100 dark:border-slate-700/60">
-                  <div class={`w-11 h-11 rounded-xl bg-gradient-to-br ${category.iconGradient} flex items-center justify-center text-xl flex-shrink-0`}>
-                    {category.icon}
-                  </div>
-                  <h4 class="font-bold text-base text-slate-800 dark:text-slate-100">{category.category}</h4>
-                  <span class="ml-auto text-xs font-medium text-slate-400 dark:text-slate-500 shrink-0">{category.skills.length}</span>
-                </div>
-                <!-- Skill badges -->
-                <ul class="space-y-2">
-                  {category.skills.map((skill) => (
-                      <li class="flex items-center gap-2 px-2.5 py-1.5 rounded-lg
-                                  bg-slate-100 dark:bg-slate-700/60
-                                  border border-slate-200 dark:border-slate-600
-                                  border-l-2 border-l-slate-300 dark:border-l-slate-500
-                                  hover:border-primary-400 dark:hover:border-primary-500
-                                  hover:border-l-primary-400 dark:hover:border-l-primary-500
-                                  hover:text-primary-600 dark:hover:text-primary-400
-                                  hover:-translate-y-0.5 hover:shadow-sm
-                                  transition-all duration-150 cursor-default">
-                        <span class="text-xs font-medium text-slate-700 dark:text-slate-300 leading-tight">
-                          {skill}
-                        </span>
-                      </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+    <!-- Categories -->
+    <div class="grid grid-cols-1 gap-10">
+
+      <!-- Cloud -->
+      <div class="flex items-start gap-6 lg:gap-12 border-b border-slate-100 dark:border-slate-800 pb-8 reveal">
+        <div class="w-40 lg:w-48 shrink-0 pt-2">
+          <span class="text-2xl font-black text-slate-800 dark:text-slate-100 tracking-tight uppercase">Cloud</span>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <!-- Devicon skills -->
+          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+            <i class="devicon-azure-plain colored text-xl w-6 h-6 flex items-center justify-center"></i>
+            <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Azure</span>
           </div>
-        ))}
-      </div>
-
-    </div>
-
-    <!-- Soft Skills -->
-    <div class="mb-12">
-      <h3 class="text-2xl font-bold mb-8 text-center text-slate-700 dark:text-slate-200 reveal">
-        {t('skills.soft')}
-      </h3>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {softSkillCategories.map((cat, i) => (
-          <div class="reveal h-full" style={`--reveal-delay: ${i * 100}ms`}>
-            <div class="skill-card group bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-xl transition-all duration-300 rounded-2xl overflow-hidden h-full">
-              <!-- Gradient top accent strip -->
-              <div class={`h-[3px] w-full bg-gradient-to-r ${cat.gradient}`}></div>
-              <div class="p-5 h-full hover:-translate-y-1 transition-transform duration-300">
-                <div class="flex items-center gap-3 mb-4 pb-3 border-b border-slate-100 dark:border-slate-700/60">
-                  <div class={`w-11 h-11 rounded-xl bg-gradient-to-br ${cat.iconGradient} flex items-center justify-center text-xl flex-shrink-0`}>
-                    {cat.icon}
-                  </div>
-                  <h4 class="font-bold text-base text-slate-800 dark:text-slate-100">{t(cat.categoryKey)}</h4>
-                  <span class="ml-auto text-xs font-medium text-slate-400 dark:text-slate-500 shrink-0">{cat.skills.length}</span>
-                </div>
-                <div class="flex flex-wrap gap-2">
-                  {cat.skills.map(({ key, emoji }) => (
-                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-full bg-violet-500/10 text-violet-600 dark:text-violet-400 border border-violet-500/20 hover:bg-violet-500/20 hover:-translate-y-0.5 hover:shadow-sm transition-all duration-200 cursor-default">
-                      <span class="leading-none">{emoji}</span>
-                      {t(key)}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+            <i class="devicon-docker-plain colored text-xl w-6 h-6 flex items-center justify-center"></i>
+            <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Docker</span>
           </div>
-        ))}
-      </div>
-    </div>
-
-    <!-- Languages -->
-    <div>
-      <h3 class="text-2xl font-bold mb-8 text-center text-slate-700 dark:text-slate-200 reveal">
-        {t('skills.languages')}
-      </h3>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        <div class="reveal">
-          <div class="skill-card group bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-xl transition-all duration-300 rounded-2xl overflow-hidden">
-            <!-- Gradient top accent strip -->
-            <div class="h-[3px] w-full bg-gradient-to-r from-primary-500 to-accent-500"></div>
-            <div class="p-5 h-full hover:-translate-y-1 transition-transform duration-300">
-              <div class="flex items-center gap-3 mb-4 pb-3 border-b border-slate-100 dark:border-slate-700/60">
-                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-xl flex-shrink-0">
-                  {languageCategory.icon}
-                </div>
-                <h4 class="font-bold text-base text-slate-800 dark:text-slate-100">{t(languageCategory.categoryKey)}</h4>
-                <span class="ml-auto text-xs font-medium text-slate-400 dark:text-slate-500 shrink-0">{languageCategory.skills.length}</span>
-              </div>
-              <ul class="space-y-2">
-                {languageCategory.skills.map(({ key, badge }) => (
-                  <li class="flex items-center justify-between gap-2 px-2.5 py-1.5 rounded-lg
-                              bg-slate-100 dark:bg-slate-700/60
-                              border border-slate-200 dark:border-slate-600
-                              border-l-2 border-l-slate-300 dark:border-l-slate-500
-                              hover:border-primary-400 dark:hover:border-primary-500
-                              hover:border-l-primary-400 dark:hover:border-l-primary-500
-                              hover:-translate-y-0.5 hover:shadow-sm
-                              transition-all duration-150 cursor-default">
-                    <span class="text-xs font-medium text-slate-700 dark:text-slate-300">
-                      {t(key)}
-                    </span>
-                    <span class="px-2 py-0.5 rounded-full text-[10px] font-bold tracking-wide
-                                  bg-primary-500 dark:bg-primary-400 text-white dark:text-slate-900 shrink-0">
-                      {badge}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+            <i class="devicon-terraform-plain colored text-xl w-6 h-6 flex items-center justify-center"></i>
+            <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Terraform</span>
+          </div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+            <i class="devicon-linux-plain text-xl w-6 h-6 flex items-center justify-center text-slate-700 dark:text-slate-200"></i>
+            <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Linux</span>
+          </div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+            <i class="devicon-bash-plain colored text-xl w-6 h-6 flex items-center justify-center"></i>
+            <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Bash</span>
+          </div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+            <i class="devicon-git-plain colored text-xl w-6 h-6 flex items-center justify-center"></i>
+            <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Git</span>
+          </div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+            <i class="devicon-github-original text-xl w-6 h-6 flex items-center justify-center dark:invert"></i>
+            <span class="text-sm font-medium text-slate-700 dark:text-slate-200">GitHub</span>
+          </div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+            <i class="devicon-vscode-plain colored text-xl w-6 h-6 flex items-center justify-center"></i>
+            <span class="text-sm font-medium text-slate-700 dark:text-slate-200">VS Code</span>
+          </div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+            <i class="devicon-postman-plain colored text-xl w-6 h-6 flex items-center justify-center"></i>
+            <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Postman</span>
+          </div>
+          <!-- Pill-only skills (no devicon) -->
+          <div class="flex items-center px-3 py-2 rounded-xl bg-primary-500/10 dark:bg-primary-500/10 border border-primary-200 dark:border-primary-800/50 text-sm font-medium text-primary-700 dark:text-primary-300 hover:shadow-md transition-all duration-200">
+            PowerShell
+          </div>
+          <div class="flex items-center px-3 py-2 rounded-xl bg-primary-500/10 dark:bg-primary-500/10 border border-primary-200 dark:border-primary-800/50 text-sm font-medium text-primary-700 dark:text-primary-300 hover:shadow-md transition-all duration-200">
+            ARM Templates
+          </div>
+          <div class="flex items-center px-3 py-2 rounded-xl bg-primary-500/10 dark:bg-primary-500/10 border border-primary-200 dark:border-primary-800/50 text-sm font-medium text-primary-700 dark:text-primary-300 hover:shadow-md transition-all duration-200">
+            IaC
+          </div>
+          <div class="flex items-center px-3 py-2 rounded-xl bg-primary-500/10 dark:bg-primary-500/10 border border-primary-200 dark:border-primary-800/50 text-sm font-medium text-primary-700 dark:text-primary-300 hover:shadow-md transition-all duration-200">
+            RBAC
+          </div>
+          <div class="flex items-center px-3 py-2 rounded-xl bg-primary-500/10 dark:bg-primary-500/10 border border-primary-200 dark:border-primary-800/50 text-sm font-medium text-primary-700 dark:text-primary-300 hover:shadow-md transition-all duration-200">
+            FinOps
+          </div>
+          <div class="flex items-center px-3 py-2 rounded-xl bg-primary-500/10 dark:bg-primary-500/10 border border-primary-200 dark:border-primary-800/50 text-sm font-medium text-primary-700 dark:text-primary-300 hover:shadow-md transition-all duration-200">
+            Azure DevOps
+          </div>
+          <div class="flex items-center px-3 py-2 rounded-xl bg-primary-500/10 dark:bg-primary-500/10 border border-primary-200 dark:border-primary-800/50 text-sm font-medium text-primary-700 dark:text-primary-300 hover:shadow-md transition-all duration-200">
+            VMs & VNets
+          </div>
+          <div class="flex items-center px-3 py-2 rounded-xl bg-primary-500/10 dark:bg-primary-500/10 border border-primary-200 dark:border-primary-800/50 text-sm font-medium text-primary-700 dark:text-primary-300 hover:shadow-md transition-all duration-200">
+            Networking
           </div>
         </div>
       </div>
-    </div>
 
+      <!-- Frontend -->
+      <div class="flex items-start gap-6 lg:gap-12 border-b border-slate-100 dark:border-slate-800 pb-8 reveal">
+        <div class="w-40 lg:w-48 shrink-0 pt-2">
+          <span class="text-2xl font-black text-slate-800 dark:text-slate-100 tracking-tight uppercase">Frontend</span>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+            <i class="devicon-html5-plain colored text-xl w-6 h-6 flex items-center justify-center"></i>
+            <span class="text-sm font-medium text-slate-700 dark:text-slate-200">HTML5</span>
+          </div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+            <i class="devicon-css3-plain colored text-xl w-6 h-6 flex items-center justify-center"></i>
+            <span class="text-sm font-medium text-slate-700 dark:text-slate-200">CSS3</span>
+          </div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+            <i class="devicon-javascript-plain colored text-xl w-6 h-6 flex items-center justify-center"></i>
+            <span class="text-sm font-medium text-slate-700 dark:text-slate-200">JavaScript</span>
+          </div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+            <i class="devicon-typescript-plain colored text-xl w-6 h-6 flex items-center justify-center"></i>
+            <span class="text-sm font-medium text-slate-700 dark:text-slate-200">TypeScript</span>
+          </div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+            <i class="devicon-angularjs-plain colored text-xl w-6 h-6 flex items-center justify-center"></i>
+            <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Angular</span>
+          </div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+            <i class="devicon-tailwindcss-original colored text-xl w-6 h-6 flex items-center justify-center"></i>
+            <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Tailwind CSS</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Backend -->
+      <div class="flex items-start gap-6 lg:gap-12 border-b border-slate-100 dark:border-slate-800 pb-8 reveal">
+        <div class="w-40 lg:w-48 shrink-0 pt-2">
+          <span class="text-2xl font-black text-slate-800 dark:text-slate-100 tracking-tight uppercase">Backend</span>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+            <i class="devicon-nodejs-plain colored text-xl w-6 h-6 flex items-center justify-center"></i>
+            <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Node.js</span>
+          </div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+            <i class="devicon-express-original text-xl w-6 h-6 flex items-center justify-center dark:invert"></i>
+            <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Express</span>
+          </div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+            <i class="devicon-java-plain colored text-xl w-6 h-6 flex items-center justify-center"></i>
+            <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Java</span>
+          </div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+            <i class="devicon-spring-plain colored text-xl w-6 h-6 flex items-center justify-center"></i>
+            <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Spring</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Databases -->
+      <div class="flex items-start gap-6 lg:gap-12 border-b border-slate-100 dark:border-slate-800 pb-8 reveal">
+        <div class="w-40 lg:w-48 shrink-0 pt-2">
+          <span class="text-2xl font-black text-slate-800 dark:text-slate-100 tracking-tight uppercase">
+            {isEs ? 'Bases de Datos' : 'Databases'}
+          </span>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+            <i class="devicon-postgresql-plain colored text-xl w-6 h-6 flex items-center justify-center"></i>
+            <span class="text-sm font-medium text-slate-700 dark:text-slate-200">PostgreSQL</span>
+          </div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200 group">
+            <i class="devicon-mysql-plain colored text-xl w-6 h-6 flex items-center justify-center"></i>
+            <span class="text-sm font-medium text-slate-700 dark:text-slate-200">MySQL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Soft Skills -->
+      <div class="flex items-start gap-6 lg:gap-12 border-b border-slate-100 dark:border-slate-800 pb-8 reveal">
+        <div class="w-40 lg:w-48 shrink-0 pt-2">
+          <span class="text-2xl font-black text-slate-800 dark:text-slate-100 tracking-tight uppercase">Soft Skills</span>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          {softSkills.map(({ emoji, label }) => (
+            <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-violet-50 dark:bg-violet-900/20 border border-violet-200 dark:border-violet-700/40 text-sm font-medium text-violet-700 dark:text-violet-300 hover:shadow-md transition-all duration-200">
+              <span>{emoji}</span>
+              <span>{label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Languages -->
+      <div class="flex items-start gap-6 lg:gap-12 reveal">
+        <div class="w-40 lg:w-48 shrink-0 pt-2">
+          <span class="text-2xl font-black text-slate-800 dark:text-slate-100 tracking-tight uppercase">
+            {isEs ? 'Idiomas' : 'Languages'}
+          </span>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 text-sm font-medium text-slate-700 dark:text-slate-200 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200">
+            🇪🇸 Español — Nativo
+          </div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 text-sm font-medium text-slate-700 dark:text-slate-200 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all duration-200">
+            🇬🇧 English — B2
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>

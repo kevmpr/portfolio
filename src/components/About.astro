@@ -1,278 +1,415 @@
 ---
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { Image } from 'astro:assets';
+import logoUADE from '../assets/logos/uade.png';
+import logoIFTS from '../assets/logos/ifts11.png';
+import logoReadymind from '../assets/logos/readymind.png';
+import certAZ104 from '../assets/certs/az104.png';
+import certAZ700 from '../assets/certs/az700.png';
+import certAZ900 from '../assets/certs/az900.png';
+import certDP900 from '../assets/certs/dp900.png';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const isEs = lang === 'es';
 
-const certifications = [
-  { name: 'AZ-104', title: 'Azure Administrator', color: 'from-blue-500 to-blue-700', url: 'https://learn.microsoft.com/en-gb/users/kevinmaximilianopalmaromero-4986/credentials/48112e50f0667613' },
-  { name: 'AZ-700', title: 'Azure Network Engineer', color: 'from-cyan-500 to-blue-600', url: 'https://learn.microsoft.com/en-us/users/kevinmaximilianopalmaromero-4986/credentials/b43015bfda159018' },
-  { name: 'AZ-900', title: 'Azure Fundamentals', color: 'from-sky-400 to-blue-500', url: 'https://learn.microsoft.com/en-us/users/kevinmaximilianopalmaromero-4986/credentials/64d4b26fcc71de2c' },
-  { name: 'DP-900', title: 'Azure Data Fundamentals', color: 'from-purple-500 to-blue-600', url: 'https://learn.microsoft.com/en-gb/users/kevinmaximilianopalmaromero-4986/credentials/80c3d30098977b49' },
+const highlightsAzure = isEs ? [
+  'Consultoría cloud en Microsoft Azure con clientes directos y área comercial',
+  'Migraciones, movimientos cross-subscription y despliegue de infraestructura Azure',
+  'Automatización con PowerShell: exportación de RBAC, gestión de roles y recursos',
+  'Documentación técnica, reportes ejecutivos y análisis de costos con FinOps',
+] : [
+  'Azure cloud consulting with direct client and commercial team engagement',
+  'Migrations, cross-subscription movements, and Azure infrastructure deployment',
+  'PowerShell automation: RBAC export, role management, and bulk resource operations',
+  'Technical documentation, executive reports, and FinOps cost analysis',
+];
+
+const highlightsCloud = isEs ? [
+  'Iniciativas internas en Microsoft Azure, low-code y soluciones de datos',
+  'Laboratorios técnicos sobre servicios principales de Azure',
+  'Aplicación de conceptos de infraestructura cloud y buenas prácticas',
+] : [
+  'Internal initiatives in Microsoft Azure, low-code, and data solutions',
+  'Technical labs on core Azure services',
+  'Applied cloud infrastructure concepts and best practices',
 ];
 
 const azureTechTags = ['Azure', 'PowerShell', 'RBAC', 'IaC', 'FinOps', 'Networking', 'Git'];
 const cloudTechTags = ['Azure', 'Low-Code', 'Power Platform', 'ARM Templates', 'Azure CLI'];
+
+const certifications = [
+  {
+    image: certAZ104,
+    code: 'AZ-104',
+    title: 'Azure Administrator Associate',
+    role: isEs ? 'Administrador Cloud' : 'Cloud Administrator',
+    description: isEs
+      ? 'Valida la capacidad de gestionar identidades y accesos, implementar almacenamiento, administrar máquinas virtuales, configurar redes virtuales y monitorear recursos en Microsoft Azure.'
+      : 'Validates the ability to manage identities and access, implement storage, administer virtual machines, configure virtual networks, and monitor resources in Microsoft Azure.',
+    skills: ['RBAC & IAM', 'VMs & Compute', 'VNets & NSGs', 'Azure Monitor', 'Storage'],
+    verify: 'https://learn.microsoft.com/en-gb/users/kevinmaximilianopalmaromero-4986/credentials/48112e50f0667613',
+  },
+  {
+    image: certAZ700,
+    code: 'AZ-700',
+    title: 'Azure Network Engineer Associate',
+    role: isEs ? 'Ingeniero de Redes' : 'Network Engineer',
+    description: isEs
+      ? 'Valida el diseño e implementación de soluciones de red en Azure: conectividad híbrida, VPN Gateway, ExpressRoute, DNS privado, balanceo de carga y seguridad perimetral.'
+      : 'Validates designing and implementing Azure network solutions: hybrid connectivity, VPN Gateway, ExpressRoute, private DNS, load balancing, and perimeter security.',
+    skills: ['VPN & ExpressRoute', 'Private DNS', 'Load Balancing', 'Private Endpoints', 'App Gateway'],
+    verify: 'https://learn.microsoft.com/en-us/users/kevinmaximilianopalmaromero-4986/credentials/b43015bfda159018',
+  },
+  {
+    image: certAZ900,
+    code: 'AZ-900',
+    title: 'Microsoft Azure Fundamentals',
+    role: isEs ? 'Fundamentos Cloud' : 'Cloud Fundamentals',
+    description: isEs
+      ? 'Certifica comprensión de los conceptos de nube, los servicios principales de Azure, seguridad, privacidad, cumplimiento normativo y modelos de precios y soporte.'
+      : 'Certifies understanding of cloud concepts, core Azure services, security, privacy, compliance, and pricing and support models.',
+    skills: [isEs ? 'Conceptos Cloud' : 'Cloud Concepts', 'Azure Services', isEs ? 'Seguridad' : 'Security', isEs ? 'Precios' : 'Pricing'],
+    verify: 'https://learn.microsoft.com/en-us/users/kevinmaximilianopalmaromero-4986/credentials/64d4b26fcc71de2c',
+  },
+  {
+    image: certDP900,
+    code: 'DP-900',
+    title: 'Microsoft Azure Data Fundamentals',
+    role: isEs ? 'Fundamentos de Datos' : 'Data Fundamentals',
+    description: isEs
+      ? 'Certifica conocimientos sobre conceptos de datos, servicios de datos relacionales y no relacionales en Azure, y fundamentos de analítica e inteligencia de datos.'
+      : 'Certifies knowledge of core data concepts, relational and non-relational Azure data services, and data analytics and intelligence fundamentals.',
+    skills: ['Azure SQL', 'Cosmos DB', isEs ? 'Analítica' : 'Analytics', 'Data Factory'],
+    verify: 'https://learn.microsoft.com/en-gb/users/kevinmaximilianopalmaromero-4986/credentials/80c3d30098977b49',
+  },
+];
 ---
 
-<section id="about" class="relative py-20 lg:py-28" style="content-visibility: auto; contain-intrinsic-size: auto 800px;">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<section id="about" class="py-20 lg:py-32 bg-white dark:bg-slate-900">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8">
 
     <!-- Section header -->
-    <div class="text-center mb-16 reveal">
-      <h2 class="text-4xl sm:text-5xl font-bold mb-4">
-        <span class="bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent">
-          {t('about.title')}
-        </span>
-      </h2>
-      <p class="text-slate-600 dark:text-slate-300 text-lg max-w-3xl mx-auto leading-relaxed">
-        {t('about.description')}
-      </p>
+    <div class="reveal mb-16 lg:mb-24 flex flex-col lg:flex-row items-start justify-between gap-10">
+
+      <!-- Left: title + description -->
+      <div class="flex-1 max-w-2xl">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-0.5 bg-primary-500"></div>
+          <span class="text-sm font-semibold tracking-widest uppercase text-primary-500">
+            {isEs ? 'Trayectoria' : 'Career'}
+          </span>
+        </div>
+        <h2 class="text-4xl lg:text-5xl font-black text-slate-900 dark:text-white mb-4">{t('about.title')}</h2>
+        <p class="text-lg text-slate-500 dark:text-slate-400 leading-relaxed">{t('about.description')}</p>
+      </div>
+
+      <!-- Right: stats 2×2 -->
+      <div class="grid grid-cols-2 gap-x-10 gap-y-8 shrink-0 lg:self-end lg:pb-2">
+        <div class="stat-item" style="--delay:0ms">
+          <p class="text-4xl font-black text-slate-900 dark:text-white tabular-nums leading-none">{t('hero.stat1.value')}</p>
+          <p class="text-xs text-slate-400 dark:text-slate-500 mt-2 leading-snug">{t('hero.stat1.label')}</p>
+        </div>
+        <div class="stat-item" style="--delay:80ms">
+          <p class="text-4xl font-black text-slate-900 dark:text-white tabular-nums leading-none">{t('hero.stat2.value')}</p>
+          <p class="text-xs text-slate-400 dark:text-slate-500 mt-2 leading-snug">{t('hero.stat2.label')}</p>
+        </div>
+        <div class="stat-item" style="--delay:160ms">
+          <p class="text-4xl font-black text-slate-900 dark:text-white tabular-nums leading-none">{t('hero.stat3.value')}</p>
+          <p class="text-xs text-slate-400 dark:text-slate-500 mt-2 leading-snug">{t('hero.stat3.label')}</p>
+        </div>
+        <div class="stat-item" style="--delay:240ms">
+          <p class="text-4xl font-black text-slate-900 dark:text-white tabular-nums leading-none">{t('hero.stat4.value')}</p>
+          <p class="text-xs text-slate-400 dark:text-slate-500 mt-2 leading-snug">{t('hero.stat4.label')}</p>
+        </div>
+      </div>
+
     </div>
 
-    <!-- Certifications -->
-    <div class="mb-16 reveal">
-      <h3 class="text-2xl font-bold text-center mb-8 text-slate-700 dark:text-slate-200">
-        {t('about.certifications')}
-      </h3>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {certifications.map((cert) => (
-          <a
-            href={cert.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group relative rounded-2xl overflow-hidden bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm border border-slate-200 dark:border-slate-700 hover:shadow-glow-blue hover:border-primary-300 dark:hover:border-primary-600 transition-all duration-300 hover:-translate-y-1"
-          >
-            <!-- Colored top accent strip -->
-            <div class={`h-1 w-full bg-gradient-to-r ${cert.color}`}></div>
-            <div class="p-5 text-center">
-              <div class={`inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br ${cert.color} text-white font-bold text-sm mb-3 group-hover:scale-110 transition-transform`}>
-                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
-                </svg>
+    <!-- ── EXPERIENCIA ── -->
+    <div class="reveal flex flex-col sm:flex-row items-start gap-6 lg:gap-12 border-b border-slate-100 dark:border-slate-800 pb-12 mb-12">
+      <div class="w-40 lg:w-48 shrink-0 pt-2">
+        <span class="text-2xl font-black uppercase text-slate-900 dark:text-white">{t('about.experience')}</span>
+      </div>
+
+      <div class="flex-1">
+
+        <!-- Company header -->
+        <div class="flex items-center gap-3 mb-5 exp-entry" style="--delay:0ms">
+          <Image src={logoReadymind} alt="Readymind" width={44} height={44} class="w-11 h-11 object-contain rounded-xl" />
+          <div>
+            <p class="text-base font-bold text-slate-900 dark:text-white leading-tight">{t('exp.azure.company')}</p>
+            <p class="text-xs text-slate-400 dark:text-slate-500">{isEs ? '1+ año · Tiempo completo' : '1+ year · Full-time'}</p>
+          </div>
+        </div>
+
+        <!-- Roles timeline -->
+        <div class="relative pl-5 border-l border-slate-200 dark:border-slate-700 space-y-8">
+
+          <!-- Azure Cloud Engineer (current) -->
+          <div class="exp-entry relative" style="--delay:100ms">
+            <!-- dot -->
+            <div class="absolute -left-[21px] top-1.5 w-3 h-3 z-10">
+              <div class="absolute inset-0 rounded-full bg-accent-400/50 animate-ping"></div>
+              <div class="relative w-3 h-3 rounded-full bg-accent-500 ring-2 ring-white dark:ring-slate-900"></div>
+            </div>
+
+            <div class="flex items-start justify-between gap-4 flex-wrap mb-3">
+              <div>
+                <h3 class="text-sm font-bold text-slate-900 dark:text-white">{t('exp.azure.title')}</h3>
+                <p class="text-xs text-slate-400 dark:text-slate-500 mt-0.5">
+                  {t('exp.azure.period')} · {t('exp.azure.location')}
+                </p>
               </div>
-              <p class="text-2xl font-black bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent leading-tight">{cert.name}</p>
-              <p class="text-slate-500 dark:text-slate-400 text-xs mt-1">{cert.title}</p>
-              <span class="inline-flex items-center gap-1 mt-2 text-xs text-primary-500 dark:text-primary-400 opacity-0 group-hover:opacity-100 transition-opacity">
-                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                </svg>
-                Verify
+              <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 shrink-0">
+                {t('about.current')}
               </span>
             </div>
-          </a>
-        ))}
+
+            <ul class="space-y-1.5 mb-3">
+              {highlightsAzure.map((h) => (
+                <li class="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-300">
+                  <span class="mt-1.5 w-1 h-1 rounded-full bg-accent-500 shrink-0"></span>
+                  {h}
+                </li>
+              ))}
+            </ul>
+            <div class="flex flex-wrap gap-1.5">
+              {azureTechTags.map((tag) => (
+                <span class="px-2.5 py-0.5 text-xs font-medium border border-slate-200 dark:border-slate-700 rounded-full text-slate-500 dark:text-slate-400">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <!-- Cloud Engineer (past) -->
+          <div class="exp-entry relative" style="--delay:200ms">
+            <!-- dot -->
+            <div class="absolute -left-[21px] top-1.5 w-3 h-3 rounded-full bg-slate-300 dark:bg-slate-600 ring-2 ring-white dark:ring-slate-900 z-10"></div>
+
+            <div class="flex items-start justify-between gap-4 flex-wrap mb-3">
+              <div>
+                <h3 class="text-sm font-bold text-slate-900 dark:text-white">{t('exp.cloud.title')}</h3>
+                <p class="text-xs text-slate-400 dark:text-slate-500 mt-0.5">
+                  {t('exp.cloud.period')} · {t('exp.cloud.location')}
+                </p>
+              </div>
+            </div>
+
+            <ul class="space-y-1.5 mb-3">
+              {highlightsCloud.map((h) => (
+                <li class="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-300">
+                  <span class="mt-1.5 w-1 h-1 rounded-full bg-slate-400 shrink-0"></span>
+                  {h}
+                </li>
+              ))}
+            </ul>
+            <div class="flex flex-wrap gap-1.5">
+              {cloudTechTags.map((tag) => (
+                <span class="px-2.5 py-0.5 text-xs font-medium border border-slate-200 dark:border-slate-700 rounded-full text-slate-500 dark:text-slate-400">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
 
-    <!-- Education & Experience Timelines -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-
-      <!-- ── Education Timeline ── -->
-      <div class="reveal">
-        <h3 class="text-2xl font-bold mb-8 flex items-center gap-3 text-slate-700 dark:text-slate-200">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center shrink-0">
-            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path>
-            </svg>
-          </div>
-          {t('about.education')}
-        </h3>
-
-        <!-- tl-edu: dots + line measured by JS -->
-        <div class="tl-container relative pl-10">
-          <!-- Line: JS sets top/bottom to connect dot centers -->
-          <div class="tl-line absolute left-[7px] w-0.5 rounded-full bg-gradient-to-b from-primary-500 to-primary-400/30 pointer-events-none" style="opacity:0;transition:opacity 0.4s;"></div>
-
-          <!-- UADE -->
-          <div class="relative mb-8 reveal">
-            <div class="tl-dot absolute -left-10 top-5 w-4 h-4 rounded-full bg-primary-500 ring-2 ring-white dark:ring-slate-900 z-10" style="box-shadow:0 0 0 4px rgba(59,130,246,0.15),0 0 10px rgba(59,130,246,0.4);"></div>
-            <div class="bg-white/80 dark:bg-slate-800/70 backdrop-blur-sm border border-slate-200 dark:border-slate-700 rounded-2xl p-5 hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-lg transition-all duration-300">
-              <div class="flex items-start justify-between gap-3 mb-3">
-                <div class="flex items-start gap-3 min-w-0">
-                  <div class="shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center">
-                    <span class="text-white text-sm font-bold">UA</span>
-                  </div>
-                  <div class="min-w-0">
-                    <h4 class="text-base font-bold text-slate-900 dark:text-white leading-snug">{t('edu.uade.title')}</h4>
-                    <p class="text-primary-600 dark:text-primary-400 font-medium text-sm mt-0.5">{t('edu.uade.institution')}</p>
-                  </div>
-                </div>
-                <div class="flex flex-col items-end gap-1.5 shrink-0">
-                  <span class="text-xs text-slate-500 dark:text-slate-400 whitespace-nowrap">{t('edu.uade.period')}</span>
-                  <span class="text-xs px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20 whitespace-nowrap">{t('edu.uade.status')}</span>
-                </div>
-              </div>
-              <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">{t('edu.uade.description')}</p>
-            </div>
-          </div>
-
-          <!-- IFTS -->
-          <div class="relative reveal" style="--reveal-delay:150ms">
-            <div class="tl-dot absolute -left-10 top-5 w-4 h-4 rounded-full bg-primary-400 ring-2 ring-white dark:ring-slate-900 z-10" style="box-shadow:0 0 0 4px rgba(59,130,246,0.1),0 0 8px rgba(59,130,246,0.25);"></div>
-            <div class="bg-white/80 dark:bg-slate-800/70 backdrop-blur-sm border border-slate-200 dark:border-slate-700 rounded-2xl p-5 hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-lg transition-all duration-300">
-              <div class="flex items-start justify-between gap-3 mb-3">
-                <div class="flex items-start gap-3 min-w-0">
-                  <div class="shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-slate-500 to-slate-700 flex items-center justify-center">
-                    <span class="text-white text-sm font-bold">IF</span>
-                  </div>
-                  <div class="min-w-0">
-                    <h4 class="text-base font-bold text-slate-900 dark:text-white leading-snug">{t('edu.ifts.title')}</h4>
-                    <p class="text-primary-600 dark:text-primary-400 font-medium text-sm mt-0.5">{t('edu.ifts.institution')}</p>
-                  </div>
-                </div>
-                <div class="flex flex-col items-end gap-1.5 shrink-0">
-                  <span class="text-xs text-slate-500 dark:text-slate-400 whitespace-nowrap">{t('edu.ifts.period')}</span>
-                  <span class="text-xs px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-600 whitespace-nowrap">{t('edu.ifts.status')}</span>
-                </div>
-              </div>
-              <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">{t('edu.ifts.description')}</p>
-              <ul class="mt-3 space-y-1.5">
-                {t('edu.ifts.details').split('\n').map((item) => (
-                  <li class="text-slate-500 dark:text-slate-400 text-xs leading-relaxed flex items-start gap-2">
-                    <span class="text-primary-500 mt-0.5 shrink-0">•</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-        </div>
+    <!-- ── EDUCACIÓN ── -->
+    <div class="reveal flex flex-col sm:flex-row items-start gap-6 lg:gap-12 border-b border-slate-100 dark:border-slate-800 pb-12 mb-12">
+      <div class="w-40 lg:w-48 shrink-0 pt-2">
+        <span class="text-2xl font-black uppercase text-slate-900 dark:text-white">{t('about.education')}</span>
       </div>
 
-      <!-- ── Experience Timeline ── -->
-      <div class="reveal" style="--reveal-delay: 100ms">
-        <h3 class="text-2xl font-bold mb-8 flex items-center gap-3 text-slate-700 dark:text-slate-200">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-500 to-primary-600 flex items-center justify-center shrink-0">
-            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-            </svg>
+      <div class="flex-1">
+
+        <!-- Institution headers + timeline -->
+
+        <!-- UADE -->
+        <div class="flex items-center gap-3 mb-5 edu-card" style="--delay:0ms">
+          <Image src={logoUADE} alt="UADE" width={44} height={44} class="w-11 h-11 object-contain rounded-xl shrink-0" />
+          <div>
+            <p class="text-base font-bold text-slate-900 dark:text-white leading-tight">{t('edu.uade.institution')}</p>
+            <p class="text-xs text-slate-400 dark:text-slate-500">{t('edu.uade.period')}</p>
           </div>
-          {t('about.experience')}
-        </h3>
-
-        <!-- tl-exp -->
-        <div class="tl-container relative pl-10">
-          <div class="tl-line absolute left-[7px] w-0.5 rounded-full bg-gradient-to-b from-accent-500 to-accent-400/30 pointer-events-none" style="opacity:0;transition:opacity 0.4s;"></div>
-
-          <!-- Azure Cloud Engineer — current -->
-          <div class="relative mb-8 reveal">
-            <!-- Ping ring for "active" role -->
-            <div class="tl-dot absolute -left-10 top-5 w-4 h-4 z-10">
-              <div class="absolute inset-0 rounded-full bg-accent-400/40 animate-ping"></div>
-              <div class="relative w-4 h-4 rounded-full bg-accent-500 ring-2 ring-white dark:ring-slate-900" style="box-shadow:0 0 0 4px rgba(6,182,212,0.15),0 0 10px rgba(6,182,212,0.5);"></div>
-            </div>
-            <div class="bg-white/80 dark:bg-slate-800/70 backdrop-blur-sm border border-slate-200 dark:border-slate-700 rounded-2xl p-5 hover:border-accent-400 dark:hover:border-accent-500 hover:shadow-lg transition-all duration-300">
-              <div class="flex items-start justify-between gap-3 mb-3">
-                <div class="flex items-start gap-3 min-w-0">
-                  <div class="shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-accent-600 flex items-center justify-center">
-                    <span class="text-white text-sm font-bold">RM</span>
-                  </div>
-                  <div class="min-w-0">
-                    <h4 class="text-base font-bold text-slate-900 dark:text-white leading-snug">{t('exp.azure.title')}</h4>
-                    <p class="text-accent-600 dark:text-accent-400 font-medium text-sm mt-0.5">{t('exp.azure.company')}</p>
-                  </div>
-                </div>
-                <div class="flex flex-col items-end gap-1.5 shrink-0">
-                  <span class="text-xs text-slate-500 dark:text-slate-400 whitespace-nowrap">{t('exp.azure.period')}</span>
-                  <span class="text-xs px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 whitespace-nowrap">{t('about.current')}</span>
-                </div>
-              </div>
-              <p class="text-xs text-slate-400 dark:text-slate-500 mb-3">{t('exp.azure.location')}</p>
-              <div class="space-y-2">
-                {t('exp.azure.description').split('\n').map((p) => (
-                  <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">{p}</p>
-                ))}
-              </div>
-              <div class="mt-4">
-                <p class="text-xs text-slate-400 dark:text-slate-500 font-medium mb-2">{t('about.techused')}</p>
-                <div class="flex flex-wrap gap-1.5">
-                  {azureTechTags.map((tag) => (
-                    <span class="text-xs px-2 py-0.5 rounded-full bg-accent-500/10 text-accent-600 dark:text-accent-400 border border-accent-500/20">{tag}</span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Cloud Engineer — previous -->
-          <div class="relative reveal" style="--reveal-delay:150ms">
-            <div class="tl-dot absolute -left-10 top-5 w-4 h-4 rounded-full bg-accent-400 ring-2 ring-white dark:ring-slate-900 z-10" style="box-shadow:0 0 0 4px rgba(6,182,212,0.1),0 0 8px rgba(6,182,212,0.25);"></div>
-            <div class="bg-white/80 dark:bg-slate-800/70 backdrop-blur-sm border border-slate-200 dark:border-slate-700 rounded-2xl p-5 hover:border-accent-400 dark:hover:border-accent-500 hover:shadow-lg transition-all duration-300">
-              <div class="flex items-start justify-between gap-3 mb-3">
-                <div class="flex items-start gap-3 min-w-0">
-                  <div class="shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center">
-                    <span class="text-white text-sm font-bold">RM</span>
-                  </div>
-                  <div class="min-w-0">
-                    <h4 class="text-base font-bold text-slate-900 dark:text-white leading-snug">{t('exp.cloud.title')}</h4>
-                    <p class="text-accent-600 dark:text-accent-400 font-medium text-sm mt-0.5">{t('exp.cloud.company')}</p>
-                  </div>
-                </div>
-                <div class="flex flex-col items-end gap-1.5 shrink-0">
-                  <span class="text-xs text-slate-500 dark:text-slate-400 whitespace-nowrap">{t('exp.cloud.period')}</span>
-                  <span class="text-xs px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-600 whitespace-nowrap">{t('exp.cloud.location')}</span>
-                </div>
-              </div>
-              <div class="space-y-2">
-                {t('exp.cloud.description').split('\n').map((p) => (
-                  <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">{p}</p>
-                ))}
-              </div>
-              <div class="mt-4">
-                <p class="text-xs text-slate-400 dark:text-slate-500 font-medium mb-2">{t('about.techused')}</p>
-                <div class="flex flex-wrap gap-1.5">
-                  {cloudTechTags.map((tag) => (
-                    <span class="text-xs px-2 py-0.5 rounded-full bg-accent-500/10 text-accent-600 dark:text-accent-400 border border-accent-500/20">{tag}</span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
+
+        <div class="relative pl-5 border-l border-slate-200 dark:border-slate-700 mb-10">
+          <div class="edu-card relative" style="--delay:100ms">
+            <div class="absolute -left-[21px] top-1.5 w-3 h-3 z-10">
+              <div class="absolute inset-0 rounded-full bg-primary-400/50 animate-ping"></div>
+              <div class="relative w-3 h-3 rounded-full bg-primary-500 ring-2 ring-white dark:ring-slate-900"></div>
+            </div>
+            <div class="flex items-start justify-between gap-4 flex-wrap mb-2">
+              <h3 class="text-sm font-bold text-slate-900 dark:text-white">{t('edu.uade.title')}</h3>
+              <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-primary-500/10 text-primary-600 dark:text-primary-400 border border-primary-500/20 shrink-0">
+                {t('edu.uade.status')}
+              </span>
+            </div>
+            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-3">{t('edu.uade.description')}</p>
+            <div class="flex flex-wrap gap-1.5">
+              {t('edu.uade.details').split('\n').filter(Boolean).map((subject: string) => (
+                <span class="px-2 py-0.5 text-xs font-medium border border-slate-200 dark:border-slate-700 rounded-full text-slate-500 dark:text-slate-400">
+                  {subject.trim()}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- IFTS -->
+        <div class="flex items-center gap-3 mb-5 edu-card" style="--delay:180ms">
+          <Image src={logoIFTS} alt="IFTS N°11" width={44} height={44} class="w-11 h-11 object-contain rounded-xl shrink-0" />
+          <div>
+            <p class="text-base font-bold text-slate-900 dark:text-white leading-tight">{t('edu.ifts.institution')}</p>
+            <p class="text-xs text-slate-400 dark:text-slate-500">{t('edu.ifts.period')}</p>
+          </div>
+        </div>
+
+        <div class="relative pl-5 border-l border-slate-200 dark:border-slate-700">
+          <div class="edu-card relative" style="--delay:280ms">
+            <div class="absolute -left-[21px] top-1.5 w-3 h-3 rounded-full bg-slate-300 dark:bg-slate-600 ring-2 ring-white dark:ring-slate-900 z-10"></div>
+            <div class="flex items-start justify-between gap-4 flex-wrap mb-2">
+              <h3 class="text-sm font-bold text-slate-900 dark:text-white">{t('edu.ifts.title')}</h3>
+              <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 shrink-0">
+                {t('edu.ifts.status')}
+              </span>
+            </div>
+            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-3">{t('edu.ifts.description')}</p>
+            <div class="flex flex-wrap gap-1.5">
+              {t('edu.ifts.details').split('\n').filter(Boolean).map((subject: string) => (
+                <span class="px-2 py-0.5 text-xs font-medium border border-slate-200 dark:border-slate-700 rounded-full text-slate-500 dark:text-slate-400">
+                  {subject.trim()}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── CERTIFICACIONES ── -->
+    <div class="reveal flex flex-col sm:flex-row items-start gap-6 lg:gap-12">
+      <div class="w-40 lg:w-48 shrink-0 pt-2">
+        <span class="text-2xl font-black uppercase text-slate-900 dark:text-white">{t('about.certifications')}</span>
       </div>
 
+      <div class="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {certifications.map((cert, i) => (
+          <div
+            class="cert-card group flex flex-col border border-slate-100 dark:border-slate-800 rounded-2xl p-5 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-300"
+            style={`--delay: ${i * 80}ms`}
+          >
+            <!-- Header: imagen + código + título + rol -->
+            <div class="flex items-center gap-3 mb-4">
+              <div class="shrink-0 transition-transform duration-300 group-hover:scale-110 origin-center">
+                <Image src={cert.image} alt={cert.code} class="w-11 h-11 object-contain rounded-xl" />
+              </div>
+              <div class="flex-1 min-w-0">
+                <p class="text-base font-bold text-slate-900 dark:text-white leading-tight">{cert.code}</p>
+                <p class="text-xs text-slate-400 dark:text-slate-500">{cert.title}</p>
+              </div>
+              <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400 border border-primary-200 dark:border-primary-800 shrink-0">
+                {cert.role}
+              </span>
+            </div>
+            <!-- Descripción: crece para igualar altura entre cards -->
+            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-3 flex-1">{cert.description}</p>
+            <!-- Skills: siempre al mismo nivel -->
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              {cert.skills.map((skill: string) => (
+                <span class="px-2 py-0.5 text-xs font-medium bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-md text-slate-600 dark:text-slate-400">
+                  {skill}
+                </span>
+              ))}
+            </div>
+            <!-- Verificar: siempre al pie -->
+            <a
+              href={cert.verify}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1.5 text-xs font-semibold text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+            >
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+              </svg>
+              {isEs ? 'Verificar credencial' : 'Verify credential'}
+            </a>
+          </div>
+        ))}
+      </div>
     </div>
 
   </div>
 </section>
 
-<script>
-  function positionTimelineLines() {
-    document.querySelectorAll<HTMLElement>('.tl-container').forEach(container => {
-      const dots = Array.from(container.querySelectorAll<HTMLElement>('.tl-dot'));
-      const line = container.querySelector<HTMLElement>('.tl-line');
-      if (dots.length < 2 || !line) return;
-
-      // offsetTop walks up the offsetParent chain — NOT affected by CSS transforms
-      function offsetRelativeTo(el: HTMLElement, ancestor: HTMLElement): number {
-        let top = 0;
-        let cur: HTMLElement | null = el;
-        while (cur && cur !== ancestor) {
-          top += cur.offsetTop;
-          cur = cur.offsetParent as HTMLElement | null;
-        }
-        return top;
-      }
-
-      const first = dots[0];
-      const last  = dots[dots.length - 1];
-
-      const firstCenter = offsetRelativeTo(first, container) + first.offsetHeight / 2;
-      const lastCenter  = offsetRelativeTo(last,  container) + last.offsetHeight  / 2;
-
-      line.style.top    = `${firstCenter}px`;
-      line.style.height = `${lastCenter - firstCenter}px`;
-      line.style.bottom = 'auto';
-      line.style.opacity = '1';
-    });
+<style>
+  /* ── Keyframes ── */
+  @keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-24px); }
+    to   { opacity: 1; transform: translateX(0); }
   }
 
-  document.fonts.ready.then(() => {
-    positionTimelineLines();
-    const ro = new ResizeObserver(positionTimelineLines);
-    document.querySelectorAll<HTMLElement>('.tl-container').forEach(c => ro.observe(c));
-  });
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.93); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── Experience entries ── */
+  .exp-entry {
+    opacity: 0;
+  }
+  .exp-entry.animated {
+    animation: slideInLeft 0.5s ease both;
+    animation-delay: var(--delay, 0ms);
+  }
+
+  /* ── Education cards ── */
+  .edu-card {
+    opacity: 0;
+  }
+  .edu-card.animated {
+    animation: scaleIn 0.45s ease both;
+    animation-delay: var(--delay, 0ms);
+  }
+
+  /* ── Certification cards ── */
+  .cert-card {
+    opacity: 0;
+  }
+  .cert-card.animated {
+    animation: fadeUp 0.5s ease both;
+    animation-delay: var(--delay, 0ms);
+  }
+
+  /* ── Stat items ── */
+  .stat-item {
+    opacity: 0;
+  }
+  .stat-item.animated {
+    animation: fadeUp 0.45s cubic-bezier(0.16,1,0.3,1) both;
+    animation-delay: var(--delay, 0ms);
+  }
+</style>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animated');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.exp-entry, .edu-card, .cert-card, .stat-item').forEach((el) => io.observe(el));
 </script>
