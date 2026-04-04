@@ -1,8 +1,7 @@
 import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  integrations: [tailwind({ applyBaseStyles: false })],
   i18n: {
     defaultLocale: 'es',
     locales: ['es', 'en'],
@@ -11,15 +10,16 @@ export default defineConfig({
     },
   },
   vite: {
+    plugins: [tailwindcss()],
     build: {
       cssMinify: 'esbuild',
       minify: 'terser',
       terserOptions: {
         compress: {
           drop_console: true,
-          drop_debugger: true
-        }
-      }
-    }
-  }
+          drop_debugger: true,
+        },
+      },
+    },
+  },
 });
