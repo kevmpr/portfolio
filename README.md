@@ -1,26 +1,73 @@
-# Kevin Maximiliano Palma Romero — Portfolio
+<div align="center">
 
-Personal portfolio for **Kevin Maximiliano Palma Romero**, Azure Cloud Engineer at Readymind. Built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
+<img src="public/favicon.svg" alt="Logo" width="64" height="64" />
 
-**Live:** [kevmpr.vercel.app](https://kevmpr.vercel.app/)
+# Kevin Maximiliano Palma Romero
+
+### Azure Cloud Engineer · Portfolio
+
+[![Live](https://img.shields.io/badge/Live-kevmpr.vercel.app-3b82f6?style=flat-square&logo=vercel&logoColor=white)](https://kevmpr.vercel.app)
+[![Astro](https://img.shields.io/badge/Astro-6.1-FF5D01?style=flat-square&logo=astro&logoColor=white)](https://astro.build)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.2-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![Vercel](https://img.shields.io/badge/Deployed-Vercel-000000?style=flat-square&logo=vercel&logoColor=white)](https://vercel.com)
+
+</div>
+
+---
+
+## Overview
+
+Personal portfolio built with **Astro v6** and **Tailwind CSS v4**. Designed with an editorial system — consistent accent line + label + heading pattern — across every section. Fully bilingual (ES / EN), dark/light mode, and optimized for performance and accessibility.
 
 ---
 
 ## Features
 
-- **Internationalization (i18n)** — Full ES / EN support with language-aware routing
-- **Dark / Light mode** — Toggle with persistent preference; each mode has its own background effect
-- **Animated starfield** — Canvas-based twinkling stars in dark mode; dot-grid CSS pattern in light mode
-- **Editorial design** — Consistent accent line + label + heading pattern across all sections
-- **Scroll-triggered animations** — Sections and elements animate in via IntersectionObserver with staggered delays
-- **Count-up stats** — Animated counters in About Me: months → year, A1→A2→B1→B2 for English level, numeric counts for certs and projects
-- **Typewriter heading** — Contact section cycles through phrases with a blinking cursor
-- **3D tilt tiles** — Contact channel tiles follow the mouse with perspective transform
-- **Accordion projects** — Cloud Solutions section uses a collapsible accordion that scales to any number of projects
-- **Timeline fix** — Experience and education timelines use flex-column dots where the connecting line runs exactly between dots
-- **Active nav detection** — Navbar highlights the current section via scroll position
-- **Responsive** — Mobile-first, optimized for all screen sizes
-- **CV download** — Language-aware resume download (ES / EN)
+<table>
+<tr>
+<td valign="top" width="50%">
+
+**Design & UX**
+- Editorial design system across all sections
+- Dark / Light mode with canvas starfield (dark) and CSS dot-grid (light)
+- Scroll-triggered reveal animations with `IntersectionObserver`
+- Scroll progress bar
+- Full-viewport mobile menu overlay with staggered entrance
+
+</td>
+<td valign="top" width="50%">
+
+**Interactions**
+- 3D tilt on profile photo (mouse tracking)
+- 3D tilt on contact tiles
+- Typewriter heading in Contact section
+- Count-up stats (numeric, months→year, A1→B2 for English level)
+- Accordion layout for Cloud Solutions (scales to any number of projects)
+
+</td>
+</tr>
+<tr>
+<td valign="top" width="50%">
+
+**i18n & Routing**
+- Full ES / EN support with language-aware routing (`/es/`, `/en/`)
+- Language-aware CV download
+- `hreflang` alternate links for SEO
+
+</td>
+<td valign="top" width="50%">
+
+**Performance & SEO**
+- Astro static output — zero JS by default
+- Non-blocking font and icon loading (`preload` + `onload`)
+- `content-visibility: auto` on heavy sections
+- Open Graph, Twitter Card, canonical, structured data (JSON-LD)
+- `prefers-reduced-motion` respected throughout
+
+</td>
+</tr>
+</table>
 
 ---
 
@@ -28,11 +75,11 @@ Personal portfolio for **Kevin Maximiliano Palma Romero**, Azure Cloud Engineer 
 
 | Section | Description |
 |---|---|
-| **Inicio / Hero** | Full name, role badge, entrance animations, animated mouse scroll indicator |
-| **Sobre Mí / About** | Stats with count-up animation, LinkedIn-style experience timeline, education timeline, certification cards with badge images |
-| **Soluciones Cloud / Projects** | Accordion list of 5 real Azure case studies (Challenge / Solution / Impact) |
-| **Habilidades / Skills** | Editorial row layout: Cloud, Frontend, Backend, Databases, Soft Skills, Languages — all pills white/slate, emoji fallbacks for tools without devicons |
-| **Contacto / Contact** | Typewriter animated heading, 3D tilt contact tiles (Email, LinkedIn, GitHub) |
+| **Hero** | Name, role badge, 3D photo tilt, CTA buttons, animated scroll indicator |
+| **About Me** | Count-up stats, LinkedIn-style experience timeline, education timeline, certification cards |
+| **Cloud Solutions** | Accordion with 5 real Azure case studies (Challenge / Solution / Impact) |
+| **Skills** | Editorial row layout — Cloud, Frontend, Backend, Databases, Soft Skills, Languages |
+| **Contact** | Typewriter animated heading, 3D tilt contact tiles (Email, LinkedIn, GitHub) |
 
 ---
 
@@ -40,10 +87,11 @@ Personal portfolio for **Kevin Maximiliano Palma Romero**, Azure Cloud Engineer 
 
 | Layer | Technology |
 |---|---|
-| Framework | [Astro](https://astro.build/) v5 |
-| Styling | [Tailwind CSS](https://tailwindcss.com/) v3 |
+| Framework | [Astro](https://astro.build/) v6 |
+| Styling | [Tailwind CSS](https://tailwindcss.com/) v4 + `@tailwindcss/vite` |
 | Language | TypeScript |
-| Icons | [Devicon](https://devicon.dev/) + inline SVG |
+| Icons | [Devicon](https://devicon.dev/) + inline SVG + emoji fallbacks |
+| Images | Astro Image (WebP optimization) |
 | Deployment | [Vercel](https://vercel.com/) |
 
 ---
@@ -63,8 +111,7 @@ Personal portfolio for **Kevin Maximiliano Palma Romero**, Azure Cloud Engineer 
 │   ├── components/
 │   │   ├── Hero.astro
 │   │   ├── About.astro
-│   │   ├── Projects.astro   # Cloud Solutions accordion
-│   │   ├── CaseStudyCard.astro
+│   │   ├── Projects.astro
 │   │   ├── Skills.astro
 │   │   ├── Contact.astro
 │   │   ├── Navbar.astro
@@ -72,15 +119,16 @@ Personal portfolio for **Kevin Maximiliano Palma Romero**, Azure Cloud Engineer 
 │   │   ├── ThemeToggle.astro
 │   │   └── LanguageSelector.astro
 │   ├── i18n/
-│   │   └── utils.ts         # All translation strings (ES / EN)
+│   │   └── utils.ts         # Translation strings (ES / EN)
 │   ├── layouts/
-│   │   └── Layout.astro     # Global layout, starfield canvas, dot-grid, scroll-reveal
+│   │   └── Layout.astro     # Global layout — meta tags, starfield, scroll-reveal
+│   ├── styles/
+│   │   └── global.css       # Tailwind v4 CSS config (@theme, @variant dark)
 │   └── pages/
 │       ├── es/index.astro
 │       ├── en/index.astro
-│       └── index.astro      # Redirect to /es
+│       └── index.astro      # Redirect → /es/
 ├── astro.config.mjs
-├── tailwind.config.mjs
 └── package.json
 ```
 
@@ -106,15 +154,48 @@ Dev server runs at `http://localhost:4321/`.
 
 ---
 
-## Certifications
+## Azure Certifications
 
-- [AZ-104 — Azure Administrator Associate](https://learn.microsoft.com/en-gb/users/kevinmaximilianopalmaromero-4986/credentials/48112e50f0667613)
-- [AZ-700 — Azure Network Engineer Associate](https://learn.microsoft.com/en-us/users/kevinmaximilianopalmaromero-4986/credentials/b43015bfda159018)
-- [AZ-900 — Azure Fundamentals](https://learn.microsoft.com/en-us/users/kevinmaximilianopalmaromero-4986/credentials/64d4b26fcc71de2c)
-- [DP-900 — Azure Data Fundamentals](https://learn.microsoft.com/en-gb/users/kevinmaximilianopalmaromero-4986/credentials/80c3d30098977b49)
+<table>
+<tr>
+<td>
+
+[![AZ-104](https://img.shields.io/badge/AZ--104-Azure%20Administrator%20Associate-0078d4?style=flat-square&logo=microsoftazure&logoColor=white)](https://learn.microsoft.com/en-gb/users/kevinmaximilianopalmaromero-4986/credentials/48112e50f0667613)
+
+</td>
+<td>
+
+[![AZ-700](https://img.shields.io/badge/AZ--700-Azure%20Network%20Engineer%20Associate-0078d4?style=flat-square&logo=microsoftazure&logoColor=white)](https://learn.microsoft.com/en-us/users/kevinmaximilianopalmaromero-4986/credentials/b43015bfda159018)
+
+</td>
+</tr>
+<tr>
+<td>
+
+[![AZ-900](https://img.shields.io/badge/AZ--900-Azure%20Fundamentals-0078d4?style=flat-square&logo=microsoftazure&logoColor=white)](https://learn.microsoft.com/en-us/users/kevinmaximilianopalmaromero-4986/credentials/64d4b26fcc71de2c)
+
+</td>
+<td>
+
+[![DP-900](https://img.shields.io/badge/DP--900-Azure%20Data%20Fundamentals-0078d4?style=flat-square&logo=microsoftazure&logoColor=white)](https://learn.microsoft.com/en-gb/users/kevinmaximilianopalmaromero-4986/credentials/80c3d30098977b49)
+
+</td>
+</tr>
+</table>
 
 ---
 
-## License
+## Notable Implementation Details
 
-Personal use only. All rights reserved.
+- **Tailwind v4 layer cascade** — Critical inline CSS is unlayered and wins over `@layer utilities`. Removed heading and anchor resets from the inline block to avoid overriding utility classes like `text-5xl` and `text-white`.
+- **Dark mode variant** — Configured via `@variant dark (&:where(.dark, .dark *))` in the CSS file instead of a JS config.
+- **Timeline** — Flex-column dot + `flex-1 w-px` connecting line pattern so the line only runs between dots, never beyond them.
+- **Count-up animation** — `performance.now()` + ease-out quad for smooth numeric counters; level animation (A1→B2) uses fixed step intervals.
+
+---
+
+<div align="center">
+
+**[kevmpr.vercel.app](https://kevmpr.vercel.app)** · Personal use only · All rights reserved
+
+</div>
