@@ -1,97 +1,205 @@
 ---
-import CaseStudyCard from './CaseStudyCard.astro';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
+const isEs = lang === 'es';
+
 const caseStudies = [
   {
-    titleKey: 'case1.title' as const,
-    challengeKey: 'case1.challenge' as const,
-    solutionKey: 'case1.solution' as const,
-    impactKey: 'projects.impact1' as const,
+    num: '01',
+    titleKey:     'case1.title'      as const,
+    challengeKey: 'case1.challenge'  as const,
+    solutionKey:  'case1.solution'   as const,
+    impactKey:    'projects.impact1' as const,
     tech: ['Azure RBAC', 'PowerShell'],
-    icon: 'shield',
   },
   {
-    titleKey: 'case2.title' as const,
-    challengeKey: 'case2.challenge' as const,
-    solutionKey: 'case2.solution' as const,
-    impactKey: 'projects.impact2' as const,
+    num: '02',
+    titleKey:     'case2.title'      as const,
+    challengeKey: 'case2.challenge'  as const,
+    solutionKey:  'case2.solution'   as const,
+    impactKey:    'projects.impact2' as const,
     tech: ['Azure Resource Graph', 'Cloudockit', 'Governance'],
-    icon: 'search',
   },
   {
-    titleKey: 'case3.title' as const,
-    challengeKey: 'case3.challenge' as const,
-    solutionKey: 'case3.solution' as const,
-    impactKey: 'projects.impact3' as const,
+    num: '03',
+    titleKey:     'case3.title'      as const,
+    challengeKey: 'case3.challenge'  as const,
+    solutionKey:  'case3.solution'   as const,
+    impactKey:    'projects.impact3' as const,
     tech: ['Azure Backup', 'App Service Cloning', 'Disaster Recovery'],
-    icon: 'migrate',
   },
   {
-    titleKey: 'case4.title' as const,
-    challengeKey: 'case4.challenge' as const,
-    solutionKey: 'case4.solution' as const,
-    impactKey: 'projects.impact4' as const,
+    num: '04',
+    titleKey:     'case4.title'      as const,
+    challengeKey: 'case4.challenge'  as const,
+    solutionKey:  'case4.solution'   as const,
+    impactKey:    'projects.impact4' as const,
     tech: ['Azure Cost Management', 'Excel/PowerBI', 'FinOps'],
-    icon: 'cost',
   },
   {
-    titleKey: 'case5.title' as const,
-    challengeKey: 'case5.challenge' as const,
-    solutionKey: 'case5.solution' as const,
-    impactKey: 'projects.impact5' as const,
-    tech: ['Technical Writing', 'Canva', 'Cloud Adoption Framework (CAF)'],
-    icon: 'document',
+    num: '05',
+    titleKey:     'case5.title'      as const,
+    challengeKey: 'case5.challenge'  as const,
+    solutionKey:  'case5.solution'   as const,
+    impactKey:    'projects.impact5' as const,
+    tech: ['Technical Writing', 'Canva', 'Cloud Adoption Framework'],
   },
 ];
 ---
 
 <section id="projects" class="relative py-20 lg:py-28" style="content-visibility: auto; contain-intrinsic-size: auto 600px;">
-  <!-- Background decoration -->
-  <div class="absolute inset-0 pointer-events-none overflow-hidden">
-    <div class="absolute top-0 right-0 w-72 h-72 bg-primary-400/10 dark:bg-primary-500/5 rounded-full blur-2xl"></div>
-    <div class="absolute bottom-0 left-0 w-96 h-96 bg-accent-400/10 dark:bg-accent-500/5 rounded-full blur-2xl"></div>
-  </div>
+  <div class="max-w-6xl mx-auto px-6 lg:px-8">
 
-  <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Section header -->
-    <div class="text-center mb-16 reveal">
-      <h2 class="text-4xl sm:text-5xl font-bold mb-4">
-        <span class="bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent">
-          {t('casestudies.title')}
+    <div class="proj-header mb-16 lg:mb-20 max-w-2xl">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-0.5 bg-primary-500"></div>
+        <span class="text-sm font-semibold tracking-widest uppercase text-primary-500">
+          {isEs ? 'Proyectos' : 'Projects'}
         </span>
+      </div>
+      <h2 class="text-4xl lg:text-5xl font-black text-slate-900 dark:text-white mb-4">
+        {t('casestudies.title')}
       </h2>
-      <p class="text-base text-slate-500 dark:text-slate-400 max-w-xl mx-auto">
+      <p class="text-lg text-slate-500 dark:text-slate-400 leading-relaxed">
         {t('casestudies.subtitle')}
       </p>
     </div>
 
-    <!-- Case Studies grid: 2 columns, 5th card centered full-width -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- Accordion list -->
+    <div class="flex flex-col">
       {caseStudies.map((cs, i) => (
-        <div
-          class={`reveal${i === 4 ? ' md:col-span-2' : ''}`}
-          style={`--reveal-delay: ${i * 120}ms`}
+        <details
+          class="proj-item group border-t border-slate-100 dark:border-slate-800 last:border-b"
+          style={`--delay: ${i * 80}ms`}
         >
-          <div class={i === 4 ? 'max-w-lg mx-auto w-full' : ''}>
-            <CaseStudyCard
-              title={t(cs.titleKey)}
-              challenge={t(cs.challengeKey)}
-              solution={t(cs.solutionKey)}
-              impact={t(cs.impactKey)}
-              impactLabel={t('projects.impact.label')}
-              tech={cs.tech}
-              icon={cs.icon}
-              challengeLabel={t('casestudies.challengeLabel')}
-              solutionLabel={t('casestudies.solutionLabel')}
-              stackLabel={t('casestudies.stackLabel')}
-            />
+          <summary class="flex items-center gap-5 py-5 cursor-pointer list-none select-none hover:bg-slate-50 dark:hover:bg-slate-800/40 transition-colors duration-200 px-2 rounded-xl -mx-2">
+            <!-- Number -->
+            <span class="text-xs font-black tabular-nums text-slate-300 dark:text-slate-600 group-open:text-primary-500 transition-colors duration-200 w-6 shrink-0">
+              {cs.num}
+            </span>
+            <!-- Title -->
+            <span class="flex-1 text-sm font-bold text-slate-800 dark:text-slate-100 group-open:text-primary-600 dark:group-open:text-primary-400 transition-colors duration-200">
+              {t(cs.titleKey)}
+            </span>
+            <!-- Tech tags — hidden on mobile -->
+            <div class="hidden sm:flex flex-wrap gap-1.5 shrink-0">
+              {cs.tech.map((tag) => (
+                <span class="text-xs px-2 py-0.5 rounded-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400">
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <!-- Chevron -->
+            <svg
+              class="w-4 h-4 text-slate-400 dark:text-slate-500 shrink-0 transition-transform duration-300 group-open:rotate-180"
+              fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+
+          <!-- Expanded content -->
+          <div class="px-2 pb-6 pt-1 grid grid-cols-1 md:grid-cols-3 gap-6 ml-11">
+
+            <!-- Challenge -->
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-2">
+                {t('casestudies.challengeLabel')}
+              </p>
+              <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                {t(cs.challengeKey)}
+              </p>
+            </div>
+
+            <!-- Solution -->
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-2">
+                {t('casestudies.solutionLabel')}
+              </p>
+              <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                {t(cs.solutionKey)}
+              </p>
+            </div>
+
+            <!-- Impact -->
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-2">
+                {t('projects.impact.label')}
+              </p>
+              <div class="border-l-2 border-primary-500 pl-3">
+                <p class="text-sm font-semibold text-slate-700 dark:text-slate-200 leading-relaxed">
+                  {t(cs.impactKey)}
+                </p>
+              </div>
+              <!-- Tags on mobile -->
+              <div class="flex sm:hidden flex-wrap gap-1.5 mt-4">
+                {cs.tech.map((tag) => (
+                  <span class="text-xs px-2 py-0.5 rounded-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+
           </div>
-        </div>
+        </details>
       ))}
     </div>
+
   </div>
 </section>
+
+<style>
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes slideLeft {
+    from { opacity: 0; transform: translateX(-24px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes expandDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .proj-header {
+    opacity: 0;
+  }
+  .proj-header.animated {
+    animation: slideLeft 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .proj-item {
+    opacity: 0;
+  }
+  .proj-item.animated {
+    animation: fadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: var(--delay, 0ms);
+  }
+
+  details[open] > div {
+    animation: expandDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  /* Remove default marker */
+  details summary::-webkit-details-marker { display: none; }
+  details summary::marker { display: none; }
+</style>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animated');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.05 });
+
+  document.querySelectorAll('#projects .proj-header, #projects .proj-item').forEach((el) => io.observe(el));
+</script>
