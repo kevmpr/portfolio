@@ -8,26 +8,25 @@ const t = useTranslations(lang);
 ---
 
 <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-  <div id="navbar-bg" class="transition-all duration-300 border-b border-transparent">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div id="navbar-bg" class="transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
+
         <!-- Logo -->
-        <a href={`/${lang}/#home`} class="flex items-center gap-2 group">
-          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-sm group-hover:scale-110 transition-transform">
-            KP
-          </div>
-          <span class="font-bold text-lg bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent transition-[filter] duration-200 group-hover:logo-glow">
+        <a href={`/${lang}/#home`} class="flex items-center gap-2.5 group">
+          <div class="w-0.5 h-5 bg-primary-500 rounded-full transition-all duration-300 group-hover:h-6"></div>
+          <span class="font-black text-slate-900 dark:text-white text-base tracking-tight transition-colors duration-200 group-hover:text-primary-600 dark:group-hover:text-primary-400">
             Kevin Palma
           </span>
         </a>
 
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center gap-1">
-          <a href={`/${lang}/#home`} class="nav-link" data-section="home">{t('nav.home')}</a>
-          <a href={`/${lang}/#about`} class="nav-link" data-section="about">{t('nav.about')}</a>
+          <a href={`/${lang}/#home`}     class="nav-link" data-section="home"    >{t('nav.home')}</a>
+          <a href={`/${lang}/#about`}    class="nav-link" data-section="about"   >{t('nav.about')}</a>
           <a href={`/${lang}/#projects`} class="nav-link" data-section="projects">{t('nav.projects')}</a>
-          <a href={`/${lang}/#skills`} class="nav-link" data-section="skills">{t('nav.skills')}</a>
-          <a href={`/${lang}/#contact`} class="nav-link" data-section="contact">{t('nav.contact')}</a>
+          <a href={`/${lang}/#skills`}   class="nav-link" data-section="skills"  >{t('nav.skills')}</a>
+          <a href={`/${lang}/#contact`}  class="nav-link" data-section="contact" >{t('nav.contact')}</a>
         </div>
 
         <!-- Controls -->
@@ -35,86 +34,80 @@ const t = useTranslations(lang);
           <LanguageSelector />
           <ThemeToggle />
           <!-- Mobile menu button -->
-          <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-slate-200/50 dark:hover:bg-slate-700/50 transition-colors" aria-label="Menu">
-            <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200" aria-label="Menu">
+            <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
             </svg>
-            <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
             </svg>
           </button>
         </div>
+
       </div>
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="md:hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm border-t border-white/20 dark:border-slate-700/30 overflow-hidden transition-[max-height,opacity] duration-300 ease-out max-h-0 opacity-0">
-      <div class="px-4 py-3 space-y-1">
-        <a href={`/${lang}/#home`} class="mobile-nav-link">{t('nav.home')}</a>
-        <a href={`/${lang}/#about`} class="mobile-nav-link">{t('nav.about')}</a>
+    <div id="mobile-menu" class="md:hidden overflow-hidden transition-[max-height,opacity] duration-300 ease-out max-h-0 opacity-0">
+      <div class="max-w-6xl mx-auto px-6 pb-4 pt-2 flex flex-col gap-1">
+        <a href={`/${lang}/#home`}     class="mobile-nav-link">{t('nav.home')}</a>
+        <a href={`/${lang}/#about`}    class="mobile-nav-link">{t('nav.about')}</a>
         <a href={`/${lang}/#projects`} class="mobile-nav-link">{t('nav.projects')}</a>
-        <a href={`/${lang}/#skills`} class="mobile-nav-link">{t('nav.skills')}</a>
-        <a href={`/${lang}/#contact`} class="mobile-nav-link">{t('nav.contact')}</a>
+        <a href={`/${lang}/#skills`}   class="mobile-nav-link">{t('nav.skills')}</a>
+        <a href={`/${lang}/#contact`}  class="mobile-nav-link">{t('nav.contact')}</a>
       </div>
     </div>
 
-    <!-- Gradient border bottom (visible when scrolled) -->
-    <div id="navbar-gradient-border" class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-primary-500/50 via-accent-500/50 to-transparent opacity-0 transition-opacity duration-300 pointer-events-none"></div>
   </div>
 </nav>
 
 <style>
   .nav-link {
-    @apply relative px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors duration-200;
+    @apply relative px-3 py-2 text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors duration-200 rounded-lg;
   }
   .nav-link::after {
     content: '';
     position: absolute;
-    bottom: 4px;
+    bottom: 5px;
     left: 50%;
     transform: translateX(-50%);
     width: 0;
     height: 2px;
     border-radius: 2px;
-    background: linear-gradient(to right, #3b82f6, #06b6d4);
-    transition: width 0.25s ease;
+    background-color: var(--color-primary-500, #3b82f6);
+    transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .nav-link.active {
-    @apply text-primary-600 dark:text-primary-400;
+    @apply text-slate-900 dark:text-white;
   }
-  .nav-link.active::after {
-    width: calc(100% - 16px);
+  .nav-link.active::after,
+  .nav-link:hover::after {
+    width: calc(100% - 24px);
   }
+
   .mobile-nav-link {
-    @apply block px-3 py-2 rounded-lg text-base font-medium text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/20;
+    @apply block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors duration-200;
     opacity: 0;
-    transform: translateY(-8px);
-    transition: opacity 0.25s ease, transform 0.25s ease, background-color 0.2s, color 0.2s;
+    transform: translateY(-6px);
+    transition: opacity 0.2s ease, transform 0.2s ease, background-color 0.2s, color 0.2s;
   }
   #mobile-menu.menu-open .mobile-nav-link {
     opacity: 1;
     transform: translateY(0);
   }
-  #mobile-menu.menu-open .mobile-nav-link:nth-child(1) { transition-delay: 50ms; }
-  #mobile-menu.menu-open .mobile-nav-link:nth-child(2) { transition-delay: 100ms; }
-  #mobile-menu.menu-open .mobile-nav-link:nth-child(3) { transition-delay: 150ms; }
-  #mobile-menu.menu-open .mobile-nav-link:nth-child(4) { transition-delay: 200ms; }
-  #mobile-menu.menu-open .mobile-nav-link:nth-child(5) { transition-delay: 250ms; }
-  .logo-glow {
-    filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.6));
-  }
-  .group:hover .logo-glow-target {
-    filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.6));
-  }
+  #mobile-menu.menu-open .mobile-nav-link:nth-child(1) { transition-delay: 40ms; }
+  #mobile-menu.menu-open .mobile-nav-link:nth-child(2) { transition-delay: 80ms; }
+  #mobile-menu.menu-open .mobile-nav-link:nth-child(3) { transition-delay: 120ms; }
+  #mobile-menu.menu-open .mobile-nav-link:nth-child(4) { transition-delay: 160ms; }
+  #mobile-menu.menu-open .mobile-nav-link:nth-child(5) { transition-delay: 200ms; }
 </style>
 
 <script>
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const menuIcon = document.getElementById('menu-icon');
-  const closeIcon = document.getElementById('close-icon');
-  const navbarBg = document.getElementById('navbar-bg');
-  const gradientBorder = document.getElementById('navbar-gradient-border');
+  const mobileMenu    = document.getElementById('mobile-menu');
+  const menuIcon      = document.getElementById('menu-icon');
+  const closeIcon     = document.getElementById('close-icon');
+  const navbarBg      = document.getElementById('navbar-bg');
 
   function openMenu() {
     if (!mobileMenu) return;
@@ -123,7 +116,6 @@ const t = useTranslations(lang);
     menuIcon?.classList.add('hidden');
     closeIcon?.classList.remove('hidden');
   }
-
   function closeMenu() {
     if (!mobileMenu) return;
     mobileMenu.classList.remove('max-h-96', 'opacity-100', 'menu-open');
@@ -133,78 +125,54 @@ const t = useTranslations(lang);
   }
 
   mobileMenuBtn?.addEventListener('click', () => {
-    const isOpen = mobileMenu?.classList.contains('menu-open');
-    isOpen ? closeMenu() : openMenu();
+    mobileMenu?.classList.contains('menu-open') ? closeMenu() : openMenu();
   });
+  mobileMenu?.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
 
-  // Close mobile menu when clicking a link
-  mobileMenu?.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', closeMenu);
-  });
-
-  // Scroll-based navbar background transition
-  function updateNavbarOnScroll() {
+  // Scroll-based background
+  function updateNavbar() {
     const scrolled = window.scrollY > 20;
-    if (navbarBg) {
-      if (scrolled) {
-        navbarBg.style.backgroundColor = '';
-        navbarBg.classList.add('navbar-scrolled');
-        // Apply styles via inline style for dark/light mode compatibility
-        const isDark = document.documentElement.classList.contains('dark');
-        navbarBg.style.backdropFilter = 'blur(24px)';
-        navbarBg.style.webkitBackdropFilter = 'blur(24px)';
-        navbarBg.style.backgroundColor = isDark ? 'rgba(2,6,23,0.90)' : 'rgba(255,255,255,0.90)';
-        navbarBg.style.boxShadow = '0 1px 3px rgba(0,0,0,0.08)';
-      } else {
-        navbarBg.style.backdropFilter = '';
-        navbarBg.style.webkitBackdropFilter = '';
-        navbarBg.style.backgroundColor = '';
-        navbarBg.style.boxShadow = '';
-        navbarBg.classList.remove('navbar-scrolled');
-      }
-    }
-    if (gradientBorder) {
-      gradientBorder.style.opacity = scrolled ? '1' : '0';
+    if (!navbarBg) return;
+    const isDark = document.documentElement.classList.contains('dark');
+    if (scrolled) {
+      navbarBg.style.backdropFilter        = 'blur(20px)';
+      navbarBg.style.webkitBackdropFilter  = 'blur(20px)';
+      navbarBg.style.backgroundColor       = isDark ? 'rgba(15,23,42,0.92)' : 'rgba(255,255,255,0.92)';
+      navbarBg.style.boxShadow             = '0 1px 0 rgba(0,0,0,0.06)';
+    } else {
+      navbarBg.style.backdropFilter        = '';
+      navbarBg.style.webkitBackdropFilter  = '';
+      navbarBg.style.backgroundColor       = '';
+      navbarBg.style.boxShadow             = '';
     }
   }
 
-  window.addEventListener('scroll', updateNavbarOnScroll, { passive: true });
-  // Re-apply if dark mode changes
-  const observer = new MutationObserver(updateNavbarOnScroll);
-  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-  updateNavbarOnScroll();
+  window.addEventListener('scroll', updateNavbar, { passive: true });
+  new MutationObserver(updateNavbar).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+  updateNavbar();
 
-  // Active section detection via IntersectionObserver
+  // Active section detection via scroll position
   const navLinks = document.querySelectorAll('.nav-link[data-section]');
-  const sections = ['home', 'about', 'projects', 'skills', 'contact'];
+  const sectionIds = ['home', 'about', 'projects', 'skills', 'contact'];
 
-  let activeSection = 'home';
-
-  function setActiveLink(sectionId: string) {
-    activeSection = sectionId;
+  function setActive(id: string) {
     navLinks.forEach(link => {
-      const section = link.getAttribute('data-section');
-      if (section === sectionId) {
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
-      }
+      link.classList.toggle('active', link.getAttribute('data-section') === id);
     });
   }
 
-  const sectionObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setActiveLink(entry.target.id);
-        }
-      });
-    },
-    { threshold: 0.3, rootMargin: '-60px 0px -40% 0px' }
-  );
+  function updateActiveSection() {
+    const scrollY = window.scrollY + 80; // offset for navbar height
+    let current = sectionIds[0];
+    for (const id of sectionIds) {
+      const el = document.getElementById(id);
+      if (el && el.offsetTop <= scrollY) {
+        current = id;
+      }
+    }
+    setActive(current);
+  }
 
-  sections.forEach(id => {
-    const el = document.getElementById(id);
-    if (el) sectionObserver.observe(el);
-  });
+  window.addEventListener('scroll', updateActiveSection, { passive: true });
+  updateActiveSection();
 </script>
