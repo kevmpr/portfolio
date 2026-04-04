@@ -5,15 +5,25 @@ import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const isEs = lang === 'es';
+
+const navItems = [
+  { key: 'nav.home',     section: 'home',     num: '01' },
+  { key: 'nav.about',    section: 'about',    num: '02' },
+  { key: 'nav.projects', section: 'projects', num: '03' },
+  { key: 'nav.skills',   section: 'skills',   num: '04' },
+  { key: 'nav.contact',  section: 'contact',  num: '05' },
+];
 ---
 
+<!-- Navbar bar (z-50) -->
 <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
   <div id="navbar-bg" class="transition-all duration-300">
     <div class="max-w-6xl mx-auto px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
 
         <!-- Logo -->
-        <a href={`/${lang}/#home`} class="flex items-center gap-2.5 group">
+        <a href={`/${lang}/#home`} class="flex items-center gap-2.5 group" aria-label="Kevin Palma — inicio">
           <div class="w-0.5 h-5 bg-primary-500 rounded-full transition-all duration-300 group-hover:h-6"></div>
           <span class="font-black text-slate-900 dark:text-white text-base tracking-tight transition-colors duration-200 group-hover:text-primary-600 dark:group-hover:text-primary-400">
             Kevin Palma
@@ -22,11 +32,11 @@ const t = useTranslations(lang);
 
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center gap-1">
-          <a href={`/${lang}/#home`}     class="nav-link" data-section="home"    >{t('nav.home')}</a>
-          <a href={`/${lang}/#about`}    class="nav-link" data-section="about"   >{t('nav.about')}</a>
-          <a href={`/${lang}/#projects`} class="nav-link" data-section="projects">{t('nav.projects')}</a>
-          <a href={`/${lang}/#skills`}   class="nav-link" data-section="skills"  >{t('nav.skills')}</a>
-          <a href={`/${lang}/#contact`}  class="nav-link" data-section="contact" >{t('nav.contact')}</a>
+          {navItems.map(item => (
+            <a href={`/${lang}/#${item.section}`} class="nav-link" data-section={item.section}>
+              {t(item.key)}
+            </a>
+          ))}
         </div>
 
         <!-- Controls -->
@@ -34,11 +44,16 @@ const t = useTranslations(lang);
           <LanguageSelector />
           <ThemeToggle />
           <!-- Mobile menu button -->
-          <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200" aria-label="Menu">
-            <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <button
+            id="mobile-menu-btn"
+            class="md:hidden flex items-center justify-center w-9 h-9 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200"
+            aria-label={isEs ? 'Abrir menú' : 'Open menu'}
+            aria-expanded="false"
+          >
+            <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
             </svg>
-            <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
             </svg>
           </button>
@@ -46,24 +61,57 @@ const t = useTranslations(lang);
 
       </div>
     </div>
-
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="md:hidden overflow-hidden transition-[max-height,opacity] duration-300 ease-out max-h-0 opacity-0">
-      <div class="max-w-6xl mx-auto px-6 pb-4 pt-2 flex flex-col gap-1">
-        <a href={`/${lang}/#home`}     class="mobile-nav-link">{t('nav.home')}</a>
-        <a href={`/${lang}/#about`}    class="mobile-nav-link">{t('nav.about')}</a>
-        <a href={`/${lang}/#projects`} class="mobile-nav-link">{t('nav.projects')}</a>
-        <a href={`/${lang}/#skills`}   class="mobile-nav-link">{t('nav.skills')}</a>
-        <a href={`/${lang}/#contact`}  class="mobile-nav-link">{t('nav.contact')}</a>
-      </div>
-    </div>
-
   </div>
 </nav>
+
+<!-- Full-screen mobile overlay (z-40, below navbar bar) -->
+<div
+  id="mobile-overlay"
+  class="md:hidden fixed inset-0 z-40 bg-white dark:bg-slate-950 flex flex-col px-8 overflow-y-auto"
+  aria-hidden="true"
+>
+  <!-- Nav links — vertically centered -->
+  <div class="flex-1 flex flex-col justify-center pt-16 pb-4">
+    {navItems.map((item, i) => (
+      <a
+        href={`/${lang}/#${item.section}`}
+        class="overlay-link group flex items-center gap-5 py-4 border-b border-slate-100 dark:border-slate-800/60"
+        data-section={item.section}
+        style={`--oi:${i}`}
+      >
+        <span class="text-xs font-mono font-semibold text-primary-500 w-6 shrink-0">{item.num}</span>
+        <span class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white group-hover:text-primary-500 dark:group-hover:text-primary-400 transition-colors duration-200">
+          {t(item.key)}
+        </span>
+        <svg class="ml-auto w-4 h-4 text-slate-300 dark:text-slate-700 group-hover:text-primary-400 group-hover:translate-x-1 transition-all duration-200 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    ))}
+  </div>
+
+  <!-- Bottom bar: socials + lang -->
+  <div class="overlay-footer pb-10 pt-6 flex items-center justify-between border-t border-slate-100 dark:border-slate-800/60">
+    <div class="flex items-center gap-4">
+      <a href="https://www.linkedin.com/in/kevin-m-palma-r/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-slate-400 dark:text-slate-500 hover:text-primary-500 transition-colors duration-200">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+      </a>
+      <a href="https://github.com/kevmpr" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="text-slate-400 dark:text-slate-500 hover:text-primary-500 transition-colors duration-200">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+        </svg>
+      </a>
+    </div>
+    <span class="text-xs text-slate-400 dark:text-slate-600 font-medium">&copy; {new Date().getFullYear()} Kevin Palma</span>
+  </div>
+</div>
 
 <style>
   @reference "../styles/global.css";
 
+  /* ── Desktop nav links ── */
   .nav-link {
     @apply relative px-3 py-2 text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors duration-200 rounded-lg;
   }
@@ -79,73 +127,108 @@ const t = useTranslations(lang);
     background-color: var(--color-primary-500, #3b82f6);
     transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  .nav-link.active {
-    @apply text-slate-900 dark:text-white;
-  }
+  .nav-link.active { @apply text-slate-900 dark:text-white; }
   .nav-link.active::after,
-  .nav-link:hover::after {
-    width: calc(100% - 24px);
+  .nav-link:hover::after { width: calc(100% - 24px); }
+
+  /* ── Mobile overlay ── */
+  #mobile-overlay {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  #mobile-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
   }
 
-  .mobile-nav-link {
-    @apply block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors duration-200;
+  .overlay-link {
     opacity: 0;
-    transform: translateY(-6px);
-    transition: opacity 0.2s ease, transform 0.2s ease, background-color 0.2s, color 0.2s;
+    transform: translateX(-16px);
+    transition: opacity 0.3s ease, transform 0.3s ease, color 0.2s;
   }
-  #mobile-menu.menu-open .mobile-nav-link {
+  #mobile-overlay.open .overlay-link {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  #mobile-overlay.open .overlay-link:nth-child(1) { transition-delay: 60ms; }
+  #mobile-overlay.open .overlay-link:nth-child(2) { transition-delay: 100ms; }
+  #mobile-overlay.open .overlay-link:nth-child(3) { transition-delay: 140ms; }
+  #mobile-overlay.open .overlay-link:nth-child(4) { transition-delay: 180ms; }
+  #mobile-overlay.open .overlay-link:nth-child(5) { transition-delay: 220ms; }
+
+  .overlay-footer {
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.3s ease 280ms, transform 0.3s ease 280ms;
+  }
+  #mobile-overlay.open .overlay-footer {
     opacity: 1;
     transform: translateY(0);
   }
-  #mobile-menu.menu-open .mobile-nav-link:nth-child(1) { transition-delay: 40ms; }
-  #mobile-menu.menu-open .mobile-nav-link:nth-child(2) { transition-delay: 80ms; }
-  #mobile-menu.menu-open .mobile-nav-link:nth-child(3) { transition-delay: 120ms; }
-  #mobile-menu.menu-open .mobile-nav-link:nth-child(4) { transition-delay: 160ms; }
-  #mobile-menu.menu-open .mobile-nav-link:nth-child(5) { transition-delay: 200ms; }
 </style>
 
 <script>
-  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-  const mobileMenu    = document.getElementById('mobile-menu');
-  const menuIcon      = document.getElementById('menu-icon');
-  const closeIcon     = document.getElementById('close-icon');
-  const navbarBg      = document.getElementById('navbar-bg');
+  const menuBtn   = document.getElementById('mobile-menu-btn');
+  const overlay   = document.getElementById('mobile-overlay');
+  const menuIcon  = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+  const navbarBg  = document.getElementById('navbar-bg');
+
+  function solidBg() {
+    if (!navbarBg) return;
+    const isDark = document.documentElement.classList.contains('dark');
+    navbarBg.style.backdropFilter       = 'blur(20px)';
+    navbarBg.style.webkitBackdropFilter = 'blur(20px)';
+    navbarBg.style.backgroundColor      = isDark ? 'rgba(2,6,23,1)' : 'rgba(248,250,252,1)';
+    navbarBg.style.boxShadow            = '0 1px 0 rgba(0,0,0,0.06)';
+  }
 
   function openMenu() {
-    if (!mobileMenu) return;
-    mobileMenu.classList.remove('max-h-0', 'opacity-0');
-    mobileMenu.classList.add('max-h-96', 'opacity-100', 'menu-open');
+    solidBg();
+    overlay?.classList.add('open');
+    overlay?.removeAttribute('aria-hidden');
+    menuBtn?.setAttribute('aria-expanded', 'true');
+    menuBtn?.setAttribute('aria-label', menuBtn.closest('[lang]')?.getAttribute('lang') === 'es' ? 'Cerrar menú' : 'Close menu');
     menuIcon?.classList.add('hidden');
     closeIcon?.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
   }
+
   function closeMenu() {
-    if (!mobileMenu) return;
-    mobileMenu.classList.remove('max-h-96', 'opacity-100', 'menu-open');
-    mobileMenu.classList.add('max-h-0', 'opacity-0');
+    overlay?.classList.remove('open');
+    overlay?.setAttribute('aria-hidden', 'true');
+    menuBtn?.setAttribute('aria-expanded', 'false');
     menuIcon?.classList.remove('hidden');
     closeIcon?.classList.add('hidden');
+    document.body.style.overflow = '';
+    updateNavbar();
   }
 
-  mobileMenuBtn?.addEventListener('click', () => {
-    mobileMenu?.classList.contains('menu-open') ? closeMenu() : openMenu();
+  menuBtn?.addEventListener('click', () => {
+    overlay?.classList.contains('open') ? closeMenu() : openMenu();
   });
-  mobileMenu?.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
 
-  // Scroll-based background
+  overlay?.querySelectorAll('a[data-section], a[href]').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // ── Scroll-based navbar background ──
   function updateNavbar() {
+    if (overlay?.classList.contains('open')) return; // keep solid while menu is open
     const scrolled = window.scrollY > 20;
     if (!navbarBg) return;
     const isDark = document.documentElement.classList.contains('dark');
     if (scrolled) {
-      navbarBg.style.backdropFilter        = 'blur(20px)';
-      navbarBg.style.webkitBackdropFilter  = 'blur(20px)';
-      navbarBg.style.backgroundColor       = isDark ? 'rgba(15,23,42,0.92)' : 'rgba(255,255,255,0.92)';
-      navbarBg.style.boxShadow             = '0 1px 0 rgba(0,0,0,0.06)';
+      navbarBg.style.backdropFilter       = 'blur(20px)';
+      navbarBg.style.webkitBackdropFilter = 'blur(20px)';
+      navbarBg.style.backgroundColor      = isDark ? 'rgba(15,23,42,0.92)' : 'rgba(255,255,255,0.92)';
+      navbarBg.style.boxShadow            = '0 1px 0 rgba(0,0,0,0.06)';
     } else {
-      navbarBg.style.backdropFilter        = '';
-      navbarBg.style.webkitBackdropFilter  = '';
-      navbarBg.style.backgroundColor       = '';
-      navbarBg.style.boxShadow             = '';
+      navbarBg.style.backdropFilter       = '';
+      navbarBg.style.webkitBackdropFilter = '';
+      navbarBg.style.backgroundColor      = '';
+      navbarBg.style.boxShadow            = '';
     }
   }
 
@@ -153,8 +236,8 @@ const t = useTranslations(lang);
   new MutationObserver(updateNavbar).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
   updateNavbar();
 
-  // Active section detection via scroll position
-  const navLinks = document.querySelectorAll('.nav-link[data-section]');
+  // ── Active section detection ──
+  const navLinks   = document.querySelectorAll('.nav-link[data-section]');
   const sectionIds = ['home', 'about', 'projects', 'skills', 'contact'];
 
   function setActive(id: string) {
@@ -164,13 +247,11 @@ const t = useTranslations(lang);
   }
 
   function updateActiveSection() {
-    const scrollY = window.scrollY + 80; // offset for navbar height
-    let current = sectionIds[0];
+    const scrollY   = window.scrollY + 80;
+    let current     = sectionIds[0];
     for (const id of sectionIds) {
       const el = document.getElementById(id);
-      if (el && el.offsetTop <= scrollY) {
-        current = id;
-      }
+      if (el && el.offsetTop <= scrollY) current = id;
     }
     setActive(current);
   }
