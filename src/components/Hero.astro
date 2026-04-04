@@ -8,7 +8,7 @@ const t = useTranslations(lang);
 const isEs = lang === 'es';
 ---
 
-<section id="home" class="relative min-h-screen flex items-center overflow-hidden">
+<section id="home" class="relative min-h-screen flex items-center overflow-hidden" aria-label={isEs ? 'Inicio — Kevin Palma, Ingeniero Cloud Azure' : 'Home — Kevin Palma, Azure Cloud Engineer'}>
   <!-- Subtle dot texture -->
   <div class="absolute inset-0 bg-dot-pattern opacity-20 dark:opacity-10 pointer-events-none" aria-hidden="true"></div>
   <!-- Very soft ambient glow -->
@@ -52,7 +52,7 @@ const isEs = lang === 'es';
         <div class="hero-item flex flex-col sm:flex-row gap-3 justify-center lg:justify-start" style="--i:4">
           <a
             href="#contact"
-            class="group inline-flex items-center justify-center gap-2 px-7 py-3 rounded-lg bg-primary-600 hover:bg-primary-500 text-white dark:bg-white dark:text-primary-600 dark:hover:bg-slate-100 font-semibold transition-all duration-300 hover:-translate-y-0.5 text-sm"
+            class="group inline-flex items-center justify-center gap-2 px-7 py-3 rounded-lg bg-slate-900 hover:bg-slate-700 text-white dark:bg-primary-600 dark:hover:bg-primary-500 font-semibold transition-all duration-300 hover:-translate-y-0.5 text-sm"
             aria-label="Go to contact section"
           >
             {t('hero.contact')}

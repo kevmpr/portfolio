@@ -6,10 +6,20 @@ import '../styles/global.css';
 
 interface Props {
   title: string;
+  description?: string;
 }
 
-const { title } = Astro.props;
+const { title, description: descProp } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
+const isEs = lang === 'es';
+
+const defaultDescription = isEs
+  ? 'Ingeniero Cloud Azure especializado en infraestructura, redes e IaC. 4 certificaciones Microsoft Azure, más de 1 año de experiencia en Readymind.'
+  : 'Azure Cloud Engineer specializing in infrastructure, networking, and IaC. 4 Microsoft Azure certifications, 1+ year of experience at Readymind.';
+
+const description = descProp ?? defaultDescription;
+const siteURL = 'https://kevmpr.vercel.app';
+const canonicalURL = new URL(Astro.url.pathname, siteURL);
 ---
 
 <!doctype html>
@@ -17,12 +27,44 @@ const lang = getLangFromUrl(Astro.url);
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Kevin Palma - Azure Cloud Engineer | Portfolio" />
+
+    <!-- Primary meta -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Hreflang for i18n -->
+    <link rel="alternate" hreflang="es" href={`${siteURL}/es/`} />
+    <link rel="alternate" hreflang="en" href={`${siteURL}/en/`} />
+    <link rel="alternate" hreflang="x-default" href={`${siteURL}/es/`} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:locale" content={isEs ? 'es_AR' : 'en_US'} />
+    <meta property="og:locale:alternate" content={isEs ? 'en_US' : 'es_AR'} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" /></noscript>
+
+    <!-- Devicons (non-blocking) -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" /></noscript>
+
     <style is:inline>
       /* Critical CSS — inlined to eliminate render-blocking */
       *,*::before,*::after{box-sizing:border-box;border-width:0;border-style:solid}
@@ -31,11 +73,12 @@ const lang = getLangFromUrl(Astro.url);
       body{margin:0;line-height:inherit;min-height:100vh;contain:style;background-color:transparent;color:#1e293b}
       html.dark body{color:#f1f5f9}
       img,video{display:block;max-width:100%;height:auto}
-      a{color:inherit;text-decoration:inherit}
       ::selection{background-color:rgba(59,130,246,0.3);color:inherit}
       .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);transition-delay:var(--reveal-delay,0ms)}
       .reveal.revealed{opacity:1;transform:translateY(0)}
+      @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
     </style>
+
     <script is:inline type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -44,31 +87,39 @@ const lang = getLangFromUrl(Astro.url);
       "jobTitle": "Azure Cloud Engineer",
       "worksFor": { "@type": "Organization", "name": "Readymind" },
       "url": "https://kevmpr.vercel.app",
+      "email": "kev.mpr03@outlook.com",
       "sameAs": [
         "https://www.linkedin.com/in/kevin-m-palma-r/",
         "https://github.com/kevmpr"
       ],
-      "knowsAbout": ["Microsoft Azure", "Cloud Infrastructure", "Networking", "IaC"],
+      "knowsAbout": ["Microsoft Azure", "Cloud Infrastructure", "Networking", "IaC", "Azure Administrator", "Azure Networking"],
       "hasCredential": [
-        { "@type": "EducationalOccupationalCredential", "name": "AZ-104 Azure Administrator" },
-        { "@type": "EducationalOccupationalCredential", "name": "AZ-700 Azure Network Engineer" },
-        { "@type": "EducationalOccupationalCredential", "name": "AZ-900 Azure Fundamentals" },
-        { "@type": "EducationalOccupationalCredential", "name": "DP-900 Azure Data Fundamentals" }
+        { "@type": "EducationalOccupationalCredential", "name": "AZ-104 Azure Administrator Associate", "credentialCategory": "Professional Certification" },
+        { "@type": "EducationalOccupationalCredential", "name": "AZ-700 Azure Network Engineer Associate", "credentialCategory": "Professional Certification" },
+        { "@type": "EducationalOccupationalCredential", "name": "AZ-900 Azure Fundamentals", "credentialCategory": "Professional Certification" },
+        { "@type": "EducationalOccupationalCredential", "name": "DP-900 Azure Data Fundamentals", "credentialCategory": "Professional Certification" }
       ]
     }
     </script>
-    <title>{title}</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
   </head>
   <body class="text-slate-800 dark:text-slate-100 font-sans transition-colors duration-300 overflow-x-hidden">
+
+    <!-- Skip to content (keyboard navigation) -->
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-primary-600 focus:text-white focus:font-semibold focus:shadow-lg focus:outline-none"
+    >
+      {isEs ? 'Saltar al contenido' : 'Skip to content'}
+    </a>
+
     <!-- Scroll progress bar -->
-    <div id="scroll-progress" style="position:fixed;top:0;left:0;width:0%;height:3px;z-index:100;background:linear-gradient(to right,#3b82f6,#06b6d4);transition:width 0.1s linear;pointer-events:none;"></div>
+    <div id="scroll-progress" aria-hidden="true" style="position:fixed;top:0;left:0;width:0%;height:3px;z-index:100;background:linear-gradient(to right,#3b82f6,#06b6d4);transition:width 0.1s linear;pointer-events:none;"></div>
 
     <!-- Starfield / particle background -->
     <canvas id="starfield" aria-hidden="true" style="position:fixed;inset:0;width:100%;height:100%;z-index:-10;pointer-events:none;"></canvas>
 
     <Navbar />
-    <main>
+    <main id="main-content">
       <slot />
     </main>
     <Footer />
@@ -100,8 +151,10 @@ const lang = getLangFromUrl(Astro.url);
     </script>
 
     <script is:inline>
-      // Starfield / particle background
+      // Starfield / particle background — dark mode only, respects prefers-reduced-motion
       (function () {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
         const canvas = document.getElementById('starfield');
         if (!canvas) return;
         const ctx = canvas.getContext('2d');
@@ -163,8 +216,13 @@ const lang = getLangFromUrl(Astro.url);
     </script>
 
     <script is:inline>
-      // Scroll-reveal animations using IntersectionObserver
+      // Scroll-reveal animations — respects prefers-reduced-motion
       (function() {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('revealed'); });
+          return;
+        }
+
         const observer = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -189,18 +247,16 @@ const lang = getLangFromUrl(Astro.url);
 </html>
 
 <style is:global>
-  /* Custom scrollbar */
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-  ::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: rgba(59, 130, 246, 0.3);
+  /* Focus visible — keyboard navigation */
+  :focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
     border-radius: 4px;
   }
-  ::-webkit-scrollbar-thumb:hover {
-    background: rgba(59, 130, 246, 0.5);
-  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: rgba(59,130,246,0.3); border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(59,130,246,0.5); }
 </style>

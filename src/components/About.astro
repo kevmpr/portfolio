@@ -86,7 +86,7 @@ const certifications = [
 ];
 ---
 
-<section id="about" class="py-20 lg:py-32">
+<section id="about" class="py-20 lg:py-32" aria-label={isEs ? 'Sobre mí — experiencia y certificaciones' : 'About me — experience and certifications'} style="content-visibility: auto; contain-intrinsic-size: auto 800px;">
   <div class="max-w-6xl mx-auto px-6 lg:px-8">
 
     <!-- Section header -->
@@ -328,7 +328,7 @@ const certifications = [
             <!-- Header: imagen + código + título + rol -->
             <div class="flex items-center gap-3 mb-4">
               <div class="shrink-0 transition-transform duration-300 group-hover:scale-110 origin-center">
-                <Image src={cert.image} alt={cert.code} class="w-11 h-11 object-contain rounded-xl" />
+                <Image src={cert.image} alt={`${cert.code} — ${cert.title}`} width={44} height={44} class="w-11 h-11 object-contain rounded-xl" />
               </div>
               <div class="flex-1 min-w-0">
                 <p class="text-base font-bold text-slate-900 dark:text-white leading-tight">{cert.code}</p>
