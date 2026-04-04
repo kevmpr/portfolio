@@ -1,51 +1,70 @@
-# 🚀 Kevin Maximiliano Palma Romero — Portfolio
+# Kevin Maximiliano Palma Romero — Portfolio
 
-Personal portfolio website for **Kevin Maximiliano Palma Romero**, Azure Cloud Engineer at Readymind. Built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
+Personal portfolio for **Kevin Maximiliano Palma Romero**, Azure Cloud Engineer at Readymind. Built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
 
-🔗 **Live:** [kevin-m-palma-r.vercel.app](https://kevin-m-palma-r.vercel.app/)
+**Live:** [kevmpr.vercel.app](https://kevmpr.vercel.app/)
 
-## ✨ Features
+---
 
-- **🌐 Internationalization (i18n)** — Full support for English and Spanish
-- **🌙 Dark Mode** — Toggle between light and dark themes
-- **🎨 Glassmorphism Design** — Modern, premium UI with backdrop blur and gradients
-- **📱 Fully Responsive** — Optimized for mobile, tablet, and desktop
-- **✨ Scroll-Reveal Animations** — Sections and cards fade in with staggered delays on scroll
-- **📄 CV Download** — Language-aware resume download (ES/EN)
-- **🔒 Contact Privacy** — Email, LinkedIn, and GitHub are hidden from bots and only revealed on click
-- **📜 Timeline Layout** — Education and experience displayed as vertical timelines
+## Features
 
-## 📸 Sections
+- **Internationalization (i18n)** — Full ES / EN support with language-aware routing
+- **Dark / Light mode** — Toggle with persistent preference; each mode has its own background effect
+- **Animated starfield** — Canvas-based twinkling stars in dark mode; dot-grid CSS pattern in light mode
+- **Editorial design** — Consistent accent line + label + heading pattern across all sections
+- **Scroll-triggered animations** — Sections and elements animate in via IntersectionObserver with staggered delays
+- **Count-up stats** — Animated counters in About Me: months → year, A1→A2→B1→B2 for English level, numeric counts for certs and projects
+- **Typewriter heading** — Contact section cycles through phrases with a blinking cursor
+- **3D tilt tiles** — Contact channel tiles follow the mouse with perspective transform
+- **Accordion projects** — Cloud Solutions section uses a collapsible accordion that scales to any number of projects
+- **Timeline fix** — Experience and education timelines use flex-column dots where the connecting line runs exactly between dots
+- **Active nav detection** — Navbar highlights the current section via scroll position
+- **Responsive** — Mobile-first, optimized for all screen sizes
+- **CV download** — Language-aware resume download (ES / EN)
+
+---
+
+## Sections
 
 | Section | Description |
 |---|---|
-| **Hero** | Introduction with role badge, bio, and CTA buttons |
-| **About** | Certifications (linked to Microsoft Learn), education timeline, experience timeline |
-| **Cloud Solutions** | 5 case study cards with Challenge/Solution narrative format and distinct icons |
-| **Skills** | Technical skills, soft skills, and languages — categorized cards with gradient hover effects |
-| **Contact** | Privacy-first contact cards (click to reveal) |
+| **Inicio / Hero** | Full name, role badge, entrance animations, animated mouse scroll indicator |
+| **Sobre Mí / About** | Stats with count-up animation, LinkedIn-style experience timeline, education timeline, certification cards with badge images |
+| **Soluciones Cloud / Projects** | Accordion list of 5 real Azure case studies (Challenge / Solution / Impact) |
+| **Habilidades / Skills** | Editorial row layout: Cloud, Frontend, Backend, Databases, Soft Skills, Languages — all pills white/slate, emoji fallbacks for tools without devicons |
+| **Contacto / Contact** | Typewriter animated heading, 3D tilt contact tiles (Email, LinkedIn, GitHub) |
 
-## 🛠️ Tech Stack
+---
 
-- **Framework:** [Astro](https://astro.build/) v5
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/) v3
-- **Language:** TypeScript
-- **Deployment:** [Vercel](https://vercel.com/)
+## Tech Stack
 
-## 🏗️ Project Structure
+| Layer | Technology |
+|---|---|
+| Framework | [Astro](https://astro.build/) v5 |
+| Styling | [Tailwind CSS](https://tailwindcss.com/) v3 |
+| Language | TypeScript |
+| Icons | [Devicon](https://devicon.dev/) + inline SVG |
+| Deployment | [Vercel](https://vercel.com/) |
+
+---
+
+## Project Structure
 
 ```
 ├── public/
 │   ├── cv/
-│   │   ├── es/    # Spanish CV
-│   │   └── en/    # English CV
+│   │   ├── es/              # Spanish CV PDF
+│   │   └── en/              # English CV PDF
 │   └── favicon.svg
 ├── src/
+│   ├── assets/
+│   │   ├── certs/           # Azure certification badge images
+│   │   └── logos/           # Company / institution logos
 │   ├── components/
 │   │   ├── Hero.astro
 │   │   ├── About.astro
-│   │   ├── Projects.astro          # Cloud Solutions section
-│   │   ├── CaseStudyCard.astro     # Narrative case study card
+│   │   ├── Projects.astro   # Cloud Solutions accordion
+│   │   ├── CaseStudyCard.astro
 │   │   ├── Skills.astro
 │   │   ├── Contact.astro
 │   │   ├── Navbar.astro
@@ -53,19 +72,21 @@ Personal portfolio website for **Kevin Maximiliano Palma Romero**, Azure Cloud E
 │   │   ├── ThemeToggle.astro
 │   │   └── LanguageSelector.astro
 │   ├── i18n/
-│   │   └── utils.ts        # Translation strings (ES/EN)
+│   │   └── utils.ts         # All translation strings (ES / EN)
 │   ├── layouts/
-│   │   └── Layout.astro     # Global layout + scroll-reveal system
+│   │   └── Layout.astro     # Global layout, starfield canvas, dot-grid, scroll-reveal
 │   └── pages/
-│       ├── es/index.astro   # Spanish page
-│       ├── en/index.astro   # English page
-│       └── index.astro      # Redirect
+│       ├── es/index.astro
+│       ├── en/index.astro
+│       └── index.astro      # Redirect to /es
 ├── astro.config.mjs
 ├── tailwind.config.mjs
 └── package.json
 ```
 
-## 🚀 Getting Started
+---
+
+## Getting Started
 
 ```bash
 # Install dependencies
@@ -81,19 +102,19 @@ npm run build
 npm run preview
 ```
 
-The dev server will start at `http://localhost:4321/`.
-
-## 📜 Certifications
-
-- [AZ-104 — Azure Administrator](https://learn.microsoft.com/en-gb/users/kevinmaximilianopalmaromero-4986/credentials/48112e50f0667613)
-- [AZ-700 — Azure Network Engineer](https://learn.microsoft.com/en-us/users/kevinmaximilianopalmaromero-4986/credentials/b43015bfda159018)
-- [AZ-900 — Azure Fundamentals](https://learn.microsoft.com/en-us/users/kevinmaximilianopalmaromero-4986/credentials/64d4b26fcc71de2c)
-- [DP-900 — Azure Data Fundamentals](https://learn.microsoft.com/en-gb/users/kevinmaximilianopalmaromero-4986/credentials/80c3d30098977b49)
-
-## 📝 License
-
-This project is for personal use. All rights reserved.
+Dev server runs at `http://localhost:4321/`.
 
 ---
 
-Built with ❤️ by Kevin
+## Certifications
+
+- [AZ-104 — Azure Administrator Associate](https://learn.microsoft.com/en-gb/users/kevinmaximilianopalmaromero-4986/credentials/48112e50f0667613)
+- [AZ-700 — Azure Network Engineer Associate](https://learn.microsoft.com/en-us/users/kevinmaximilianopalmaromero-4986/credentials/b43015bfda159018)
+- [AZ-900 — Azure Fundamentals](https://learn.microsoft.com/en-us/users/kevinmaximilianopalmaromero-4986/credentials/64d4b26fcc71de2c)
+- [DP-900 — Azure Data Fundamentals](https://learn.microsoft.com/en-gb/users/kevinmaximilianopalmaromero-4986/credentials/80c3d30098977b49)
+
+---
+
+## License
+
+Personal use only. All rights reserved.
