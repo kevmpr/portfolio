@@ -14,29 +14,39 @@ const t = useTranslations(lang);
 const isEs = lang === 'es';
 
 const highlightsAzure = isEs ? [
-  'Consultoría cloud en Microsoft Azure con clientes directos y área comercial',
-  'Migraciones, movimientos cross-subscription y despliegue de infraestructura Azure',
-  'Automatización con PowerShell: exportación de RBAC, gestión de roles y recursos',
-  'Documentación técnica, reportes ejecutivos y análisis de costos con FinOps',
+  'Automatización & Tooling (ACIM & ARGUS): Plataformas internas full-stack (Astro, Tailwind, Azure Functions) para gestión de Service Principals, almacenamiento seguro en Key Vault y auditoría avanzada de tenants mediante KQL con Azure Resource Graph.',
+  'Migraciones de Recursos: Movimientos complejos entre suscripciones y Resource Groups (Lift & Shift / Re-platforming) con ARM Templates. Análisis de migrabilidad, dependencias y coordinación de ventanas de mantenimiento.',
+  'Evaluación de Migración (Azure Migrate): Lideré proyectos de assessment on-premise → Azure. Análisis comparativos de TCO en escenarios PAYG, RI 1y y RI 3y para fundamentar decisiones de inversión estratégica.',
+  'Auditoría de Tenant: Análisis integral desde el portal, Azure Advisor y Azure Resource Graph. Identificación de buenas prácticas en costos (right-sizing, Reserved Instances, backups, recursos huérfanos, Spot VMs), gobernanza (tags, naming convention, RBAC, Least Privilege, Policies) y seguridad (Zero Trust, Hub & Spoke, Entra ID, Landing Zone).',
+  'Gobernanza & FinOps: Auditorías con Azure Advisor y Resource Graph. Recomendaciones de optimización (Reserved Instances, Right-sizing) y seguridad (RBAC Least Privilege, Azure Policy) en entornos multiregión.',
+  'Scripting con IA: Desarrollo de scripts PowerShell asistidos por agentes IA para extracción de roles con high privilege, borrado masivo de RGs, migración de bases de datos e instalación de módulos.',
+  'Consultoría & Troubleshooting: Sesiones técnicas con clientes, guía en modo manos remotas, troubleshooting en vivo e incidentes críticos en arquitecturas híbridas y cloud-native.',
+  'Comercial & Post-sales: Reuniones con el equipo comercial para definición de próximos pasos y propuestas de servicios post-sales a clientes.',
+  'Agile DevOps: Gestión en Azure DevOps bajo Scrum: planning, daily, review semanal y retrospectiva mensual. Automatización de operaciones masivas con PowerShell.',
 ] : [
-  'Azure cloud consulting with direct client and commercial team engagement',
-  'Migrations, cross-subscription movements, and Azure infrastructure deployment',
-  'PowerShell automation: RBAC export, role management, and bulk resource operations',
-  'Technical documentation, executive reports, and FinOps cost analysis',
+  'Automation & Tooling (ACIM & ARGUS): Designed and developed full-stack internal platforms (Astro, Tailwind, Azure Functions) to automate Service Principal management, secure Key Vault storage, and advanced tenant auditing via KQL with Azure Resource Graph.',
+  'Resource Migrations: Complex resource movements between subscriptions and Resource Groups (Lift & Shift / Re-platforming) using ARM Templates. Migratability analysis, cross-RG/subscription dependency mapping, and maintenance window coordination.',
+  'Migration Assessment (Azure Migrate): Led on-premise → Azure assessment projects. TCO comparative analysis across PAYG, 1y RI, and 3y RI scenarios to support strategic investment decisions.',
+  'Tenant Auditing: Full analysis from the portal, Azure Advisor, and Azure Resource Graph. Best practice identification across cost (right-sizing, Reserved Instances, backups, orphan resources, Spot VMs), governance (tags, naming convention, RBAC, Least Privilege, Policies), and security (Zero Trust, Hub & Spoke, Entra ID, Landing Zone).',
+  'Governance & FinOps: Azure Advisor and Resource Graph audits. Optimization recommendations (Reserved Instances, Right-sizing) and security hardening (RBAC Least Privilege, Azure Policy) across multi-region environments.',
+  'AI-Assisted Scripting: PowerShell scripts developed with AI agents for high-privilege role extraction, bulk RG deletion, cross-server database migration, and module installation.',
+  'Consulting & Troubleshooting: Technical client sessions, remote-hands guidance, live troubleshooting, and critical incident resolution in hybrid and cloud-native architectures.',
+  'Commercial & Post-sales: Meetings with the commercial team to define next steps and craft post-sales service proposals for clients.',
+  'Agile DevOps: Task management in Azure DevOps under Scrum: planning, daily stand-up, weekly sprint review, and monthly retrospective. Bulk operation automation with PowerShell.',
 ];
 
 const highlightsCloud = isEs ? [
-  'Iniciativas internas en Microsoft Azure, low-code y soluciones de datos',
-  'Laboratorios técnicos sobre servicios principales de Azure',
-  'Aplicación de conceptos de infraestructura cloud y buenas prácticas',
+  'Azure Infrastructure (IaaS & PaaS): Aprovisionamiento y administración de máquinas virtuales (VMs) y SQL Databases. Implementación de buenas prácticas de gobernanza: Resource Groups, Tagging estratégico y RBAC para control de accesos.',
+  'Business Automation (Low-code): Diseño y despliegue de aplicaciones empresariales con Power Apps. Automatización de flujos de trabajo con Power Automate para mejorar la eficiencia operativa interna y reducir tareas manuales repetitivas.',
+  'Data Analytics & BI: Desarrollo de tableros interactivos en Power BI integrando fuentes de datos SQL, para visualización de indicadores clave (KPIs) y soporte a la toma de decisiones basada en datos.',
 ] : [
-  'Internal initiatives in Microsoft Azure, low-code, and data solutions',
-  'Technical labs on core Azure services',
-  'Applied cloud infrastructure concepts and best practices',
+  'Azure Infrastructure (IaaS & PaaS): Provisioning and management of virtual machines (VMs) and SQL Databases. Governance best practices: Resource Groups, strategic Tagging, and RBAC for access control.',
+  'Business Automation (Low-code): Design and deployment of enterprise applications with Power Apps. Workflow automation with Power Automate to improve internal operational efficiency and reduce repetitive manual tasks.',
+  'Data Analytics & BI: Interactive Power BI dashboards integrating SQL data sources for KPI visualization and data-driven decision support.',
 ];
 
-const azureTechTags = ['Azure', 'PowerShell', 'RBAC', 'IaC', 'FinOps', 'Networking', 'Git'];
-const cloudTechTags = ['Azure', 'Low-Code', 'Power Platform', 'ARM Templates', 'Azure CLI'];
+const azureTechTags = ['Azure', 'PowerShell', 'KQL', 'ARM Templates', 'FinOps', 'Azure Migrate', 'Hub & Spoke', 'Astro', 'Azure Functions', 'Key Vault', 'Azure Resource Graph', 'Scrum', 'ADO'];
+const cloudTechTags = ['Azure', 'Power Apps', 'Power Automate', 'Power BI', 'SQL', 'Azure VMs', 'Azure SQL', 'RBAC', 'Azure CLI'];
 
 const certifications = [
   {
@@ -149,7 +159,7 @@ const certifications = [
           <Image src={logoReadymind} alt="Readymind" width={44} height={44} class="w-11 h-11 object-contain rounded-xl" />
           <div>
             <p class="text-base font-bold text-slate-900 dark:text-white leading-tight">{t('exp.azure.company')}</p>
-            <p class="text-xs text-slate-400 dark:text-slate-500">{isEs ? '1+ año · Tiempo completo' : '1+ year · Full-time'}</p>
+            <p class="text-xs text-slate-400 dark:text-slate-500">{isEs ? '~1 año · Tiempo completo' : '~1 year · Full-time'}</p>
           </div>
         </div>
 

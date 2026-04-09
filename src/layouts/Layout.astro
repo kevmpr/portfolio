@@ -14,8 +14,8 @@ const lang = getLangFromUrl(Astro.url);
 const isEs = lang === 'es';
 
 const defaultDescription = isEs
-  ? 'Ingeniero Cloud Azure especializado en infraestructura, redes e IaC. 4 certificaciones Microsoft Azure, más de 1 año de experiencia en Readymind.'
-  : 'Azure Cloud Engineer specializing in infrastructure, networking, and IaC. 4 Microsoft Azure certifications, 1+ year of experience at Readymind.';
+  ? 'Azure Cloud Engineer en Readymind especializado en Platform Engineering, FinOps y automatización de infraestructura. AZ-104 & AZ-700 certificado. Consultoría cloud, migraciones y gobernanza sobre Microsoft Azure.'
+  : 'Azure Cloud Engineer at Readymind specialized in Platform Engineering, FinOps, and infrastructure automation. AZ-104 & AZ-700 certified. Cloud consulting, migrations, and governance on Microsoft Azure.';
 
 const description = descProp ?? defaultDescription;
 const siteURL = 'https://kevmpr.vercel.app';
@@ -62,8 +62,8 @@ const canonicalURL = new URL(Astro.url.pathname, siteURL);
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" /></noscript>
 
     <!-- Devicons (non-blocking) -->
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" /></noscript>
+    <link rel="preload" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css" /></noscript>
 
     <style is:inline>
       /* Critical CSS — inlined to eliminate render-blocking */
@@ -92,7 +92,7 @@ const canonicalURL = new URL(Astro.url.pathname, siteURL);
         "https://www.linkedin.com/in/kevin-m-palma-r/",
         "https://github.com/kevmpr"
       ],
-      "knowsAbout": ["Microsoft Azure", "Cloud Infrastructure", "Networking", "IaC", "Azure Administrator", "Azure Networking"],
+      "knowsAbout": ["Microsoft Azure", "Cloud Infrastructure", "Platform Engineering", "FinOps", "Networking", "IaC", "Azure Administrator", "Azure Networking", "Infrastructure Automation"],
       "hasCredential": [
         { "@type": "EducationalOccupationalCredential", "name": "AZ-104 Azure Administrator Associate", "credentialCategory": "Professional Certification" },
         { "@type": "EducationalOccupationalCredential", "name": "AZ-700 Azure Network Engineer Associate", "credentialCategory": "Professional Certification" },
