@@ -191,27 +191,27 @@ export const translations = {
 
         // About
         'about.title': 'About me',
-        'about.description': 'I transform complex infrastructures into scalable, secure solutions by converging software engineering and cloud architecture. My background as a Software Development Technician lets me approach Microsoft Azure with an engineering mindset, prioritizing automation and custom tooling that streamlines operations. I lead technical consulting processes for high-maturity corporate environments, ensuring cloud adoption is resilient, secure, and financially efficient under Cloud Adoption Framework (CAF) standards.',
+        'about.description': 'I transform complex infrastructures into scalable, secure solutions by converging software engineering and cloud architecture. My background as an Associate Degree in Software Development graduate lets me approach Microsoft Azure with an engineering mindset, prioritizing automation and custom tooling that streamlines operations. I lead technical consulting processes for high-maturity corporate environments, ensuring cloud adoption is resilient, secure, and financially efficient under Cloud Adoption Framework (CAF) standards.',
         'about.education': 'Education',
         'about.experience': 'Experience',
         'about.certifications': 'Certifications',
         'about.current': 'Current',
         'about.techused': 'Tech used',
         'about.changelog': 'Timeline',
-        'changelog.uade': 'Computer Engineering',
+        'changelog.uade': 'Bachelor of Science in Computer Engineering',
         'changelog.azure': 'Azure Cloud Engineer',
         'changelog.cloud': 'Cloud Engineer',
-        'changelog.ifts': 'Software Development Technician',
+        'changelog.ifts': 'Associate Degree in Software Development',
 
         // Education entries
-        'edu.uade.title': 'Computer Engineering',
+        'edu.uade.title': 'Bachelor of Science in Computer Engineering',
         'edu.uade.institution': 'UADE',
         'edu.uade.period': 'Mar 2026 – Nov 2030',
         'edu.uade.status': 'In progress',
         'edu.uade.description': 'Undergraduate program aimed at deepening scientific and methodological foundations of computing. Goal: complement practical experience as a Software Developer and Cloud Engineer with a solid foundation in complex systems engineering, distributed architectures, and applied research methodology.',
         'edu.uade.details': 'Systemic Thinking: Analysis and modeling of information systems and systems theory for the optimization of complex organizational processes\nEngineering Fundamentals: Strengthening logical, algorithmic, and mathematical foundations (Algebra and Geometry) applied to solving high-complexity technical problems\nProfessional Soft Skills: Development of critical thinking and effective communication, essential for technical team leadership and strategic project management',
 
-        'edu.ifts.title': 'Software Development Technician',
+        'edu.ifts.title': 'Associate Degree in Software Development',
         'edu.ifts.institution': 'Instituto de Formación Técnica Superior N° 11',
         'edu.ifts.period': 'Aug 2023 - Nov 2025',
         'edu.ifts.status': 'Graduated',

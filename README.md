@@ -43,7 +43,7 @@ Personal portfolio built with **Astro v6** and **Tailwind CSS v4**. Designed wit
 - 3D tilt on contact tiles
 - Typewriter heading in Contact section
 - Count-up stats (numeric, months→year, A1→B2 for English level)
-- Accordion layout for Cloud Solutions (scales to any number of projects)
+- Accordion layout for Cloud Solutions (scales to any number of entries)
 
 </td>
 </tr>
@@ -51,7 +51,7 @@ Personal portfolio built with **Astro v6** and **Tailwind CSS v4**. Designed wit
 <td valign="top" width="50%">
 
 **i18n & Routing**
-- Full ES / EN support with language-aware routing (`/es/`, `/en/`)
+- Full ES / EN support via Astro's built-in i18n with `prefixDefaultLocale: true`
 - Language-aware CV download
 - `hreflang` alternate links for SEO
 
@@ -63,6 +63,7 @@ Personal portfolio built with **Astro v6** and **Tailwind CSS v4**. Designed wit
 - Non-blocking font and icon loading (`preload` + `onload`)
 - `content-visibility: auto` on heavy sections
 - Open Graph, Twitter Card, canonical, structured data (JSON-LD)
+- JS minified with Terser; CSS minified with esbuild
 - `prefers-reduced-motion` respected throughout
 
 </td>
@@ -75,9 +76,9 @@ Personal portfolio built with **Astro v6** and **Tailwind CSS v4**. Designed wit
 
 | Section | Description |
 |---|---|
-| **Hero** | Name, role badge, 3D photo tilt, CTA buttons, animated scroll indicator |
-| **About Me** | Count-up stats, LinkedIn-style experience timeline, education timeline, certification cards |
-| **Cloud Solutions** | Accordion with 5 real Azure case studies (Challenge / Solution / Impact) |
+| **Hero** | Name, role badge, 3D photo tilt, CTA buttons, animated scroll indicator, count-up stats |
+| **About Me** | Bio, LinkedIn-style experience timeline, education timeline, certification cards |
+| **Cloud Solutions** | Accordion with 5 real Azure case studies (Challenge / Solution / Impact) + 2 internal tools (ACIM & ACIM-ARGUS) |
 | **Skills** | Editorial row layout — Cloud, Frontend, Backend, Databases, Soft Skills, Languages |
 | **Contact** | Typewriter animated heading, 3D tilt contact tiles (Email, LinkedIn, GitHub) |
 
@@ -92,6 +93,8 @@ Personal portfolio built with **Astro v6** and **Tailwind CSS v4**. Designed wit
 | Language | TypeScript |
 | Icons | [Devicon](https://devicon.dev/) + inline SVG + emoji fallbacks |
 | Images | Astro Image (WebP optimization) |
+| JS minification | Terser |
+| CSS minification | esbuild |
 | Deployment | [Vercel](https://vercel.com/) |
 
 ---
@@ -107,11 +110,13 @@ Personal portfolio built with **Astro v6** and **Tailwind CSS v4**. Designed wit
 ├── src/
 │   ├── assets/
 │   │   ├── certs/           # Azure certification badge images
-│   │   └── logos/           # Company / institution logos
+│   │   ├── logos/           # Company / institution logos
+│   │   └── imgProfile.png   # Profile photo
 │   ├── components/
 │   │   ├── Hero.astro
 │   │   ├── About.astro
 │   │   ├── Projects.astro
+│   │   ├── CaseStudyCard.astro
 │   │   ├── Skills.astro
 │   │   ├── Contact.astro
 │   │   ├── Navbar.astro
@@ -119,7 +124,7 @@ Personal portfolio built with **Astro v6** and **Tailwind CSS v4**. Designed wit
 │   │   ├── ThemeToggle.astro
 │   │   └── LanguageSelector.astro
 │   ├── i18n/
-│   │   └── utils.ts         # Translation strings (ES / EN)
+│   │   └── utils.ts         # Translation strings (ES / EN) + routing helpers
 │   ├── layouts/
 │   │   └── Layout.astro     # Global layout — meta tags, starfield, scroll-reveal
 │   ├── styles/
@@ -151,6 +156,16 @@ npm run preview
 ```
 
 Dev server runs at `http://localhost:4321/`.
+
+---
+
+## i18n Setup
+
+Routing is handled by Astro's built-in i18n with `defaultLocale: 'es'` and `prefixDefaultLocale: true`. Both `/es/` and `/en/` are prefixed routes. `src/i18n/utils.ts` holds all translation strings and exports:
+
+- `getLangFromUrl(url)` — detects locale from the URL pathname
+- `useTranslations(lang)` — returns a typed `t(key)` helper
+- `getLocalizedPath(lang, hash)` — builds a language-aware anchor link
 
 ---
 
@@ -189,8 +204,11 @@ Dev server runs at `http://localhost:4321/`.
 
 - **Tailwind v4 layer cascade** — Critical inline CSS is unlayered and wins over `@layer utilities`. Removed heading and anchor resets from the inline block to avoid overriding utility classes like `text-5xl` and `text-white`.
 - **Dark mode variant** — Configured via `@variant dark (&:where(.dark, .dark *))` in the CSS file instead of a JS config.
+- **Astro i18n routing** — Uses `prefixDefaultLocale: true` so both `/es/` and `/en/` are explicit routes; `index.astro` at the root redirects to `/es/`.
+- **CaseStudyCard component** — Extracted accordion card for Cloud Solutions and Internal Tools entries, driven entirely by translation strings.
 - **Timeline** — Flex-column dot + `flex-1 w-px` connecting line pattern so the line only runs between dots, never beyond them.
 - **Count-up animation** — `performance.now()` + ease-out quad for smooth numeric counters; level animation (A1→B2) uses fixed step intervals.
+- **Build optimizations** — Terser (`drop_console`, `drop_debugger`) for JS; esbuild for CSS minification, configured in `astro.config.mjs`.
 
 ---
 
