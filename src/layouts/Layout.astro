@@ -14,8 +14,8 @@ const lang = getLangFromUrl(Astro.url);
 const isEs = lang === 'es';
 
 const defaultDescription = isEs
-  ? 'Azure Cloud Engineer en Readymind especializado en Platform Engineering, FinOps y automatización de infraestructura. AZ-104 & AZ-700 certificado. Consultoría cloud, migraciones y gobernanza sobre Microsoft Azure.'
-  : 'Azure Cloud Engineer at Readymind specialized in Platform Engineering, FinOps, and infrastructure automation. AZ-104 & AZ-700 certified. Cloud consulting, migrations, and governance on Microsoft Azure.';
+  ? 'Azure Cloud Architect en Movistar especializado en automatización con IA, gobernanza híbrida y arquitectura de infraestructura. AZ-305, AZ-104 & AZ-700 certificado. Consultoría cloud, migraciones y gobernanza sobre Microsoft Azure.'
+  : 'Azure Cloud Architect at Movistar specialized in AI automation, hybrid governance, and infrastructure design. AZ-305, AZ-104 & AZ-700 certified. Cloud consulting, migrations, and governance on Microsoft Azure.';
 
 const description = descProp ?? defaultDescription;
 const siteURL = 'https://kevmpr.vercel.app';
@@ -84,16 +84,17 @@ const canonicalURL = new URL(Astro.url.pathname, siteURL);
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Kevin Maximiliano Palma Romero",
-      "jobTitle": "Azure Cloud Engineer",
-      "worksFor": { "@type": "Organization", "name": "Readymind" },
+      "jobTitle": "Azure Cloud Architect",
+      "worksFor": { "@type": "Organization", "name": "Movistar Argentina" },
       "url": "https://kevmpr.vercel.app",
       "email": "kev.mpr03@outlook.com",
       "sameAs": [
         "https://www.linkedin.com/in/kevin-m-palma-r/",
         "https://github.com/kevmpr"
       ],
-      "knowsAbout": ["Microsoft Azure", "Cloud Infrastructure", "Platform Engineering", "FinOps", "Networking", "IaC", "Azure Administrator", "Azure Networking", "Infrastructure Automation"],
+      "knowsAbout": ["Microsoft Azure", "Cloud Architecture", "AI Automation", "Azure Governance", "FinOps", "Networking", "IaC", "Azure Administrator", "Azure Networking", "Infrastructure Automation"],
       "hasCredential": [
+        { "@type": "EducationalOccupationalCredential", "name": "AZ-305 Azure Solutions Architect Expert", "credentialCategory": "Professional Certification" },
         { "@type": "EducationalOccupationalCredential", "name": "AZ-104 Azure Administrator Associate", "credentialCategory": "Professional Certification" },
         { "@type": "EducationalOccupationalCredential", "name": "AZ-700 Azure Network Engineer Associate", "credentialCategory": "Professional Certification" },
         { "@type": "EducationalOccupationalCredential", "name": "AZ-900 Azure Fundamentals", "credentialCategory": "Professional Certification" },

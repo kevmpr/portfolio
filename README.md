@@ -175,24 +175,24 @@ Routing is handled by Astro's built-in i18n with `defaultLocale: 'es'` and `pref
 <tr>
 <td>
 
-[![AZ-104](https://img.shields.io/badge/AZ--104-Azure%20Administrator%20Associate-0078d4?style=flat-square&logo=microsoftazure&logoColor=white)](https://learn.microsoft.com/en-gb/users/kevinmaximilianopalmaromero-4986/credentials/48112e50f0667613)
+[![AZ-104](https://img.shields.io/badge/AZ--104-Azure%20Administrator%20Associate-0078d4?style=flat-square&logo=microsoftazure&logoColor=white)](https://learn.microsoft.com/en-gb/users/kevinmaximilianopalmaromero/credentials/48112e50f0667613)
 
 </td>
 <td>
 
-[![AZ-700](https://img.shields.io/badge/AZ--700-Azure%20Network%20Engineer%20Associate-0078d4?style=flat-square&logo=microsoftazure&logoColor=white)](https://learn.microsoft.com/en-us/users/kevinmaximilianopalmaromero-4986/credentials/b43015bfda159018)
+[![AZ-700](https://img.shields.io/badge/AZ--700-Azure%20Network%20Engineer%20Associate-0078d4?style=flat-square&logo=microsoftazure&logoColor=white)](https://learn.microsoft.com/en-us/users/kevinmaximilianopalmaromero/credentials/b43015bfda159018)
 
 </td>
 </tr>
 <tr>
 <td>
 
-[![AZ-900](https://img.shields.io/badge/AZ--900-Azure%20Fundamentals-0078d4?style=flat-square&logo=microsoftazure&logoColor=white)](https://learn.microsoft.com/en-us/users/kevinmaximilianopalmaromero-4986/credentials/64d4b26fcc71de2c)
+[![AZ-900](https://img.shields.io/badge/AZ--900-Azure%20Fundamentals-0078d4?style=flat-square&logo=microsoftazure&logoColor=white)](https://learn.microsoft.com/en-us/users/kevinmaximilianopalmaromero/credentials/64d4b26fcc71de2c)
 
 </td>
 <td>
 
-[![DP-900](https://img.shields.io/badge/DP--900-Azure%20Data%20Fundamentals-0078d4?style=flat-square&logo=microsoftazure&logoColor=white)](https://learn.microsoft.com/en-gb/users/kevinmaximilianopalmaromero-4986/credentials/80c3d30098977b49)
+[![DP-900](https://img.shields.io/badge/DP--900-Azure%20Data%20Fundamentals-0078d4?style=flat-square&logo=microsoftazure&logoColor=white)](https://learn.microsoft.com/en-gb/users/kevinmaximilianopalmaromero/credentials/80c3d30098977b49)
 
 </td>
 </tr>

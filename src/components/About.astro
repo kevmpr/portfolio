@@ -4,6 +4,8 @@ import { Image } from 'astro:assets';
 import logoUADE from '../assets/logos/uade.png';
 import logoIFTS from '../assets/logos/ifts11.png';
 import logoReadymind from '../assets/logos/readymind.png';
+import logoMovistar from '../assets/logos/movistar.png';
+import certAZ305 from '../assets/certs/az305.png';
 import certAZ104 from '../assets/certs/az104.png';
 import certAZ700 from '../assets/certs/az700.png';
 import certAZ900 from '../assets/certs/az900.png';
@@ -13,42 +15,69 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const isEs = lang === 'es';
 
-const highlightsAzure = isEs ? [
-  'Automatización & Tooling (ACIM & ARGUS): Plataformas internas full-stack (Astro, Tailwind, Azure Functions) para gestión de Service Principals, almacenamiento seguro en Key Vault y auditoría avanzada de tenants mediante KQL con Azure Resource Graph.',
-  'Migraciones de Recursos: Movimientos complejos entre suscripciones y Resource Groups (Lift & Shift / Re-platforming) con ARM Templates. Análisis de migrabilidad, dependencias y coordinación de ventanas de mantenimiento.',
-  'Evaluación de Migración (Azure Migrate): Lideré proyectos de assessment on-premise → Azure. Análisis comparativos de TCO en escenarios PAYG, RI 1y y RI 3y para fundamentar decisiones de inversión estratégica.',
-  'Auditoría de Tenant: Análisis integral desde el portal, Azure Advisor y Azure Resource Graph. Identificación de buenas prácticas en costos (right-sizing, Reserved Instances, backups, recursos huérfanos, Spot VMs), gobernanza (tags, naming convention, RBAC, Least Privilege, Policies) y seguridad (Zero Trust, Hub & Spoke, Entra ID, Landing Zone).',
-  'Gobernanza & FinOps: Auditorías con Azure Advisor y Resource Graph. Recomendaciones de optimización (Reserved Instances, Right-sizing) y seguridad (RBAC Least Privilege, Azure Policy) en entornos multiregión.',
-  'Scripting con IA: Desarrollo de scripts PowerShell asistidos por agentes IA para extracción de roles con high privilege, borrado masivo de RGs, migración de bases de datos e instalación de módulos.',
-  'Consultoría & Troubleshooting: Sesiones técnicas con clientes, guía en modo manos remotas, troubleshooting en vivo e incidentes críticos en arquitecturas híbridas y cloud-native.',
-  'Comercial & Post-sales: Reuniones con el equipo comercial para definición de próximos pasos y propuestas de servicios post-sales a clientes.',
-  'Agile DevOps: Gestión en Azure DevOps bajo Scrum: planning, daily, review semanal y retrospectiva mensual. Automatización de operaciones masivas con PowerShell.',
+const highlightsMovistar = isEs ? [
+  'Migración de Bases de Datos & Alta Disponibilidad: Evalué y diseñé estrategias de migración de SQL Server Standard a Enterprise, comparando Log Shipping y Azure Database Migration Service (DMS), con pruebas offline y online en laboratorio para minimizar downtime en bases de datos productivas 24/7.',
+  'Gobernanza Híbrida & Azure Arc: Auditoría de cobertura de Azure Update Manager sobre una flota híbrida VMware/Azure, incluyendo revisión de update rings, identificando servidores sin Azure Arc y sistemas operativos end-of-life, con informes ejecutivos de remediación.',
+  'Automatización & IA (Copilot Studio / Azure AI Foundry): Diseñé agentes de IA para automatizar tareas operativas y de análisis, entre ellos un orquestador multiagente sobre Copilot Studio con SharePoint Lists como backend, y un agente sobre Azure AI Foundry con Code Interpreter que procesa datos exportados y genera reportes en Word aplicando buenas prácticas de seguridad.',
+  'Integración On-Premises: Implementé un laboratorio con SQL Server y On-premises Data Gateway para conectar Copilot Studio a bases de datos locales, resolviendo casos reales de integración híbrida.',
+  'Seguridad & Optimización de Costos: Resolví incidencias de Secure Score / Defender for Cloud, auditué licenciamiento de NVAs (PAYG vs BYOL), y gestioné GDAP, roles RBAC y cuotas en Azure.',
+  'Soporte Técnico: Resolví incidentes de redes (VPN Gateway), licenciamiento SQL (Azure Hybrid Benefit) y facturación, colaborando en inglés con soporte de Microsoft.',
+  'Capacitación: Dicté capacitaciones de Microsoft 365 Copilot a clientes y lideré knowledge transfer interno sobre IA generativa.',
 ] : [
-  'Automation & Tooling (ACIM & ARGUS): Designed and developed full-stack internal platforms (Astro, Tailwind, Azure Functions) to automate Service Principal management, secure Key Vault storage, and advanced tenant auditing via KQL with Azure Resource Graph.',
-  'Resource Migrations: Complex resource movements between subscriptions and Resource Groups (Lift & Shift / Re-platforming) using ARM Templates. Migratability analysis, cross-RG/subscription dependency mapping, and maintenance window coordination.',
-  'Migration Assessment (Azure Migrate): Led on-premise → Azure assessment projects. TCO comparative analysis across PAYG, 1y RI, and 3y RI scenarios to support strategic investment decisions.',
-  'Tenant Auditing: Full analysis from the portal, Azure Advisor, and Azure Resource Graph. Best practice identification across cost (right-sizing, Reserved Instances, backups, orphan resources, Spot VMs), governance (tags, naming convention, RBAC, Least Privilege, Policies), and security (Zero Trust, Hub & Spoke, Entra ID, Landing Zone).',
-  'Governance & FinOps: Azure Advisor and Resource Graph audits. Optimization recommendations (Reserved Instances, Right-sizing) and security hardening (RBAC Least Privilege, Azure Policy) across multi-region environments.',
-  'AI-Assisted Scripting: PowerShell scripts developed with AI agents for high-privilege role extraction, bulk RG deletion, cross-server database migration, and module installation.',
-  'Consulting & Troubleshooting: Technical client sessions, remote-hands guidance, live troubleshooting, and critical incident resolution in hybrid and cloud-native architectures.',
-  'Commercial & Post-sales: Meetings with the commercial team to define next steps and craft post-sales service proposals for clients.',
-  'Agile DevOps: Task management in Azure DevOps under Scrum: planning, daily stand-up, weekly sprint review, and monthly retrospective. Bulk operation automation with PowerShell.',
+  'Database Migration & High Availability: Assessed and designed SQL Server Standard-to-Enterprise migration strategies, comparing Log Shipping and Azure Database Migration Service (DMS), with offline and online lab testing to minimize downtime on 24/7 production databases.',
+  'Hybrid Governance & Azure Arc: Audited Azure Update Manager coverage across a hybrid VMware/Azure fleet, including update ring review, identifying servers without Azure Arc and end-of-life operating systems, with executive remediation reports.',
+  'Automation & AI (Copilot Studio / Azure AI Foundry): Designed AI agents to automate operational and analytical tasks, including a multi-agent orchestrator on Copilot Studio with SharePoint Lists as the backend, and an Azure AI Foundry agent with Code Interpreter that processes exported data and generates Word reports following security best practices.',
+  'On-Premises Integration: Built a lab with SQL Server and On-premises Data Gateway to connect Copilot Studio to local databases, solving real hybrid integration cases.',
+  'Security & Cost Optimization: Resolved Secure Score / Defender for Cloud findings, audited NVA licensing (PAYG vs BYOL), and managed GDAP, RBAC roles, and Azure quotas.',
+  'Technical Support: Resolved networking incidents (VPN Gateway), SQL licensing (Azure Hybrid Benefit), and billing issues, collaborating in English with Microsoft support.',
+  'Training: Delivered Microsoft 365 Copilot training to clients and led internal knowledge transfer on generative AI.',
+];
+
+const movistarTechTags = ['Azure', 'SQL Server', 'Azure DMS', 'Copilot Studio', 'Azure AI Foundry', 'Azure Arc', 'Defender for Cloud', 'RBAC', 'GDAP'];
+
+const highlightsAzure = isEs ? [
+  'Automatización & Tooling (ACIM & ARGUS): Plataformas internas full-stack (Astro, Tailwind, Azure Functions) para automatizar la gestión de Service Principals, almacenamiento en Key Vault y auditoría avanzada de tenants mediante KQL (Azure Resource Graph).',
+  'Evaluación de Migración (Azure Migrate): Lideré proyectos de assessment para la transición de entornos on-premise a Azure. Análisis comparativos de costos (TCO) contemplando escenarios PAYG, RI 1y y RI 3y para fundamentar decisiones de inversión.',
+  'Ejecución de Migraciones: Movimientos complejos de recursos entre suscripciones y RGs (Lift & Shift / Re-platforming) utilizando ARM Templates, garantizando integridad de dependencias y optimización de ventanas de mantenimiento.',
+  'Azure Arc & Gestión Híbrida: Lideré el onboarding de servidores on-premise y de otras nubes bajo Azure Arc, habilitando monitoreo centralizado (AMA/DCR), gestión de parches con Update Manager y administración remota mediante Windows Admin Center.',
+  'Gobernanza & FinOps: Auditorías integrales con Azure Advisor y Resource Graph. Recomendaciones de optimización (Reserved Instances, Right-sizing) y seguridad (RBAC Least Privilege, Azure Policy).',
+  'Consultoría & Troubleshooting: Liderazgo de sesiones técnicas con clientes y soporte especializado en arquitecturas híbridas y cloud-native, guiando la resolución de incidentes críticos en vivo.',
+  'Agile DevOps: Automatización de tareas masivas con PowerShell y gestión del ciclo de vida del proyecto bajo metodologías Scrum en Azure DevOps (ADO).',
+] : [
+  'Automation & Tooling (ACIM & ARGUS): Designed and developed full-stack internal platforms (Astro, Tailwind, Azure Functions) to automate Service Principal management, Key Vault storage, and advanced tenant auditing via KQL (Azure Resource Graph).',
+  'Migration Assessment (Azure Migrate): Led assessment projects for the transition from on-premise environments to Azure. Comparative cost analysis (TCO) across PAYG, 1y RI, and 3y RI scenarios to support investment decisions.',
+  'Migration Execution: Complex resource movements between subscriptions and RGs (Lift & Shift / Re-platforming) using ARM Templates, ensuring dependency integrity and optimized maintenance windows.',
+  'Azure Arc & Hybrid Management: Led the onboarding of on-premise and other-cloud servers under Azure Arc, enabling centralized monitoring (AMA/DCR), patch management with Update Manager, and remote administration via Windows Admin Center.',
+  'Governance & FinOps: Comprehensive audits with Azure Advisor and Resource Graph. Optimization (Reserved Instances, Right-sizing) and security (RBAC Least Privilege, Azure Policy) recommendations.',
+  'Consulting & Troubleshooting: Led technical sessions with clients and specialized support in hybrid and cloud-native architectures, guiding live critical incident resolution.',
+  'Agile DevOps: Bulk task automation with PowerShell and project lifecycle management under Scrum methodologies in Azure DevOps (ADO).',
 ];
 
 const highlightsCloud = isEs ? [
-  'Azure Infrastructure (IaaS & PaaS): Aprovisionamiento y administración de máquinas virtuales (VMs) y SQL Databases. Implementación de buenas prácticas de gobernanza: Resource Groups, Tagging estratégico y RBAC para control de accesos.',
-  'Business Automation (Low-code): Diseño y despliegue de aplicaciones empresariales con Power Apps. Automatización de flujos de trabajo con Power Automate para mejorar la eficiencia operativa interna y reducir tareas manuales repetitivas.',
-  'Data Analytics & BI: Desarrollo de tableros interactivos en Power BI integrando fuentes de datos SQL, para visualización de indicadores clave (KPIs) y soporte a la toma de decisiones basada en datos.',
+  'Azure Infrastructure: Aprovisionamiento y administración de recursos IaaS y PaaS, incluyendo máquinas virtuales (VMs) y SQL Databases, asegurando el cumplimiento de buenas prácticas de gobernanza (Resource Groups, Tagging y RBAC).',
+  'Business Automation (Low-code): Diseño y despliegue de aplicaciones empresariales con Power Apps y automatización de flujos de trabajo con Power Automate para mejorar la eficiencia operativa interna.',
+  'Data Analytics: Desarrollo de tableros interactivos en Power BI para la visualización de indicadores clave, integrando fuentes de datos SQL para facilitar la toma de decisiones basada en datos.',
 ] : [
-  'Azure Infrastructure (IaaS & PaaS): Provisioning and management of virtual machines (VMs) and SQL Databases. Governance best practices: Resource Groups, strategic Tagging, and RBAC for access control.',
-  'Business Automation (Low-code): Design and deployment of enterprise applications with Power Apps. Workflow automation with Power Automate to improve internal operational efficiency and reduce repetitive manual tasks.',
-  'Data Analytics & BI: Interactive Power BI dashboards integrating SQL data sources for KPI visualization and data-driven decision support.',
+  'Azure Infrastructure: Provisioning and management of IaaS and PaaS resources, including virtual machines (VMs) and SQL Databases, ensuring compliance with governance best practices (Resource Groups, Tagging, and RBAC).',
+  'Business Automation (Low-code): Design and deployment of enterprise applications with Power Apps and workflow automation with Power Automate to improve internal operational efficiency.',
+  'Data Analytics: Development of interactive Power BI dashboards for key indicator visualization, integrating SQL data sources to support data-driven decision-making.',
 ];
 
 const azureTechTags = ['Azure', 'PowerShell', 'KQL', 'ARM Templates', 'FinOps', 'Azure Migrate', 'Hub & Spoke', 'Astro', 'Azure Functions', 'Key Vault', 'Azure Resource Graph', 'Scrum', 'ADO'];
 const cloudTechTags = ['Azure', 'Power Apps', 'Power Automate', 'Power BI', 'SQL', 'Azure VMs', 'Azure SQL', 'RBAC', 'Azure CLI'];
 
 const certifications = [
+  {
+    image: certAZ305,
+    code: 'AZ-305',
+    title: 'Azure Solutions Architect Expert',
+    role: isEs ? 'Arquitecto Cloud' : 'Cloud Architect',
+    description: isEs
+      ? 'Valida el diseño de soluciones de infraestructura, datos, negocio continuo, identidad, gobernanza y seguridad en Microsoft Azure, alineadas al Well-Architected Framework.'
+      : 'Validates designing infrastructure, data, business continuity, identity, governance, and security solutions on Microsoft Azure, aligned with the Well-Architected Framework.',
+    skills: ['Well-Architected Framework', 'Landing Zones', isEs ? 'Alta Disponibilidad' : 'High Availability', 'Zero Trust', 'CAF'],
+    verify: 'https://learn.microsoft.com/en-us/users/kevinmaximilianopalmaromero/credentials/855c11f97213ecbb',
+  },
   {
     image: certAZ104,
     code: 'AZ-104',
@@ -58,7 +87,7 @@ const certifications = [
       ? 'Valida la capacidad de gestionar identidades y accesos, implementar almacenamiento, administrar máquinas virtuales, configurar redes virtuales y monitorear recursos en Microsoft Azure.'
       : 'Validates the ability to manage identities and access, implement storage, administer virtual machines, configure virtual networks, and monitor resources in Microsoft Azure.',
     skills: ['RBAC & IAM', 'VMs & Compute', 'VNets & NSGs', 'Azure Monitor', 'Storage'],
-    verify: 'https://learn.microsoft.com/en-gb/users/kevinmaximilianopalmaromero-4986/credentials/48112e50f0667613',
+    verify: 'https://learn.microsoft.com/en-gb/users/kevinmaximilianopalmaromero/credentials/48112e50f0667613',
   },
   {
     image: certAZ700,
@@ -69,7 +98,7 @@ const certifications = [
       ? 'Valida el diseño e implementación de soluciones de red en Azure: conectividad híbrida, VPN Gateway, ExpressRoute, DNS privado, balanceo de carga y seguridad perimetral.'
       : 'Validates designing and implementing Azure network solutions: hybrid connectivity, VPN Gateway, ExpressRoute, private DNS, load balancing, and perimeter security.',
     skills: ['VPN & ExpressRoute', 'Private DNS', 'Load Balancing', 'Private Endpoints', 'App Gateway'],
-    verify: 'https://learn.microsoft.com/en-us/users/kevinmaximilianopalmaromero-4986/credentials/b43015bfda159018',
+    verify: 'https://learn.microsoft.com/en-us/users/kevinmaximilianopalmaromero/credentials/b43015bfda159018',
   },
   {
     image: certAZ900,
@@ -80,7 +109,7 @@ const certifications = [
       ? 'Certifica comprensión de los conceptos de nube, los servicios principales de Azure, seguridad, privacidad, cumplimiento normativo y modelos de precios y soporte.'
       : 'Certifies understanding of cloud concepts, core Azure services, security, privacy, compliance, and pricing and support models.',
     skills: [isEs ? 'Conceptos Cloud' : 'Cloud Concepts', 'Azure Services', isEs ? 'Seguridad' : 'Security', isEs ? 'Precios' : 'Pricing'],
-    verify: 'https://learn.microsoft.com/en-us/users/kevinmaximilianopalmaromero-4986/credentials/64d4b26fcc71de2c',
+    verify: 'https://learn.microsoft.com/en-us/users/kevinmaximilianopalmaromero/credentials/64d4b26fcc71de2c',
   },
   {
     image: certDP900,
@@ -91,7 +120,7 @@ const certifications = [
       ? 'Certifica conocimientos sobre conceptos de datos, servicios de datos relacionales y no relacionales en Azure, y fundamentos de analítica e inteligencia de datos.'
       : 'Certifies knowledge of core data concepts, relational and non-relational Azure data services, and data analytics and intelligence fundamentals.',
     skills: ['Azure SQL', 'Cosmos DB', isEs ? 'Analítica' : 'Analytics', 'Data Factory'],
-    verify: 'https://learn.microsoft.com/en-gb/users/kevinmaximilianopalmaromero-4986/credentials/80c3d30098977b49',
+    verify: 'https://learn.microsoft.com/en-gb/users/kevinmaximilianopalmaromero/credentials/80c3d30098977b49',
   },
 ];
 ---
@@ -118,7 +147,7 @@ const certifications = [
       <div class="grid grid-cols-2 gap-x-10 gap-y-8 shrink-0 lg:self-end lg:pb-2">
         <div class="stat-item" style="--delay:0ms">
           <p class="text-4xl font-black text-slate-900 dark:text-white tabular-nums leading-none">
-            <span class="count-up" data-count="4" data-suffix="">0</span>
+            <span class="count-up" data-count="5" data-suffix="">0</span>
           </p>
           <p class="text-xs text-slate-400 dark:text-slate-500 mt-2 leading-snug">{t('hero.stat1.label')}</p>
         </div>
@@ -154,26 +183,74 @@ const certifications = [
 
       <div class="flex-1">
 
-        <!-- Company header -->
+        <!-- Company header: Movistar Argentina -->
         <div class="flex items-center gap-3 mb-5 exp-entry" style="--delay:0ms">
-          <Image src={logoReadymind} alt="Readymind" width={44} height={44} class="w-11 h-11 object-contain rounded-xl" />
+          <Image src={logoMovistar} alt="Movistar Argentina" width={44} height={44} class="w-11 h-11 object-contain rounded-xl" />
+          <div>
+            <p class="text-base font-bold text-slate-900 dark:text-white leading-tight">{t('exp.movistar.company')}</p>
+            <p class="text-xs text-slate-400 dark:text-slate-500">{isEs ? '3 meses · Tiempo completo' : '3 months · Full-time'}</p>
+          </div>
+        </div>
+
+        <!-- Movistar role -->
+        <div class="relative mb-10">
+          <div class="exp-entry flex gap-4" style="--delay:60ms">
+            <!-- Dot (current) -->
+            <div class="flex flex-col items-center shrink-0">
+              <div class="mt-1 w-3 h-3 relative shrink-0 z-10">
+                <div class="absolute inset-0 rounded-full bg-accent-400/50 animate-ping"></div>
+                <div class="relative w-3 h-3 rounded-full bg-accent-500 ring-2 ring-white dark:ring-slate-900"></div>
+              </div>
+            </div>
+            <!-- Content -->
+            <div class="flex-1">
+              <div class="flex items-start justify-between gap-4 flex-wrap mb-3">
+                <div>
+                  <h3 class="text-sm font-bold text-slate-900 dark:text-white">{t('exp.movistar.title')}</h3>
+                  <p class="text-xs text-slate-400 dark:text-slate-500 mt-0.5">
+                    {t('exp.movistar.period')} · {t('exp.movistar.location')}
+                  </p>
+                </div>
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 shrink-0">
+                  {t('about.current')}
+                </span>
+              </div>
+              <ul class="space-y-1.5 mb-3">
+                {highlightsMovistar.map((h) => (
+                  <li class="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-300">
+                    <span class="mt-1.5 w-1 h-1 rounded-full bg-accent-500 shrink-0"></span>
+                    {h}
+                  </li>
+                ))}
+              </ul>
+              <div class="flex flex-wrap gap-1.5">
+                {movistarTechTags.map((tag) => (
+                  <span class="px-2.5 py-0.5 text-xs font-medium border border-slate-200 dark:border-slate-700 rounded-full text-slate-500 dark:text-slate-400">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Company header: readymind -->
+        <div class="flex items-center gap-3 mb-5 exp-entry" style="--delay:120ms">
+          <Image src={logoReadymind} alt="readymind" width={44} height={44} class="w-11 h-11 object-contain rounded-xl" />
           <div>
             <p class="text-base font-bold text-slate-900 dark:text-white leading-tight">{t('exp.azure.company')}</p>
-            <p class="text-xs text-slate-400 dark:text-slate-500">{isEs ? '~1 año · Tiempo completo' : '~1 year · Full-time'}</p>
+            <p class="text-xs text-slate-400 dark:text-slate-500">{isEs ? '1 año 2 meses · Tiempo completo' : '1 yr 2 mos · Full-time'}</p>
           </div>
         </div>
 
         <!-- Roles timeline -->
         <div class="relative">
 
-          <!-- Azure Cloud Engineer (current) -->
-          <div class="exp-entry flex gap-4" style="--delay:100ms">
+          <!-- Azure Cloud Engineer (past) -->
+          <div class="exp-entry flex gap-4" style="--delay:180ms">
             <!-- Dot + connecting line -->
             <div class="flex flex-col items-center shrink-0">
-              <div class="mt-1 w-3 h-3 relative shrink-0 z-10">
-                <div class="absolute inset-0 rounded-full bg-accent-400/50 animate-ping"></div>
-                <div class="relative w-3 h-3 rounded-full bg-accent-500 ring-2 ring-white dark:ring-slate-900"></div>
-              </div>
+              <div class="mt-1 w-3 h-3 rounded-full bg-slate-300 dark:bg-slate-600 ring-2 ring-white dark:ring-slate-900 shrink-0 z-10"></div>
               <div class="flex-1 w-px bg-slate-200 dark:bg-slate-700 mt-2"></div>
             </div>
             <!-- Content -->
@@ -185,9 +262,6 @@ const certifications = [
                     {t('exp.azure.period')} · {t('exp.azure.location')}
                   </p>
                 </div>
-                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 shrink-0">
-                  {t('about.current')}
-                </span>
               </div>
               <ul class="space-y-1.5 mb-3">
                 {highlightsAzure.map((h) => (
@@ -338,7 +412,15 @@ const certifications = [
             <!-- Header: imagen + código + título + rol -->
             <div class="flex items-center gap-3 mb-4">
               <div class="shrink-0 transition-transform duration-300 group-hover:scale-110 origin-center">
-                <Image src={cert.image} alt={`${cert.code} — ${cert.title}`} width={44} height={44} class="w-11 h-11 object-contain rounded-xl" />
+                {cert.image ? (
+                  <Image src={cert.image} alt={`${cert.code} — ${cert.title}`} width={44} height={44} class="w-11 h-11 object-contain rounded-xl" />
+                ) : (
+                  <div class="w-11 h-11 rounded-xl bg-primary-50 dark:bg-primary-900/20 border border-primary-200 dark:border-primary-800 flex items-center justify-center" aria-hidden="true">
+                    <svg class="w-6 h-6 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                    </svg>
+                  </div>
+                )}
               </div>
               <div class="flex-1 min-w-0">
                 <p class="text-base font-bold text-slate-900 dark:text-white leading-tight">{cert.code}</p>
